@@ -14,6 +14,7 @@ namespace NURSAN_PROJE
         public Form1()
         {
             InitializeComponent();
+            Console.WriteLine();
         }
     }
 }
