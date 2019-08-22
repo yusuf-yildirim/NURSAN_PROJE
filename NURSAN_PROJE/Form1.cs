@@ -23,8 +23,8 @@ namespace NURSAN_PROJE
 
         public void initializelistbox()
         {
-            string[] xmlFiles = Directory.GetFiles("C:\\Users\\yyill\\Desktop\\xmlfile", "*.txt").Select(Path.GetFileName).ToArray();
-            listBoxControl1.DataSource = xmlFiles;
+         //   string[] xmlFiles = Directory.GetFiles("C:\\Users\\yyill\\Desktop\\xmlfile", "*.txt").Select(Path.GetFileName).ToArray();
+       //     listBoxControl1.DataSource = xmlFiles;
         }
 
         private void simpleButton16_Click(object sender, EventArgs e)
