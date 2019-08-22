@@ -29,104 +29,98 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.newproject = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton16 = new DevExpress.XtraEditors.SimpleButton();
+            this.listBoxControl1 = new DevExpress.XtraEditors.ListBoxControl();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
-            // applicationMenu1
+            // newproject
             // 
-            this.applicationMenu1.Name = "applicationMenu1";
+            this.newproject.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.newproject.Appearance.Options.UseFont = true;
+            this.newproject.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.newproject.Location = new System.Drawing.Point(49, 81);
+            this.newproject.Name = "newproject";
+            this.newproject.Size = new System.Drawing.Size(299, 58);
+            this.newproject.TabIndex = 0;
+            this.newproject.Text = "Yeni Proje";
+            this.newproject.Click += new System.EventHandler(this.newproject_Click);
             // 
-            // label1
+            // simpleButton16
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(497, 139);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.simpleButton16.Location = new System.Drawing.Point(136, 603);
+            this.simpleButton16.Name = "simpleButton16";
+            this.simpleButton16.Size = new System.Drawing.Size(160, 35);
+            this.simpleButton16.TabIndex = 2;
+            this.simpleButton16.Text = "Çıkış";
+            this.simpleButton16.Click += new System.EventHandler(this.simpleButton16_Click);
             // 
-            // popupMenu1
+            // listBoxControl1
             // 
-            this.popupMenu1.Manager = this.barManager1;
-            this.popupMenu1.Name = "popupMenu1";
-            // 
-            // barManager1
-            // 
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(948, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 476);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(948, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 476);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(948, 0);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 476);
+            this.listBoxControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 13.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listBoxControl1.Appearance.Options.UseFont = true;
+            this.listBoxControl1.AppearanceHighlight.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.listBoxControl1.AppearanceHighlight.BackColor2 = System.Drawing.Color.Gainsboro;
+            this.listBoxControl1.AppearanceHighlight.Font = new System.Drawing.Font("Tahoma", 34.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listBoxControl1.AppearanceHighlight.FontSizeDelta = 15;
+            this.listBoxControl1.AppearanceHighlight.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.listBoxControl1.AppearanceHighlight.Options.UseBackColor = true;
+            this.listBoxControl1.AppearanceHighlight.Options.UseFont = true;
+            this.behaviorManager1.SetBehaviors(this.listBoxControl1, new DevExpress.Utils.Behaviors.Behavior[] {
+            ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.Behaviors.ScrollAnnotationsBehavior.Create(typeof(DevExpress.XtraEditors.Behaviors.ScrollAnnotationsBehaviorSourceForListBox), ((DevExpress.Utils.Behaviors.ScrollAnnotationType)((DevExpress.Utils.Behaviors.ScrollAnnotationType.SearchResult | DevExpress.Utils.Behaviors.ScrollAnnotationType.Selection))), new System.Drawing.Color[] {
+                        System.Drawing.Color.Sienna,
+                        System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))))}, new DevExpress.Utils.Behaviors.ScrollAnnotationAlignment[] {
+                        DevExpress.Utils.Behaviors.ScrollAnnotationAlignment.Default,
+                        DevExpress.Utils.Behaviors.ScrollAnnotationAlignment.Center})))});
+            this.listBoxControl1.ContextButtonOptions.AllowGlyphSkinning = true;
+            this.listBoxControl1.HighlightedItemStyle = DevExpress.XtraEditors.HighlightStyle.Skinned;
+            this.listBoxControl1.HotTrackItems = true;
+            this.listBoxControl1.ItemPadding = new System.Windows.Forms.Padding(5500, -15, 0, 0);
+            this.listBoxControl1.Items.AddRange(new object[] {
+            "ıoaşdsasd7",
+            "asdas",
+            "dasd",
+            "as",
+            "da",
+            "sd",
+            "asdasdasdasdasd",
+            "asdasdasdasd",
+            "asdasdasdasd",
+            "asdasdasdasdas"});
+            this.listBoxControl1.Location = new System.Drawing.Point(49, 191);
+            this.listBoxControl1.Name = "listBoxControl1";
+            this.listBoxControl1.Size = new System.Drawing.Size(299, 378);
+            this.listBoxControl1.TabIndex = 3;
+            this.listBoxControl1.SelectedIndexChanged += new System.EventHandler(this.listBoxControl1_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 476);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(414, 650);
+            this.Controls.Add(this.listBoxControl1);
+            this.Controls.Add(this.simpleButton16);
+            this.Controls.Add(this.newproject);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nursan Projesi";
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraBars.PopupMenu popupMenu1;
-        private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraEditors.SimpleButton newproject;
+        private DevExpress.XtraEditors.SimpleButton simpleButton16;
+        private DevExpress.XtraEditors.ListBoxControl listBoxControl1;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }
 
