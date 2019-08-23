@@ -33,17 +33,9 @@
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery1 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column1 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression1 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table1 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column2 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression2 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column3 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression3 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column4 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression4 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions ımageListBoxItemImageOptions1 = new DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Projectwindow));
+            DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions ımageListBoxItemImageOptions2 = new DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions();
             DevExpress.Utils.Animation.Transition transition1 = new DevExpress.Utils.Animation.Transition();
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -81,19 +73,48 @@
             this.listBoxControl2 = new DevExpress.XtraEditors.ListBoxControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEST1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEST2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEST3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sidePanel2 = new DevExpress.XtraEditors.SidePanel();
+            this.ımageListBoxControl1 = new DevExpress.XtraEditors.ImageListBoxControl();
+            this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
+            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
+            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.listBoxControl3 = new DevExpress.XtraEditors.ListBoxControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.transitionManager1 = new DevExpress.Utils.Animation.TransitionManager(this.components);
-            this.listBoxControl3 = new DevExpress.XtraEditors.ListBoxControl();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.comboBoxEdit3 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.comboBoxEdit4 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -107,13 +128,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.sidePanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ımageListBoxControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
+            this.sidePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             this.tabNavigationPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl3)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // toolbarFormManager1
@@ -277,6 +315,7 @@
             this.barButtonItem7.Caption = "barButtonItem7";
             this.barButtonItem7.Id = 2;
             this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem7_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -325,16 +364,17 @@
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Controls.Add(this.tabNavigationPage2);
             this.tabPane1.Controls.Add(this.tabNavigationPage3);
-            this.tabPane1.Location = new System.Drawing.Point(0, 62);
+            this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPane1.Location = new System.Drawing.Point(0, 56);
             this.tabPane1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1,
             this.tabNavigationPage2,
             this.tabNavigationPage3});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1086, 480);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1086, 502);
             this.tabPane1.SelectedPage = this.tabNavigationPage2;
-            this.tabPane1.Size = new System.Drawing.Size(1086, 480);
+            this.tabPane1.Size = new System.Drawing.Size(1086, 502);
             this.tabPane1.TabIndex = 8;
             this.tabPane1.Text = "tabPane1";
             // 
@@ -354,7 +394,7 @@
             this.tabNavigationPage1.Controls.Add(this.textEdit1);
             this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1086, 459);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1086, 481);
             // 
             // textEdit4
             // 
@@ -482,108 +522,298 @@
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.Caption = "Bağlantıları Belirleme";
-            this.tabNavigationPage2.Controls.Add(this.gridControl1);
+            this.tabNavigationPage2.Controls.Add(this.panel1);
             this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1086, 459);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1086, 481);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.sidePanel2);
+            this.panel1.Controls.Add(this.sidePanel1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1086, 481);
+            this.panel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.gridControl1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(181, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(737, 481);
+            this.panel2.TabIndex = 3;
             // 
             // gridControl1
             // 
-            this.gridControl1.DataMember = "TEST";
-            this.gridControl1.DataSource = this.sqlDataSource2;
-            this.gridControl1.Location = new System.Drawing.Point(12, 13);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.toolbarFormManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1062, 434);
-            this.gridControl1.TabIndex = 1;
+            this.gridControl1.Size = new System.Drawing.Size(737, 481);
+            this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // sqlDataSource2
-            // 
-            this.sqlDataSource2.ConnectionName = "database";
-            this.sqlDataSource2.Name = "sqlDataSource2";
-            columnExpression1.ColumnName = "ID";
-            table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"134\" />";
-            table1.Name = "TEST";
-            columnExpression1.Table = table1;
-            column1.Expression = columnExpression1;
-            columnExpression2.ColumnName = "TEST1";
-            columnExpression2.Table = table1;
-            column2.Expression = columnExpression2;
-            columnExpression3.ColumnName = "TEST2";
-            columnExpression3.Table = table1;
-            column3.Expression = columnExpression3;
-            columnExpression4.ColumnName = "TEST3";
-            columnExpression4.Table = table1;
-            column4.Expression = columnExpression4;
-            selectQuery1.Columns.Add(column1);
-            selectQuery1.Columns.Add(column2);
-            selectQuery1.Columns.Add(column3);
-            selectQuery1.Columns.Add(column4);
-            selectQuery1.Name = "TEST";
-            selectQuery1.Tables.Add(table1);
-            this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery1});
-            this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
-            // 
             // gridView1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colID,
-            this.colTEST1,
-            this.colTEST2,
-            this.colTEST3});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // colID
+            // sidePanel2
             // 
-            this.colID.FieldName = "ID";
-            this.colID.Name = "colID";
-            this.colID.Visible = true;
-            this.colID.VisibleIndex = 0;
+            this.sidePanel2.Controls.Add(this.ımageListBoxControl1);
+            this.sidePanel2.Controls.Add(this.searchControl1);
+            this.sidePanel2.Controls.Add(this.simpleButton7);
+            this.sidePanel2.Controls.Add(this.simpleButton6);
+            this.sidePanel2.Controls.Add(this.simpleButton5);
+            this.sidePanel2.Controls.Add(this.simpleButton4);
+            this.sidePanel2.Controls.Add(this.simpleButton3);
+            this.sidePanel2.Controls.Add(this.labelControl5);
+            this.sidePanel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidePanel2.Location = new System.Drawing.Point(0, 0);
+            this.sidePanel2.Name = "sidePanel2";
+            this.sidePanel2.Size = new System.Drawing.Size(181, 481);
+            this.sidePanel2.TabIndex = 2;
+            this.sidePanel2.Text = "sidePanel2";
             // 
-            // colTEST1
+            // ımageListBoxControl1
             // 
-            this.colTEST1.FieldName = "TEST1";
-            this.colTEST1.Name = "colTEST1";
-            this.colTEST1.Visible = true;
-            this.colTEST1.VisibleIndex = 1;
+            this.ımageListBoxControl1.HorizontalScrollbar = true;
+            ımageListBoxItemImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ımageListBoxItemImageOptions1.SvgImage")));
+            ımageListBoxItemImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ımageListBoxItemImageOptions2.SvgImage")));
+            this.ımageListBoxControl1.Items.AddRange(new DevExpress.XtraEditors.Controls.ImageListBoxItem[] {
+            new DevExpress.XtraEditors.Controls.ImageListBoxItem("STANDART", "", ımageListBoxItemImageOptions1, null),
+            new DevExpress.XtraEditors.Controls.ImageListBoxItem("FAZ1", "", ımageListBoxItemImageOptions2, null)});
+            this.ımageListBoxControl1.Location = new System.Drawing.Point(9, 185);
+            this.ımageListBoxControl1.Name = "ımageListBoxControl1";
+            this.ımageListBoxControl1.Size = new System.Drawing.Size(166, 227);
+            this.ımageListBoxControl1.TabIndex = 7;
             // 
-            // colTEST2
+            // searchControl1
             // 
-            this.colTEST2.FieldName = "TEST2";
-            this.colTEST2.Name = "colTEST2";
-            this.colTEST2.Visible = true;
-            this.colTEST2.VisibleIndex = 2;
+            this.searchControl1.Location = new System.Drawing.Point(9, 148);
+            this.searchControl1.MenuManager = this.toolbarFormManager1;
+            this.searchControl1.Name = "searchControl1";
+            this.searchControl1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Repository.ClearButton(),
+            new DevExpress.XtraEditors.Repository.SearchButton()});
+            this.searchControl1.Size = new System.Drawing.Size(166, 20);
+            this.searchControl1.TabIndex = 6;
             // 
-            // colTEST3
+            // simpleButton7
             // 
-            this.colTEST3.FieldName = "TEST3";
-            this.colTEST3.Name = "colTEST3";
-            this.colTEST3.Visible = true;
-            this.colTEST3.VisibleIndex = 3;
+            this.simpleButton7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton7.ImageOptions.Image")));
+            this.simpleButton7.Location = new System.Drawing.Point(41, 99);
+            this.simpleButton7.Name = "simpleButton7";
+            this.simpleButton7.Size = new System.Drawing.Size(29, 29);
+            this.simpleButton7.TabIndex = 5;
+            // 
+            // simpleButton6
+            // 
+            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
+            this.simpleButton6.Location = new System.Drawing.Point(76, 99);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(29, 29);
+            this.simpleButton6.TabIndex = 4;
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.simpleButton5.Location = new System.Drawing.Point(111, 99);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(29, 29);
+            this.simpleButton5.TabIndex = 3;
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(146, 99);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(29, 29);
+            this.simpleButton4.TabIndex = 2;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(9, 99);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(26, 29);
+            this.simpleButton3.TabIndex = 1;
+            this.simpleButton3.Click += new System.EventHandler(this.SimpleButton3_Click);
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(22, 39);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(130, 19);
+            this.labelControl5.TabIndex = 0;
+            this.labelControl5.Text = "ETAP ÖZELLİKERİ";
+            // 
+            // sidePanel1
+            // 
+            this.sidePanel1.Controls.Add(this.textEdit9);
+            this.sidePanel1.Controls.Add(this.labelControl10);
+            this.sidePanel1.Controls.Add(this.textEdit8);
+            this.sidePanel1.Controls.Add(this.labelControl9);
+            this.sidePanel1.Controls.Add(this.textEdit7);
+            this.sidePanel1.Controls.Add(this.labelControl8);
+            this.sidePanel1.Controls.Add(this.textEdit6);
+            this.sidePanel1.Controls.Add(this.labelControl7);
+            this.sidePanel1.Controls.Add(this.textEdit5);
+            this.sidePanel1.Controls.Add(this.labelControl6);
+            this.sidePanel1.Controls.Add(this.simpleButton2);
+            this.sidePanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sidePanel1.Location = new System.Drawing.Point(918, 0);
+            this.sidePanel1.Name = "sidePanel1";
+            this.sidePanel1.Size = new System.Drawing.Size(168, 481);
+            this.sidePanel1.TabIndex = 1;
+            this.sidePanel1.Text = "sidePanel1";
+            this.sidePanel1.Click += new System.EventHandler(this.SidePanel1_Click);
+            // 
+            // textEdit9
+            // 
+            this.textEdit9.Location = new System.Drawing.Point(15, 282);
+            this.textEdit9.MenuManager = this.toolbarFormManager1;
+            this.textEdit9.Name = "textEdit9";
+            this.textEdit9.Size = new System.Drawing.Size(100, 20);
+            this.textEdit9.TabIndex = 10;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(6, 263);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(42, 13);
+            this.labelControl10.TabIndex = 9;
+            this.labelControl10.Text = "Özellikler";
+            // 
+            // textEdit8
+            // 
+            this.textEdit8.Location = new System.Drawing.Point(13, 211);
+            this.textEdit8.MenuManager = this.toolbarFormManager1;
+            this.textEdit8.Name = "textEdit8";
+            this.textEdit8.Size = new System.Drawing.Size(100, 20);
+            this.textEdit8.TabIndex = 8;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(4, 192);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(56, 13);
+            this.labelControl9.TabIndex = 7;
+            this.labelControl9.Text = "Kablo Rengi";
+            // 
+            // textEdit7
+            // 
+            this.textEdit7.Location = new System.Drawing.Point(13, 148);
+            this.textEdit7.MenuManager = this.toolbarFormManager1;
+            this.textEdit7.Name = "textEdit7";
+            this.textEdit7.Size = new System.Drawing.Size(100, 20);
+            this.textEdit7.TabIndex = 6;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(4, 129);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(63, 13);
+            this.labelControl8.TabIndex = 5;
+            this.labelControl8.Text = "Kablo Kontrol";
+            // 
+            // textEdit6
+            // 
+            this.textEdit6.Location = new System.Drawing.Point(15, 96);
+            this.textEdit6.MenuManager = this.toolbarFormManager1;
+            this.textEdit6.Name = "textEdit6";
+            this.textEdit6.Size = new System.Drawing.Size(100, 20);
+            this.textEdit6.TabIndex = 4;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(6, 77);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(35, 13);
+            this.labelControl7.TabIndex = 3;
+            this.labelControl7.Text = "Nereye";
+            // 
+            // textEdit5
+            // 
+            this.textEdit5.Location = new System.Drawing.Point(15, 38);
+            this.textEdit5.MenuManager = this.toolbarFormManager1;
+            this.textEdit5.Name = "textEdit5";
+            this.textEdit5.Size = new System.Drawing.Size(100, 20);
+            this.textEdit5.TabIndex = 2;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(6, 19);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(41, 13);
+            this.labelControl6.TabIndex = 1;
+            this.labelControl6.Text = "Nereden";
+            this.labelControl6.Click += new System.EventHandler(this.LabelControl6_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(6, 441);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(156, 35);
+            this.simpleButton2.TabIndex = 0;
+            this.simpleButton2.Text = "Yeni Bağlantı";
             // 
             // tabNavigationPage3
             // 
             this.tabNavigationPage3.Caption = "Bileşenleri Belirleme";
-            this.tabNavigationPage3.Controls.Add(this.tableLayoutPanel1);
+            this.tabNavigationPage3.Controls.Add(this.panelControl1);
             this.tabNavigationPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabNavigationPage3.Name = "tabNavigationPage3";
-            this.tabNavigationPage3.Size = new System.Drawing.Size(1086, 459);
+            this.tabNavigationPage3.Size = new System.Drawing.Size(1086, 481);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.simpleButton8);
+            this.panelControl1.Controls.Add(this.comboBoxEdit4);
+            this.panelControl1.Controls.Add(this.labelControl14);
+            this.panelControl1.Controls.Add(this.comboBoxEdit3);
+            this.panelControl1.Controls.Add(this.comboBoxEdit2);
+            this.panelControl1.Controls.Add(this.labelControl13);
+            this.panelControl1.Controls.Add(this.labelControl12);
+            this.panelControl1.Controls.Add(this.comboBoxEdit1);
+            this.panelControl1.Controls.Add(this.label1);
+            this.panelControl1.Controls.Add(this.textEdit10);
+            this.panelControl1.Controls.Add(this.labelControl11);
+            this.panelControl1.Controls.Add(this.listBoxControl3);
+            this.panelControl1.Controls.Add(this.gridControl2);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1086, 481);
+            this.panelControl1.TabIndex = 2;
+            // 
+            // listBoxControl3
+            // 
+            this.listBoxControl3.Location = new System.Drawing.Point(856, 228);
+            this.listBoxControl3.Name = "listBoxControl3";
+            this.listBoxControl3.Size = new System.Drawing.Size(226, 248);
+            this.listBoxControl3.TabIndex = 1;
             // 
             // gridControl2
             // 
-            this.gridControl2.Location = new System.Drawing.Point(3, 3);
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gridControl2.Location = new System.Drawing.Point(2, 2);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.toolbarFormManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(858, 447);
+            this.gridControl2.Size = new System.Drawing.Size(852, 477);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gridControl2.Click += new System.EventHandler(this.GridControl2_Click);
             // 
             // gridView2
             // 
@@ -605,27 +835,113 @@
             transition1.WaitingIndicatorProperties.Description = "";
             this.transitionManager1.Transitions.Add(transition1);
             // 
-            // listBoxControl3
+            // labelControl11
             // 
-            this.listBoxControl3.Location = new System.Drawing.Point(867, 3);
-            this.listBoxControl3.Name = "listBoxControl3";
-            this.listBoxControl3.Size = new System.Drawing.Size(201, 447);
-            this.listBoxControl3.TabIndex = 1;
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(874, 78);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(31, 19);
+            this.labelControl11.TabIndex = 2;
+            this.labelControl11.Text = "İsim";
             // 
-            // tableLayoutPanel1
+            // textEdit10
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.listBoxControl3, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.gridControl2, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1080, 453);
-            this.tableLayoutPanel1.TabIndex = 2;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
+            this.textEdit10.Location = new System.Drawing.Point(946, 80);
+            this.textEdit10.MenuManager = this.toolbarFormManager1;
+            this.textEdit10.Name = "textEdit10";
+            this.textEdit10.Size = new System.Drawing.Size(100, 20);
+            this.textEdit10.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label1.Location = new System.Drawing.Point(870, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 19);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Tür";
+            // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.Location = new System.Drawing.Point(946, 42);
+            this.comboBoxEdit1.MenuManager = this.toolbarFormManager1;
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit1.TabIndex = 5;
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Location = new System.Drawing.Point(902, 0);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(135, 24);
+            this.labelControl12.TabIndex = 6;
+            this.labelControl12.Text = "Bileşen Ekleme";
+            this.labelControl12.Click += new System.EventHandler(this.LabelControl12_Click);
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.Location = new System.Drawing.Point(874, 115);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(46, 19);
+            this.labelControl13.TabIndex = 7;
+            this.labelControl13.Text = "Değeri";
+            this.labelControl13.Click += new System.EventHandler(this.LabelControl13_Click);
+            // 
+            // comboBoxEdit2
+            // 
+            this.comboBoxEdit2.Location = new System.Drawing.Point(946, 113);
+            this.comboBoxEdit2.MenuManager = this.toolbarFormManager1;
+            this.comboBoxEdit2.Name = "comboBoxEdit2";
+            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit2.Size = new System.Drawing.Size(48, 20);
+            this.comboBoxEdit2.TabIndex = 8;
+            // 
+            // comboBoxEdit3
+            // 
+            this.comboBoxEdit3.Location = new System.Drawing.Point(1010, 113);
+            this.comboBoxEdit3.MenuManager = this.toolbarFormManager1;
+            this.comboBoxEdit3.Name = "comboBoxEdit3";
+            this.comboBoxEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit3.Size = new System.Drawing.Size(36, 20);
+            this.comboBoxEdit3.TabIndex = 9;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl14.Appearance.Options.UseFont = true;
+            this.labelControl14.Location = new System.Drawing.Point(874, 152);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(65, 19);
+            this.labelControl14.TabIndex = 10;
+            this.labelControl14.Text = "Toleransı";
+            // 
+            // comboBoxEdit4
+            // 
+            this.comboBoxEdit4.Location = new System.Drawing.Point(946, 149);
+            this.comboBoxEdit4.MenuManager = this.toolbarFormManager1;
+            this.comboBoxEdit4.Name = "comboBoxEdit4";
+            this.comboBoxEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit4.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit4.TabIndex = 11;
+            // 
+            // simpleButton8
+            // 
+            this.simpleButton8.Location = new System.Drawing.Point(936, 188);
+            this.simpleButton8.Name = "simpleButton8";
+            this.simpleButton8.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton8.TabIndex = 12;
+            this.simpleButton8.Text = "Ekle";
             // 
             // Projectwindow
             // 
@@ -661,13 +977,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.sidePanel2.ResumeLayout(false);
+            this.sidePanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ımageListBoxControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
+            this.sidePanel1.ResumeLayout(false);
+            this.sidePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             this.tabNavigationPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl3)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -712,17 +1048,46 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarDockingMenuItem barDockingMenuItem1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource2;
-        private DevExpress.XtraGrid.Columns.GridColumn colID;
-        private DevExpress.XtraGrid.Columns.GridColumn colTEST1;
-        private DevExpress.XtraGrid.Columns.GridColumn colTEST2;
-        private DevExpress.XtraGrid.Columns.GridColumn colTEST3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.ListBoxControl listBoxControl3;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.Utils.Animation.TransitionManager transitionManager1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.SidePanel sidePanel1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private System.Windows.Forms.Panel panel2;
+        private DevExpress.XtraEditors.SidePanel sidePanel2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton7;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.ImageListBoxControl ımageListBoxControl1;
+        private DevExpress.XtraEditors.SearchControl searchControl1;
+        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.TextEdit textEdit9;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.TextEdit textEdit8;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.TextEdit textEdit7;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.TextEdit textEdit10;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.SimpleButton simpleButton8;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit4;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit3;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
     }
 }
