@@ -125,3 +125,17 @@ C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\de\DevExpress
 C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\es\DevExpress.XtraVerticalGrid.v19.1.resources.dll
 C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\ja\DevExpress.XtraVerticalGrid.v19.1.resources.dll
 C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\ru\DevExpress.XtraVerticalGrid.v19.1.resources.dll
+C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\DevExpress.XtraGauges.v19.1.Core.dll
+C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\DevExpress.XtraGauges.v19.1.Win.dll
+C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\DevExpress.XtraWizard.v19.1.dll
+C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\DevExpress.XtraGauges.v19.1.Core.xml
+C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\DevExpress.XtraGauges.v19.1.Win.xml
+C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\DevExpress.XtraWizard.v19.1.xml
+C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\de\DevExpress.XtraGauges.v19.1.Core.resources.dll
+C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\es\DevExpress.XtraGauges.v19.1.Core.resources.dll
+C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\ja\DevExpress.XtraGauges.v19.1.Core.resources.dll
+C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\ru\DevExpress.XtraGauges.v19.1.Core.resources.dll
+C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\de\DevExpress.XtraWizard.v19.1.resources.dll
+C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\es\DevExpress.XtraWizard.v19.1.resources.dll
+C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\ja\DevExpress.XtraWizard.v19.1.resources.dll
+C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\ru\DevExpress.XtraWizard.v19.1.resources.dll

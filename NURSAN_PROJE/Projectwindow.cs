@@ -40,22 +40,6 @@ namespace NURSAN_PROJE
             
         }
 
-      
-
-        private void BarButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DataTable table1 = new DataTable("Connections");
-          
-            table1.Columns.Add("name");
-            table1.Columns.Add("id");
-            table1.Rows.Add("sam", 1);
-            table1.Rows.Add("mark", 2);
-
-
-            gridControl1.DataSource = table1;
-            Console.WriteLine("test");
-        }
-
         private void CheckButton1_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -90,5 +74,28 @@ namespace NURSAN_PROJE
         {
 
         }
+
+        private void GridControl3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SimpleButton1_Click(object sender, EventArgs e)
+        {
+            DataTable table1 = new DataTable("Connections");
+
+            table1.Columns.Add("Soket");
+            table1.Columns.Add("Pin");
+            table1.Columns.Add("Test noktası");
+            table1.Rows.Add("Soket-3","1", "1");
+            table1.Rows.Add("Soket-3", "2", "1");
+            table1.Rows.Add("Soket-3", "3", "2");
+
+
+            gridControl3.DataSource = table1;
+            Console.WriteLine("test");
+        }
     }
 }
+
+
