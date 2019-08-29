@@ -16,6 +16,7 @@ namespace NURSAN_PROJE
 {
     public partial class Projectwindow : DevExpress.XtraBars.ToolbarForm.ToolbarForm
     {
+        DataTable table1;
         public Projectwindow()
         {
            
@@ -86,23 +87,40 @@ namespace NURSAN_PROJE
 
         private void SimpleButton1_Click(object sender, EventArgs e)
         {
-            DataTable table1 = new DataTable("Connections");
-
-            table1.Columns.Add("Soket");
-            table1.Columns.Add("Pin");
-            table1.Columns.Add("Test noktası");
-            table1.Rows.Add("Soket-3","1", "1");
-            table1.Rows.Add("Soket-3", "2", "1");
-            table1.Rows.Add("Soket-3", "3", "2");
-
-
-            gridControl3.DataSource = table1;
-            Console.WriteLine("test");
+            listBoxControl2.Items.Add(textEdit1.Text);
         }
 
         private void Projectwindow_Load(object sender, EventArgs e)
         {
             sqlDataSource1.ConnectionParameters.Equals(Application.StartupPath + "\\database.db");
+        }
+
+        private void TextEdit2_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int pinvalue = 0;
+                if (textEdit2.Text != "")
+                {
+                     pinvalue = Convert.ToInt32(textEdit2.Text);
+                }
+                table1 = new DataTable("pins");
+                table1.Columns.Add("Soket");
+                table1.Columns.Add("Pin");
+                table1.Columns.Add("Test noktası");
+                for (int i = 1; i <= pinvalue; i++)
+                {
+                    table1.Rows.Add(textEdit1.Text, i);
+                }
+                gridControl3.DataSource = table1;
+                gridControl3.RefreshDataSource();
+                Console.WriteLine("test");
+            }
+            catch(FormatException err)
+            {
+               Console.WriteLine(textEdit2.Text);
+            }
+           
         }
     }
 }
