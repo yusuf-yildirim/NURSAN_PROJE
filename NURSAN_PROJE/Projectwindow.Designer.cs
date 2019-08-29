@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions ımageListBoxItemImageOptions1 = new DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions();
-            DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions ımageListBoxItemImageOptions2 = new DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions();
-            DevExpress.XtraEditors.TableLayout.ItemTemplateBase ıtemTemplateBase1 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement1 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.Utils.Animation.Transition transition1 = new DevExpress.Utils.Animation.Transition();
-            DevExpress.DataAccess.ConnectionParameters.SQLiteConnectionParameters sqLiteConnectionParameters1 = new DevExpress.DataAccess.ConnectionParameters.SQLiteConnectionParameters();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery1 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column1 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression1 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table1 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column2 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression2 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column3 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression3 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.ConnectionParameters.SQLiteConnectionParameters sqLiteConnectionParameters2 = new DevExpress.DataAccess.ConnectionParameters.SQLiteConnectionParameters();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery2 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.Column column4 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression4 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column5 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression5 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column6 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression6 = new DevExpress.DataAccess.Sql.ColumnExpression();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Projectwindow));
+            DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions ımageListBoxItemImageOptions3 = new DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions();
+            DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions ımageListBoxItemImageOptions4 = new DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions();
+            DevExpress.XtraEditors.TableLayout.ItemTemplateBase ıtemTemplateBase2 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement2 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition4 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition5 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition6 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.Utils.Animation.Transition transition2 = new DevExpress.Utils.Animation.Transition();
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -89,7 +89,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colTEST1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTEST2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTEST3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sidePanel2 = new DevExpress.XtraEditors.SidePanel();
             this.ımageListBoxControl1 = new DevExpress.XtraEditors.ImageListBoxControl();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
@@ -131,10 +135,6 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.transitionManager1 = new DevExpress.Utils.Animation.TransitionManager(this.components);
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.colTEST1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEST2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEST3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -599,6 +599,32 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "database 1";
+            sqLiteConnectionParameters2.FileName = "C:\\Users\\Burakcan\\source\\repos\\NURSAN_PROJE\\NURSAN_PROJE\\bin\\Debug\\database.db";
+            this.sqlDataSource1.ConnectionParameters = sqLiteConnectionParameters2;
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            columnExpression4.ColumnName = "TEST1";
+            table2.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"134\" />";
+            table2.Name = "TEST";
+            columnExpression4.Table = table2;
+            column4.Expression = columnExpression4;
+            columnExpression5.ColumnName = "TEST2";
+            columnExpression5.Table = table2;
+            column5.Expression = columnExpression5;
+            columnExpression6.ColumnName = "TEST3";
+            columnExpression6.Table = table2;
+            column6.Expression = columnExpression6;
+            selectQuery2.Columns.Add(column4);
+            selectQuery2.Columns.Add(column5);
+            selectQuery2.Columns.Add(column6);
+            selectQuery2.Name = "TEST";
+            selectQuery2.Tables.Add(table2);
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            selectQuery2});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -607,6 +633,27 @@
             this.colTEST3});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            // 
+            // colTEST1
+            // 
+            this.colTEST1.FieldName = "TEST1";
+            this.colTEST1.Name = "colTEST1";
+            this.colTEST1.Visible = true;
+            this.colTEST1.VisibleIndex = 0;
+            // 
+            // colTEST2
+            // 
+            this.colTEST2.FieldName = "TEST2";
+            this.colTEST2.Name = "colTEST2";
+            this.colTEST2.Visible = true;
+            this.colTEST2.VisibleIndex = 1;
+            // 
+            // colTEST3
+            // 
+            this.colTEST3.FieldName = "TEST3";
+            this.colTEST3.Name = "colTEST3";
+            this.colTEST3.Visible = true;
+            this.colTEST3.VisibleIndex = 2;
             // 
             // sidePanel2
             // 
@@ -628,11 +675,11 @@
             // ımageListBoxControl1
             // 
             this.ımageListBoxControl1.HorizontalScrollbar = true;
-            ımageListBoxItemImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ımageListBoxItemImageOptions1.SvgImage")));
-            ımageListBoxItemImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ımageListBoxItemImageOptions2.SvgImage")));
+            ımageListBoxItemImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ımageListBoxItemImageOptions3.SvgImage")));
+            ımageListBoxItemImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ımageListBoxItemImageOptions4.SvgImage")));
             this.ımageListBoxControl1.Items.AddRange(new DevExpress.XtraEditors.Controls.ImageListBoxItem[] {
-            new DevExpress.XtraEditors.Controls.ImageListBoxItem("STANDART", "", ımageListBoxItemImageOptions1, null),
-            new DevExpress.XtraEditors.Controls.ImageListBoxItem("FAZ1", "", ımageListBoxItemImageOptions2, null)});
+            new DevExpress.XtraEditors.Controls.ImageListBoxItem("STANDART", "", ımageListBoxItemImageOptions3, null),
+            new DevExpress.XtraEditors.Controls.ImageListBoxItem("FAZ1", "", ımageListBoxItemImageOptions4, null)});
             this.ımageListBoxControl1.Location = new System.Drawing.Point(9, 185);
             this.ımageListBoxControl1.Name = "ımageListBoxControl1";
             this.ımageListBoxControl1.Size = new System.Drawing.Size(166, 227);
@@ -956,18 +1003,18 @@
             this.listBoxControl3.Name = "listBoxControl3";
             this.listBoxControl3.Size = new System.Drawing.Size(226, 248);
             this.listBoxControl3.TabIndex = 1;
-            ıtemTemplateBase1.Columns.Add(tableColumnDefinition1);
-            templatedItemElement1.FieldName = null;
-            templatedItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            templatedItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement1.Text = "Common component-1";
-            templatedItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            ıtemTemplateBase1.Elements.Add(templatedItemElement1);
-            ıtemTemplateBase1.Name = "template1";
-            ıtemTemplateBase1.Rows.Add(tableRowDefinition1);
-            ıtemTemplateBase1.Rows.Add(tableRowDefinition2);
-            ıtemTemplateBase1.Rows.Add(tableRowDefinition3);
-            this.listBoxControl3.Templates.Add(ıtemTemplateBase1);
+            ıtemTemplateBase2.Columns.Add(tableColumnDefinition2);
+            templatedItemElement2.FieldName = null;
+            templatedItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement2.Text = "Common component-1";
+            templatedItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            ıtemTemplateBase2.Elements.Add(templatedItemElement2);
+            ıtemTemplateBase2.Name = "template1";
+            ıtemTemplateBase2.Rows.Add(tableRowDefinition4);
+            ıtemTemplateBase2.Rows.Add(tableRowDefinition5);
+            ıtemTemplateBase2.Rows.Add(tableRowDefinition6);
+            this.listBoxControl3.Templates.Add(ıtemTemplateBase2);
             // 
             // gridControl2
             // 
@@ -1011,65 +1058,18 @@
             // 
             // transitionManager1
             // 
-            transition1.BarWaitingIndicatorProperties.Caption = "";
-            transition1.BarWaitingIndicatorProperties.Description = "";
-            transition1.Control = null;
-            transition1.LineWaitingIndicatorProperties.AnimationElementCount = 5;
-            transition1.LineWaitingIndicatorProperties.Caption = "";
-            transition1.LineWaitingIndicatorProperties.Description = "";
-            transition1.RingWaitingIndicatorProperties.AnimationElementCount = 5;
-            transition1.RingWaitingIndicatorProperties.Caption = "";
-            transition1.RingWaitingIndicatorProperties.Description = "";
-            transition1.WaitingIndicatorProperties.Caption = "";
-            transition1.WaitingIndicatorProperties.Description = "";
-            this.transitionManager1.Transitions.Add(transition1);
-            // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "database 1";
-            sqLiteConnectionParameters1.FileName = "C:\\Users\\Burakcan\\source\\repos\\NURSAN_PROJE\\NURSAN_PROJE\\bin\\Debug\\database.db";
-            this.sqlDataSource1.ConnectionParameters = sqLiteConnectionParameters1;
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            columnExpression1.ColumnName = "TEST1";
-            table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"134\" />";
-            table1.Name = "TEST";
-            columnExpression1.Table = table1;
-            column1.Expression = columnExpression1;
-            columnExpression2.ColumnName = "TEST2";
-            columnExpression2.Table = table1;
-            column2.Expression = columnExpression2;
-            columnExpression3.ColumnName = "TEST3";
-            columnExpression3.Table = table1;
-            column3.Expression = columnExpression3;
-            selectQuery1.Columns.Add(column1);
-            selectQuery1.Columns.Add(column2);
-            selectQuery1.Columns.Add(column3);
-            selectQuery1.Name = "TEST";
-            selectQuery1.Tables.Add(table1);
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery1});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
-            // 
-            // colTEST1
-            // 
-            this.colTEST1.FieldName = "TEST1";
-            this.colTEST1.Name = "colTEST1";
-            this.colTEST1.Visible = true;
-            this.colTEST1.VisibleIndex = 0;
-            // 
-            // colTEST2
-            // 
-            this.colTEST2.FieldName = "TEST2";
-            this.colTEST2.Name = "colTEST2";
-            this.colTEST2.Visible = true;
-            this.colTEST2.VisibleIndex = 1;
-            // 
-            // colTEST3
-            // 
-            this.colTEST3.FieldName = "TEST3";
-            this.colTEST3.Name = "colTEST3";
-            this.colTEST3.Visible = true;
-            this.colTEST3.VisibleIndex = 2;
+            transition2.BarWaitingIndicatorProperties.Caption = "";
+            transition2.BarWaitingIndicatorProperties.Description = "";
+            transition2.Control = null;
+            transition2.LineWaitingIndicatorProperties.AnimationElementCount = 5;
+            transition2.LineWaitingIndicatorProperties.Caption = "";
+            transition2.LineWaitingIndicatorProperties.Description = "";
+            transition2.RingWaitingIndicatorProperties.AnimationElementCount = 5;
+            transition2.RingWaitingIndicatorProperties.Caption = "";
+            transition2.RingWaitingIndicatorProperties.Description = "";
+            transition2.WaitingIndicatorProperties.Caption = "";
+            transition2.WaitingIndicatorProperties.Description = "";
+            this.transitionManager1.Transitions.Add(transition2);
             // 
             // Projectwindow
             // 
@@ -1091,6 +1091,7 @@
             this.Name = "Projectwindow";
             this.Text = "Projectwindow";
             this.ToolbarFormControl = this.toolbarFormControl1;
+            this.Load += new System.EventHandler(this.Projectwindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

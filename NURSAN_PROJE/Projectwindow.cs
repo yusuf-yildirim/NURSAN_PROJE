@@ -18,6 +18,7 @@ namespace NURSAN_PROJE
     {
         public Projectwindow()
         {
+           
             this.Hide();
             InitializeComponent();
             new Form1().ShowDialog();
@@ -97,6 +98,11 @@ namespace NURSAN_PROJE
 
             gridControl3.DataSource = table1;
             Console.WriteLine("test");
+        }
+
+        private void Projectwindow_Load(object sender, EventArgs e)
+        {
+            sqlDataSource1.ConnectionParameters.Equals(Application.StartupPath + "\\database.db");
         }
     }
 }
