@@ -106,7 +106,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sockets.cs" />
-    <Compile Include="SQL\Connection.cs" />
+    <Compile Include="SQL\dbeng.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

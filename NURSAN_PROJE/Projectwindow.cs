@@ -11,7 +11,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using System.IO;
 using System.Data.SQLite;
-
+using NURSAN_PROJE.SQL;
 namespace NURSAN_PROJE
 {
     public partial class Projectwindow : DevExpress.XtraBars.ToolbarForm.ToolbarForm
@@ -72,7 +72,11 @@ namespace NURSAN_PROJE
 
         private void SimpleButton2_Click(object sender, EventArgs e)
         {
-
+            dbeng test = new dbeng();
+            test.connection_add(textEdit5.Text, textEdit6.Text, textEdit7.Text, textEdit8.Text);
+            sqlDataSource1.Fill();
+            gridControl1.RefreshDataSource();
+           
         }
     }
 }
