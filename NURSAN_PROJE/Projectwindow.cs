@@ -51,16 +51,12 @@ namespace NURSAN_PROJE
             test.connection_add(textEdit5.Text, textEdit6.Text, textEdit7.Text, textEdit8.Text);
             sqlDataSource1.Fill();
             gridControl1.RefreshDataSource();
-           
         }
 
         private void simpleButton11_Click(object sender, EventArgs e)
         {
             socket = new Sockets(textEdit13.Text);
             listBoxControl1.Items.Add(socket.getsocketname());
-            
-            
-            
         }
 
         private void accordionControlElement3_Click(object sender, EventArgs e)
@@ -71,7 +67,6 @@ namespace NURSAN_PROJE
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
             listBoxControl1.Items.Remove(listBoxControl1.GetItem(listBoxControl1.SelectedIndex));
-
         }
 
         private void simpleButton9_Click(object sender, EventArgs e)
@@ -81,7 +76,6 @@ namespace NURSAN_PROJE
                 listBoxControl2.Items.Add(listBoxControl1.GetItem(listBoxControl1.SelectedIndex));
                 listBoxControl1.Items.Remove(listBoxControl1.GetItem(listBoxControl1.SelectedIndex));
                 listBoxControl2.SelectedIndex = listBoxControl2.ItemCount;
-
             }
             catch (Exception err)
             {
@@ -108,9 +102,9 @@ namespace NURSAN_PROJE
             try
             {
                 int pinvalue = 0;
-                if (textEdit13.Text != "")
+                if (textEdit14.Text != "")
                 {
-                    pinvalue = Convert.ToInt32(textEdit13.Text);
+                    pinvalue = Convert.ToInt32(textEdit14.Text);
                 }
                 table1 = new DataTable("pins");
                 table1.Columns.Add("Soket");
@@ -118,7 +112,7 @@ namespace NURSAN_PROJE
                 table1.Columns.Add("Test noktası");
                 for (int i = 1; i <= pinvalue; i++)
                 {
-                    table1.Rows.Add(textEdit14.Text, i);
+                    table1.Rows.Add(textEdit13.Text, i);
                 }
                 gridControl4.DataSource = table1;
                 gridControl4.RefreshDataSource();
@@ -128,6 +122,11 @@ namespace NURSAN_PROJE
             {
                 Console.WriteLine(textEdit14.Text);
             }
+        }
+
+        private void dropDownButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

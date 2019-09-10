@@ -277,3 +277,5 @@ C:\Users\uhud\source\repos\proje\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.exe.license
 C:\Users\uhud\source\repos\proje\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.csproj.CoreCompileInputs.cache
 C:\Users\uhud\source\repos\proje\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.exe
 C:\Users\uhud\source\repos\proje\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.pdb
+C:\Users\uhud\source\repos\proje\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.askprojectname.resources
+C:\Users\uhud\source\repos\proje\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.newuserform.resources

@@ -50,7 +50,13 @@ namespace NURSAN_PROJE
 
         private void newproject_Click(object sender, EventArgs e)
         {
+            new askprojectname().ShowDialog();
             this.Close();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            new newuserform().ShowDialog();
         }
     }
 }

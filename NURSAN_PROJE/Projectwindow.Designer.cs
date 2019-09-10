@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.ConnectionParameters.SQLiteConnectionParameters sqLiteConnectionParameters2 = new DevExpress.DataAccess.ConnectionParameters.SQLiteConnectionParameters();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery2 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column6 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression6 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column7 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression7 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column8 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression8 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column9 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression9 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column10 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression10 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.ConnectionParameters.SQLiteConnectionParameters sqLiteConnectionParameters5 = new DevExpress.DataAccess.ConnectionParameters.SQLiteConnectionParameters();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery5 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.Column column21 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression21 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table5 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column22 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression22 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column23 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression23 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column24 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression24 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column25 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression25 = new DevExpress.DataAccess.Sql.ColumnExpression();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Projectwindow));
-            DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions ımageListBoxItemImageOptions3 = new DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions();
-            DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions ımageListBoxItemImageOptions4 = new DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions();
-            DevExpress.XtraEditors.TableLayout.ItemTemplateBase ıtemTemplateBase2 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement2 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition4 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition5 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition6 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.Utils.Animation.Transition transition2 = new DevExpress.Utils.Animation.Transition();
+            DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions ımageListBoxItemImageOptions9 = new DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions();
+            DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions ımageListBoxItemImageOptions10 = new DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions();
+            DevExpress.XtraEditors.TableLayout.ItemTemplateBase ıtemTemplateBase5 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition5 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement5 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition13 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition14 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition15 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.Utils.Animation.Transition transition5 = new DevExpress.Utils.Animation.Transition();
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -76,6 +76,12 @@
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.listBoxControl2 = new DevExpress.XtraEditors.ListBoxControl();
+            this.listBoxControl1 = new DevExpress.XtraEditors.ListBoxControl();
             this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.sidePanel3 = new DevExpress.XtraEditors.SidePanel();
@@ -125,6 +131,7 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxEdit4 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
@@ -144,14 +151,8 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.transitionManager1 = new DevExpress.Utils.Animation.TransitionManager(this.components);
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
-            this.listBoxControl1 = new DevExpress.XtraEditors.ListBoxControl();
-            this.listBoxControl2 = new DevExpress.XtraEditors.ListBoxControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -162,6 +163,8 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).BeginInit();
             this.sidePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
@@ -196,8 +199,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -442,6 +443,68 @@
             this.panelControl3.Size = new System.Drawing.Size(1626, 910);
             this.panelControl3.TabIndex = 44;
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(916, 33);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(241, 33);
+            this.labelControl2.TabIndex = 35;
+            this.labelControl2.Text = "Kullanılacak Soketler";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(91, 33);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(174, 33);
+            this.labelControl1.TabIndex = 34;
+            this.labelControl1.Text = "Kayıtlı Soketler";
+            // 
+            // simpleButton12
+            // 
+            this.simpleButton12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton12.ImageOptions.Image")));
+            this.simpleButton12.Location = new System.Drawing.Point(693, 33);
+            this.simpleButton12.Name = "simpleButton12";
+            this.simpleButton12.Size = new System.Drawing.Size(37, 29);
+            this.simpleButton12.TabIndex = 33;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(630, 33);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(36, 29);
+            this.simpleButton1.TabIndex = 32;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
+            // 
+            // listBoxControl2
+            // 
+            this.listBoxControl2.ItemHeight = 40;
+            this.listBoxControl2.Location = new System.Drawing.Point(916, 70);
+            this.listBoxControl2.Name = "listBoxControl2";
+            this.listBoxControl2.Size = new System.Drawing.Size(635, 816);
+            this.listBoxControl2.TabIndex = 31;
+            // 
+            // listBoxControl1
+            // 
+            this.behaviorManager1.SetBehaviors(this.listBoxControl1, new DevExpress.Utils.Behaviors.Behavior[] {
+            ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.Behaviors.ScrollAnnotationsBehavior.Create(typeof(DevExpress.XtraEditors.Behaviors.ScrollAnnotationsBehaviorSourceForListBox), ((DevExpress.Utils.Behaviors.ScrollAnnotationType)(((DevExpress.Utils.Behaviors.ScrollAnnotationType.SearchResult | DevExpress.Utils.Behaviors.ScrollAnnotationType.Selection) 
+                            | DevExpress.Utils.Behaviors.ScrollAnnotationType.Focus))), new System.Drawing.Color[] {
+                        System.Drawing.Color.Empty,
+                        System.Drawing.Color.Empty,
+                        System.Drawing.Color.Empty}, new DevExpress.Utils.Behaviors.ScrollAnnotationAlignment[] {
+                        DevExpress.Utils.Behaviors.ScrollAnnotationAlignment.Default,
+                        DevExpress.Utils.Behaviors.ScrollAnnotationAlignment.Default,
+                        DevExpress.Utils.Behaviors.ScrollAnnotationAlignment.Default})))});
+            this.listBoxControl1.ItemHeight = 40;
+            this.listBoxControl1.Location = new System.Drawing.Point(91, 70);
+            this.listBoxControl1.Name = "listBoxControl1";
+            this.listBoxControl1.Size = new System.Drawing.Size(639, 816);
+            this.listBoxControl1.TabIndex = 30;
+            // 
             // simpleButton10
             // 
             this.simpleButton10.Location = new System.Drawing.Point(781, 318);
@@ -484,12 +547,12 @@
             // gridControl4
             // 
             this.gridControl4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl4.Location = new System.Drawing.Point(24, 342);
+            this.gridControl4.Location = new System.Drawing.Point(3, 342);
             this.gridControl4.MainView = this.gridView4;
             this.gridControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl4.MenuManager = this.toolbarFormManager1;
             this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(242, 544);
+            this.gridControl4.Size = new System.Drawing.Size(281, 544);
             this.gridControl4.TabIndex = 41;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -499,6 +562,7 @@
             this.gridView4.DetailHeight = 431;
             this.gridView4.GridControl = this.gridControl4;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsView.ShowGroupPanel = false;
             // 
             // textEdit11
             // 
@@ -619,10 +683,10 @@
             // 
             this.panel2.Controls.Add(this.gridControl1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(211, 0);
+            this.panel2.Location = new System.Drawing.Point(223, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1513, 914);
+            this.panel2.Size = new System.Drawing.Size(1501, 914);
             this.panel2.TabIndex = 3;
             // 
             // gridControl1
@@ -638,7 +702,7 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1});
-            this.gridControl1.Size = new System.Drawing.Size(1513, 914);
+            this.gridControl1.Size = new System.Drawing.Size(1501, 914);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -646,35 +710,35 @@
             // sqlDataSource1
             // 
             this.sqlDataSource1.ConnectionName = "database 2";
-            sqLiteConnectionParameters2.FileName = "C:\\Users\\Burakcan\\source\\repos\\NURSAN_PROJE\\NURSAN_PROJE\\bin\\Debug\\database.db";
-            this.sqlDataSource1.ConnectionParameters = sqLiteConnectionParameters2;
+            sqLiteConnectionParameters5.FileName = "C:\\Users\\Burakcan\\source\\repos\\NURSAN_PROJE\\NURSAN_PROJE\\bin\\Debug\\database.db";
+            this.sqlDataSource1.ConnectionParameters = sqLiteConnectionParameters5;
             this.sqlDataSource1.Name = "sqlDataSource1";
-            columnExpression6.ColumnName = "NEREDEN";
-            table2.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"172\" />";
-            table2.Name = "TEST";
-            columnExpression6.Table = table2;
-            column6.Expression = columnExpression6;
-            columnExpression7.ColumnName = "NEREYE";
-            columnExpression7.Table = table2;
-            column7.Expression = columnExpression7;
-            columnExpression8.ColumnName = "KABLO KONTROL";
-            columnExpression8.Table = table2;
-            column8.Expression = columnExpression8;
-            columnExpression9.ColumnName = "KABLO RENGİ";
-            columnExpression9.Table = table2;
-            column9.Expression = columnExpression9;
-            columnExpression10.ColumnName = "ÖZELİİKLER";
-            columnExpression10.Table = table2;
-            column10.Expression = columnExpression10;
-            selectQuery2.Columns.Add(column6);
-            selectQuery2.Columns.Add(column7);
-            selectQuery2.Columns.Add(column8);
-            selectQuery2.Columns.Add(column9);
-            selectQuery2.Columns.Add(column10);
-            selectQuery2.Name = "TEST";
-            selectQuery2.Tables.Add(table2);
+            columnExpression21.ColumnName = "NEREDEN";
+            table5.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"172\" />";
+            table5.Name = "TEST";
+            columnExpression21.Table = table5;
+            column21.Expression = columnExpression21;
+            columnExpression22.ColumnName = "NEREYE";
+            columnExpression22.Table = table5;
+            column22.Expression = columnExpression22;
+            columnExpression23.ColumnName = "KABLO KONTROL";
+            columnExpression23.Table = table5;
+            column23.Expression = columnExpression23;
+            columnExpression24.ColumnName = "KABLO RENGİ";
+            columnExpression24.Table = table5;
+            column24.Expression = columnExpression24;
+            columnExpression25.ColumnName = "ÖZELİİKLER";
+            columnExpression25.Table = table5;
+            column25.Expression = columnExpression25;
+            selectQuery5.Columns.Add(column21);
+            selectQuery5.Columns.Add(column22);
+            selectQuery5.Columns.Add(column23);
+            selectQuery5.Columns.Add(column24);
+            selectQuery5.Columns.Add(column25);
+            selectQuery5.Name = "TEST";
+            selectQuery5.Tables.Add(table5);
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery2});
+            selectQuery5});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -755,18 +819,18 @@
             this.sidePanel2.Location = new System.Drawing.Point(0, 0);
             this.sidePanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sidePanel2.Name = "sidePanel2";
-            this.sidePanel2.Size = new System.Drawing.Size(211, 914);
+            this.sidePanel2.Size = new System.Drawing.Size(223, 914);
             this.sidePanel2.TabIndex = 2;
             this.sidePanel2.Text = "sidePanel2";
             // 
             // ımageListBoxControl1
             // 
             this.ımageListBoxControl1.HorizontalScrollbar = true;
-            ımageListBoxItemImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ımageListBoxItemImageOptions3.SvgImage")));
-            ımageListBoxItemImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ımageListBoxItemImageOptions4.SvgImage")));
+            ımageListBoxItemImageOptions9.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ımageListBoxItemImageOptions9.SvgImage")));
+            ımageListBoxItemImageOptions10.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ımageListBoxItemImageOptions10.SvgImage")));
             this.ımageListBoxControl1.Items.AddRange(new DevExpress.XtraEditors.Controls.ImageListBoxItem[] {
-            new DevExpress.XtraEditors.Controls.ImageListBoxItem("STANDART", "", ımageListBoxItemImageOptions3, null),
-            new DevExpress.XtraEditors.Controls.ImageListBoxItem("FAZ1", "", ımageListBoxItemImageOptions4, null)});
+            new DevExpress.XtraEditors.Controls.ImageListBoxItem("STANDART", "", ımageListBoxItemImageOptions9, null),
+            new DevExpress.XtraEditors.Controls.ImageListBoxItem("FAZ1", "", ımageListBoxItemImageOptions10, null)});
             this.ımageListBoxControl1.Location = new System.Drawing.Point(10, 228);
             this.ımageListBoxControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ımageListBoxControl1.Name = "ımageListBoxControl1";
@@ -843,6 +907,7 @@
             // 
             // sidePanel1
             // 
+            this.sidePanel1.Controls.Add(this.dropDownButton1);
             this.sidePanel1.Controls.Add(this.textEdit9);
             this.sidePanel1.Controls.Add(this.labelControl10);
             this.sidePanel1.Controls.Add(this.textEdit8);
@@ -993,6 +1058,14 @@
             this.panelControl1.Size = new System.Drawing.Size(1920, 914);
             this.panelControl1.TabIndex = 2;
             // 
+            // simpleButton13
+            // 
+            this.simpleButton13.Location = new System.Drawing.Point(1741, 810);
+            this.simpleButton13.Name = "simpleButton13";
+            this.simpleButton13.Size = new System.Drawing.Size(94, 29);
+            this.simpleButton13.TabIndex = 13;
+            this.simpleButton13.Text = "<";
+            // 
             // simpleButton8
             // 
             this.simpleButton8.Location = new System.Drawing.Point(1741, 237);
@@ -1119,18 +1192,18 @@
             this.listBoxControl3.Name = "listBoxControl3";
             this.listBoxControl3.Size = new System.Drawing.Size(264, 389);
             this.listBoxControl3.TabIndex = 1;
-            ıtemTemplateBase2.Columns.Add(tableColumnDefinition2);
-            templatedItemElement2.FieldName = null;
-            templatedItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            templatedItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement2.Text = "Common component-1";
-            templatedItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            ıtemTemplateBase2.Elements.Add(templatedItemElement2);
-            ıtemTemplateBase2.Name = "template1";
-            ıtemTemplateBase2.Rows.Add(tableRowDefinition4);
-            ıtemTemplateBase2.Rows.Add(tableRowDefinition5);
-            ıtemTemplateBase2.Rows.Add(tableRowDefinition6);
-            this.listBoxControl3.Templates.Add(ıtemTemplateBase2);
+            ıtemTemplateBase5.Columns.Add(tableColumnDefinition5);
+            templatedItemElement5.FieldName = null;
+            templatedItemElement5.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement5.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement5.Text = "Common component-1";
+            templatedItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            ıtemTemplateBase5.Elements.Add(templatedItemElement5);
+            ıtemTemplateBase5.Name = "template1";
+            ıtemTemplateBase5.Rows.Add(tableRowDefinition13);
+            ıtemTemplateBase5.Rows.Add(tableRowDefinition14);
+            ıtemTemplateBase5.Rows.Add(tableRowDefinition15);
+            this.listBoxControl3.Templates.Add(ıtemTemplateBase5);
             // 
             // gridControl2
             // 
@@ -1182,92 +1255,32 @@
             // 
             // transitionManager1
             // 
-            transition2.BarWaitingIndicatorProperties.Caption = "";
-            transition2.BarWaitingIndicatorProperties.Description = "";
-            transition2.Control = null;
-            transition2.LineWaitingIndicatorProperties.AnimationElementCount = 5;
-            transition2.LineWaitingIndicatorProperties.Caption = "";
-            transition2.LineWaitingIndicatorProperties.Description = "";
-            transition2.RingWaitingIndicatorProperties.AnimationElementCount = 5;
-            transition2.RingWaitingIndicatorProperties.Caption = "";
-            transition2.RingWaitingIndicatorProperties.Description = "";
-            transition2.WaitingIndicatorProperties.Caption = "";
-            transition2.WaitingIndicatorProperties.Description = "";
-            this.transitionManager1.Transitions.Add(transition2);
+            transition5.BarWaitingIndicatorProperties.Caption = "";
+            transition5.BarWaitingIndicatorProperties.Description = "";
+            transition5.Control = null;
+            transition5.LineWaitingIndicatorProperties.AnimationElementCount = 5;
+            transition5.LineWaitingIndicatorProperties.Caption = "";
+            transition5.LineWaitingIndicatorProperties.Description = "";
+            transition5.RingWaitingIndicatorProperties.AnimationElementCount = 5;
+            transition5.RingWaitingIndicatorProperties.Caption = "";
+            transition5.RingWaitingIndicatorProperties.Description = "";
+            transition5.WaitingIndicatorProperties.Caption = "";
+            transition5.WaitingIndicatorProperties.Description = "";
+            this.transitionManager1.Transitions.Add(transition5);
             // 
             // dxErrorProvider1
             // 
             this.dxErrorProvider1.ContainerControl = this;
             // 
-            // listBoxControl1
+            // dropDownButton1
             // 
-            this.behaviorManager1.SetBehaviors(this.listBoxControl1, new DevExpress.Utils.Behaviors.Behavior[] {
-            ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.Behaviors.ScrollAnnotationsBehavior.Create(typeof(DevExpress.XtraEditors.Behaviors.ScrollAnnotationsBehaviorSourceForListBox), ((DevExpress.Utils.Behaviors.ScrollAnnotationType)(((DevExpress.Utils.Behaviors.ScrollAnnotationType.SearchResult | DevExpress.Utils.Behaviors.ScrollAnnotationType.Selection) 
-                            | DevExpress.Utils.Behaviors.ScrollAnnotationType.Focus))), new System.Drawing.Color[] {
-                        System.Drawing.Color.Empty,
-                        System.Drawing.Color.Empty,
-                        System.Drawing.Color.Empty}, new DevExpress.Utils.Behaviors.ScrollAnnotationAlignment[] {
-                        DevExpress.Utils.Behaviors.ScrollAnnotationAlignment.Default,
-                        DevExpress.Utils.Behaviors.ScrollAnnotationAlignment.Default,
-                        DevExpress.Utils.Behaviors.ScrollAnnotationAlignment.Default})))});
-            this.listBoxControl1.ItemHeight = 40;
-            this.listBoxControl1.Location = new System.Drawing.Point(91, 70);
-            this.listBoxControl1.Name = "listBoxControl1";
-            this.listBoxControl1.Size = new System.Drawing.Size(639, 816);
-            this.listBoxControl1.TabIndex = 30;
-            // 
-            // listBoxControl2
-            // 
-            this.listBoxControl2.ItemHeight = 40;
-            this.listBoxControl2.Location = new System.Drawing.Point(916, 70);
-            this.listBoxControl2.Name = "listBoxControl2";
-            this.listBoxControl2.Size = new System.Drawing.Size(635, 816);
-            this.listBoxControl2.TabIndex = 31;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(630, 33);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(36, 29);
-            this.simpleButton1.TabIndex = 32;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
-            // 
-            // simpleButton12
-            // 
-            this.simpleButton12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton12.ImageOptions.Image")));
-            this.simpleButton12.Location = new System.Drawing.Point(693, 33);
-            this.simpleButton12.Name = "simpleButton12";
-            this.simpleButton12.Size = new System.Drawing.Size(37, 29);
-            this.simpleButton12.TabIndex = 33;
-            // 
-            // simpleButton13
-            // 
-            this.simpleButton13.Location = new System.Drawing.Point(1741, 810);
-            this.simpleButton13.Name = "simpleButton13";
-            this.simpleButton13.Size = new System.Drawing.Size(94, 29);
-            this.simpleButton13.TabIndex = 13;
-            this.simpleButton13.Text = "<";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(91, 33);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(174, 33);
-            this.labelControl1.TabIndex = 34;
-            this.labelControl1.Text = "Kayıtlı Soketler";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(916, 33);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(241, 33);
-            this.labelControl2.TabIndex = 35;
-            this.labelControl2.Text = "Kullanılacak Soketler";
+            this.dropDownButton1.Location = new System.Drawing.Point(17, 423);
+            this.dropDownButton1.MenuManager = this.toolbarFormManager1;
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.dropDownButton1.Size = new System.Drawing.Size(154, 29);
+            this.dropDownButton1.TabIndex = 11;
+            this.dropDownButton1.Text = "dropDownButton1";
+            this.dropDownButton1.Click += new System.EventHandler(this.dropDownButton1_Click);
             // 
             // Projectwindow
             // 
@@ -1304,6 +1317,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).EndInit();
             this.sidePanel3.ResumeLayout(false);
             this.sidePanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
@@ -1342,8 +1357,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1452,5 +1465,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButton13;
+        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
     }
 }

@@ -83,6 +83,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="askprojectname.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="askprojectname.Designer.cs">
+      <DependentUpon>askprojectname.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data.cs" />
     <Compile Include="Connections.cs" />
     <Compile Include="Components.cs" />
@@ -97,6 +103,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>masterDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="newuserform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newuserform.Designer.cs">
+      <DependentUpon>newuserform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Projectwindow.cs">
       <SubType>Form</SubType>
@@ -107,8 +119,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sockets.cs" />
     <Compile Include="SQL\dbeng.cs" />
+    <EmbeddedResource Include="askprojectname.resx">
+      <DependentUpon>askprojectname.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newuserform.resx">
+      <DependentUpon>newuserform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Projectwindow.resx">
       <DependentUpon>Projectwindow.cs</DependentUpon>
