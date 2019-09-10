@@ -29,10 +29,24 @@ namespace NURSAN_PROJE.SQL
             
             cmd.Connection = con;
             cmd.CommandText = "insert into TEST(NEREDEN,NEREYE,\"KABLO KONTROL\",\"KABLO RENGİ\") values ('"+nereden+ "','" + nereye + "','" + kablodı + "','" + kablorengi + "')";
+
             cmd.ExecuteNonQuery();
             con.Close();
          
         }
+
+        public void getuser()
+        {
+
+
+
+        }
+
+        public void create_command()
+        {
+
+        }
+
 
 
 
