@@ -20,7 +20,15 @@ namespace NURSAN_PROJE
 
         private void okaskprojectnamebutton_Click(object sender, EventArgs e)
         {
+            DevExpress.DataAccess.Sql.SqlDataSource.DisableCustomQueryValidation = true;
+            sqlDataSource1.Queries[0].Parameters[0].Value = textEdit1.Text;
+            sqlDataSource1.Fill();
             this.Close();
+        }
+
+        private void cancelaskprojectnamebutton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
