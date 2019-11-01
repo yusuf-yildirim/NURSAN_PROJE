@@ -506,7 +506,7 @@
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Size = new System.Drawing.Size(100, 96);
+            this.pictureEdit1.Size = new System.Drawing.Size(719, 511);
             this.pictureEdit1.TabIndex = 38;
             // 
             // gridControl6
