@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Data;
 using System.Windows.Forms;
+using System.Configuration;
+using System.IO;
 
 namespace NURSAN_PROJE.SQL
 {
-    class dbeng
+    class DBeng
     {
        static SQLiteConnection con;
        static SQLiteDataAdapter da;
@@ -33,7 +35,29 @@ namespace NURSAN_PROJE.SQL
             con.Close();
          
         }
+        public void create_project()
+        {
+            try
+            {
+                var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
+                connectionStringsSection.ConnectionStrings["tablo"].ConnectionString = @"XpoProvider=SQLite;Data Source=C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\yeni.nursan";
+                config.Save();
+                ConfigurationManager.RefreshSection("connectionStrings");
 
+                SQLiteConnection m_dbConnection = new SQLiteConnection(@"XpoProvider=SQLite;Data Source=C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\yeni.nursan");
+                m_dbConnection.Open();
+                string sql = File.ReadAllText(@"db.ini");
+                SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
+                command.ExecuteNonQuery();
+                m_dbConnection.Close();
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+     
+        }
 
 
     }

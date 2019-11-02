@@ -21,20 +21,11 @@ namespace NURSAN_PROJE
             InitializeComponent();
             initializelistbox();
 
-            try
-            {               
+                      
                 selectscreendb.Fill();
-                MessageBox.Show("PROJE AÇILMASI");
-            }
-            catch
-            {
-                MessageBox.Show("YENİ BOŞ BİR PENCERE AÇILMASI AŞAĞIDAKİ KODLAR STANDART TABLIYU AYARLAMAK İÇİN");
-                var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-                connectionStringsSection.ConnectionStrings["tablo"].ConnectionString = @"XpoProvider=SQLite;Data Source=C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\tablo.db";
-                config.Save();
-                ConfigurationManager.RefreshSection("connectionStrings");
-            }
+                MessageBox.Show("açılış ekranı");
+            
+
           
         }
 

@@ -77,7 +77,7 @@
             this.projectlistbox.Appearance.Options.UseFont = true;
             this.projectlistbox.AppearanceHighlight.BackColor = System.Drawing.Color.WhiteSmoke;
             this.projectlistbox.AppearanceHighlight.BackColor2 = System.Drawing.Color.Gainsboro;
-            this.projectlistbox.AppearanceHighlight.Font = new System.Drawing.Font("Tahoma", 154.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.projectlistbox.AppearanceHighlight.Font = new System.Drawing.Font("Tahoma", 169.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.projectlistbox.AppearanceHighlight.FontSizeDelta = 15;
             this.projectlistbox.AppearanceHighlight.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.projectlistbox.AppearanceHighlight.Options.UseBackColor = true;
@@ -91,18 +91,18 @@
             this.projectlistbox.ContextButtonOptions.AllowGlyphSkinning = true;
             this.projectlistbox.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.projectlist, "ad", true));
             this.projectlistbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectlist, "ad", true));
-            this.projectlistbox.DataSource = this.projectlist;
-            this.projectlistbox.DisplayMember = "ad";
             this.projectlistbox.HighlightedItemStyle = DevExpress.XtraEditors.HighlightStyle.Skinned;
             this.projectlistbox.HotTrackItems = true;
             this.projectlistbox.ItemHeight = 41;
             this.projectlistbox.ItemPadding = new System.Windows.Forms.Padding(5500, -15, 0, 0);
+            this.projectlistbox.Items.AddRange(new object[] {
+            "GEÇMİŞ AÇILAN PROJELER ",
+            "LİSTELENECEK"});
             this.projectlistbox.Location = new System.Drawing.Point(42, 150);
             this.projectlistbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.projectlistbox.Name = "projectlistbox";
             this.projectlistbox.Size = new System.Drawing.Size(256, 307);
             this.projectlistbox.TabIndex = 3;
-            this.projectlistbox.ValueMember = "ad";
             this.projectlistbox.SelectedIndexChanged += new System.EventHandler(this.listBoxControl1_SelectedIndexChanged);
             // 
             // projectlist

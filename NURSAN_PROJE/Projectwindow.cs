@@ -37,12 +37,11 @@ namespace NURSAN_PROJE
             }
             else
             {
-                MessageBox.Show("YENİ BOŞ BİR PENCERE AÇILMASI AŞAĞIDAKİ KODLAR STANDART TABLIYU AYARLAMAK İÇİN");
-                var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-                connectionStringsSection.ConnectionStrings["tablo"].ConnectionString = @"XpoProvider=SQLite;Data Source=C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\PROJE DOSYASI ÖRNEĞİ1.nursan";
-                config.Save();
-                ConfigurationManager.RefreshSection("connectionStrings");
+                MessageBox.Show("YENİ - PROJE EKRANI");
+                DBeng db = new DBeng();
+                db.create_project();
+               
+
                 new Form1().ShowDialog();
                 this.Show();
             }
@@ -131,7 +130,7 @@ namespace NURSAN_PROJE
 
         private void SimpleButton2_Click(object sender, EventArgs e)
         {
-            dbeng test = new dbeng();
+            DBeng test = new DBeng();
             test.connection_add(textEdit5.Text, textEdit6.Text, textEdit7.Text, textEdit8.Text);
             sqlDataSource1.Fill();
             gridControl1.RefreshDataSource();
