@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="DevExpress.Data.v19.1" name="DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-  <data name="newproject.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <assembly alias="DevExpress.Data.v19.2" name="DevExpress.Data.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="newproject.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE5LjEsIFZlcnNpb249MTkuMS4z
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi4z
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
         dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAACEEAAAC77u/
         PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
@@ -146,11 +146,58 @@
   <metadata name="behaviorManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="projectlist.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="projeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>328, 21</value>
   </metadata>
   <metadata name="selectscreendb.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>196, 21</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="simpleButton2.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAFnRFWHRUaXRsZQBSZWNlbnRs
+        eTtSZWNlbnQ7eAuvSgAACF1JREFUWEe1l3lUFFcaxZ2ZzGQmmZjdJGa2c/JX/omZiUJERY0LIhoWBxUV
+        RRBbQVzYlFZkX0SBoGDEsMSFRXZka9amwQVQkLVZGxoQxgVQQEADxzvfV92dzSacOXPyzvmd79Wrrntv
+        vap6VT0LwCxuW/cFCVD7jZrf/gpotIUmeP84ADXe+TviD8Qf1fxpBl6ZgVfVlbV+T2iC/DQANR58yWSH
+        m4HFXv/bW+wDYcHYBeJEWoNAYGq9QACTUg//lDr4J9fBj/BNqhXwuVIL78Q78GISauAZXwMP4tjFymqH
+        4ExD8uAQWgNwspc37w24v9zIHuWVjXj0ZOJ/Ymh0fFrquh7i6IXK++TBs8ZeWgO8snmvP/QNbPB1TCZq
+        WpWoaenBHXWtllOVd6G6RSn0q6l/q0lF1Y/g7cp6BSobCao8Vt/ajSMxN9jsNYIv8wsBePDVTSJfhMdm
+        wdYpVGDngZM4ebUF/hly+KfL4achTQ7ftCaCamoTfNR4MylMI9EALya5EYEptdgfXsJms4mX2FBbgD+b
+        7/bGxYxyRKfJEJVaiojEQnQ8/g7NQ88E5IMqmgaeoVFN/UM1DyaIp6ilWkv1DtWa+yryWwYhCilms9eJ
+        6QP8e5cXzpLpQb9YATuPSFT0j6Ps7piArPcHSjX0jEFKVcq1+wlKep6guHuM4Eoon6CibwwO4WVs9gYx
+        bYDXzKw9cPpyHhw8vyGiIDoaget0sJQES8ighKtGnISZIqJQOYrCLqpdoyj4OZ0jKKdQTpHCPfCLAWab
+        WrkjJDYbdu6RArtcT6OsVyVc2MliKvLVyEhY2jVMjKBUOQKJYgR5HcwwctuZEeS2DdO+URw6d53N3iS0
+        BuDB140txQg6n4nd4giIiJ3OoSihM5OQqIREBXESZiRERc8IpPnxkEricZP6OW2PkaXmaivRoqqFFGx/
+        RDmbvUXwWqA9wJfb3OB3NhU2rmEClgdPCQdn01kwgnjrMAkPo6hzGNfa76E63gnVcU6QtfajoOMxMpof
+        IUP+COkamoYgoeP2qe6Bt4lpA7yxbosrvEITYOUYgh2HQmCxL4AOHn5BlLdlnY+QlxCC4e5yDCtlyI07
+        hVLFEFLJMKmRaGAGkVQ/iCw6xi6sdMYAbxpudIKjZyS2OQRh2/4gbKR1IZumMaN5CFlEHpHfNoCi1geQ
+        VMlRm3gYz0cb8Xy4EjWXHJFd0YB8+T3kyh/gatMDpDU8xJW6ASTUPIQoVMpm7xDCcqwtwFtrzB2xz+0M
+        jC2PYdMef2ygx5KnMEc+iIKqWuRkxCH3W19cuyRGQ4onJvrLMXU/D1N9SRhTZuNOghjF55yRdkaMlLhY
+        ZJfdQmLNPXxbdQ+2wcI68C6hNQAPvr3K7AD2unwFo02uMLI4AuOtYiQ3DCC9/gGyYnxQf9kRz8faMTXS
+        gKmhCjJOx2RXLCY7v8GkMhZT/dmYUsZhqjcVN8O2IO7UUVyquIvom/2wDipkszlqL+0BVprsw26nYBhu
+        dIahuTNWGu/Hxdv3kVr3ELl1fbjk64Cm5GOY6r6EyfYzmGw9jcmWUHzXEoJnte6YkFpi4roItRGm+Pqw
+        CMmVSlys6Me5a32wCsxns/cIft1rDfDOF+vtYHPgBNZsOAQDgrdjKv6DiPI+JNy+h/TbPYg6sgMtaWIy
+        DiNTDzy95YKnZdaYKDDFhGw76s+bIHy/BRJvduLCzT4EF/cgXNYLSz/JtAH4/cwB3l1mJIKVvR9Wmx4Q
+        WGa0F1E3+nG6tBdh0l7EV/UjvqwZaW6GgvlEvjHG89YRazGeY4CJG7sQZ6+Pi9ImMu/FyUIlgoiwkh5s
+        9c5ls/eJaQPM0Te0haXIBytNHGj6HaBvKBKmL5QEQojg4m4kXFcgz8cMz+4cw1i2AcaLNmC8wARPMpfj
+        aclGZLquwAVZG07kdyGQCCCCi7qx2TObzT4gtAbgwfeWGFhji40nVqy3p+m3xxIDW0TI7gpnwoQQl2Wt
+        kAWup7O1w2jxFlQGLkFVwCKMSMwwnmuAAreFiC1pJvNO+OUq4JenEMKYH89is7lqL+0B9FbthLnVcSw3
+        shNYtNpGmP7AfCUCJV0IKe5CTIYUN4LWo8xHHxHm8xDsLhYIN/sEpW6fQHp0ASKTixCU3wHvHAW8szso
+        RCc2iDPZ7EPiZfbUFuD9hV9sxwZLNyxdu0dAb5U1vqKbiAWYk5IORF1IwpnNugj180NMsRzRpR2IlrYj
+        qrARp7x8EGwyH2ejEhCQ0w6Pqx04frUdXhTC1C19xgAf6C7bCmNajvUNdwt8vsIKpwqUwpl4ZSsQRAGi
+        i5txvrgV0TIFggs74UkGHkRwgQLnSxU4W9CMyAL6asrtgHtmG45ltAkhjF1T2ewvxLQB5uroW2DdJmcs
+        pmvP6NKMBBV0wTOrAx6EYEainlkkStWdxDUm3FfVVrinE1TFVJmj6W1Y55LCZn8ltAbgwQ/nL96MteaH
+        hGvP6CyzRIBEoRJXGzEs+ANkksa0CNUtlWkR6hGqDG+vdUyaMcDcz/Q2Yg09/4tWWkOPWKC/Fb40leK0
+        NrUJiQtoDDSQUUoLDlM9zJVwTW7+nsMpzVhz8IomAP9J0XoJ5szTNR1YSmsBP356K3ZCZykFyOlQGxIk
+        zEaCGQlzdRXMVLjQmEuyHC5JDPUJZ+qLIiuxwu7CIHlMuxDx23D2Rx/rW83TMRn4VNcM8xgdUyzec4VI
+        xCJRIvSIhbsT8LltInRtE4hE6OxKwAIbFfOJz6xV/Gunin8Sn26/PPDRarE1eWi+in8SgBuH4NWQv9t5
+        vea79W/T8PcZ+MfP4GN4BWRzPnut/4w4AO/gj1P+Ed8Tmj+o/y+sxbA2e7DXCwE0jXf+mnzfAMz6L7FW
+        UUOIY4KtAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>487, 21</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>79</value>

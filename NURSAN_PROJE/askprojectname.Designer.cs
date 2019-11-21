@@ -104,6 +104,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "askprojectname";
             this.Text = "Yeni Proje İsmi";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.askprojectname_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

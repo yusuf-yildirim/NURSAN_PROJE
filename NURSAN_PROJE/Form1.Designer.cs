@@ -30,22 +30,32 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            DevExpress.XtraEditors.TableLayout.ItemTemplateBase ıtemTemplateBase1 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement1 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement2 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.DataAccess.Sql.SelectQuery selectQuery1 = new DevExpress.DataAccess.Sql.SelectQuery();
             DevExpress.DataAccess.Sql.Column column1 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression1 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Table table1 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column2 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression2 = new DevExpress.DataAccess.Sql.ColumnExpression();
             this.newproject = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton16 = new DevExpress.XtraEditors.SimpleButton();
             this.projectlistbox = new DevExpress.XtraEditors.ListBoxControl();
-            this.projectlist = new System.Windows.Forms.BindingSource(this.components);
             this.selectscreendb = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.projeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.projectlistbox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectlist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // newproject
@@ -53,7 +63,7 @@
             this.newproject.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.newproject.Appearance.Options.UseFont = true;
             this.newproject.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("newproject.ImageOptions.SvgImage")));
-            this.newproject.Location = new System.Drawing.Point(42, 76);
+            this.newproject.Location = new System.Drawing.Point(28, 76);
             this.newproject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.newproject.Name = "newproject";
             this.newproject.Size = new System.Drawing.Size(256, 47);
@@ -63,21 +73,24 @@
             // 
             // simpleButton16
             // 
-            this.simpleButton16.Location = new System.Drawing.Point(117, 490);
+            this.simpleButton16.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.simpleButton16.Location = new System.Drawing.Point(0, 500);
             this.simpleButton16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton16.Name = "simpleButton16";
-            this.simpleButton16.Size = new System.Drawing.Size(137, 28);
+            this.simpleButton16.Size = new System.Drawing.Size(315, 28);
             this.simpleButton16.TabIndex = 2;
             this.simpleButton16.Text = "Çıkış";
             this.simpleButton16.Click += new System.EventHandler(this.simpleButton16_Click);
             // 
             // projectlistbox
             // 
+            this.projectlistbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.projectlistbox.Appearance.Font = new System.Drawing.Font("Tahoma", 13.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.projectlistbox.Appearance.Options.UseFont = true;
             this.projectlistbox.AppearanceHighlight.BackColor = System.Drawing.Color.WhiteSmoke;
             this.projectlistbox.AppearanceHighlight.BackColor2 = System.Drawing.Color.Gainsboro;
-            this.projectlistbox.AppearanceHighlight.Font = new System.Drawing.Font("Tahoma", 169.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.projectlistbox.AppearanceHighlight.Font = new System.Drawing.Font("Tahoma", 184.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.projectlistbox.AppearanceHighlight.FontSizeDelta = 15;
             this.projectlistbox.AppearanceHighlight.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.projectlistbox.AppearanceHighlight.Options.UseBackColor = true;
@@ -89,47 +102,67 @@
                         DevExpress.Utils.Behaviors.ScrollAnnotationAlignment.Default,
                         DevExpress.Utils.Behaviors.ScrollAnnotationAlignment.Center})))});
             this.projectlistbox.ContextButtonOptions.AllowGlyphSkinning = true;
-            this.projectlistbox.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.projectlist, "ad", true));
-            this.projectlistbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectlist, "ad", true));
+            this.projectlistbox.DataSource = this.projeBindingSource;
+            this.projectlistbox.DisplayMember = "NAME";
             this.projectlistbox.HighlightedItemStyle = DevExpress.XtraEditors.HighlightStyle.Skinned;
             this.projectlistbox.HotTrackItems = true;
-            this.projectlistbox.ItemHeight = 41;
+            this.projectlistbox.ItemHeight = 19;
             this.projectlistbox.ItemPadding = new System.Windows.Forms.Padding(5500, -15, 0, 0);
-            this.projectlistbox.Items.AddRange(new object[] {
-            "GEÇMİŞ AÇILAN PROJELER ",
-            "LİSTELENECEK"});
-            this.projectlistbox.Location = new System.Drawing.Point(42, 150);
+            this.projectlistbox.Location = new System.Drawing.Point(28, 209);
             this.projectlistbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.projectlistbox.Name = "projectlistbox";
-            this.projectlistbox.Size = new System.Drawing.Size(256, 307);
+            this.projectlistbox.Padding = new System.Windows.Forms.Padding(0, 0, 0, 50);
+            this.projectlistbox.Size = new System.Drawing.Size(256, 287);
             this.projectlistbox.TabIndex = 3;
+            tableColumnDefinition1.Length.Value = 170D;
+            tableColumnDefinition2.Length.Value = 82D;
+            ıtemTemplateBase1.Columns.Add(tableColumnDefinition1);
+            ıtemTemplateBase1.Columns.Add(tableColumnDefinition2);
+            templatedItemElement1.FieldName = "NAME";
+            templatedItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement1.Text = "NAME";
+            templatedItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            templatedItemElement2.ColumnIndex = 1;
+            templatedItemElement2.FieldName = "PATH";
+            templatedItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement2.Text = "PATH";
+            templatedItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            ıtemTemplateBase1.Elements.Add(templatedItemElement1);
+            ıtemTemplateBase1.Elements.Add(templatedItemElement2);
+            ıtemTemplateBase1.Name = "template1";
+            tableRowDefinition1.Length.Value = 30D;
+            ıtemTemplateBase1.Rows.Add(tableRowDefinition1);
+            this.projectlistbox.Templates.Add(ıtemTemplateBase1);
+            this.projectlistbox.ValueMember = "PATH";
             this.projectlistbox.SelectedIndexChanged += new System.EventHandler(this.listBoxControl1_SelectedIndexChanged);
-            // 
-            // projectlist
-            // 
-            this.projectlist.DataMember = "proje";
-            this.projectlist.DataSource = this.selectscreendb;
             // 
             // selectscreendb
             // 
-            this.selectscreendb.ConnectionName = "tablo";
+            this.selectscreendb.ConnectionName = "maindatabase";
             this.selectscreendb.Name = "selectscreendb";
-            columnExpression1.ColumnName = "ad";
-            table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"77\" />";
-            table1.Name = "proje";
+            columnExpression1.ColumnName = "NAME";
+            table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"115\" />";
+            table1.Name = "tbl_Recent";
             columnExpression1.Table = table1;
             column1.Expression = columnExpression1;
+            columnExpression2.ColumnName = "PATH";
+            columnExpression2.Table = table1;
+            column2.Expression = columnExpression2;
             selectQuery1.Columns.Add(column1);
+            selectQuery1.Columns.Add(column2);
             selectQuery1.Name = "proje";
             selectQuery1.Tables.Add(table1);
             this.selectscreendb.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             selectQuery1});
             this.selectscreendb.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic2VsZWN0c2NyZWVuZGIiPjxWaWV3IE5hbWU9InByb2plIj48RmllbGQgTmFtZ" +
-    "T0iYWQiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==";
+    "T0iTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQQVRIIiBUeXBlPSJTdHJpbmciIC8+P" +
+    "C9WaWV3PjwvRGF0YVNldD4=";
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(42, 30);
+            this.simpleButton1.Location = new System.Drawing.Point(28, 30);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(81, 24);
@@ -139,7 +172,7 @@
             // 
             // dropDownButton1
             // 
-            this.dropDownButton1.Location = new System.Drawing.Point(166, 30);
+            this.dropDownButton1.Location = new System.Drawing.Point(152, 30);
             this.dropDownButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dropDownButton1.Name = "dropDownButton1";
             this.dropDownButton1.Size = new System.Drawing.Size(132, 24);
@@ -155,11 +188,30 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "label1";
             // 
+            // projeBindingSource
+            // 
+            this.projeBindingSource.DataMember = "proje";
+            this.projeBindingSource.DataSource = this.selectscreendb;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(28, 158);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(256, 47);
+            this.simpleButton2.TabIndex = 7;
+            this.simpleButton2.Text = "SON AÇILAN DOSYALAR";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 528);
+            this.ClientSize = new System.Drawing.Size(315, 528);
+            this.ControlBox = false;
+            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dropDownButton1);
             this.Controls.Add(this.simpleButton1);
@@ -169,9 +221,11 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nursan Projesi";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.projectlistbox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectlist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,7 +241,9 @@
         private DevExpress.XtraEditors.DropDownButton dropDownButton1;
         private System.Windows.Forms.Label label1;
         private DevExpress.DataAccess.Sql.SqlDataSource selectscreendb;
-        private System.Windows.Forms.BindingSource projectlist;
+        private System.Windows.Forms.BindingSource projeBindingSource;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

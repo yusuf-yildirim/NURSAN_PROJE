@@ -17,6 +17,7 @@ namespace NURSAN_PROJE.SQL
        static SQLiteDataAdapter da;
        static SQLiteCommand cmd;
        static DataSet ds;
+       public static bool created = false;
         private void getcon()
         {
             con = new SQLiteConnection("Data Source="+Application.StartupPath+"\\database.db;Version=3;");
@@ -27,30 +28,31 @@ namespace NURSAN_PROJE.SQL
         public void connection_add(string nereden,string nereye,string kablodı,string kablorengi)
         {
             getcon();
-            cmd = new SQLiteCommand();
-            
+            cmd = new SQLiteCommand();            
             cmd.Connection = con;
             cmd.CommandText = "insert into TEST(NEREDEN,NEREYE,\"KABLO KONTROL\",\"KABLO RENGİ\") values ('"+nereden+ "','" + nereye + "','" + kablodı + "','" + kablorengi + "')";
             cmd.ExecuteNonQuery();
             con.Close();
          
         }
-        public void create_project()
+        public void create_project(string name)
         {
             try
             {
                 var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-                connectionStringsSection.ConnectionStrings["tablo"].ConnectionString = @"XpoProvider=SQLite;Data Source=C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\yeni.nursan";
+                connectionStringsSection.ConnectionStrings["tablo"].ConnectionString = @"XpoProvider=SQLite;Data Source=" + Application.StartupPath + "\\" +name + ".nursan";
+               // MessageBox.Show(Application.StartupPath + "\\" + name + ".nursan");
                 config.Save();
                 ConfigurationManager.RefreshSection("connectionStrings");
 
-                SQLiteConnection m_dbConnection = new SQLiteConnection(@"XpoProvider=SQLite;Data Source=C:\Users\Burakcan\source\repos\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\yeni.nursan");
+                SQLiteConnection m_dbConnection = new SQLiteConnection(@"XpoProvider=SQLite;Data Source=" + Application.StartupPath + "\\" + name + ".nursan");
                 m_dbConnection.Open();
                 string sql = File.ReadAllText(@"db.ini");
                 SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
                 command.ExecuteNonQuery();
                 m_dbConnection.Close();
+                created = true;
             }
             catch(Exception err)
             {
