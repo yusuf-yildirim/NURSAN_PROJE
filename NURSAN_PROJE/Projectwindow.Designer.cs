@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery2 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Projectwindow));
             DevExpress.DataAccess.Sql.SelectQuery selectQuery1 = new DevExpress.DataAccess.Sql.SelectQuery();
             DevExpress.DataAccess.Sql.Column column1 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression1 = new DevExpress.DataAccess.Sql.ColumnExpression();
@@ -72,7 +67,11 @@
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression12 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Column column13 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression13 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.AllColumns allColumns1 = new DevExpress.DataAccess.Sql.AllColumns();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Projectwindow));
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery2 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions ımageListBoxItemImageOptions1 = new DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions();
             DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions ımageListBoxItemImageOptions2 = new DevExpress.XtraEditors.Controls.ImageListBoxItemImageOptions();
             DevExpress.XtraEditors.TableLayout.ItemTemplateBase ıtemTemplateBase1 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
@@ -107,14 +106,15 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.newsocketvargroup = new DevExpress.XtraEditors.GroupControl();
             this.newsocketname = new DevExpress.XtraEditors.TextEdit();
+            this.newsocketpinc = new DevExpress.XtraEditors.TextEdit();
+            this.newsocketledc = new DevExpress.XtraEditors.TextEdit();
+            this.newsocketswc = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl4 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
-            this.newsocketswc = new DevExpress.XtraEditors.TextEdit();
-            this.newsocketledc = new DevExpress.XtraEditors.TextEdit();
-            this.newsocketpinc = new DevExpress.XtraEditors.TextEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
@@ -122,17 +122,13 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.gridControl6 = new DevExpress.XtraGrid.GridControl();
+            this.tbl_Socket_usingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectdatasource = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colID_soket = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAdı1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPin_sayisi1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAnahtar_sayisi1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLed_numarasi1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltbl_Socket_using_ID_soket = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltbl_Socket_using_Adı = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltbl_Socket_using_Pin_sayisi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltbl_Socket_using_Anahtar_sayisi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltbl_Socket_using_Led_numarasi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl5 = new DevExpress.XtraGrid.GridControl();
             this.getsocketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maindatasource = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -152,7 +148,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.tbl_connectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projectdatasource = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colNEREDEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNEREYE = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -202,7 +197,6 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tbl_Socket_usingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.transitionManager1 = new DevExpress.Utils.Animation.TransitionManager(this.components);
             this.errorprovider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
@@ -219,16 +213,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
             this.navigationPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.newsocketvargroup)).BeginInit();
+            this.newsocketvargroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newsocketname.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newsocketpinc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newsocketledc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newsocketswc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newsocketswc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newsocketledc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newsocketpinc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbl_Socket_usingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getsocketsBindingSource)).BeginInit();
@@ -260,7 +257,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbl_Socket_usingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorprovider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
@@ -513,24 +509,71 @@
             this.navigationPane1.TabIndex = 42;
             this.navigationPane1.Text = "navigationPane1";
             this.navigationPane1.TransitionType = DevExpress.Utils.Animation.Transitions.Push;
-            this.navigationPane1.StateChanged += new DevExpress.XtraBars.Navigation.StateChangedEventHandler(this.navigationPane1_StateChanged);
             // 
             // navigationPage1
             // 
             this.navigationPage1.Caption = "YENİ SOKET TANIMLAMA";
+            this.navigationPage1.Controls.Add(this.newsocketvargroup);
             this.navigationPage1.Controls.Add(this.labelControl18);
-            this.navigationPage1.Controls.Add(this.newsocketname);
             this.navigationPage1.Controls.Add(this.gridControl4);
             this.navigationPage1.Controls.Add(this.simpleButton11);
-            this.navigationPage1.Controls.Add(this.newsocketswc);
-            this.navigationPage1.Controls.Add(this.newsocketledc);
-            this.navigationPage1.Controls.Add(this.newsocketpinc);
             this.navigationPage1.Controls.Add(this.labelControl15);
             this.navigationPage1.Controls.Add(this.labelControl16);
             this.navigationPage1.Controls.Add(this.labelControl17);
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.PageText = "SOKET EKLE";
             this.navigationPage1.Size = new System.Drawing.Size(359, 694);
+            // 
+            // newsocketvargroup
+            // 
+            this.newsocketvargroup.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.newsocketvargroup.Controls.Add(this.newsocketname);
+            this.newsocketvargroup.Controls.Add(this.newsocketpinc);
+            this.newsocketvargroup.Controls.Add(this.newsocketledc);
+            this.newsocketvargroup.Controls.Add(this.newsocketswc);
+            this.newsocketvargroup.Location = new System.Drawing.Point(157, 19);
+            this.newsocketvargroup.Name = "newsocketvargroup";
+            this.newsocketvargroup.ShowCaption = false;
+            this.newsocketvargroup.Size = new System.Drawing.Size(131, 158);
+            this.newsocketvargroup.TabIndex = 39;
+            this.newsocketvargroup.Text = "groupControl1";
+            // 
+            // newsocketname
+            // 
+            this.newsocketname.Location = new System.Drawing.Point(5, 16);
+            this.newsocketname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.newsocketname.MenuManager = this.toolbarFormManager1;
+            this.newsocketname.Name = "newsocketname";
+            this.newsocketname.Size = new System.Drawing.Size(117, 20);
+            this.newsocketname.TabIndex = 39;
+            // 
+            // newsocketpinc
+            // 
+            this.newsocketpinc.Location = new System.Drawing.Point(5, 51);
+            this.newsocketpinc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.newsocketpinc.MenuManager = this.toolbarFormManager1;
+            this.newsocketpinc.Name = "newsocketpinc";
+            this.newsocketpinc.Size = new System.Drawing.Size(117, 20);
+            this.newsocketpinc.TabIndex = 34;
+            this.newsocketpinc.TextChanged += new System.EventHandler(this.newsocketpinc_TextChanged);
+            // 
+            // newsocketledc
+            // 
+            this.newsocketledc.Location = new System.Drawing.Point(5, 86);
+            this.newsocketledc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.newsocketledc.MenuManager = this.toolbarFormManager1;
+            this.newsocketledc.Name = "newsocketledc";
+            this.newsocketledc.Size = new System.Drawing.Size(117, 20);
+            this.newsocketledc.TabIndex = 39;
+            // 
+            // newsocketswc
+            // 
+            this.newsocketswc.Location = new System.Drawing.Point(5, 123);
+            this.newsocketswc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.newsocketswc.MenuManager = this.toolbarFormManager1;
+            this.newsocketswc.Name = "newsocketswc";
+            this.newsocketswc.Size = new System.Drawing.Size(117, 20);
+            this.newsocketswc.TabIndex = 40;
             // 
             // labelControl18
             // 
@@ -544,17 +587,6 @@
             this.labelControl18.Size = new System.Drawing.Size(24, 19);
             this.labelControl18.TabIndex = 38;
             this.labelControl18.Text = "İsim";
-            this.labelControl18.Click += new System.EventHandler(this.labelControl18_Click);
-            // 
-            // newsocketname
-            // 
-            this.newsocketname.Location = new System.Drawing.Point(171, 34);
-            this.newsocketname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.newsocketname.MenuManager = this.toolbarFormManager1;
-            this.newsocketname.Name = "newsocketname";
-            this.newsocketname.Size = new System.Drawing.Size(117, 20);
-            this.newsocketname.TabIndex = 39;
-            this.newsocketname.EditValueChanged += new System.EventHandler(this.newsocketname_EditValueChanged);
             // 
             // gridControl4
             // 
@@ -582,34 +614,6 @@
             this.simpleButton11.TabIndex = 33;
             this.simpleButton11.Text = "Yeni Soket";
             this.simpleButton11.Click += new System.EventHandler(this.simpleButton11_Click);
-            // 
-            // newsocketswc
-            // 
-            this.newsocketswc.Location = new System.Drawing.Point(171, 140);
-            this.newsocketswc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.newsocketswc.MenuManager = this.toolbarFormManager1;
-            this.newsocketswc.Name = "newsocketswc";
-            this.newsocketswc.Size = new System.Drawing.Size(117, 20);
-            this.newsocketswc.TabIndex = 40;
-            // 
-            // newsocketledc
-            // 
-            this.newsocketledc.Location = new System.Drawing.Point(171, 104);
-            this.newsocketledc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.newsocketledc.MenuManager = this.toolbarFormManager1;
-            this.newsocketledc.Name = "newsocketledc";
-            this.newsocketledc.Size = new System.Drawing.Size(117, 20);
-            this.newsocketledc.TabIndex = 39;
-            // 
-            // newsocketpinc
-            // 
-            this.newsocketpinc.Location = new System.Drawing.Point(171, 69);
-            this.newsocketpinc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.newsocketpinc.MenuManager = this.toolbarFormManager1;
-            this.newsocketpinc.Name = "newsocketpinc";
-            this.newsocketpinc.Size = new System.Drawing.Size(117, 20);
-            this.newsocketpinc.TabIndex = 34;
-            this.newsocketpinc.TextChanged += new System.EventHandler(this.textEdit14_TextChanged);
             // 
             // labelControl15
             // 
@@ -650,7 +654,7 @@
             // 
             this.navigationPage2.Caption = "navigationPage2";
             this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(0, 0);
+            this.navigationPage2.Size = new System.Drawing.Size(359, 694);
             // 
             // panelControl3
             // 
@@ -682,100 +686,159 @@
             // 
             // gridControl6
             // 
+            this.gridControl6.DataSource = this.tbl_Socket_usingBindingSource;
             this.gridControl6.Location = new System.Drawing.Point(785, 72);
             this.gridControl6.MainView = this.gridView6;
             this.gridControl6.MenuManager = this.toolbarFormManager1;
             this.gridControl6.Name = "gridControl6";
-            this.gridControl6.Size = new System.Drawing.Size(544, 316);
+            this.gridControl6.Size = new System.Drawing.Size(544, 365);
             this.gridControl6.TabIndex = 37;
             this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
             // 
+            // tbl_Socket_usingBindingSource
+            // 
+            this.tbl_Socket_usingBindingSource.DataMember = "tbl_Socket_using";
+            this.tbl_Socket_usingBindingSource.DataSource = this.projectdatasource;
+            // 
+            // projectdatasource
+            // 
+            this.projectdatasource.ConnectionName = "tablo";
+            this.projectdatasource.Name = "projectdatasource";
+            columnExpression1.ColumnName = "Adı";
+            table1.MetaSerializable = "<Meta X=\"185\" Y=\"30\" Width=\"125\" Height=\"153\" />";
+            table1.Name = "tbl_Socket";
+            columnExpression1.Table = table1;
+            column1.Expression = columnExpression1;
+            column2.Alias = "tbl_Socket_1_Adı";
+            columnExpression2.ColumnName = "Adı";
+            table2.Alias = "tbl_Socket_1";
+            table2.MetaSerializable = "<Meta X=\"190\" Y=\"200\" Width=\"125\" Height=\"153\" />";
+            table2.Name = "tbl_Socket";
+            columnExpression2.Table = table2;
+            column2.Expression = columnExpression2;
+            columnExpression3.ColumnName = "Kablo_Ad";
+            table3.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"305\" />";
+            table3.Name = "tbl_connection";
+            columnExpression3.Table = table3;
+            column3.Expression = columnExpression3;
+            columnExpression4.ColumnName = "Yorum";
+            columnExpression4.Table = table3;
+            column4.Expression = columnExpression4;
+            selectQuery1.Columns.Add(column1);
+            selectQuery1.Columns.Add(column2);
+            selectQuery1.Columns.Add(column3);
+            selectQuery1.Columns.Add(column4);
+            selectQuery1.Name = "tbl_connection";
+            relationColumnInfo1.NestedKeyColumn = "ID_soket";
+            relationColumnInfo1.ParentKeyColumn = "ID_soket_1";
+            join1.KeyColumns.Add(relationColumnInfo1);
+            join1.Nested = table1;
+            join1.Parent = table3;
+            relationColumnInfo2.NestedKeyColumn = "ID_soket";
+            relationColumnInfo2.ParentKeyColumn = "ID_soket_2";
+            join2.KeyColumns.Add(relationColumnInfo2);
+            join2.Nested = table2;
+            join2.Parent = table3;
+            selectQuery1.Relations.Add(join1);
+            selectQuery1.Relations.Add(join2);
+            selectQuery1.Tables.Add(table3);
+            selectQuery1.Tables.Add(table1);
+            selectQuery1.Tables.Add(table2);
+            columnExpression5.ColumnName = "image_id";
+            table4.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"134\" />";
+            table4.Name = "ImageStore";
+            columnExpression5.Table = table4;
+            column5.Expression = columnExpression5;
+            columnExpression6.ColumnName = "imageFileName";
+            columnExpression6.Table = table4;
+            column6.Expression = columnExpression6;
+            columnExpression7.ColumnName = "imageBlob";
+            columnExpression7.Table = table4;
+            column7.Expression = columnExpression7;
+            columnExpression8.ColumnName = "imageFileSizeBytes";
+            columnExpression8.Table = table4;
+            column8.Expression = columnExpression8;
+            selectQuery2.Columns.Add(column5);
+            selectQuery2.Columns.Add(column6);
+            selectQuery2.Columns.Add(column7);
+            selectQuery2.Columns.Add(column8);
+            selectQuery2.Name = "imageStore";
+            selectQuery2.Tables.Add(table4);
+            columnExpression9.ColumnName = "ID_soket";
+            table5.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"153\" />";
+            table5.Name = "tbl_Socket_using";
+            columnExpression9.Table = table5;
+            column9.Expression = columnExpression9;
+            columnExpression10.ColumnName = "Adı";
+            columnExpression10.Table = table5;
+            column10.Expression = columnExpression10;
+            columnExpression11.ColumnName = "Pin_sayisi";
+            columnExpression11.Table = table5;
+            column11.Expression = columnExpression11;
+            columnExpression12.ColumnName = "Anahtar_sayisi";
+            columnExpression12.Table = table5;
+            column12.Expression = columnExpression12;
+            columnExpression13.ColumnName = "Led_numarasi";
+            columnExpression13.Table = table5;
+            column13.Expression = columnExpression13;
+            selectQuery3.Columns.Add(column9);
+            selectQuery3.Columns.Add(column10);
+            selectQuery3.Columns.Add(column11);
+            selectQuery3.Columns.Add(column12);
+            selectQuery3.Columns.Add(column13);
+            selectQuery3.Name = "tbl_Socket_using";
+            selectQuery3.Tables.Add(table5);
+            this.projectdatasource.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            selectQuery1,
+            selectQuery2,
+            selectQuery3});
+            this.projectdatasource.ResultSchemaSerializable = resources.GetString("projectdatasource.ResultSchemaSerializable");
+            // 
             // gridView6
             // 
             this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colID_soket,
-            this.colAdı1,
-            this.colPin_sayisi1,
-            this.colAnahtar_sayisi1,
-            this.colLed_numarasi1,
-            this.coltbl_Socket_using_ID_soket,
-            this.coltbl_Socket_using_Adı,
-            this.coltbl_Socket_using_Pin_sayisi,
-            this.coltbl_Socket_using_Anahtar_sayisi,
-            this.coltbl_Socket_using_Led_numarasi});
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7});
             this.gridView6.GridControl = this.gridControl6;
+            this.gridView6.GroupCount = 1;
             this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsPrint.EnableAppearanceEvenRow = true;
+            this.gridView6.OptionsPrint.EnableAppearanceOddRow = true;
+            this.gridView6.OptionsView.ShowGroupPanel = false;
+            this.gridView6.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn4, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
-            // colID_soket
+            // gridColumn4
             // 
-            this.colID_soket.FieldName = "ID_soket";
-            this.colID_soket.Name = "colID_soket";
-            this.colID_soket.Visible = true;
-            this.colID_soket.VisibleIndex = 0;
+            this.gridColumn4.Caption = "SOKET";
+            this.gridColumn4.FieldName = "Adı";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 0;
             // 
-            // colAdı1
+            // gridColumn5
             // 
-            this.colAdı1.FieldName = "Adı";
-            this.colAdı1.Name = "colAdı1";
-            this.colAdı1.Visible = true;
-            this.colAdı1.VisibleIndex = 1;
+            this.gridColumn5.FieldName = "Pin_sayisi";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 0;
             // 
-            // colPin_sayisi1
+            // gridColumn6
             // 
-            this.colPin_sayisi1.FieldName = "Pin_sayisi";
-            this.colPin_sayisi1.Name = "colPin_sayisi1";
-            this.colPin_sayisi1.Visible = true;
-            this.colPin_sayisi1.VisibleIndex = 2;
+            this.gridColumn6.FieldName = "Anahtar_sayisi";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 1;
             // 
-            // colAnahtar_sayisi1
+            // gridColumn7
             // 
-            this.colAnahtar_sayisi1.FieldName = "Anahtar_sayisi";
-            this.colAnahtar_sayisi1.Name = "colAnahtar_sayisi1";
-            this.colAnahtar_sayisi1.Visible = true;
-            this.colAnahtar_sayisi1.VisibleIndex = 3;
-            // 
-            // colLed_numarasi1
-            // 
-            this.colLed_numarasi1.FieldName = "Led_numarasi";
-            this.colLed_numarasi1.Name = "colLed_numarasi1";
-            this.colLed_numarasi1.Visible = true;
-            this.colLed_numarasi1.VisibleIndex = 4;
-            // 
-            // coltbl_Socket_using_ID_soket
-            // 
-            this.coltbl_Socket_using_ID_soket.FieldName = "tbl_Socket_using_ID_soket";
-            this.coltbl_Socket_using_ID_soket.Name = "coltbl_Socket_using_ID_soket";
-            this.coltbl_Socket_using_ID_soket.Visible = true;
-            this.coltbl_Socket_using_ID_soket.VisibleIndex = 5;
-            // 
-            // coltbl_Socket_using_Adı
-            // 
-            this.coltbl_Socket_using_Adı.FieldName = "tbl_Socket_using_Adı";
-            this.coltbl_Socket_using_Adı.Name = "coltbl_Socket_using_Adı";
-            this.coltbl_Socket_using_Adı.Visible = true;
-            this.coltbl_Socket_using_Adı.VisibleIndex = 6;
-            // 
-            // coltbl_Socket_using_Pin_sayisi
-            // 
-            this.coltbl_Socket_using_Pin_sayisi.FieldName = "tbl_Socket_using_Pin_sayisi";
-            this.coltbl_Socket_using_Pin_sayisi.Name = "coltbl_Socket_using_Pin_sayisi";
-            this.coltbl_Socket_using_Pin_sayisi.Visible = true;
-            this.coltbl_Socket_using_Pin_sayisi.VisibleIndex = 7;
-            // 
-            // coltbl_Socket_using_Anahtar_sayisi
-            // 
-            this.coltbl_Socket_using_Anahtar_sayisi.FieldName = "tbl_Socket_using_Anahtar_sayisi";
-            this.coltbl_Socket_using_Anahtar_sayisi.Name = "coltbl_Socket_using_Anahtar_sayisi";
-            this.coltbl_Socket_using_Anahtar_sayisi.Visible = true;
-            this.coltbl_Socket_using_Anahtar_sayisi.VisibleIndex = 8;
-            // 
-            // coltbl_Socket_using_Led_numarasi
-            // 
-            this.coltbl_Socket_using_Led_numarasi.FieldName = "tbl_Socket_using_Led_numarasi";
-            this.coltbl_Socket_using_Led_numarasi.Name = "coltbl_Socket_using_Led_numarasi";
-            this.coltbl_Socket_using_Led_numarasi.Visible = true;
-            this.coltbl_Socket_using_Led_numarasi.VisibleIndex = 9;
+            this.gridColumn7.FieldName = "Led_numarasi";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 2;
             // 
             // gridControl5
             // 
@@ -900,7 +963,6 @@
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(31, 24);
             this.simpleButton1.TabIndex = 32;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
             // simpleButton10
             // 
@@ -909,7 +971,6 @@
             this.simpleButton10.Size = new System.Drawing.Size(81, 31);
             this.simpleButton10.TabIndex = 29;
             this.simpleButton10.Text = "<";
-            this.simpleButton10.Click += new System.EventHandler(this.simpleButton10_Click);
             // 
             // simpleButton9
             // 
@@ -967,102 +1028,6 @@
             // 
             this.tbl_connectionBindingSource.DataMember = "tbl_connection";
             this.tbl_connectionBindingSource.DataSource = this.projectdatasource;
-            // 
-            // projectdatasource
-            // 
-            this.projectdatasource.ConnectionName = "tablo";
-            this.projectdatasource.Name = "projectdatasource";
-            columnExpression1.ColumnName = "Adı";
-            table1.MetaSerializable = "<Meta X=\"185\" Y=\"30\" Width=\"125\" Height=\"153\" />";
-            table1.Name = "tbl_Socket";
-            columnExpression1.Table = table1;
-            column1.Expression = columnExpression1;
-            column2.Alias = "tbl_Socket_1_Adı";
-            columnExpression2.ColumnName = "Adı";
-            table2.Alias = "tbl_Socket_1";
-            table2.MetaSerializable = "<Meta X=\"190\" Y=\"200\" Width=\"125\" Height=\"153\" />";
-            table2.Name = "tbl_Socket";
-            columnExpression2.Table = table2;
-            column2.Expression = columnExpression2;
-            columnExpression3.ColumnName = "Kablo_Ad";
-            table3.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"305\" />";
-            table3.Name = "tbl_connection";
-            columnExpression3.Table = table3;
-            column3.Expression = columnExpression3;
-            columnExpression4.ColumnName = "Yorum";
-            columnExpression4.Table = table3;
-            column4.Expression = columnExpression4;
-            selectQuery1.Columns.Add(column1);
-            selectQuery1.Columns.Add(column2);
-            selectQuery1.Columns.Add(column3);
-            selectQuery1.Columns.Add(column4);
-            selectQuery1.Name = "tbl_connection";
-            relationColumnInfo1.NestedKeyColumn = "ID_soket";
-            relationColumnInfo1.ParentKeyColumn = "ID_soket_1";
-            join1.KeyColumns.Add(relationColumnInfo1);
-            join1.Nested = table1;
-            join1.Parent = table3;
-            relationColumnInfo2.NestedKeyColumn = "ID_soket";
-            relationColumnInfo2.ParentKeyColumn = "ID_soket_2";
-            join2.KeyColumns.Add(relationColumnInfo2);
-            join2.Nested = table2;
-            join2.Parent = table3;
-            selectQuery1.Relations.Add(join1);
-            selectQuery1.Relations.Add(join2);
-            selectQuery1.Tables.Add(table3);
-            selectQuery1.Tables.Add(table1);
-            selectQuery1.Tables.Add(table2);
-            columnExpression5.ColumnName = "image_id";
-            table4.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"134\" />";
-            table4.Name = "ImageStore";
-            columnExpression5.Table = table4;
-            column5.Expression = columnExpression5;
-            columnExpression6.ColumnName = "imageFileName";
-            columnExpression6.Table = table4;
-            column6.Expression = columnExpression6;
-            columnExpression7.ColumnName = "imageBlob";
-            columnExpression7.Table = table4;
-            column7.Expression = columnExpression7;
-            columnExpression8.ColumnName = "imageFileSizeBytes";
-            columnExpression8.Table = table4;
-            column8.Expression = columnExpression8;
-            selectQuery2.Columns.Add(column5);
-            selectQuery2.Columns.Add(column6);
-            selectQuery2.Columns.Add(column7);
-            selectQuery2.Columns.Add(column8);
-            selectQuery2.Name = "imageStore";
-            selectQuery2.Tables.Add(table4);
-            columnExpression9.ColumnName = "ID_soket";
-            table5.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"153\" />";
-            table5.Name = "tbl_Socket_using";
-            columnExpression9.Table = table5;
-            column9.Expression = columnExpression9;
-            columnExpression10.ColumnName = "Adı";
-            columnExpression10.Table = table5;
-            column10.Expression = columnExpression10;
-            columnExpression11.ColumnName = "Pin_sayisi";
-            columnExpression11.Table = table5;
-            column11.Expression = columnExpression11;
-            columnExpression12.ColumnName = "Anahtar_sayisi";
-            columnExpression12.Table = table5;
-            column12.Expression = columnExpression12;
-            columnExpression13.ColumnName = "Led_numarasi";
-            columnExpression13.Table = table5;
-            column13.Expression = columnExpression13;
-            allColumns1.Table = table5;
-            selectQuery3.Columns.Add(column9);
-            selectQuery3.Columns.Add(column10);
-            selectQuery3.Columns.Add(column11);
-            selectQuery3.Columns.Add(column12);
-            selectQuery3.Columns.Add(column13);
-            selectQuery3.Columns.Add(allColumns1);
-            selectQuery3.Name = "tbl_Socket_using";
-            selectQuery3.Tables.Add(table5);
-            this.projectdatasource.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery1,
-            selectQuery2,
-            selectQuery3});
-            this.projectdatasource.ResultSchemaSerializable = resources.GetString("projectdatasource.ResultSchemaSerializable");
             // 
             // gridView1
             // 
@@ -1236,7 +1201,6 @@
             this.dropDownButton1.Size = new System.Drawing.Size(132, 24);
             this.dropDownButton1.TabIndex = 11;
             this.dropDownButton1.Text = "dropDownButton1";
-            this.dropDownButton1.Click += new System.EventHandler(this.dropDownButton1_Click);
             // 
             // textEdit9
             // 
@@ -1533,11 +1497,6 @@
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             // 
-            // tbl_Socket_usingBindingSource
-            // 
-            this.tbl_Socket_usingBindingSource.DataMember = "tbl_Socket_using";
-            this.tbl_Socket_usingBindingSource.DataSource = this.projectdatasource;
-            // 
             // transitionManager1
             // 
             transition1.BarWaitingIndicatorProperties.Caption = "";
@@ -1610,17 +1569,20 @@
             this.navigationPane1.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
             this.navigationPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.newsocketvargroup)).EndInit();
+            this.newsocketvargroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.newsocketname.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newsocketpinc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newsocketledc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newsocketswc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newsocketswc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newsocketledc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newsocketpinc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbl_Socket_usingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getsocketsBindingSource)).EndInit();
@@ -1655,7 +1617,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbl_Socket_usingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorprovider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
@@ -1780,18 +1741,13 @@
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
         private DevExpress.DataAccess.Sql.SqlDataSource maindatasource;
         private System.Windows.Forms.BindingSource getsocketsBindingSource;
-        private System.Windows.Forms.BindingSource tbl_Socket_usingBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colID_soket;
-        private DevExpress.XtraGrid.Columns.GridColumn colAdı1;
-        private DevExpress.XtraGrid.Columns.GridColumn colPin_sayisi1;
-        private DevExpress.XtraGrid.Columns.GridColumn colAnahtar_sayisi1;
-        private DevExpress.XtraGrid.Columns.GridColumn colLed_numarasi1;
-        private DevExpress.XtraGrid.Columns.GridColumn coltbl_Socket_using_ID_soket;
-        private DevExpress.XtraGrid.Columns.GridColumn coltbl_Socket_using_Adı;
-        private DevExpress.XtraGrid.Columns.GridColumn coltbl_Socket_using_Pin_sayisi;
-        private DevExpress.XtraGrid.Columns.GridColumn coltbl_Socket_using_Anahtar_sayisi;
-        private DevExpress.XtraGrid.Columns.GridColumn coltbl_Socket_using_Led_numarasi;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.TextEdit newsocketname;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private System.Windows.Forms.BindingSource tbl_Socket_usingBindingSource;
+        private DevExpress.XtraEditors.GroupControl newsocketvargroup;
     }
 }

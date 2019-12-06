@@ -105,6 +105,7 @@
     <Compile Include="askprojectname.Designer.cs">
       <DependentUpon>askprojectname.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configurator\Config.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Connections.cs" />
     <Compile Include="Components.cs" />

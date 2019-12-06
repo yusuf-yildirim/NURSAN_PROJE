@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Data;
 using System.Windows.Forms;
@@ -35,6 +32,20 @@ namespace NURSAN_PROJE.SQL
             con.Close();
          
         }
+
+
+        public void create_recent(String path,DevExpress.DataAccess.Sql.SqlDataSource datasource)
+        {
+
+            datasource.Queries[0].Parameters[0].Value = path.Split('\\')[(path.Split('\\')).Count() - 1];
+            datasource.Queries[0].Parameters[1].Value = path;
+            datasource.Fill();
+        }
+
+
+
+
+
         public void create_project(string name)
         {
             try
