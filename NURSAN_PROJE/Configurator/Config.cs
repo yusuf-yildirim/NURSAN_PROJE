@@ -20,7 +20,14 @@ namespace NURSAN_PROJE.Configurator
             ConfigurationManager.RefreshSection("connectionStrings");
 
         }
-
+        public string get_conn_string(string connection)
+        {
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
+           
+            return connectionStringsSection.ConnectionStrings[connection].ConnectionString.Substring(connectionStringsSection.ConnectionStrings[connection].ConnectionString.IndexOf(";")+1, (connectionStringsSection.ConnectionStrings[connection].ConnectionString.Length - connectionStringsSection.ConnectionStrings[connection].ConnectionString.IndexOf(";")) - 1);
+          //  return connectionStringsSection.ConnectionStrings[connection].ConnectionString;
+        }
 
 
 
