@@ -246,6 +246,7 @@ namespace NURSAN_PROJE
 
             gridControl5.DataSource = db.get_saved_sockets();
             dataGridView1.DataSource = db.get_saved_sockets();
+            maindatasource.Fill();
         }
 
 

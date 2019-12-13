@@ -158,11 +158,33 @@ namespace NURSAN_PROJE.SQL
             con.Close();
         }
      
-        
-        
-        
-        
-        
+        public void get_connectionselect_tree()
+        {
+            cmd.CommandText = @"SELECT
+             tbl_Socket.Adı,
+             tbl_Socket.ID_soket,
+             tbl_IO_connection.Socket_PIN
+             FROM
+             tbl_Socket
+             INNER JOIN tbl_IO_connection ON tbl_IO_connection.ID_soket = tbl_Socket.ID_soket
+             WHERE
+             tbl_Socket.ID_soket = 52";
+            /*
+             SELECT
+             tbl_Socket."Adı",
+             tbl_Socket.ID_soket,
+             tbl_IO_connection.Socket_PIN
+             FROM
+             tbl_Socket
+             INNER JOIN tbl_IO_connection ON tbl_IO_connection.ID_soket = tbl_Socket.ID_soket
+             WHERE
+             tbl_Socket.ID_soket = 52
+             * */
+        }
+
+
+
+
         public void create_recent(String path,DevExpress.DataAccess.Sql.SqlDataSource datasource)
         {
 
