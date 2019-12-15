@@ -239,6 +239,13 @@ namespace NURSAN_PROJE
                 MessageBox.Show(ex.StackTrace);
             }
         }
+
+        private void pictureEdit1_Click(object sender, EventArgs e)
+        {
+            
+           new determine_pin_locations_window().ShowDialog();
+
+        }
     }
 }
 

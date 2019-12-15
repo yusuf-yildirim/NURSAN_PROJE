@@ -66,6 +66,7 @@ namespace NURSAN_PROJE.SQL
             da.Fill(ds);
             ds.Tables[0].DefaultView.AllowEdit = true;
             return ds.Tables[0].DefaultView;
+
         }
         public void register_socket(object[] soc_parameters, string[,] tp_parameters)
         {

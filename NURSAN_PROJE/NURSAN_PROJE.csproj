@@ -143,6 +143,12 @@
     </Compile>
     <Compile Include="Configurator\Config.cs" />
     <Compile Include="Data.cs" />
+    <Compile Include="determine_pin_locations_window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="determine_pin_locations_window.Designer.cs">
+      <DependentUpon>determine_pin_locations_window.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     <Compile Include="SQL\DBeng.cs" />
     <EmbeddedResource Include="askprojectname.resx">
       <DependentUpon>askprojectname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="determine_pin_locations_window.resx">
+      <DependentUpon>determine_pin_locations_window.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

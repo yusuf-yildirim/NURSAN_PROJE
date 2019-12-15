@@ -840,6 +840,7 @@
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Size = new System.Drawing.Size(120, 98);
             this.pictureEdit1.TabIndex = 38;
+            this.pictureEdit1.Click += new System.EventHandler(this.pictureEdit1_Click);
             // 
             // gridControl6
             // 
