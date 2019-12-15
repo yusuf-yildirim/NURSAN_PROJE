@@ -14,13 +14,13 @@ namespace NURSAN_PROJE
             initializelistbox();
 
             selectscreendb.Fill();
-            
+
         }
 
         public void initializelistbox()
         {
-         //   string[] xmlFiles = Directory.GetFiles("C:\\Users\\yyill\\Desktop\\xmlfile", "*.txt").Select(Path.GetFileName).ToArray();
-       //     listBoxControl1.DataSource = xmlFiles;
+            //   string[] xmlFiles = Directory.GetFiles("C:\\Users\\yyill\\Desktop\\xmlfile", "*.txt").Select(Path.GetFileName).ToArray();
+            //     listBoxControl1.DataSource = xmlFiles;
         }
 
         private void simpleButton16_Click(object sender, EventArgs e)
@@ -30,12 +30,12 @@ namespace NURSAN_PROJE
 
         private void listBoxControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (firstlogin==false)
+            if (firstlogin == false)
             {
                 Data.selectedfile = projectlistbox.SelectedItem.ToString();
                 MessageBox.Show(Data.selectedfile);
                 this.Hide();
-                
+
             }
             firstlogin = false;
 
@@ -44,7 +44,7 @@ namespace NURSAN_PROJE
         private void newproject_Click(object sender, EventArgs e)
         {
             new askprojectname().ShowDialog();
-            if(SQL.DBeng.created == true)
+            if (SQL.DBeng.created == true)
             {
                 this.Close();
             }
@@ -52,7 +52,7 @@ namespace NURSAN_PROJE
             {
                 MessageBox.Show("İŞLEM KULLANICI TARAFNDAN İPTAL EDİLDİ");
             }
-           
+
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -62,13 +62,13 @@ namespace NURSAN_PROJE
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-           // Application.Exit();
+            // Application.Exit();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-         //   toolTip1.SetToolTip(projectlistbox.Controls, selectscreendb.Result[0].ElementAt(0).ElementAt(1).ToString());
-          
+            //   toolTip1.SetToolTip(projectlistbox.Controls, selectscreendb.Result[0].ElementAt(0).ElementAt(1).ToString());
+
         }
     }
 }

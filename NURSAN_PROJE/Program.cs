@@ -22,6 +22,7 @@ namespace NURSAN_PROJE
             //  Application.Run(new Projectwindow());
            
             Application.Run(args.Length == 0 ? new Projectwindow(string.Empty) : new Projectwindow(args[0]));
+          
         }
     }
 }

@@ -11,7 +11,7 @@ namespace NURSAN_PROJE.Configurator
     {
 
 
-        public void set_connectionstring(string connection,string path)
+        public void set_connectionstring(string connection, string path)
         {
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
@@ -24,9 +24,9 @@ namespace NURSAN_PROJE.Configurator
         {
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-           
-            return connectionStringsSection.ConnectionStrings[connection].ConnectionString.Substring(connectionStringsSection.ConnectionStrings[connection].ConnectionString.IndexOf(";")+1, (connectionStringsSection.ConnectionStrings[connection].ConnectionString.Length - connectionStringsSection.ConnectionStrings[connection].ConnectionString.IndexOf(";")) - 1);
-          //  return connectionStringsSection.ConnectionStrings[connection].ConnectionString;
+
+            return connectionStringsSection.ConnectionStrings[connection].ConnectionString.Substring(connectionStringsSection.ConnectionStrings[connection].ConnectionString.IndexOf(";") + 1, (connectionStringsSection.ConnectionStrings[connection].ConnectionString.Length - connectionStringsSection.ConnectionStrings[connection].ConnectionString.IndexOf(";")) - 1);
+            //  return connectionStringsSection.ConnectionStrings[connection].ConnectionString;
         }
 
 
