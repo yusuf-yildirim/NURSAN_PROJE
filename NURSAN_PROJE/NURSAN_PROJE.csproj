@@ -54,6 +54,8 @@
     <ApplicationIcon>LOGO.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Devart.Data, Version=5.0.2311.0, Culture=neutral, PublicKeyToken=09af7300eec23701" />
+    <Reference Include="Devart.Data.SQLite, Version=5.14.1519.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.BonusSkins.v19.2" />
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -124,6 +126,7 @@
     </Reference>
     <Reference Include="System.Messaging" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -154,6 +157,14 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainsource.cs">
+      <DependentUpon>mainsource.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mainsource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mainsource.xsd</DependentUpon>
     </Compile>
     <Compile Include="newuserform.cs">
       <SubType>Form</SubType>
@@ -196,6 +207,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="App.config" />
+    <None Include="mainsource.xsc">
+      <DependentUpon>mainsource.xsd</DependentUpon>
+    </None>
+    <None Include="mainsource.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mainsource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mainsource.xss">
+      <DependentUpon>mainsource.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

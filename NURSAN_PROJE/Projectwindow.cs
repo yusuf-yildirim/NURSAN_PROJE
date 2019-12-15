@@ -24,7 +24,7 @@ namespace NURSAN_PROJE
         DBeng db;
         public Projectwindow(string path)
         {
-            //  DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
+            DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
             db = new DBeng();
             Config conf = new Config();
             this.Hide();
@@ -101,6 +101,8 @@ namespace NURSAN_PROJE
 
         private void Projectwindow_Load(object sender, EventArgs e)
         {
+            // TODO: Bu kod satırı 'mainsource.tbl_Socket' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            
             Task.Factory.StartNew(() => refresh_socket_grids());
         }
 
@@ -130,7 +132,8 @@ namespace NURSAN_PROJE
                     {
                         arr2[z, i] = gridView4.GetRowCellValue(i, gridView4.Columns[z]).ToString();
                     }
-                }
+                }            
+               
                 Task.Factory.StartNew(() => db.register_socket(arr, arr2)).ContinueWith(delegate { refresh_socket_grids(); });
                 navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
 
@@ -221,7 +224,8 @@ namespace NURSAN_PROJE
         public void refresh_socket_grids()
         {
             realTimeSource2.DataSource = db.get_project_sockets();
-            realTimeSource1.DataSource = db.get_saved_sockets();         
+           // realTimeSource1.DataSource = db.get_saved_sockets();
+            this.tbl_SocketTableAdapter.Fill(this.mainsource.tbl_Socket);
         }
 
         private void unregistermainsocket_button_Click(object sender, EventArgs e)
@@ -245,6 +249,15 @@ namespace NURSAN_PROJE
             
            new determine_pin_locations_window().ShowDialog();
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /*mainsource.tbl_Socket.Addtbl_SocketRow("allah", "aaa", 54, 4, 2);
+              this.tbl_SocketTableAdapter.Update(this.mainsource.tbl_Socket);*/
+            
+           
+         
         }
     }
 }

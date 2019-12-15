@@ -811,3 +811,8 @@ C:\Users\yyill\source\repos\BurakcanKolay\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\NU
 C:\Users\yyill\source\repos\BurakcanKolay\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\NURSAN_PROJE.exe
 C:\Users\yyill\source\repos\BurakcanKolay\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\NURSAN_PROJE.pdb
 C:\Users\yyill\source\repos\BurakcanKolay\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.csproj.CopyComplete
+D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\Devart.Data.dll
+D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\Devart.Data.SQLite.dll
+D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\Devart.Data.xml
+D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\Devart.Data.SQLite.xml
+D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.determine_pin_locations_window.resources

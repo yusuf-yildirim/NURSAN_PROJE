@@ -4,12 +4,20 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NURSAN_PROJE.Configurator
 {
     class Config
     {
-
+        public Config()
+        {
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
+            connectionStringsSection.ConnectionStrings["NURSAN_PROJE.Properties.Settings.mainsource"].ConnectionString = @"Data Source=" + Application.StartupPath+ "\\tablo.db";
+            config.Save();
+            ConfigurationManager.RefreshSection("connectionStrings");
+        }
 
         public void set_connectionstring(string connection, string path)
         {

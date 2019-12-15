@@ -7,11 +7,13 @@ using System.Configuration;
 using System.IO;
 using NURSAN_PROJE.Configurator;
 using System.Diagnostics;
+using System.Threading;
 
 namespace NURSAN_PROJE.SQL
 {
     class DBeng
     {
+        mainsource x = new mainsource();
         static SQLiteConnection con;
         static SQLiteDataAdapter da;
         static SQLiteCommand cmd;
@@ -68,62 +70,45 @@ namespace NURSAN_PROJE.SQL
             return ds.Tables[0].DefaultView;
 
         }
+     
+
+
         public void register_socket(object[] soc_parameters, string[,] tp_parameters)
         {
-            getmaincon();
-            cmd = new SQLiteCommand();
-            cmd.Connection = con;
-            using (var conn = _getmaincon())
+            try
             {
-                conn.Open();
-                var stopwatch = new Stopwatch();
-                stopwatch.Start();
-
-                using (var cmd = new SQLiteCommand(conn))
+                x.tbl_Socket.Addtbl_SocketRow(soc_parameters[0].ToString(), soc_parameters[1].ToString(), Convert.ToInt32(soc_parameters[2]), Convert.ToInt32(soc_parameters[3]), Convert.ToInt32(soc_parameters[4]));
+                mainsourceTableAdapters.tbl_SocketTableAdapter a = new mainsourceTableAdapters.tbl_SocketTableAdapter();       
+                a.Update(x.tbl_Socket);
+                a.Dispose();
+                for (int i = 0; i < tp_parameters.GetLength(1); i++)
                 {
-                    using (var transaction = conn.BeginTransaction())
+                    if (tp_parameters[0, i] == null)
                     {
-                        cmd.CommandText = "INSERT INTO tbl_Socket(ID_soket,Adı, Pin_sayisi, Anahtar_sayisi, Led_numarasi) values (?,?,?,?,?)";
-                        foreach (object value in soc_parameters)
-                        {
-                            cmd.Parameters.AddWithValue("", value);
-                        }
-                        try
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-
-                        catch (SQLiteException ex)
-                        {
-                            if (ex.ErrorCode == 19)
-                            {
-                                MessageBox.Show("SOKET ZATEN KULLANIMDA");
-                            }
-                            else
-                            {
-                                MessageBox.Show(ex.Message);
-                            }
-
-                        }
-                        for (int i = 0; i < tp_parameters.GetLength(1); i++)
-                        {
-                            if (tp_parameters[0, i] == null)
-                            {
-                                break;
-                            }
-
-                            cmd.CommandText = "INSERT INTO tbl_IO_connection(ID_soket, Socket_PIN, IO_PIN) values ('" + soc_parameters[0] + "','" + tp_parameters[1, i] + "','" + tp_parameters[2, i] + "');";
-                            cmd.ExecuteNonQuery();
-                        }
-                        transaction.Commit();
+                        break;
                     }
+                    try
+                    {
+                        Convert.ToInt32(tp_parameters[2, i]);                        
+                        x.tbl_IO_connection.Addtbl_IO_connectionRow( soc_parameters[0].ToString(), tp_parameters[1, i], Convert.ToInt32(tp_parameters[2, i]));
+                    }
+                    catch
+                    {
+                     
+                        x.tbl_IO_connection.Addtbl_IO_connectionRow(soc_parameters[0].ToString(), tp_parameters[1, i], -1);
+                    }
+                    
+                    // cmd.CommandText = "INSERT INTO tbl_IO_connection(ID_soket, Socket_PIN, IO_PIN) values ('" + soc_parameters[0] + "','" + tp_parameters[1, i] + "','" + tp_parameters[2, i] + "');";
+                    // cmd.ExecuteNonQuery();
                 }
-
-                Console.WriteLine("{0} seconds with one transaction.",
-                  stopwatch.Elapsed.TotalSeconds);
-
-                conn.Close();
+                mainsourceTableAdapters.tbl_IO_connectionTableAdapter ax = new mainsourceTableAdapters.tbl_IO_connectionTableAdapter();
+                ax.Update(x.tbl_IO_connection);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }           
+
         }
         public void unregister_socket(string SocketID)
         {
