@@ -24,6 +24,7 @@ namespace NURSAN_PROJE
         DBeng db;
         public Projectwindow(string path)
         {
+           
             DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
             db = new DBeng();
             Config conf = new Config();
@@ -34,19 +35,21 @@ namespace NURSAN_PROJE
             {
                 if (path.Length > 0)
                 {
+                   
                     conf.set_connectionstring("tablo", path);
                     db.create_recent(path, maindatasource);
 
                 }
                 else
-                {
-                    new Form1().ShowDialog();
+                {                    
+                   // new Form1().ShowDialog();
                     this.Show();
+                    
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                Console.WriteLine("I/O ERROR");
+                MessageBox.Show(ex.Message);
             }
             //*--*-*-*-*-*-*-* FOTOĞRAFI VERİ TABANINDAN ALMA
 
@@ -101,8 +104,10 @@ namespace NURSAN_PROJE
 
         private void Projectwindow_Load(object sender, EventArgs e)
         {
+            // TODO: Bu kod satırı 'mainsource.Sockets' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.socketsTableAdapter.Fill(this.mainsource.Sockets);
             // TODO: Bu kod satırı 'mainsource.tbl_Socket' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            
+
             Task.Factory.StartNew(() => refresh_socket_grids());
         }
 
@@ -225,7 +230,7 @@ namespace NURSAN_PROJE
         {
             realTimeSource2.DataSource = db.get_project_sockets();
            // realTimeSource1.DataSource = db.get_saved_sockets();
-            this.tbl_SocketTableAdapter.Fill(this.mainsource.tbl_Socket);
+            this.socketsTableAdapter.Fill(this.mainsource.Sockets);
         }
 
         private void unregistermainsocket_button_Click(object sender, EventArgs e)

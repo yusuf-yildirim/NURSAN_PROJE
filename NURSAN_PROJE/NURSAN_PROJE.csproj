@@ -158,9 +158,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="mainsource.cs">
-      <DependentUpon>mainsource.xsd</DependentUpon>
-    </Compile>
     <Compile Include="mainsource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

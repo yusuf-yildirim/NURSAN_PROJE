@@ -48,7 +48,7 @@ namespace NURSAN_PROJE.SQL
         {
             getmaincon();
             ds = new DataSet();
-            da = new SQLiteDataAdapter("select *  from[tbl_Socket][tbl_Socket]", con);
+            da = new SQLiteDataAdapter("select *  from[Sockets][Sockets]", con);
             SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
             da.Fill(ds);
             ds.Tables[0].DefaultView.AllowEdit = true;
@@ -77,32 +77,22 @@ namespace NURSAN_PROJE.SQL
         {
             try
             {
-                x.tbl_Socket.Addtbl_SocketRow(soc_parameters[0].ToString(), soc_parameters[1].ToString(), Convert.ToInt32(soc_parameters[2]), Convert.ToInt32(soc_parameters[3]), Convert.ToInt32(soc_parameters[4]));
-                mainsourceTableAdapters.tbl_SocketTableAdapter a = new mainsourceTableAdapters.tbl_SocketTableAdapter();       
-                a.Update(x.tbl_Socket);
+                x.Sockets.AddSocketsRow(soc_parameters[0].ToString(), soc_parameters[1].ToString(), Convert.ToInt32(soc_parameters[2]), Convert.ToInt32(soc_parameters[3]), Convert.ToInt32(soc_parameters[4]));
+                mainsourceTableAdapters.SocketsTableAdapter a = new mainsourceTableAdapters.SocketsTableAdapter();       
+                a.Update(x.Sockets);
                 a.Dispose();
                 for (int i = 0; i < tp_parameters.GetLength(1); i++)
                 {
                     if (tp_parameters[0, i] == null)
                     {
                         break;
-                    }
-                    try
-                    {
-                        Convert.ToInt32(tp_parameters[2, i]);                        
-                        x.tbl_IO_connection.Addtbl_IO_connectionRow( soc_parameters[0].ToString(), tp_parameters[1, i], Convert.ToInt32(tp_parameters[2, i]));
-                    }
-                    catch
-                    {
-                     
-                        x.tbl_IO_connection.Addtbl_IO_connectionRow(soc_parameters[0].ToString(), tp_parameters[1, i], -1);
-                    }
-                    
+                    }                                        
+                        x.IO_connections.AddIO_connectionsRow(Guid.NewGuid().ToString()  ,soc_parameters[0].ToString(), tp_parameters[1, i], tp_parameters[2, i]);     
                     // cmd.CommandText = "INSERT INTO tbl_IO_connection(ID_soket, Socket_PIN, IO_PIN) values ('" + soc_parameters[0] + "','" + tp_parameters[1, i] + "','" + tp_parameters[2, i] + "');";
                     // cmd.ExecuteNonQuery();
                 }
-                mainsourceTableAdapters.tbl_IO_connectionTableAdapter ax = new mainsourceTableAdapters.tbl_IO_connectionTableAdapter();
-                ax.Update(x.tbl_IO_connection);
+                mainsourceTableAdapters.IO_connectionsTableAdapter ax = new mainsourceTableAdapters.IO_connectionsTableAdapter();
+                ax.Update(x.IO_connections);
             }
             catch (Exception ex)
             {
@@ -127,9 +117,9 @@ namespace NURSAN_PROJE.SQL
                     getmaincon();
                     cmd = new SQLiteCommand();
                     cmd.Connection = con;
-                    cmd.CommandText = $"delete from tbl_Socket where ID_soket ='{SocketID}'";
+                    cmd.CommandText = $"delete from Sockets where ID_soket ='{SocketID}'";
                     cmd.ExecuteNonQuery();
-                    cmd.CommandText = $"delete from tbl_IO_connection where ID_soket = '{SocketID}'";
+                    cmd.CommandText = $"delete from IO_connections where ID_soket = '{SocketID}'";
                     cmd.ExecuteNonQuery();
                     con.Close();
                 }
@@ -139,22 +129,22 @@ namespace NURSAN_PROJE.SQL
                 getmaincon();
                 cmd = new SQLiteCommand();
                 cmd.Connection = con;
-                cmd.CommandText = $"delete from tbl_Socket where ID_soket = '{SocketID}'";
+                cmd.CommandText = $"delete from Sockets where ID_soket = '{SocketID}'";
                 cmd.ExecuteNonQuery();
-                cmd.CommandText = $"delete from tbl_IO_connection where ID_soket = '{SocketID}'";
+                cmd.CommandText = $"delete from IO_connections where ID_soket = '{SocketID}'";
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
         }
         public void register_using_socket(string SocketID)
-        {
+        {            
             getmaincon();
             ds = new DataSet();
             DataSet ds2 = new DataSet();
-            da = new SQLiteDataAdapter($"select *  from[tbl_Socket][tbl_Socket] WHERE ID_soket = '{SocketID}'", connection: con);
+            da = new SQLiteDataAdapter($"select *  from[Sockets][Sockets] WHERE ID_soket = '{SocketID}'", connection: con);
             SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
             da.Fill(ds);
-            da = new SQLiteDataAdapter($"select *  from tbl_IO_connection WHERE ID_soket = '{SocketID}'", connection: con);
+            da = new SQLiteDataAdapter($"select *  from IO_connections WHERE ID_soket = '{SocketID}'", connection: con);
             sql_command_builder = new SQLiteCommandBuilder(da);
             da.Fill(ds2);
             con.Close();

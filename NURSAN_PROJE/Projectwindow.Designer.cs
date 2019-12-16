@@ -133,6 +133,7 @@
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -149,8 +150,6 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl5 = new DevExpress.XtraGrid.GridControl();
-            this.tblSocketBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mainsource = new NURSAN_PROJE.mainsource();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colAdı = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPin_sayisi = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -225,8 +224,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.realTimeSource1 = new DevExpress.Data.RealTimeSource();
-            this.tbl_Socket_usingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mainsource = new NURSAN_PROJE.mainsource();
             this.projectdatasource = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.treeListBand1 = new DevExpress.XtraTreeList.Columns.TreeListBand();
             this.treeListBand2 = new DevExpress.XtraTreeList.Columns.TreeListBand();
@@ -236,8 +234,8 @@
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.tbl_SocketTableAdapter = new NURSAN_PROJE.mainsourceTableAdapters.tbl_SocketTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
+            this.socketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.socketsTableAdapter = new NURSAN_PROJE.mainsourceTableAdapters.SocketsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.recentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).BeginInit();
@@ -267,8 +265,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblSocketBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainsource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -299,12 +295,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbl_Socket_usingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainsource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_connectionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorprovider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socketsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // recentBindingSource
@@ -325,7 +322,7 @@
             queryParameter4.ValueInfo = "./TEST YOL";
             customSqlQuery2.Parameters.Add(queryParameter3);
             customSqlQuery2.Parameters.Add(queryParameter4);
-            customSqlQuery2.Sql = "INSERT INTO tbl_Recent(NAME,PATH) VALUES(@NAME, @PATH)";
+            customSqlQuery2.Sql = "INSERT INTO Recent(NAME,PATH) VALUES(@NAME, @PATH)";
             columnExpression19.ColumnName = "ID_soket";
             table7.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"153\" />";
             table7.Name = "tbl_Socket";
@@ -769,6 +766,16 @@
             this.panelControl3.Size = new System.Drawing.Size(1547, 746);
             this.panelControl3.TabIndex = 44;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(322, 461);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 43;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // checkEdit1
             // 
             this.checkEdit1.Location = new System.Drawing.Point(669, 232);
@@ -916,7 +923,7 @@
             // 
             // gridControl5
             // 
-            this.gridControl5.DataSource = this.tblSocketBindingSource;
+            this.gridControl5.DataSource = this.socketsBindingSource;
             this.gridControl5.Location = new System.Drawing.Point(78, 72);
             this.gridControl5.MainView = this.gridView5;
             this.gridControl5.MenuManager = this.toolbarFormManager1;
@@ -925,16 +932,6 @@
             this.gridControl5.TabIndex = 36;
             this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
-            // 
-            // tblSocketBindingSource
-            // 
-            this.tblSocketBindingSource.DataMember = "tbl_Socket";
-            this.tblSocketBindingSource.DataSource = this.mainsource;
-            // 
-            // mainsource
-            // 
-            this.mainsource.DataSetName = "mainsource";
-            this.mainsource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView5
             // 
@@ -1666,14 +1663,10 @@
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             // 
-            // realTimeSource1
+            // mainsource
             // 
-            this.realTimeSource1.DisplayableProperties = null;
-            // 
-            // tbl_Socket_usingBindingSource
-            // 
-            this.tbl_Socket_usingBindingSource.DataMember = "tbl_Socket_using";
-            this.tbl_Socket_usingBindingSource.DataSource = this.projectdatasource;
+            this.mainsource.DataSetName = "mainsource";
+            this.mainsource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // projectdatasource
             // 
@@ -1820,19 +1813,14 @@
             this.gridView3.GridControl = this.gridControl3;
             this.gridView3.Name = "gridView3";
             // 
-            // tbl_SocketTableAdapter
+            // socketsBindingSource
             // 
-            this.tbl_SocketTableAdapter.ClearBeforeFill = true;
+            this.socketsBindingSource.DataMember = "Sockets";
+            this.socketsBindingSource.DataSource = this.mainsource;
             // 
-            // button1
+            // socketsTableAdapter
             // 
-            this.button1.Location = new System.Drawing.Point(322, 461);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.socketsTableAdapter.ClearBeforeFill = true;
             // 
             // Projectwindow
             // 
@@ -1855,7 +1843,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Projectwindow";
             this.ToolbarFormControl = this.toolbarFormControl1;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Projectwindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.recentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
@@ -1890,8 +1877,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblSocketBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainsource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1925,12 +1910,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbl_Socket_usingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainsource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_connectionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorprovider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socketsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2050,7 +2036,6 @@
         private DevExpress.DataAccess.Sql.SqlDataSource maindatasource;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.TextEdit newsocketname;
-        private System.Windows.Forms.BindingSource tbl_Socket_usingBindingSource;
         private DevExpress.XtraEditors.GroupControl newsocketvargroup;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
@@ -2078,11 +2063,11 @@
         private DevExpress.XtraDiagram.DiagramShape diagramShape3;
         private DevExpress.XtraDiagram.DiagramConnector diagramConnector1;
         private DevExpress.XtraDiagram.DiagramConnector diagramConnector2;
-        private DevExpress.Data.RealTimeSource realTimeSource1;
         private DevExpress.Data.RealTimeSource realTimeSource2;
         private mainsource mainsource;
-        private System.Windows.Forms.BindingSource tblSocketBindingSource;
-        private mainsourceTableAdapters.tbl_SocketTableAdapter tbl_SocketTableAdapter;
+
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource socketsBindingSource;
+        private mainsourceTableAdapters.SocketsTableAdapter socketsTableAdapter;
     }
 }

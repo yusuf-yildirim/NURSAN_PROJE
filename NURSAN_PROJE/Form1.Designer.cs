@@ -36,26 +36,21 @@
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement1 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement2 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery1 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column1 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression1 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table1 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column2 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression2 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             this.newproject = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton16 = new DevExpress.XtraEditors.SimpleButton();
             this.projectlistbox = new DevExpress.XtraEditors.ListBoxControl();
+            this.projeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.selectscreendb = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.projeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.projectlistbox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // newproject
@@ -90,7 +85,7 @@
             this.projectlistbox.Appearance.Options.UseFont = true;
             this.projectlistbox.AppearanceHighlight.BackColor = System.Drawing.Color.WhiteSmoke;
             this.projectlistbox.AppearanceHighlight.BackColor2 = System.Drawing.Color.Gainsboro;
-            this.projectlistbox.AppearanceHighlight.Font = new System.Drawing.Font("Tahoma", 184.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.projectlistbox.AppearanceHighlight.Font = new System.Drawing.Font("Tahoma", 199.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.projectlistbox.AppearanceHighlight.FontSizeDelta = 15;
             this.projectlistbox.AppearanceHighlight.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.projectlistbox.AppearanceHighlight.Options.UseBackColor = true;
@@ -138,24 +133,19 @@
             this.projectlistbox.ValueMember = "PATH";
             this.projectlistbox.SelectedIndexChanged += new System.EventHandler(this.listBoxControl1_SelectedIndexChanged);
             // 
+            // projeBindingSource
+            // 
+            this.projeBindingSource.DataMember = "proje";
+            this.projeBindingSource.DataSource = this.selectscreendb;
+            // 
             // selectscreendb
             // 
             this.selectscreendb.ConnectionName = "maindatabase";
             this.selectscreendb.Name = "selectscreendb";
-            columnExpression1.ColumnName = "NAME";
-            table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"115\" />";
-            table1.Name = "tbl_Recent";
-            columnExpression1.Table = table1;
-            column1.Expression = columnExpression1;
-            columnExpression2.ColumnName = "PATH";
-            columnExpression2.Table = table1;
-            column2.Expression = columnExpression2;
-            selectQuery1.Columns.Add(column1);
-            selectQuery1.Columns.Add(column2);
-            selectQuery1.Name = "proje";
-            selectQuery1.Tables.Add(table1);
+            customSqlQuery1.Name = "proje";
+            customSqlQuery1.Sql = "select [Recent].[NAME], [Recent].[PATH]\r\n  from [Recent] [Recent]";
             this.selectscreendb.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery1});
+            customSqlQuery1});
             this.selectscreendb.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic2VsZWN0c2NyZWVuZGIiPjxWaWV3IE5hbWU9InByb2plIj48RmllbGQgTmFtZ" +
     "T0iTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQQVRIIiBUeXBlPSJTdHJpbmciIC8+P" +
     "C9WaWV3PjwvRGF0YVNldD4=";
@@ -188,11 +178,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "label1";
             // 
-            // projeBindingSource
-            // 
-            this.projeBindingSource.DataMember = "proje";
-            this.projeBindingSource.DataSource = this.selectscreendb;
-            // 
             // simpleButton2
             // 
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
@@ -224,8 +209,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.projectlistbox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
