@@ -21,3 +21,4 @@ DevExpress.XtraDataLayout.DataLayoutControl, DevExpress.XtraLayout.v19.2, Versio
 DevExpress.XtraDiagram.DiagramControl, DevExpress.XtraDiagram.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
 DevExpress.XtraEditors.PictureEdit, DevExpress.XtraEditors.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
 DevExpress.DashboardWin.DashboardDesigner, DevExpress.Dashboard.v19.2.Win, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+Devart.Data.SQLite.SQLiteConnection, Devart.Data.SQLite
