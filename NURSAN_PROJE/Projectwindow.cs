@@ -34,15 +34,13 @@ namespace NURSAN_PROJE
             try
             {
                 if (path.Length > 0)
-                {
-                   
+                {                   
                     conf.set_connectionstring("tablo", path);
                     db.create_recent(path, maindatasource);
-
                 }
                 else
                 {                    
-                   // new Form1().ShowDialog();
+                    new Form1().ShowDialog();
                     this.Show();
                     
                 }

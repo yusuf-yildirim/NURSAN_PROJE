@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(determine_pin_locations_window));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.determine_pin_locations_image = new DevExpress.XtraEditors.PictureEdit();
-            this.determine_pin_locations_determinedpins = new DevExpress.XtraEditors.ListBoxControl();
-            this.determine_pin_locations_resetallpins = new DevExpress.XtraEditors.SimpleButton();
             this.determine_pin_locations_selectimage = new DevExpress.XtraEditors.SimpleButton();
+            this.determine_pin_locations_resetallpins = new DevExpress.XtraEditors.SimpleButton();
+            this.determine_pin_locations_determinedpins = new DevExpress.XtraEditors.ListBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.determine_pin_locations_image.Properties)).BeginInit();
@@ -67,12 +67,14 @@
             this.determine_pin_locations_image.TabIndex = 0;
             this.determine_pin_locations_image.MouseClick += new System.Windows.Forms.MouseEventHandler(this.determine_pin_locations_image_MouseClick);
             // 
-            // determine_pin_locations_determinedpins
+            // determine_pin_locations_selectimage
             // 
-            this.determine_pin_locations_determinedpins.Location = new System.Drawing.Point(-4, 161);
-            this.determine_pin_locations_determinedpins.Name = "determine_pin_locations_determinedpins";
-            this.determine_pin_locations_determinedpins.Size = new System.Drawing.Size(243, 393);
-            this.determine_pin_locations_determinedpins.TabIndex = 0;
+            this.determine_pin_locations_selectimage.Location = new System.Drawing.Point(8, 3);
+            this.determine_pin_locations_selectimage.Name = "determine_pin_locations_selectimage";
+            this.determine_pin_locations_selectimage.Size = new System.Drawing.Size(75, 23);
+            this.determine_pin_locations_selectimage.TabIndex = 2;
+            this.determine_pin_locations_selectimage.Text = "simpleButton1";
+            this.determine_pin_locations_selectimage.Click += new System.EventHandler(this.determine_pin_locations_selectimage_Click);
             // 
             // determine_pin_locations_resetallpins
             // 
@@ -83,14 +85,12 @@
             this.determine_pin_locations_resetallpins.Text = "simpleButton1";
             this.determine_pin_locations_resetallpins.Click += new System.EventHandler(this.determine_pin_locations_resetallpins_Click);
             // 
-            // determine_pin_locations_selectimage
+            // determine_pin_locations_determinedpins
             // 
-            this.determine_pin_locations_selectimage.Location = new System.Drawing.Point(8, 3);
-            this.determine_pin_locations_selectimage.Name = "determine_pin_locations_selectimage";
-            this.determine_pin_locations_selectimage.Size = new System.Drawing.Size(75, 23);
-            this.determine_pin_locations_selectimage.TabIndex = 2;
-            this.determine_pin_locations_selectimage.Text = "simpleButton1";
-            this.determine_pin_locations_selectimage.Click += new System.EventHandler(this.determine_pin_locations_selectimage_Click);
+            this.determine_pin_locations_determinedpins.Location = new System.Drawing.Point(-4, 161);
+            this.determine_pin_locations_determinedpins.Name = "determine_pin_locations_determinedpins";
+            this.determine_pin_locations_determinedpins.Size = new System.Drawing.Size(243, 393);
+            this.determine_pin_locations_determinedpins.TabIndex = 0;
             // 
             // determine_pin_locations_window
             // 
