@@ -175,9 +175,9 @@ namespace NURSAN_PROJE
 
         private void simpleButton9_Click(object sender, EventArgs e)
         {
-            if (gridView5.GetRowCellValue(gridView5.GetSelectedRows()[0], "ID_soket").ToString().Length > 0)
+            if (registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString().Length > 0)
             {
-                Task.Factory.StartNew(() => db.register_using_socket(gridView5.GetRowCellValue(gridView5.GetSelectedRows()[0], "ID_soket").ToString())).ContinueWith(delegate { refresh_socket_grids(); });
+                Task.Factory.StartNew(() => db.register_using_socket(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString())).ContinueWith(delegate { refresh_socket_grids(); });
             }
 
         }
@@ -235,9 +235,9 @@ namespace NURSAN_PROJE
         {
             try
             {
-                if (gridView5.GetRowCellValue(gridView5.GetSelectedRows()[0], "ID_soket").ToString().Length > 0)
+                if (registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString().Length > 0)
                 {
-                    Task.Factory.StartNew(() => db.unregister_socket(gridView5.GetRowCellValue(gridView5.GetSelectedRows()[0], "ID_soket").ToString())).ContinueWith(delegate { refresh_socket_grids(); });
+                    Task.Factory.StartNew(() => db.unregister_socket(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString())).ContinueWith(delegate { refresh_socket_grids(); });
                 }
             }
             catch (Exception ex)
@@ -249,13 +249,13 @@ namespace NURSAN_PROJE
 
         private void pictureEdit1_Click(object sender, EventArgs e)
         {
-            if(pictureEdit1.Image != null)
+            if(registeredsocketimg.Image != null)
             {
-                new determine_pin_locations_window(gridView5.GetRowCellValue(gridView5.GetSelectedRows()[0], "ID_soket").ToString(), (Bitmap)pictureEdit1.Image).ShowDialog();
+                new determine_pin_locations_window(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString(), (Bitmap)registeredsocketimg.Image).ShowDialog();
             }
             else
             {
-                new determine_pin_locations_window(gridView5.GetRowCellValue(gridView5.GetSelectedRows()[0], "ID_soket").ToString()).ShowDialog();
+                new determine_pin_locations_window(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString()).ShowDialog();
             }
           
 
@@ -273,7 +273,7 @@ namespace NURSAN_PROJE
         private void gridView5_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
 
-            pictureEdit1.Image = db.get_socket_image(gridView5.GetRowCellValue(gridView5.GetSelectedRows()[0], "ID_soket").ToString());
+            registeredsocketimg.Image = db.get_socket_image(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString());
         }
 
         private void pictureEdit1_EditValueChanged(object sender, EventArgs e)
