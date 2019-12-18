@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(determine_pin_locations_window));
+            this.components = new System.ComponentModel.Container();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.determine_pin_locations_image = new DevExpress.XtraEditors.PictureEdit();
+            this.Determine_pin_locations_SavePins = new DevExpress.XtraEditors.SimpleButton();
             this.determine_pin_locations_selectimage = new DevExpress.XtraEditors.SimpleButton();
             this.determine_pin_locations_resetallpins = new DevExpress.XtraEditors.SimpleButton();
             this.determine_pin_locations_determinedpins = new DevExpress.XtraEditors.ListBoxControl();
+            this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
+            this.determine_pin_locations_undo = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.determine_pin_locations_image.Properties)).BeginInit();
@@ -47,6 +50,8 @@
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.determine_pin_locations_image);
             this.splitContainerControl1.Panel1.Text = "Panel1";
+            this.splitContainerControl1.Panel2.Controls.Add(this.determine_pin_locations_undo);
+            this.splitContainerControl1.Panel2.Controls.Add(this.Determine_pin_locations_SavePins);
             this.splitContainerControl1.Panel2.Controls.Add(this.determine_pin_locations_selectimage);
             this.splitContainerControl1.Panel2.Controls.Add(this.determine_pin_locations_resetallpins);
             this.splitContainerControl1.Panel2.Controls.Add(this.determine_pin_locations_determinedpins);
@@ -58,7 +63,6 @@
             // determine_pin_locations_image
             // 
             this.determine_pin_locations_image.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.determine_pin_locations_image.EditValue = ((object)(resources.GetObject("determine_pin_locations_image.EditValue")));
             this.determine_pin_locations_image.Location = new System.Drawing.Point(0, 0);
             this.determine_pin_locations_image.Name = "determine_pin_locations_image";
             this.determine_pin_locations_image.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
@@ -67,22 +71,30 @@
             this.determine_pin_locations_image.TabIndex = 0;
             this.determine_pin_locations_image.MouseClick += new System.Windows.Forms.MouseEventHandler(this.determine_pin_locations_image_MouseClick);
             // 
+            // Determine_pin_locations_SavePins
+            // 
+            this.Determine_pin_locations_SavePins.Location = new System.Drawing.Point(164, 132);
+            this.Determine_pin_locations_SavePins.Name = "Determine_pin_locations_SavePins";
+            this.Determine_pin_locations_SavePins.Size = new System.Drawing.Size(75, 23);
+            this.Determine_pin_locations_SavePins.TabIndex = 3;
+            this.Determine_pin_locations_SavePins.Text = "Kaydet";
+            // 
             // determine_pin_locations_selectimage
             // 
             this.determine_pin_locations_selectimage.Location = new System.Drawing.Point(8, 3);
             this.determine_pin_locations_selectimage.Name = "determine_pin_locations_selectimage";
             this.determine_pin_locations_selectimage.Size = new System.Drawing.Size(75, 23);
             this.determine_pin_locations_selectimage.TabIndex = 2;
-            this.determine_pin_locations_selectimage.Text = "simpleButton1";
+            this.determine_pin_locations_selectimage.Text = "Resim Seç";
             this.determine_pin_locations_selectimage.Click += new System.EventHandler(this.determine_pin_locations_selectimage_Click);
             // 
             // determine_pin_locations_resetallpins
             // 
-            this.determine_pin_locations_resetallpins.Location = new System.Drawing.Point(76, 132);
+            this.determine_pin_locations_resetallpins.Location = new System.Drawing.Point(8, 132);
             this.determine_pin_locations_resetallpins.Name = "determine_pin_locations_resetallpins";
             this.determine_pin_locations_resetallpins.Size = new System.Drawing.Size(75, 23);
             this.determine_pin_locations_resetallpins.TabIndex = 1;
-            this.determine_pin_locations_resetallpins.Text = "simpleButton1";
+            this.determine_pin_locations_resetallpins.Text = "Pinleri Sıfırla";
             this.determine_pin_locations_resetallpins.Click += new System.EventHandler(this.determine_pin_locations_resetallpins_Click);
             // 
             // determine_pin_locations_determinedpins
@@ -91,6 +103,20 @@
             this.determine_pin_locations_determinedpins.Name = "determine_pin_locations_determinedpins";
             this.determine_pin_locations_determinedpins.Size = new System.Drawing.Size(243, 393);
             this.determine_pin_locations_determinedpins.TabIndex = 0;
+            // 
+            // xtraOpenFileDialog1
+            // 
+            this.xtraOpenFileDialog1.FileName = "xtraOpenFileDialog1";
+            this.xtraOpenFileDialog1.Filter = ".jpg,.png,.bmp";
+            // 
+            // determine_pin_locations_undo
+            // 
+            this.determine_pin_locations_undo.Location = new System.Drawing.Point(8, 103);
+            this.determine_pin_locations_undo.Name = "determine_pin_locations_undo";
+            this.determine_pin_locations_undo.Size = new System.Drawing.Size(75, 23);
+            this.determine_pin_locations_undo.TabIndex = 4;
+            this.determine_pin_locations_undo.Text = "Geri al";
+            this.determine_pin_locations_undo.Click += new System.EventHandler(this.determine_pin_locations_undo_Click);
             // 
             // determine_pin_locations_window
             // 
@@ -115,5 +141,8 @@
         private DevExpress.XtraEditors.SimpleButton determine_pin_locations_resetallpins;
         private DevExpress.XtraEditors.ListBoxControl determine_pin_locations_determinedpins;
         private DevExpress.XtraEditors.SimpleButton determine_pin_locations_selectimage;
+        private DevExpress.XtraEditors.SimpleButton Determine_pin_locations_SavePins;
+        private DevExpress.XtraEditors.XtraOpenFileDialog xtraOpenFileDialog1;
+        private DevExpress.XtraEditors.SimpleButton determine_pin_locations_undo;
     }
 }

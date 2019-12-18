@@ -13,36 +13,67 @@ namespace NURSAN_PROJE
 {
     public partial class determine_pin_locations_window : Form
     {
-        List<Rectangle> pin_locations;
+        List<String> pin_locations;
         Bitmap socketimage_to_be_processed;
         public determine_pin_locations_window()
         {
             InitializeComponent();
-            pin_locations = new List<Rectangle>();
+            pin_locations = new List<String>();
             //socketimage_to_be_processed = new Bitmap("dummy filename");
         }
 
         private void determine_pin_locations_selectimage_Click(object sender, EventArgs e)
         {
 
+            xtraOpenFileDialog1.InitialDirectory = "c:\\";
+            xtraOpenFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)| *.jpg; *.jpeg; *.gif; *.bmp";
+            xtraOpenFileDialog1.FilterIndex = 2;
+            xtraOpenFileDialog1.RestoreDirectory = true;
+
+            if (xtraOpenFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file
+                determine_pin_locations_image.Image = new Bitmap(xtraOpenFileDialog1.FileName);
+            }
         }
 
         private void determine_pin_locations_resetallpins_Click(object sender, EventArgs e)
         {
-
+            determine_pin_locations_image.Image = new Bitmap(xtraOpenFileDialog1.FileName);
+            pin_locations.Clear();
+            determine_pin_locations_determinedpins.Items.Clear();
+            pincount = 0;
         }
-
+        int pincount = 0;
         private void determine_pin_locations_image_MouseClick(object sender, MouseEventArgs e)
         {
-            Point sPt = scaledPoint(determine_pin_locations_image, e.Location);
-            Bitmap bmp = (Bitmap)determine_pin_locations_image.Image;
-            Color c0 = bmp.GetPixel(sPt.X, sPt.Y);
-            if(c0 != Color.Red)
+            try
             {
-                Fill4(bmp, sPt, c0, Color.Red);
-                determine_pin_locations_image.Image = bmp;
+
+                if (determine_pin_locations_image.Image != null)
+                {
+                    Point sPt = scaledPoint(determine_pin_locations_image, e.Location);
+                    Bitmap bmp = (Bitmap)determine_pin_locations_image.Image;
+                    Color c0 = bmp.GetPixel(sPt.X, sPt.Y);
+                    if (c0 != Color.FromArgb(255, 255, 0, 0))
+                    {
+                        Console.WriteLine("girdi");
+                        pin_locations.Add(sPt.X.ToString() + " " + sPt.Y.ToString());
+                        determine_pin_locations_determinedpins.Items.Add(++pincount + ". pin = " + sPt.X.ToString() + " " + sPt.Y.ToString());
+                        Fill4(bmp, sPt, c0, Color.Red);
+                        determine_pin_locations_image.Image = bmp;
+                    }
+                    else
+                    {
+                        Fill4(bmp, sPt, c0, Color.White);
+                        determine_pin_locations_image.Image = bmp;
+                    }
+
+                }
+            }catch(Exception err)
+            {
+                Console.WriteLine(err.Message);
             }
-            
         }
         static void Fill4(Bitmap bmp, Point pt, Color c0, Color c1)
         {
@@ -85,5 +116,40 @@ namespace NURSAN_PROJE
             return new Point((int)(pt.X * scaleX), (int)(pt.Y * scaleY));
         }
 
+        private void determine_pin_locations_undo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (determine_pin_locations_image.Image != null)
+                {
+                    Point undo_pin_point = new Point(Convert.ToInt32(pin_locations[pin_locations.Count-1].Split(' ')[0]) , Convert.ToInt32(pin_locations[pin_locations.Count-1].Split(' ')[1]));
+                    Bitmap bmp = (Bitmap)determine_pin_locations_image.Image;
+                    Color c0 = bmp.GetPixel(undo_pin_point.X, undo_pin_point.Y);
+                    if (c0 != Color.FromArgb(255, 255, 0, 0))
+                    {
+                        Console.WriteLine("girdi");
+                        Fill4(bmp, undo_pin_point, c0, Color.Red);
+                        determine_pin_locations_image.Image = bmp;
+                    }
+                    else
+                    {
+                        Fill4(bmp, undo_pin_point, c0, Color.White);
+                        determine_pin_locations_image.Image = bmp;
+                    }
+                    pin_locations.RemoveAt(pin_locations.Count-1);
+                    determine_pin_locations_determinedpins.Items.RemoveAt(determine_pin_locations_determinedpins.Items.Count-1);
+                    if(pincount > 0)
+                    {
+                        pincount--;
+                    }
+
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+        }
     }
 }
