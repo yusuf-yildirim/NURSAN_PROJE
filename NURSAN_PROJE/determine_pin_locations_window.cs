@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using NURSAN_PROJE.SQL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +16,30 @@ namespace NURSAN_PROJE
     {
         List<String> pin_locations;
         Bitmap socketimage_to_be_processed;
-        public determine_pin_locations_window()
+        string socketID_to_be_processed;
+        DBeng db;
+        public determine_pin_locations_window(string SocketID)
         {
+            db = new DBeng();
             InitializeComponent();
             pin_locations = new List<String>();
             //socketimage_to_be_processed = new Bitmap("dummy filename");
+            socketID_to_be_processed = SocketID;
+
+
         }
+        public determine_pin_locations_window(string SocketID,Bitmap img)
+        {
+            db = new DBeng();
+            InitializeComponent();
+            pin_locations = new List<String>();
+            socketimage_to_be_processed = img;
+            determine_pin_locations_image.Image = img;
+            socketID_to_be_processed = SocketID;
+
+
+        }
+
 
         private void determine_pin_locations_selectimage_Click(object sender, EventArgs e)
         {
@@ -29,7 +48,6 @@ namespace NURSAN_PROJE
             xtraOpenFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)| *.jpg; *.jpeg; *.gif; *.bmp";
             xtraOpenFileDialog1.FilterIndex = 2;
             xtraOpenFileDialog1.RestoreDirectory = true;
-
             if (xtraOpenFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 //Get the path of specified file
@@ -150,6 +168,11 @@ namespace NURSAN_PROJE
             {
                 Console.WriteLine(err.Message);
             }
+        }
+
+        private void Determine_pin_locations_SavePins_Click(object sender, EventArgs e)
+        {
+            db.set_socket_image(socketID_to_be_processed, determine_pin_locations_image.Image);
         }
     }
 }

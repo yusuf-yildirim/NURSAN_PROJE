@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.determine_pin_locations_image = new DevExpress.XtraEditors.PictureEdit();
+            this.determine_pin_locations_undo = new DevExpress.XtraEditors.SimpleButton();
             this.Determine_pin_locations_SavePins = new DevExpress.XtraEditors.SimpleButton();
             this.determine_pin_locations_selectimage = new DevExpress.XtraEditors.SimpleButton();
             this.determine_pin_locations_resetallpins = new DevExpress.XtraEditors.SimpleButton();
             this.determine_pin_locations_determinedpins = new DevExpress.XtraEditors.ListBoxControl();
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
-            this.determine_pin_locations_undo = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.determine_pin_locations_image.Properties)).BeginInit();
@@ -71,6 +71,15 @@
             this.determine_pin_locations_image.TabIndex = 0;
             this.determine_pin_locations_image.MouseClick += new System.Windows.Forms.MouseEventHandler(this.determine_pin_locations_image_MouseClick);
             // 
+            // determine_pin_locations_undo
+            // 
+            this.determine_pin_locations_undo.Location = new System.Drawing.Point(8, 103);
+            this.determine_pin_locations_undo.Name = "determine_pin_locations_undo";
+            this.determine_pin_locations_undo.Size = new System.Drawing.Size(75, 23);
+            this.determine_pin_locations_undo.TabIndex = 4;
+            this.determine_pin_locations_undo.Text = "Geri al";
+            this.determine_pin_locations_undo.Click += new System.EventHandler(this.determine_pin_locations_undo_Click);
+            // 
             // Determine_pin_locations_SavePins
             // 
             this.Determine_pin_locations_SavePins.Location = new System.Drawing.Point(164, 132);
@@ -78,6 +87,7 @@
             this.Determine_pin_locations_SavePins.Size = new System.Drawing.Size(75, 23);
             this.Determine_pin_locations_SavePins.TabIndex = 3;
             this.Determine_pin_locations_SavePins.Text = "Kaydet";
+            this.Determine_pin_locations_SavePins.Click += new System.EventHandler(this.Determine_pin_locations_SavePins_Click);
             // 
             // determine_pin_locations_selectimage
             // 
@@ -108,15 +118,6 @@
             // 
             this.xtraOpenFileDialog1.FileName = "xtraOpenFileDialog1";
             this.xtraOpenFileDialog1.Filter = ".jpg,.png,.bmp";
-            // 
-            // determine_pin_locations_undo
-            // 
-            this.determine_pin_locations_undo.Location = new System.Drawing.Point(8, 103);
-            this.determine_pin_locations_undo.Name = "determine_pin_locations_undo";
-            this.determine_pin_locations_undo.Size = new System.Drawing.Size(75, 23);
-            this.determine_pin_locations_undo.TabIndex = 4;
-            this.determine_pin_locations_undo.Text = "Geri al";
-            this.determine_pin_locations_undo.Click += new System.EventHandler(this.determine_pin_locations_undo_Click);
             // 
             // determine_pin_locations_window
             // 

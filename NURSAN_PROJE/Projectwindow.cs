@@ -249,8 +249,15 @@ namespace NURSAN_PROJE
 
         private void pictureEdit1_Click(object sender, EventArgs e)
         {
-            
-           new determine_pin_locations_window().ShowDialog();
+            if(pictureEdit1.Image != null)
+            {
+                new determine_pin_locations_window(gridView5.GetRowCellValue(gridView5.GetSelectedRows()[0], "ID_soket").ToString(), (Bitmap)pictureEdit1.Image).ShowDialog();
+            }
+            else
+            {
+                new determine_pin_locations_window(gridView5.GetRowCellValue(gridView5.GetSelectedRows()[0], "ID_soket").ToString()).ShowDialog();
+            }
+          
 
         }
 
@@ -260,6 +267,17 @@ namespace NURSAN_PROJE
               this.tbl_SocketTableAdapter.Update(this.mainsource.tbl_Socket);*/
             
            
+         
+        }
+
+        private void gridView5_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+
+            pictureEdit1.Image = db.get_socket_image(gridView5.GetRowCellValue(gridView5.GetSelectedRows()[0], "ID_soket").ToString());
+        }
+
+        private void pictureEdit1_EditValueChanged(object sender, EventArgs e)
+        {
          
         }
     }

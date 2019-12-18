@@ -8,6 +8,7 @@ using System.IO;
 using NURSAN_PROJE.Configurator;
 using System.Diagnostics;
 using System.Threading;
+using System.Drawing;
 
 namespace NURSAN_PROJE.SQL
 {
@@ -253,7 +254,88 @@ namespace NURSAN_PROJE.SQL
             }
 
         }
+        public Image get_socket_image(string SocketID)
+        {
+            getmaincon();
+            ds = new DataSet();
+            da = new SQLiteDataAdapter($"select *  from ImageStore where ID_soket='{SocketID}'", con);
+            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
+            da.Fill(ds);
+
+            try
+            {
+
+                byte[] data = (byte[])ds.Tables[0].Rows[0][2];
+                using (var ms = new MemoryStream(data))
+                {
+                   return Image.FromStream(ms);
+                 
+                }
+                
+            }
+            catch(Exception ex)
+            {
+               /* MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);*/
+                Console.WriteLine("RESİM YÜKLENEMEDİ yada YOK");
+                return null;
+            }
+        }
+        public void set_socket_image(string SocketID,Image img)
+        {
+            try
+            {
+                using (SQLiteConnection con = _getmaincon())
+                {
+
+                    con.Open();
+
+                    byte[] data = ImageToByteArray(img);
 
 
+                    SQLiteCommand cmd = new SQLiteCommand(con);
+
+                    cmd.CommandText = $"INSERT INTO ImageStore(ID_soket,imageBlob) VALUES ('{SocketID}',@img)";
+                    cmd.Prepare();
+
+                    cmd.Parameters.Add("@img", DbType.Binary, data.Length);
+                    cmd.Parameters["@img"].Value = data;
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+                }
+            }
+            catch
+            {
+                using (SQLiteConnection con = _getmaincon())
+                {
+
+                    con.Open();
+
+                    byte[] data = ImageToByteArray(img);
+
+
+                    SQLiteCommand cmd = new SQLiteCommand(con);
+
+                    cmd.CommandText = $"UPDATE ImageStore SET imageBlob = @img WHERE ID_soket= '{SocketID}'";
+                    cmd.Prepare();
+
+                    cmd.Parameters.Add("@img", DbType.Binary, data.Length);
+                    cmd.Parameters["@img"].Value = data;
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+                }
+            }
+          
+        }
+        public byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
+        }
     }
 }

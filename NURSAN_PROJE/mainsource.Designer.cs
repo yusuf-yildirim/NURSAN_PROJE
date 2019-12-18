@@ -496,6 +496,13 @@ namespace NURSAN_PROJE {
             this.tableversiyon = new versiyonDataTable();
             base.Tables.Add(this.tableversiyon);
             global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Sockets_ImageStore", new global::System.Data.DataColumn[] {
+                        this.tableSockets.ID_soketColumn}, new global::System.Data.DataColumn[] {
+                        this.tableImageStore.ID_soketColumn});
+            this.tableImageStore.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_IO_connections_Sockets_0", new global::System.Data.DataColumn[] {
                         this.tableSockets.ID_soketColumn}, new global::System.Data.DataColumn[] {
                         this.tableIO_connections.ID_soketColumn});
@@ -1937,7 +1944,7 @@ namespace NURSAN_PROJE {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ImageStoreDataTable : global::System.Data.TypedTableBase<ImageStoreRow> {
             
-            private global::System.Data.DataColumn columnimage_id;
+            private global::System.Data.DataColumn columnID_soket;
             
             private global::System.Data.DataColumn columnimageFileName;
             
@@ -1980,9 +1987,9 @@ namespace NURSAN_PROJE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn image_idColumn {
+            public global::System.Data.DataColumn ID_soketColumn {
                 get {
-                    return this.columnimage_id;
+                    return this.columnID_soket;
                 }
             }
             
@@ -2047,10 +2054,10 @@ namespace NURSAN_PROJE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ImageStoreRow AddImageStoreRow(long image_id, string imageFileName, byte[] imageBlob, long imageFileSizeBytes) {
+            public ImageStoreRow AddImageStoreRow(string ID_soket, string imageFileName, byte[] imageBlob, long imageFileSizeBytes) {
                 ImageStoreRow rowImageStoreRow = ((ImageStoreRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        image_id,
+                        ID_soket,
                         imageFileName,
                         imageBlob,
                         imageFileSizeBytes};
@@ -2061,9 +2068,9 @@ namespace NURSAN_PROJE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ImageStoreRow FindByimage_id(long image_id) {
+            public ImageStoreRow FindByID_soket(string ID_soket) {
                 return ((ImageStoreRow)(this.Rows.Find(new object[] {
-                            image_id})));
+                            ID_soket})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2083,7 +2090,7 @@ namespace NURSAN_PROJE {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnimage_id = base.Columns["image_id"];
+                this.columnID_soket = base.Columns["ID_soket"];
                 this.columnimageFileName = base.Columns["imageFileName"];
                 this.columnimageBlob = base.Columns["imageBlob"];
                 this.columnimageFileSizeBytes = base.Columns["imageFileSizeBytes"];
@@ -2092,8 +2099,8 @@ namespace NURSAN_PROJE {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnimage_id = new global::System.Data.DataColumn("image_id", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnimage_id);
+                this.columnID_soket = new global::System.Data.DataColumn("ID_soket", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_soket);
                 this.columnimageFileName = new global::System.Data.DataColumn("imageFileName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnimageFileName);
                 this.columnimageBlob = new global::System.Data.DataColumn("imageBlob", typeof(byte[]), null, global::System.Data.MappingType.Element);
@@ -2101,9 +2108,9 @@ namespace NURSAN_PROJE {
                 this.columnimageFileSizeBytes = new global::System.Data.DataColumn("imageFileSizeBytes", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnimageFileSizeBytes);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnimage_id}, true));
-                this.columnimage_id.AllowDBNull = false;
-                this.columnimage_id.Unique = true;
+                                this.columnID_soket}, true));
+                this.columnID_soket.AllowDBNull = false;
+                this.columnID_soket.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4597,12 +4604,12 @@ namespace NURSAN_PROJE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long image_id {
+            public string ID_soket {
                 get {
-                    return ((long)(this[this.tableImageStore.image_idColumn]));
+                    return ((string)(this[this.tableImageStore.ID_soketColumn]));
                 }
                 set {
-                    this[this.tableImageStore.image_idColumn] = value;
+                    this[this.tableImageStore.ID_soketColumn] = value;
                 }
             }
             
@@ -7716,7 +7723,7 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ImageStore";
-            tableMapping.ColumnMappings.Add("image_id", "image_id");
+            tableMapping.ColumnMappings.Add("ID_soket", "ID_soket");
             tableMapping.ColumnMappings.Add("imageFileName", "imageFileName");
             tableMapping.ColumnMappings.Add("imageBlob", "imageBlob");
             tableMapping.ColumnMappings.Add("imageFileSizeBytes", "imageFileSizeBytes");
@@ -8077,14 +8084,6 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string imageFileName, byte[] imageBlob, global::System.Nullable<long> imageFileSizeBytes, long Original_image_id, string Original_imageFileName, global::System.Nullable<long> Original_imageFileSizeBytes) {
-            return this.Update(Original_image_id, imageFileName, imageBlob, imageFileSizeBytes, Original_image_id, Original_imageFileName, Original_imageFileSizeBytes);
         }
     }
     
