@@ -9,6 +9,7 @@ using NURSAN_PROJE.Configurator;
 using System.Diagnostics;
 using System.Threading;
 using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace NURSAN_PROJE.SQL
 {
@@ -268,7 +269,14 @@ namespace NURSAN_PROJE.SQL
                 byte[] data = (byte[])ds.Tables[0].Rows[0][2];
                 using (var ms = new MemoryStream(data))
                 {
-                   return Image.FromStream(ms);
+                    Image deneme = Image.FromStream(ms);
+                    Image workaround =  (Image)deneme.Clone();
+                    for (int i = 0; i < workaround.PropertyIdList.Length; i++)
+                    {
+                        Console.WriteLine(workaround.PropertyIdList[i] + " -------------------");
+
+                    }
+                    return workaround;
                  
                 }
                 
@@ -329,12 +337,31 @@ namespace NURSAN_PROJE.SQL
             }
           
         }
+        private static ImageCodecInfo GetEncoderInfo(String mimeType)
+        {
+            int j;
+            ImageCodecInfo[] encoders;
+            encoders = ImageCodecInfo.GetImageEncoders();
+            for (j = 0; j < encoders.Length; ++j)
+            {
+                if (encoders[j].MimeType == mimeType)
+                {
+                    Console.WriteLine(encoders[j].MimeType + "---------------------------okdsaodasd");
+                    return encoders[j];
+                }
+            }
+            return null;
+        }
         public byte[] ImageToByteArray(System.Drawing.Image imageIn)
         {
+
+            
             using (var ms = new MemoryStream())
             {
-                imageIn.Save(ms, imageIn.RawFormat);
-                return ms.ToArray();
+                
+                imageIn.Save(ms,  imageIn.RawFormat);
+                byte[] bytesText = ms.ToArray();
+                return bytesText;
             }
         }
     }

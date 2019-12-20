@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +20,8 @@ namespace NURSAN_PROJE
         Bitmap socketimage_to_be_processed;
         string socketID_to_be_processed;
         DBeng db;
+        PropertyItem propertyItem;
+
         public determine_pin_locations_window(string SocketID)
         {
             db = new DBeng();
@@ -28,19 +32,53 @@ namespace NURSAN_PROJE
 
 
         }
+        string[] pin_coordinates;
+        Point pin_point;
+        Bitmap bitmap_for_pin_processing;
+        Color point_color_for_pin_processing;
         public determine_pin_locations_window(string SocketID,Bitmap img)
         {
-            db = new DBeng();
             InitializeComponent();
+            
+            PropertyItem[] propertyItem2 = img.PropertyItems;
+            bitmap_to_be_saved = new Bitmap(img);
+            
+            
+            for(int i =0; i < propertyItem2.Length; i++)
+            {
+                bitmap_to_be_saved.SetPropertyItem(propertyItem2[i]);
+                Console.WriteLine(propertyItem2[i]);
+            }
+            socketimage_to_be_processed = new Bitmap(img);
+
+            db = new DBeng();
             pin_locations = new List<String>();
-            socketimage_to_be_processed = img;
-            determine_pin_locations_image.Image = img;
+            determine_pin_locations_image.Image = socketimage_to_be_processed;
             socketID_to_be_processed = SocketID;
+            
+
+            propertyItem = bitmap_to_be_saved.GetPropertyItem(0x010e);
 
 
+            pin_coordinates = Encoding.UTF8.GetString(propertyItem.Value).Trim().Split(' ');
+            for (int i = 0; i < pin_coordinates.Length; i = i+3)
+            {
+                pin_point = new Point(Convert.ToInt32(pin_coordinates[i+1]),Convert.ToInt32( pin_coordinates[i+2]));
+                bitmap_for_pin_processing = (Bitmap)determine_pin_locations_image.Image;
+                point_color_for_pin_processing = bitmap_for_pin_processing.GetPixel(pin_point.X, pin_point.Y);
+                if (point_color_for_pin_processing != Color.FromArgb(255, 255, 0, 0))
+                {
+                    Console.WriteLine("girdi");
+                    pin_locations.Add(pincount + 1 + " " + pin_point.X.ToString() + " " + pin_point.Y.ToString());
+                    determine_pin_locations_determinedpins.Items.Add(++pincount + ". pin = " + pin_point.X.ToString() + " " + pin_point.Y.ToString());
+                    Fill4(bitmap_for_pin_processing, pin_point, point_color_for_pin_processing, Color.Red);
+                }
+                determine_pin_locations_image.Image = bitmap_for_pin_processing;
+                
+            }
         }
-
-
+        
+        Bitmap bitmap_to_be_saved;
         private void determine_pin_locations_selectimage_Click(object sender, EventArgs e)
         {
 
@@ -50,14 +88,14 @@ namespace NURSAN_PROJE
             xtraOpenFileDialog1.RestoreDirectory = true;
             if (xtraOpenFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                //Get the path of specified file
-                determine_pin_locations_image.Image = new Bitmap(xtraOpenFileDialog1.FileName);
+                bitmap_to_be_saved = new Bitmap(xtraOpenFileDialog1.FileName);
+                determine_pin_locations_image.Image = (Bitmap)bitmap_to_be_saved.Clone();
             }
         }
 
         private void determine_pin_locations_resetallpins_Click(object sender, EventArgs e)
         {
-            determine_pin_locations_image.Image = new Bitmap(xtraOpenFileDialog1.FileName);
+            determine_pin_locations_image.Image = (Bitmap)bitmap_to_be_saved.Clone();
             pin_locations.Clear();
             determine_pin_locations_determinedpins.Items.Clear();
             pincount = 0;
@@ -76,7 +114,7 @@ namespace NURSAN_PROJE
                     if (c0 != Color.FromArgb(255, 255, 0, 0))
                     {
                         Console.WriteLine("girdi");
-                        pin_locations.Add(sPt.X.ToString() + " " + sPt.Y.ToString());
+                        pin_locations.Add(pincount+1 + " " +sPt.X.ToString() + " " + sPt.Y.ToString());
                         determine_pin_locations_determinedpins.Items.Add(++pincount + ". pin = " + sPt.X.ToString() + " " + sPt.Y.ToString());
                         Fill4(bmp, sPt, c0, Color.Red);
                         determine_pin_locations_image.Image = bmp;
@@ -141,7 +179,7 @@ namespace NURSAN_PROJE
 
                 if (determine_pin_locations_image.Image != null)
                 {
-                    Point undo_pin_point = new Point(Convert.ToInt32(pin_locations[pin_locations.Count-1].Split(' ')[0]) , Convert.ToInt32(pin_locations[pin_locations.Count-1].Split(' ')[1]));
+                    Point undo_pin_point = new Point(Convert.ToInt32(pin_locations[pin_locations.Count-1].Split(' ')[1]) , Convert.ToInt32(pin_locations[pin_locations.Count-1].Split(' ')[2]));
                     Bitmap bmp = (Bitmap)determine_pin_locations_image.Image;
                     Color c0 = bmp.GetPixel(undo_pin_point.X, undo_pin_point.Y);
                     if (c0 != Color.FromArgb(255, 255, 0, 0))
@@ -172,7 +210,21 @@ namespace NURSAN_PROJE
 
         private void Determine_pin_locations_SavePins_Click(object sender, EventArgs e)
         {
-            db.set_socket_image(socketID_to_be_processed, determine_pin_locations_image.Image);
+
+
+
+            PropertyItem propItem = bitmap_to_be_saved.GetPropertyItem(0x010e);
+            string value_to_be_saved = null;
+            for(int i = 0; i< pin_locations.Count; i++)
+            {
+                value_to_be_saved += pin_locations[i] + " ";
+            }
+            propItem.Len = value_to_be_saved.Length+1;
+            byte[] bytesText = Encoding.ASCII.GetBytes(value_to_be_saved);
+            propItem.Value = bytesText;
+            bitmap_to_be_saved.SetPropertyItem(propItem);
+            
+            db.set_socket_image(socketID_to_be_processed, bitmap_to_be_saved);
         }
     }
 }

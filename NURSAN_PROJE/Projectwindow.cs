@@ -257,7 +257,7 @@ namespace NURSAN_PROJE
             {
                 new determine_pin_locations_window(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString()).ShowDialog();
             }
-          
+            GC.Collect();
 
         }
 
@@ -272,8 +272,13 @@ namespace NURSAN_PROJE
 
         private void gridView5_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-
-            registeredsocketimg.Image = db.get_socket_image(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString());
+            try
+            {
+                registeredsocketimg.Image = db.get_socket_image(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString());
+            }catch(Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
         }
 
         private void pictureEdit1_EditValueChanged(object sender, EventArgs e)
