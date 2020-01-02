@@ -355,14 +355,62 @@ namespace NURSAN_PROJE.SQL
         public byte[] ImageToByteArray(System.Drawing.Image imageIn)
         {
 
-            
-            using (var ms = new MemoryStream())
+            try
             {
-                
-                imageIn.Save(ms,  imageIn.RawFormat);
-                byte[] bytesText = ms.ToArray();
-                return bytesText;
+                using (var ms = new MemoryStream())
+                {
+
+                    imageIn.Save(ms, imageIn.RawFormat);
+                    byte[] bytesText = ms.ToArray();
+                    return bytesText;
+                }
             }
+            catch
+            {
+                /*Bitmap myBitmap;
+                ImageCodecInfo myImageCodecInfo;
+                Encoder myEncoder;
+                EncoderParameter myEncoderParameter;
+                EncoderParameters myEncoderParameters;
+
+                // Create a Bitmap object based on a BMP file.
+                myBitmap = new Bitmap(imageIn);
+                myImageCodecInfo = GetEncoderInfo2("image/jpeg");
+
+                myEncoder = Encoder.Quality;
+                myEncoder = Encoder.
+
+                myEncoderParameters = new EncoderParameters(1);
+                myEncoderParameter = new EncoderParameter(myEncoder, 80L);
+                myEncoderParameters.Param[0] = myEncoderParameter;
+                myBitmap.Save("temp.jpg", myImageCodecInfo, myEncoderParameters);*/
+                imageIn.Save("temp.jpg", ImageFormat.Jpeg);
+                byte[] data = null;
+
+                try
+                {
+                    data = File.ReadAllBytes("temp.jpg");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                return data;
+            }
+           
         }
+         ImageCodecInfo GetEncoderInfo2(string mimeType)
+        {
+            int j;
+            ImageCodecInfo[] encoders;
+            encoders = ImageCodecInfo.GetImageEncoders();
+            for (j = 0; j < encoders.Length; ++j)
+            {
+                if (encoders[j].MimeType == mimeType)
+                    return encoders[j];
+            }
+            return null;
+        }
+    
     }
 }

@@ -9,6 +9,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,6 +30,7 @@ namespace NURSAN_PROJE
             pin_locations = new List<String>();
             //socketimage_to_be_processed = new Bitmap("dummy filename");
             socketID_to_be_processed = SocketID;
+            //CheckForIllegalCrossThreadCalls = false;
 
 
         }
@@ -39,7 +41,7 @@ namespace NURSAN_PROJE
         public determine_pin_locations_window(string SocketID,Bitmap img)
         {
             InitializeComponent();
-            
+            //CheckForIllegalCrossThreadCalls = false;
             PropertyItem[] propertyItem2 = img.PropertyItems;
             bitmap_to_be_saved = new Bitmap(img);
             
@@ -116,8 +118,10 @@ namespace NURSAN_PROJE
                         Console.WriteLine("girdi");
                         pin_locations.Add(pincount+1 + " " +sPt.X.ToString() + " " + sPt.Y.ToString());
                         determine_pin_locations_determinedpins.Items.Add(++pincount + ". pin = " + sPt.X.ToString() + " " + sPt.Y.ToString());
-                        Fill4(bmp, sPt, c0, Color.Red);
-                        determine_pin_locations_image.Image = bmp;
+                        Bitmap denemeimg = new Bitmap(bmp);
+                         Fill4(denemeimg, sPt, c0, Color.Red);
+                        //Fill4(bmp, sPt, c0, Color.Red);
+                        determine_pin_locations_image.Image = denemeimg;
                     }
                     else
                     {
@@ -131,7 +135,7 @@ namespace NURSAN_PROJE
                 Console.WriteLine(err.Message);
             }
         }
-        static void Fill4(Bitmap bmp, Point pt, Color c0, Color c1)
+         void Fill4(Bitmap bmp, Point pt, Color c0, Color c1)
         {
             Color cx = bmp.GetPixel(pt.X, pt.Y);
             if (cx.GetBrightness() < 0.01f) return;  // optional, to prevent filling a black grid
@@ -141,8 +145,10 @@ namespace NURSAN_PROJE
             int y0 = pt.Y;
 
             stack.Push(new Point(x0, y0));
+            int sayacdeneme = 0;
             while (stack.Any())
             {
+                sayacdeneme++;
                 Point p = stack.Pop();
                 if (!bmpRect.Contains(p)) continue;
                 cx = bmp.GetPixel(p.X, p.Y);

@@ -209,7 +209,7 @@ namespace NURSAN_PROJE
             }
         }
 
-        private void simpleButton10_Click(object sender, EventArgs e)
+        private void selected_sockets_delete_button_Click(object sender, EventArgs e)
         {
             try
             {
@@ -266,8 +266,6 @@ namespace NURSAN_PROJE
             /*mainsource.tbl_Socket.Addtbl_SocketRow("allah", "aaa", 54, 4, 2);
               this.tbl_SocketTableAdapter.Update(this.mainsource.tbl_Socket);*/
             
-           
-         
         }
 
         private void gridView5_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
