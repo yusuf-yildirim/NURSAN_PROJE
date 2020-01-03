@@ -28,8 +28,6 @@ namespace NURSAN_PROJE {
         
         private ColoursDataTable tableColours;
         
-        private ComponentsDataTable tableComponents;
-        
         private FilesDataTable tableFiles;
         
         private ImageStoreDataTable tableImageStore;
@@ -47,6 +45,8 @@ namespace NURSAN_PROJE {
         private UsersDataTable tableUsers;
         
         private versiyonDataTable tableversiyon;
+        
+        private ComponentsDataTable tableComponents;
         
         private global::System.Data.DataRelation relationFK_Files_Users_0;
         
@@ -84,9 +84,6 @@ namespace NURSAN_PROJE {
                 if ((ds.Tables["Colours"] != null)) {
                     base.Tables.Add(new ColoursDataTable(ds.Tables["Colours"]));
                 }
-                if ((ds.Tables["Components"] != null)) {
-                    base.Tables.Add(new ComponentsDataTable(ds.Tables["Components"]));
-                }
                 if ((ds.Tables["Files"] != null)) {
                     base.Tables.Add(new FilesDataTable(ds.Tables["Files"]));
                 }
@@ -113,6 +110,9 @@ namespace NURSAN_PROJE {
                 }
                 if ((ds.Tables["versiyon"] != null)) {
                     base.Tables.Add(new versiyonDataTable(ds.Tables["versiyon"]));
+                }
+                if ((ds.Tables["Components"] != null)) {
+                    base.Tables.Add(new ComponentsDataTable(ds.Tables["Components"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -149,16 +149,6 @@ namespace NURSAN_PROJE {
         public ColoursDataTable Colours {
             get {
                 return this.tableColours;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ComponentsDataTable Components {
-            get {
-                return this.tableComponents;
             }
         }
         
@@ -254,6 +244,16 @@ namespace NURSAN_PROJE {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ComponentsDataTable Components {
+            get {
+                return this.tableComponents;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -325,9 +325,6 @@ namespace NURSAN_PROJE {
                 if ((ds.Tables["Colours"] != null)) {
                     base.Tables.Add(new ColoursDataTable(ds.Tables["Colours"]));
                 }
-                if ((ds.Tables["Components"] != null)) {
-                    base.Tables.Add(new ComponentsDataTable(ds.Tables["Components"]));
-                }
                 if ((ds.Tables["Files"] != null)) {
                     base.Tables.Add(new FilesDataTable(ds.Tables["Files"]));
                 }
@@ -354,6 +351,9 @@ namespace NURSAN_PROJE {
                 }
                 if ((ds.Tables["versiyon"] != null)) {
                     base.Tables.Add(new versiyonDataTable(ds.Tables["versiyon"]));
+                }
+                if ((ds.Tables["Components"] != null)) {
+                    base.Tables.Add(new ComponentsDataTable(ds.Tables["Components"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -398,12 +398,6 @@ namespace NURSAN_PROJE {
             if ((initTable == true)) {
                 if ((this.tableColours != null)) {
                     this.tableColours.InitVars();
-                }
-            }
-            this.tableComponents = ((ComponentsDataTable)(base.Tables["Components"]));
-            if ((initTable == true)) {
-                if ((this.tableComponents != null)) {
-                    this.tableComponents.InitVars();
                 }
             }
             this.tableFiles = ((FilesDataTable)(base.Tables["Files"]));
@@ -460,6 +454,12 @@ namespace NURSAN_PROJE {
                     this.tableversiyon.InitVars();
                 }
             }
+            this.tableComponents = ((ComponentsDataTable)(base.Tables["Components"]));
+            if ((initTable == true)) {
+                if ((this.tableComponents != null)) {
+                    this.tableComponents.InitVars();
+                }
+            }
             this.relationFK_Files_Users_0 = this.Relations["FK_Files_Users_0"];
         }
         
@@ -475,8 +475,6 @@ namespace NURSAN_PROJE {
             base.Tables.Add(this.tableActive_relay);
             this.tableColours = new ColoursDataTable();
             base.Tables.Add(this.tableColours);
-            this.tableComponents = new ComponentsDataTable();
-            base.Tables.Add(this.tableComponents);
             this.tableFiles = new FilesDataTable();
             base.Tables.Add(this.tableFiles);
             this.tableImageStore = new ImageStoreDataTable();
@@ -495,6 +493,8 @@ namespace NURSAN_PROJE {
             base.Tables.Add(this.tableUsers);
             this.tableversiyon = new versiyonDataTable();
             base.Tables.Add(this.tableversiyon);
+            this.tableComponents = new ComponentsDataTable();
+            base.Tables.Add(this.tableComponents);
             global::System.Data.ForeignKeyConstraint fkc;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_Sockets_ImageStore", new global::System.Data.DataColumn[] {
                         this.tableSockets.ID_soketColumn}, new global::System.Data.DataColumn[] {
@@ -525,12 +525,6 @@ namespace NURSAN_PROJE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeColours() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeComponents() {
             return false;
         }
         
@@ -585,6 +579,12 @@ namespace NURSAN_PROJE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeversiyon() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeComponents() {
             return false;
         }
         
@@ -650,9 +650,6 @@ namespace NURSAN_PROJE {
         public delegate void ColoursRowChangeEventHandler(object sender, ColoursRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void ComponentsRowChangeEventHandler(object sender, ComponentsRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void FilesRowChangeEventHandler(object sender, FilesRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -678,6 +675,9 @@ namespace NURSAN_PROJE {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void versiyonRowChangeEventHandler(object sender, versiyonRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void ComponentsRowChangeEventHandler(object sender, ComponentsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1233,408 +1233,6 @@ namespace NURSAN_PROJE {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "ColoursDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ComponentsDataTable : global::System.Data.TypedTableBase<ComponentsRow> {
-            
-            private global::System.Data.DataColumn columnID_component;
-            
-            private global::System.Data.DataColumn columnTur;
-            
-            private global::System.Data.DataColumn columnDeger;
-            
-            private global::System.Data.DataColumn columnDeger_Katsayi;
-            
-            private global::System.Data.DataColumn columnTolerans;
-            
-            private global::System.Data.DataColumn columnComponent_Name;
-            
-            private global::System.Data.DataColumn columnFirstTestPoint;
-            
-            private global::System.Data.DataColumn columnMinResistance;
-            
-            private global::System.Data.DataColumn columnSecondTestPoint;
-            
-            private global::System.Data.DataColumn columnMaxResistance;
-            
-            private global::System.Data.DataColumn columnComparasionTolerance;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ComponentsDataTable() {
-                this.TableName = "Components";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ComponentsDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected ComponentsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ID_componentColumn {
-                get {
-                    return this.columnID_component;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TurColumn {
-                get {
-                    return this.columnTur;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DegerColumn {
-                get {
-                    return this.columnDeger;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Deger_KatsayiColumn {
-                get {
-                    return this.columnDeger_Katsayi;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ToleransColumn {
-                get {
-                    return this.columnTolerans;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Component_NameColumn {
-                get {
-                    return this.columnComponent_Name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn FirstTestPointColumn {
-                get {
-                    return this.columnFirstTestPoint;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn MinResistanceColumn {
-                get {
-                    return this.columnMinResistance;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SecondTestPointColumn {
-                get {
-                    return this.columnSecondTestPoint;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn MaxResistanceColumn {
-                get {
-                    return this.columnMaxResistance;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ComparasionToleranceColumn {
-                get {
-                    return this.columnComparasionTolerance;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ComponentsRow this[int index] {
-                get {
-                    return ((ComponentsRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ComponentsRowChangeEventHandler ComponentsRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ComponentsRowChangeEventHandler ComponentsRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ComponentsRowChangeEventHandler ComponentsRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ComponentsRowChangeEventHandler ComponentsRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddComponentsRow(ComponentsRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ComponentsRow AddComponentsRow(long ID_component, string Tur, long Deger, long Deger_Katsayi, long Tolerans, string Component_Name, string FirstTestPoint, string MinResistance, string SecondTestPoint, string MaxResistance, string ComparasionTolerance) {
-                ComponentsRow rowComponentsRow = ((ComponentsRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        ID_component,
-                        Tur,
-                        Deger,
-                        Deger_Katsayi,
-                        Tolerans,
-                        Component_Name,
-                        FirstTestPoint,
-                        MinResistance,
-                        SecondTestPoint,
-                        MaxResistance,
-                        ComparasionTolerance};
-                rowComponentsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowComponentsRow);
-                return rowComponentsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ComponentsRow FindByID_component(long ID_component) {
-                return ((ComponentsRow)(this.Rows.Find(new object[] {
-                            ID_component})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                ComponentsDataTable cln = ((ComponentsDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new ComponentsDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnID_component = base.Columns["ID_component"];
-                this.columnTur = base.Columns["Tur"];
-                this.columnDeger = base.Columns["Deger"];
-                this.columnDeger_Katsayi = base.Columns["Deger_Katsayi"];
-                this.columnTolerans = base.Columns["Tolerans"];
-                this.columnComponent_Name = base.Columns["Component_Name"];
-                this.columnFirstTestPoint = base.Columns["FirstTestPoint"];
-                this.columnMinResistance = base.Columns["MinResistance"];
-                this.columnSecondTestPoint = base.Columns["SecondTestPoint"];
-                this.columnMaxResistance = base.Columns["MaxResistance"];
-                this.columnComparasionTolerance = base.Columns["ComparasionTolerance"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnID_component = new global::System.Data.DataColumn("ID_component", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_component);
-                this.columnTur = new global::System.Data.DataColumn("Tur", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTur);
-                this.columnDeger = new global::System.Data.DataColumn("Deger", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDeger);
-                this.columnDeger_Katsayi = new global::System.Data.DataColumn("Deger_Katsayi", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDeger_Katsayi);
-                this.columnTolerans = new global::System.Data.DataColumn("Tolerans", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTolerans);
-                this.columnComponent_Name = new global::System.Data.DataColumn("Component_Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnComponent_Name);
-                this.columnFirstTestPoint = new global::System.Data.DataColumn("FirstTestPoint", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFirstTestPoint);
-                this.columnMinResistance = new global::System.Data.DataColumn("MinResistance", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMinResistance);
-                this.columnSecondTestPoint = new global::System.Data.DataColumn("SecondTestPoint", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSecondTestPoint);
-                this.columnMaxResistance = new global::System.Data.DataColumn("MaxResistance", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMaxResistance);
-                this.columnComparasionTolerance = new global::System.Data.DataColumn("ComparasionTolerance", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnComparasionTolerance);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID_component}, true));
-                this.columnID_component.AllowDBNull = false;
-                this.columnID_component.Unique = true;
-                this.columnTur.AllowDBNull = false;
-                this.columnDeger.AllowDBNull = false;
-                this.columnDeger_Katsayi.AllowDBNull = false;
-                this.columnTolerans.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ComponentsRow NewComponentsRow() {
-                return ((ComponentsRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ComponentsRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(ComponentsRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.ComponentsRowChanged != null)) {
-                    this.ComponentsRowChanged(this, new ComponentsRowChangeEvent(((ComponentsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.ComponentsRowChanging != null)) {
-                    this.ComponentsRowChanging(this, new ComponentsRowChangeEvent(((ComponentsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.ComponentsRowDeleted != null)) {
-                    this.ComponentsRowDeleted(this, new ComponentsRowChangeEvent(((ComponentsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.ComponentsRowDeleting != null)) {
-                    this.ComponentsRowDeleting(this, new ComponentsRowChangeEvent(((ComponentsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveComponentsRow(ComponentsRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                mainsource ds = new mainsource();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ComponentsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4309,6 +3907,429 @@ namespace NURSAN_PROJE {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ComponentsDataTable : global::System.Data.TypedTableBase<ComponentsRow> {
+            
+            private global::System.Data.DataColumn columnID_component;
+            
+            private global::System.Data.DataColumn columnComponent_Name;
+            
+            private global::System.Data.DataColumn columnTur;
+            
+            private global::System.Data.DataColumn columnDeger;
+            
+            private global::System.Data.DataColumn columnDeger_Katsayi;
+            
+            private global::System.Data.DataColumn columnTolerans;
+            
+            private global::System.Data.DataColumn columnFirstTestPoint;
+            
+            private global::System.Data.DataColumn columnSecondTestPoint;
+            
+            private global::System.Data.DataColumn columnMinResistance;
+            
+            private global::System.Data.DataColumn columnMinResistanceMultiplier;
+            
+            private global::System.Data.DataColumn columnMaxResistance;
+            
+            private global::System.Data.DataColumn columnComparasionTolerance;
+            
+            private global::System.Data.DataColumn columnMaxResistanceMultiplier;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ComponentsDataTable() {
+                this.TableName = "Components";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal ComponentsDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected ComponentsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ID_componentColumn {
+                get {
+                    return this.columnID_component;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Component_NameColumn {
+                get {
+                    return this.columnComponent_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TurColumn {
+                get {
+                    return this.columnTur;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DegerColumn {
+                get {
+                    return this.columnDeger;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Deger_KatsayiColumn {
+                get {
+                    return this.columnDeger_Katsayi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ToleransColumn {
+                get {
+                    return this.columnTolerans;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FirstTestPointColumn {
+                get {
+                    return this.columnFirstTestPoint;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SecondTestPointColumn {
+                get {
+                    return this.columnSecondTestPoint;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MinResistanceColumn {
+                get {
+                    return this.columnMinResistance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MinResistanceMultiplierColumn {
+                get {
+                    return this.columnMinResistanceMultiplier;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MaxResistanceColumn {
+                get {
+                    return this.columnMaxResistance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ComparasionToleranceColumn {
+                get {
+                    return this.columnComparasionTolerance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MaxResistanceMultiplierColumn {
+                get {
+                    return this.columnMaxResistanceMultiplier;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ComponentsRow this[int index] {
+                get {
+                    return ((ComponentsRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ComponentsRowChangeEventHandler ComponentsRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ComponentsRowChangeEventHandler ComponentsRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ComponentsRowChangeEventHandler ComponentsRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ComponentsRowChangeEventHandler ComponentsRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddComponentsRow(ComponentsRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ComponentsRow AddComponentsRow(string ID_component, string Component_Name, string Tur, long Deger, long Deger_Katsayi, long Tolerans, string FirstTestPoint, string SecondTestPoint, long MinResistance, long MinResistanceMultiplier, long MaxResistance, long ComparasionTolerance, long MaxResistanceMultiplier) {
+                ComponentsRow rowComponentsRow = ((ComponentsRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID_component,
+                        Component_Name,
+                        Tur,
+                        Deger,
+                        Deger_Katsayi,
+                        Tolerans,
+                        FirstTestPoint,
+                        SecondTestPoint,
+                        MinResistance,
+                        MinResistanceMultiplier,
+                        MaxResistance,
+                        ComparasionTolerance,
+                        MaxResistanceMultiplier};
+                rowComponentsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowComponentsRow);
+                return rowComponentsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ComponentsDataTable cln = ((ComponentsDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ComponentsDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnID_component = base.Columns["ID_component"];
+                this.columnComponent_Name = base.Columns["Component_Name"];
+                this.columnTur = base.Columns["Tur"];
+                this.columnDeger = base.Columns["Deger"];
+                this.columnDeger_Katsayi = base.Columns["Deger_Katsayi"];
+                this.columnTolerans = base.Columns["Tolerans"];
+                this.columnFirstTestPoint = base.Columns["FirstTestPoint"];
+                this.columnSecondTestPoint = base.Columns["SecondTestPoint"];
+                this.columnMinResistance = base.Columns["MinResistance"];
+                this.columnMinResistanceMultiplier = base.Columns["MinResistanceMultiplier"];
+                this.columnMaxResistance = base.Columns["MaxResistance"];
+                this.columnComparasionTolerance = base.Columns["ComparasionTolerance"];
+                this.columnMaxResistanceMultiplier = base.Columns["MaxResistanceMultiplier"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnID_component = new global::System.Data.DataColumn("ID_component", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_component);
+                this.columnComponent_Name = new global::System.Data.DataColumn("Component_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnComponent_Name);
+                this.columnTur = new global::System.Data.DataColumn("Tur", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTur);
+                this.columnDeger = new global::System.Data.DataColumn("Deger", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeger);
+                this.columnDeger_Katsayi = new global::System.Data.DataColumn("Deger_Katsayi", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeger_Katsayi);
+                this.columnTolerans = new global::System.Data.DataColumn("Tolerans", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTolerans);
+                this.columnFirstTestPoint = new global::System.Data.DataColumn("FirstTestPoint", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFirstTestPoint);
+                this.columnSecondTestPoint = new global::System.Data.DataColumn("SecondTestPoint", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSecondTestPoint);
+                this.columnMinResistance = new global::System.Data.DataColumn("MinResistance", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMinResistance);
+                this.columnMinResistanceMultiplier = new global::System.Data.DataColumn("MinResistanceMultiplier", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMinResistanceMultiplier);
+                this.columnMaxResistance = new global::System.Data.DataColumn("MaxResistance", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaxResistance);
+                this.columnComparasionTolerance = new global::System.Data.DataColumn("ComparasionTolerance", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnComparasionTolerance);
+                this.columnMaxResistanceMultiplier = new global::System.Data.DataColumn("MaxResistanceMultiplier", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaxResistanceMultiplier);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_component}, false));
+                this.columnID_component.AllowDBNull = false;
+                this.columnID_component.Unique = true;
+                this.columnTur.AllowDBNull = false;
+                this.columnDeger.AllowDBNull = false;
+                this.columnDeger_Katsayi.AllowDBNull = false;
+                this.columnTolerans.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ComponentsRow NewComponentsRow() {
+                return ((ComponentsRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ComponentsRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ComponentsRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ComponentsRowChanged != null)) {
+                    this.ComponentsRowChanged(this, new ComponentsRowChangeEvent(((ComponentsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ComponentsRowChanging != null)) {
+                    this.ComponentsRowChanging(this, new ComponentsRowChangeEvent(((ComponentsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ComponentsRowDeleted != null)) {
+                    this.ComponentsRowDeleted(this, new ComponentsRowChangeEvent(((ComponentsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ComponentsRowDeleting != null)) {
+                    this.ComponentsRowDeleting(this, new ComponentsRowChangeEvent(((ComponentsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveComponentsRow(ComponentsRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                mainsource ds = new mainsource();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ComponentsDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class Active_relayRow : global::System.Data.DataRow {
@@ -4412,244 +4433,6 @@ namespace NURSAN_PROJE {
                 set {
                     this[this.tableColours.Renk_AdıColumn] = value;
                 }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class ComponentsRow : global::System.Data.DataRow {
-            
-            private ComponentsDataTable tableComponents;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ComponentsRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableComponents = ((ComponentsDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long ID_component {
-                get {
-                    return ((long)(this[this.tableComponents.ID_componentColumn]));
-                }
-                set {
-                    this[this.tableComponents.ID_componentColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Tur {
-                get {
-                    return ((string)(this[this.tableComponents.TurColumn]));
-                }
-                set {
-                    this[this.tableComponents.TurColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long Deger {
-                get {
-                    return ((long)(this[this.tableComponents.DegerColumn]));
-                }
-                set {
-                    this[this.tableComponents.DegerColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long Deger_Katsayi {
-                get {
-                    return ((long)(this[this.tableComponents.Deger_KatsayiColumn]));
-                }
-                set {
-                    this[this.tableComponents.Deger_KatsayiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long Tolerans {
-                get {
-                    return ((long)(this[this.tableComponents.ToleransColumn]));
-                }
-                set {
-                    this[this.tableComponents.ToleransColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Component_Name {
-                get {
-                    try {
-                        return ((string)(this[this.tableComponents.Component_NameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Components\' tablosundaki \'Component_Name\' sütunun değeri DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableComponents.Component_NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string FirstTestPoint {
-                get {
-                    try {
-                        return ((string)(this[this.tableComponents.FirstTestPointColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Components\' tablosundaki \'FirstTestPoint\' sütunun değeri DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableComponents.FirstTestPointColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string MinResistance {
-                get {
-                    try {
-                        return ((string)(this[this.tableComponents.MinResistanceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Components\' tablosundaki \'MinResistance\' sütunun değeri DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableComponents.MinResistanceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string SecondTestPoint {
-                get {
-                    try {
-                        return ((string)(this[this.tableComponents.SecondTestPointColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Components\' tablosundaki \'SecondTestPoint\' sütunun değeri DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableComponents.SecondTestPointColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string MaxResistance {
-                get {
-                    try {
-                        return ((string)(this[this.tableComponents.MaxResistanceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Components\' tablosundaki \'MaxResistance\' sütunun değeri DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableComponents.MaxResistanceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ComparasionTolerance {
-                get {
-                    try {
-                        return ((string)(this[this.tableComponents.ComparasionToleranceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Components\' tablosundaki \'ComparasionTolerance\' sütunun değeri DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableComponents.ComparasionToleranceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsComponent_NameNull() {
-                return this.IsNull(this.tableComponents.Component_NameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetComponent_NameNull() {
-                this[this.tableComponents.Component_NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsFirstTestPointNull() {
-                return this.IsNull(this.tableComponents.FirstTestPointColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetFirstTestPointNull() {
-                this[this.tableComponents.FirstTestPointColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsMinResistanceNull() {
-                return this.IsNull(this.tableComponents.MinResistanceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetMinResistanceNull() {
-                this[this.tableComponents.MinResistanceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSecondTestPointNull() {
-                return this.IsNull(this.tableComponents.SecondTestPointColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSecondTestPointNull() {
-                this[this.tableComponents.SecondTestPointColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsMaxResistanceNull() {
-                return this.IsNull(this.tableComponents.MaxResistanceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetMaxResistanceNull() {
-                this[this.tableComponents.MaxResistanceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsComparasionToleranceNull() {
-                return this.IsNull(this.tableComponents.ComparasionToleranceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetComparasionToleranceNull() {
-                this[this.tableComponents.ComparasionToleranceColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5384,6 +5167,300 @@ namespace NURSAN_PROJE {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ComponentsRow : global::System.Data.DataRow {
+            
+            private ComponentsDataTable tableComponents;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal ComponentsRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableComponents = ((ComponentsDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ID_component {
+                get {
+                    return ((string)(this[this.tableComponents.ID_componentColumn]));
+                }
+                set {
+                    this[this.tableComponents.ID_componentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Component_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableComponents.Component_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Components\' tablosundaki \'Component_Name\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComponents.Component_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Tur {
+                get {
+                    return ((string)(this[this.tableComponents.TurColumn]));
+                }
+                set {
+                    this[this.tableComponents.TurColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long Deger {
+                get {
+                    return ((long)(this[this.tableComponents.DegerColumn]));
+                }
+                set {
+                    this[this.tableComponents.DegerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long Deger_Katsayi {
+                get {
+                    return ((long)(this[this.tableComponents.Deger_KatsayiColumn]));
+                }
+                set {
+                    this[this.tableComponents.Deger_KatsayiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long Tolerans {
+                get {
+                    return ((long)(this[this.tableComponents.ToleransColumn]));
+                }
+                set {
+                    this[this.tableComponents.ToleransColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string FirstTestPoint {
+                get {
+                    try {
+                        return ((string)(this[this.tableComponents.FirstTestPointColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Components\' tablosundaki \'FirstTestPoint\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComponents.FirstTestPointColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string SecondTestPoint {
+                get {
+                    try {
+                        return ((string)(this[this.tableComponents.SecondTestPointColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Components\' tablosundaki \'SecondTestPoint\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComponents.SecondTestPointColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long MinResistance {
+                get {
+                    try {
+                        return ((long)(this[this.tableComponents.MinResistanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Components\' tablosundaki \'MinResistance\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComponents.MinResistanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long MinResistanceMultiplier {
+                get {
+                    try {
+                        return ((long)(this[this.tableComponents.MinResistanceMultiplierColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Components\' tablosundaki \'MinResistanceMultiplier\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComponents.MinResistanceMultiplierColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long MaxResistance {
+                get {
+                    try {
+                        return ((long)(this[this.tableComponents.MaxResistanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Components\' tablosundaki \'MaxResistance\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComponents.MaxResistanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long ComparasionTolerance {
+                get {
+                    try {
+                        return ((long)(this[this.tableComponents.ComparasionToleranceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Components\' tablosundaki \'ComparasionTolerance\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComponents.ComparasionToleranceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long MaxResistanceMultiplier {
+                get {
+                    try {
+                        return ((long)(this[this.tableComponents.MaxResistanceMultiplierColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Components\' tablosundaki \'MaxResistanceMultiplier\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComponents.MaxResistanceMultiplierColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsComponent_NameNull() {
+                return this.IsNull(this.tableComponents.Component_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetComponent_NameNull() {
+                this[this.tableComponents.Component_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFirstTestPointNull() {
+                return this.IsNull(this.tableComponents.FirstTestPointColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFirstTestPointNull() {
+                this[this.tableComponents.FirstTestPointColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSecondTestPointNull() {
+                return this.IsNull(this.tableComponents.SecondTestPointColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSecondTestPointNull() {
+                this[this.tableComponents.SecondTestPointColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMinResistanceNull() {
+                return this.IsNull(this.tableComponents.MinResistanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMinResistanceNull() {
+                this[this.tableComponents.MinResistanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMinResistanceMultiplierNull() {
+                return this.IsNull(this.tableComponents.MinResistanceMultiplierColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMinResistanceMultiplierNull() {
+                this[this.tableComponents.MinResistanceMultiplierColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMaxResistanceNull() {
+                return this.IsNull(this.tableComponents.MaxResistanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMaxResistanceNull() {
+                this[this.tableComponents.MaxResistanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsComparasionToleranceNull() {
+                return this.IsNull(this.tableComponents.ComparasionToleranceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetComparasionToleranceNull() {
+                this[this.tableComponents.ComparasionToleranceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMaxResistanceMultiplierNull() {
+                return this.IsNull(this.tableComponents.MaxResistanceMultiplierColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMaxResistanceMultiplierNull() {
+                this[this.tableComponents.MaxResistanceMultiplierColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -5437,40 +5514,6 @@ namespace NURSAN_PROJE {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ColoursRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class ComponentsRowChangeEvent : global::System.EventArgs {
-            
-            private ComponentsRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ComponentsRowChangeEvent(ComponentsRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ComponentsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5777,6 +5820,40 @@ namespace NURSAN_PROJE {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public versiyonRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class ComponentsRowChangeEvent : global::System.EventArgs {
+            
+            private ComponentsRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ComponentsRowChangeEvent(ComponentsRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ComponentsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6631,958 +6708,6 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Renk_Adı, long Original_ID_color, string Original_Renk_Adı) {
             return this.Update(Original_ID_color, Renk_Adı, Original_ID_color, Original_Renk_Adı);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ComponentsTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::Devart.Data.SQLite.SQLiteDataAdapter _adapter;
-        
-        private global::Devart.Data.SQLite.SQLiteConnection _connection;
-        
-        private global::System.Data.Common.DbTransaction _transaction;
-        
-        private global::Devart.Data.SQLite.SQLiteCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public ComponentsTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::Devart.Data.SQLite.SQLiteDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::Devart.Data.SQLite.SQLiteConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::Devart.Data.SQLite.SQLiteCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.Common.DbTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::Devart.Data.SQLite.SQLiteCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::Devart.Data.SQLite.SQLiteDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Components";
-            tableMapping.ColumnMappings.Add("ID_component", "ID_component");
-            tableMapping.ColumnMappings.Add("Tur", "Tur");
-            tableMapping.ColumnMappings.Add("Deger", "Deger");
-            tableMapping.ColumnMappings.Add("Deger_Katsayi", "Deger_Katsayi");
-            tableMapping.ColumnMappings.Add("Tolerans", "Tolerans");
-            tableMapping.ColumnMappings.Add("Component_Name", "Component_Name");
-            tableMapping.ColumnMappings.Add("FirstTestPoint", "FirstTestPoint");
-            tableMapping.ColumnMappings.Add("MinResistance", "MinResistance");
-            tableMapping.ColumnMappings.Add("SecondTestPoint", "SecondTestPoint");
-            tableMapping.ColumnMappings.Add("MaxResistance", "MaxResistance");
-            tableMapping.ColumnMappings.Add("ComparasionTolerance", "ComparasionTolerance");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::Devart.Data.SQLite.SQLiteCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""main"".""Components"" WHERE ((""ID_component"" = :Original_ID_component) AND (""Tur"" = :Original_Tur) AND (""Deger"" = :Original_Deger) AND (""Deger_Katsayi"" = :Original_Deger_Katsayi) AND (""Tolerans"" = :Original_Tolerans) AND ((:IsNull_Component_Name = 1 AND ""Component_Name"" IS NULL) OR (""Component_Name"" = :Original_Component_Name)) AND ((:IsNull_FirstTestPoint = 1 AND ""FirstTestPoint"" IS NULL) OR (""FirstTestPoint"" = :Original_FirstTestPoint)) AND ((:IsNull_MinResistance = 1 AND ""MinResistance"" IS NULL) OR (""MinResistance"" = :Original_MinResistance)) AND ((:IsNull_SecondTestPoint = 1 AND ""SecondTestPoint"" IS NULL) OR (""SecondTestPoint"" = :Original_SecondTestPoint)) AND ((:IsNull_MaxResistance = 1 AND ""MaxResistance"" IS NULL) OR (""MaxResistance"" = :Original_MaxResistance)) AND ((:IsNull_ComparasionTolerance = 1 AND ""ComparasionTolerance"" IS NULL) OR (""ComparasionTolerance"" = :Original_ComparasionTolerance)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            global::Devart.Data.SQLite.SQLiteParameter param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_ID_component";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "ID_component";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_Tur";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "Tur";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_Deger";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "Deger";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_Deger_Katsayi";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "Deger_Katsayi";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_Tolerans";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "Tolerans";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_Component_Name";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Component_Name";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_Component_Name";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "Component_Name";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_FirstTestPoint";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "FirstTestPoint";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_FirstTestPoint";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "FirstTestPoint";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_MinResistance";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "MinResistance";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_MinResistance";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "MinResistance";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_SecondTestPoint";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SecondTestPoint";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_SecondTestPoint";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "SecondTestPoint";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_MaxResistance";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "MaxResistance";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_MaxResistance";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "MaxResistance";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_ComparasionTolerance";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "ComparasionTolerance";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_ComparasionTolerance";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "ComparasionTolerance";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""main"".""Components"" (""ID_component"", ""Tur"", ""Deger"", ""Deger_Katsayi"", ""Tolerans"", ""Component_Name"", ""FirstTestPoint"", ""MinResistance"", ""SecondTestPoint"", ""MaxResistance"", ""ComparasionTolerance"") VALUES (:ID_component, :Tur, :Deger, :Deger_Katsayi, :Tolerans, :Component_Name, :FirstTestPoint, :MinResistance, :SecondTestPoint, :MaxResistance, :ComparasionTolerance)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "ID_component";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "ID_component";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Tur";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "Tur";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Deger";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "Deger";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Deger_Katsayi";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "Deger_Katsayi";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Tolerans";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "Tolerans";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Component_Name";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "Component_Name";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "FirstTestPoint";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "FirstTestPoint";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "MinResistance";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "MinResistance";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "SecondTestPoint";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "SecondTestPoint";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "MaxResistance";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "MaxResistance";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "ComparasionTolerance";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "ComparasionTolerance";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            this._adapter.UpdateCommand = new global::Devart.Data.SQLite.SQLiteCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""main"".""Components"" SET ""ID_component"" = :ID_component, ""Tur"" = :Tur, ""Deger"" = :Deger, ""Deger_Katsayi"" = :Deger_Katsayi, ""Tolerans"" = :Tolerans, ""Component_Name"" = :Component_Name, ""FirstTestPoint"" = :FirstTestPoint, ""MinResistance"" = :MinResistance, ""SecondTestPoint"" = :SecondTestPoint, ""MaxResistance"" = :MaxResistance, ""ComparasionTolerance"" = :ComparasionTolerance WHERE ((""ID_component"" = :Original_ID_component) AND (""Tur"" = :Original_Tur) AND (""Deger"" = :Original_Deger) AND (""Deger_Katsayi"" = :Original_Deger_Katsayi) AND (""Tolerans"" = :Original_Tolerans) AND ((:IsNull_Component_Name = 1 AND ""Component_Name"" IS NULL) OR (""Component_Name"" = :Original_Component_Name)) AND ((:IsNull_FirstTestPoint = 1 AND ""FirstTestPoint"" IS NULL) OR (""FirstTestPoint"" = :Original_FirstTestPoint)) AND ((:IsNull_MinResistance = 1 AND ""MinResistance"" IS NULL) OR (""MinResistance"" = :Original_MinResistance)) AND ((:IsNull_SecondTestPoint = 1 AND ""SecondTestPoint"" IS NULL) OR (""SecondTestPoint"" = :Original_SecondTestPoint)) AND ((:IsNull_MaxResistance = 1 AND ""MaxResistance"" IS NULL) OR (""MaxResistance"" = :Original_MaxResistance)) AND ((:IsNull_ComparasionTolerance = 1 AND ""ComparasionTolerance"" IS NULL) OR (""ComparasionTolerance"" = :Original_ComparasionTolerance)))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "ID_component";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "ID_component";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Tur";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "Tur";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Deger";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "Deger";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Deger_Katsayi";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "Deger_Katsayi";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Tolerans";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "Tolerans";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Component_Name";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "Component_Name";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "FirstTestPoint";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "FirstTestPoint";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "MinResistance";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "MinResistance";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "SecondTestPoint";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "SecondTestPoint";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "MaxResistance";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "MaxResistance";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "ComparasionTolerance";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "ComparasionTolerance";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_ID_component";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "ID_component";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_Tur";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "Tur";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_Deger";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "Deger";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_Deger_Katsayi";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "Deger_Katsayi";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_Tolerans";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "Tolerans";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_Component_Name";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Component_Name";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_Component_Name";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "Component_Name";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_FirstTestPoint";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "FirstTestPoint";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_FirstTestPoint";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "FirstTestPoint";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_MinResistance";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "MinResistance";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_MinResistance";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "MinResistance";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_SecondTestPoint";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SecondTestPoint";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_SecondTestPoint";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "SecondTestPoint";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_MaxResistance";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "MaxResistance";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_MaxResistance";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "MaxResistance";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_ComparasionTolerance";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "ComparasionTolerance";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_ComparasionTolerance";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "ComparasionTolerance";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::Devart.Data.SQLite.SQLiteConnection();
-            this._connection.ConnectionString = global::NURSAN_PROJE.Properties.Settings.Default.mainsource;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
-            this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        ID_component, Tur, Deger, Deger_Katsayi, Tolerans, Component_Name, " +
-                "FirstTestPoint, MinResistance, SecondTestPoint, MaxResistance, ComparasionTolera" +
-                "nce\r\nFROM            Components";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(mainsource.ComponentsDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual mainsource.ComponentsDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            mainsource.ComponentsDataTable dataTable = new mainsource.ComponentsDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(mainsource.ComponentsDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(mainsource dataSet) {
-            return this.Adapter.Update(dataSet, "Components");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_ID_component, string Original_Tur, long Original_Deger, long Original_Deger_Katsayi, long Original_Tolerans, string Original_Component_Name, string Original_FirstTestPoint, string Original_MinResistance, string Original_SecondTestPoint, string Original_MaxResistance, string Original_ComparasionTolerance) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_ID_component));
-            if ((Original_Tur == null)) {
-                throw new global::System.ArgumentNullException("Original_Tur");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Tur));
-            }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((long)(Original_Deger));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((long)(Original_Deger_Katsayi));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((long)(Original_Tolerans));
-            if ((Original_Component_Name == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Component_Name));
-            }
-            if ((Original_FirstTestPoint == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_FirstTestPoint));
-            }
-            if ((Original_MinResistance == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_MinResistance));
-            }
-            if ((Original_SecondTestPoint == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_SecondTestPoint));
-            }
-            if ((Original_MaxResistance == null)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_MaxResistance));
-            }
-            if ((Original_ComparasionTolerance == null)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_ComparasionTolerance));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long ID_component, string Tur, long Deger, long Deger_Katsayi, long Tolerans, string Component_Name, string FirstTestPoint, string MinResistance, string SecondTestPoint, string MaxResistance, string ComparasionTolerance) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(ID_component));
-            if ((Tur == null)) {
-                throw new global::System.ArgumentNullException("Tur");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Tur));
-            }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((long)(Deger));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((long)(Deger_Katsayi));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((long)(Tolerans));
-            if ((Component_Name == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Component_Name));
-            }
-            if ((FirstTestPoint == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(FirstTestPoint));
-            }
-            if ((MinResistance == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(MinResistance));
-            }
-            if ((SecondTestPoint == null)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(SecondTestPoint));
-            }
-            if ((MaxResistance == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(MaxResistance));
-            }
-            if ((ComparasionTolerance == null)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(ComparasionTolerance));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    long ID_component, 
-                    string Tur, 
-                    long Deger, 
-                    long Deger_Katsayi, 
-                    long Tolerans, 
-                    string Component_Name, 
-                    string FirstTestPoint, 
-                    string MinResistance, 
-                    string SecondTestPoint, 
-                    string MaxResistance, 
-                    string ComparasionTolerance, 
-                    long Original_ID_component, 
-                    string Original_Tur, 
-                    long Original_Deger, 
-                    long Original_Deger_Katsayi, 
-                    long Original_Tolerans, 
-                    string Original_Component_Name, 
-                    string Original_FirstTestPoint, 
-                    string Original_MinResistance, 
-                    string Original_SecondTestPoint, 
-                    string Original_MaxResistance, 
-                    string Original_ComparasionTolerance) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(ID_component));
-            if ((Tur == null)) {
-                throw new global::System.ArgumentNullException("Tur");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Tur));
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((long)(Deger));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(Deger_Katsayi));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Tolerans));
-            if ((Component_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Component_Name));
-            }
-            if ((FirstTestPoint == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(FirstTestPoint));
-            }
-            if ((MinResistance == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(MinResistance));
-            }
-            if ((SecondTestPoint == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(SecondTestPoint));
-            }
-            if ((MaxResistance == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(MaxResistance));
-            }
-            if ((ComparasionTolerance == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(ComparasionTolerance));
-            }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(Original_ID_component));
-            if ((Original_Tur == null)) {
-                throw new global::System.ArgumentNullException("Original_Tur");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Tur));
-            }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(Original_Deger));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((long)(Original_Deger_Katsayi));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((long)(Original_Tolerans));
-            if ((Original_Component_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Component_Name));
-            }
-            if ((Original_FirstTestPoint == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_FirstTestPoint));
-            }
-            if ((Original_MinResistance == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_MinResistance));
-            }
-            if ((Original_SecondTestPoint == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_SecondTestPoint));
-            }
-            if ((Original_MaxResistance == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_MaxResistance));
-            }
-            if ((Original_ComparasionTolerance == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_ComparasionTolerance));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string Tur, 
-                    long Deger, 
-                    long Deger_Katsayi, 
-                    long Tolerans, 
-                    string Component_Name, 
-                    string FirstTestPoint, 
-                    string MinResistance, 
-                    string SecondTestPoint, 
-                    string MaxResistance, 
-                    string ComparasionTolerance, 
-                    long Original_ID_component, 
-                    string Original_Tur, 
-                    long Original_Deger, 
-                    long Original_Deger_Katsayi, 
-                    long Original_Tolerans, 
-                    string Original_Component_Name, 
-                    string Original_FirstTestPoint, 
-                    string Original_MinResistance, 
-                    string Original_SecondTestPoint, 
-                    string Original_MaxResistance, 
-                    string Original_ComparasionTolerance) {
-            return this.Update(Original_ID_component, Tur, Deger, Deger_Katsayi, Tolerans, Component_Name, FirstTestPoint, MinResistance, SecondTestPoint, MaxResistance, ComparasionTolerance, Original_ID_component, Original_Tur, Original_Deger, Original_Deger_Katsayi, Original_Tolerans, Original_Component_Name, Original_FirstTestPoint, Original_MinResistance, Original_SecondTestPoint, Original_MaxResistance, Original_ComparasionTolerance);
         }
     }
     
@@ -11171,6 +10296,388 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ComponentsTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::Devart.Data.SQLite.SQLiteDataAdapter _adapter;
+        
+        private global::Devart.Data.SQLite.SQLiteConnection _connection;
+        
+        private global::System.Data.Common.DbTransaction _transaction;
+        
+        private global::Devart.Data.SQLite.SQLiteCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public ComponentsTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::Devart.Data.SQLite.SQLiteDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::Devart.Data.SQLite.SQLiteConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Devart.Data.SQLite.SQLiteCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.Common.DbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::Devart.Data.SQLite.SQLiteCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Devart.Data.SQLite.SQLiteDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Components";
+            tableMapping.ColumnMappings.Add("ID_component", "ID_component");
+            tableMapping.ColumnMappings.Add("Component_Name", "Component_Name");
+            tableMapping.ColumnMappings.Add("Tur", "Tur");
+            tableMapping.ColumnMappings.Add("Deger", "Deger");
+            tableMapping.ColumnMappings.Add("Deger_Katsayi", "Deger_Katsayi");
+            tableMapping.ColumnMappings.Add("Tolerans", "Tolerans");
+            tableMapping.ColumnMappings.Add("FirstTestPoint", "FirstTestPoint");
+            tableMapping.ColumnMappings.Add("SecondTestPoint", "SecondTestPoint");
+            tableMapping.ColumnMappings.Add("MinResistance", "MinResistance");
+            tableMapping.ColumnMappings.Add("MinResistanceMultiplier", "MinResistanceMultiplier");
+            tableMapping.ColumnMappings.Add("MaxResistance", "MaxResistance");
+            tableMapping.ColumnMappings.Add("ComparasionTolerance", "ComparasionTolerance");
+            tableMapping.ColumnMappings.Add("MaxResistanceMultiplier", "MaxResistanceMultiplier");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""main"".""Components"" (""ID_component"", ""Component_Name"", ""Tur"", ""Deger"", ""Deger_Katsayi"", ""Tolerans"", ""FirstTestPoint"", ""SecondTestPoint"", ""MinResistance"", ""MinResistanceMultiplier"", ""MaxResistance"", ""ComparasionTolerance"", ""MaxResistanceMultiplier"") VALUES (:ID_component, :Component_Name, :Tur, :Deger, :Deger_Katsayi, :Tolerans, :FirstTestPoint, :SecondTestPoint, :MinResistance, :MinResistanceMultiplier, :MaxResistance, :ComparasionTolerance, :MaxResistanceMultiplier)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            global::Devart.Data.SQLite.SQLiteParameter param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "ID_component";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "ID_component";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Component_Name";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Component_Name";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Tur";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Tur";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Deger";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
+            param.IsNullable = true;
+            param.SourceColumn = "Deger";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Deger_Katsayi";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
+            param.IsNullable = true;
+            param.SourceColumn = "Deger_Katsayi";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Tolerans";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
+            param.IsNullable = true;
+            param.SourceColumn = "Tolerans";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "FirstTestPoint";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "FirstTestPoint";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "SecondTestPoint";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "SecondTestPoint";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "MinResistance";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
+            param.IsNullable = true;
+            param.SourceColumn = "MinResistance";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "MinResistanceMultiplier";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
+            param.IsNullable = true;
+            param.SourceColumn = "MinResistanceMultiplier";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "MaxResistance";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
+            param.IsNullable = true;
+            param.SourceColumn = "MaxResistance";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "ComparasionTolerance";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
+            param.IsNullable = true;
+            param.SourceColumn = "ComparasionTolerance";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "MaxResistanceMultiplier";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
+            param.IsNullable = true;
+            param.SourceColumn = "MaxResistanceMultiplier";
+            this._adapter.InsertCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Devart.Data.SQLite.SQLiteConnection();
+            this._connection.ConnectionString = global::NURSAN_PROJE.Properties.Settings.Default.mainsource;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
+            this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        Components.*\r\nFROM            Components";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(mainsource.ComponentsDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual mainsource.ComponentsDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            mainsource.ComponentsDataTable dataTable = new mainsource.ComponentsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(mainsource.ComponentsDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(mainsource dataSet) {
+            return this.Adapter.Update(dataSet, "Components");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string ID_component, string Component_Name, string Tur, long Deger, long Deger_Katsayi, long Tolerans, string FirstTestPoint, string SecondTestPoint, global::System.Nullable<long> MinResistance, global::System.Nullable<long> MinResistanceMultiplier, global::System.Nullable<long> MaxResistance, global::System.Nullable<long> ComparasionTolerance, global::System.Nullable<long> MaxResistanceMultiplier) {
+            if ((ID_component == null)) {
+                throw new global::System.ArgumentNullException("ID_component");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(ID_component));
+            }
+            if ((Component_Name == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Component_Name));
+            }
+            if ((Tur == null)) {
+                throw new global::System.ArgumentNullException("Tur");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Tur));
+            }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((long)(Deger));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((long)(Deger_Katsayi));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((long)(Tolerans));
+            if ((FirstTestPoint == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(FirstTestPoint));
+            }
+            if ((SecondTestPoint == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(SecondTestPoint));
+            }
+            if ((MinResistance.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((long)(MinResistance.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((MinResistanceMultiplier.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((long)(MinResistanceMultiplier.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((MaxResistance.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((long)(MaxResistance.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((ComparasionTolerance.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((long)(ComparasionTolerance.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((MaxResistanceMultiplier.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((long)(MaxResistanceMultiplier.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11185,8 +10692,6 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
         private Active_relayTableAdapter _active_relayTableAdapter;
         
         private ColoursTableAdapter _coloursTableAdapter;
-        
-        private ComponentsTableAdapter _componentsTableAdapter;
         
         private FilesTableAdapter _filesTableAdapter;
         
@@ -11205,6 +10710,8 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
         private UsersTableAdapter _usersTableAdapter;
         
         private versiyonTableAdapter _versiyonTableAdapter;
+        
+        private ComponentsTableAdapter _componentsTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -11246,20 +10753,6 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
             }
             set {
                 this._coloursTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public ComponentsTableAdapter ComponentsTableAdapter {
-            get {
-                return this._componentsTableAdapter;
-            }
-            set {
-                this._componentsTableAdapter = value;
             }
         }
         
@@ -11391,6 +10884,20 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ComponentsTableAdapter ComponentsTableAdapter {
+            get {
+                return this._componentsTableAdapter;
+            }
+            set {
+                this._componentsTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -11415,10 +10922,6 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                 if (((this._coloursTableAdapter != null) 
                             && (this._coloursTableAdapter.Connection != null))) {
                     return this._coloursTableAdapter.Connection;
-                }
-                if (((this._componentsTableAdapter != null) 
-                            && (this._componentsTableAdapter.Connection != null))) {
-                    return this._componentsTableAdapter.Connection;
                 }
                 if (((this._filesTableAdapter != null) 
                             && (this._filesTableAdapter.Connection != null))) {
@@ -11456,6 +10959,10 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                             && (this._versiyonTableAdapter.Connection != null))) {
                     return this._versiyonTableAdapter.Connection;
                 }
+                if (((this._componentsTableAdapter != null) 
+                            && (this._componentsTableAdapter.Connection != null))) {
+                    return this._componentsTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -11473,9 +10980,6 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                     count = (count + 1);
                 }
                 if ((this._coloursTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._componentsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._filesTableAdapter != null)) {
@@ -11503,6 +11007,9 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                     count = (count + 1);
                 }
                 if ((this._versiyonTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._componentsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -11549,15 +11056,6 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._coloursTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._componentsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Components.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._componentsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11624,6 +11122,15 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._componentsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Components.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._componentsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -11663,14 +11170,6 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._coloursTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._componentsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Components.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._componentsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11730,6 +11229,14 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._componentsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Components.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._componentsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -11740,6 +11247,14 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(mainsource dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._componentsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Components.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._componentsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._versiyonTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.versiyon.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -11793,14 +11308,6 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._filesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._componentsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Components.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._componentsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11885,11 +11392,6 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                 throw new global::System.ArgumentException("TableAdapterManager tarafından yönetilen tüm TableAdapter\'lar aynı bağlantı dizes" +
                         "ini kullanmalıdır.");
             }
-            if (((this._componentsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._componentsTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("TableAdapterManager tarafından yönetilen tüm TableAdapter\'lar aynı bağlantı dizes" +
-                        "ini kullanmalıdır.");
-            }
             if (((this._filesTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._filesTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager tarafından yönetilen tüm TableAdapter\'lar aynı bağlantı dizes" +
@@ -11932,6 +11434,11 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
             }
             if (((this._versiyonTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._versiyonTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("TableAdapterManager tarafından yönetilen tüm TableAdapter\'lar aynı bağlantı dizes" +
+                        "ini kullanmalıdır.");
+            }
+            if (((this._componentsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._componentsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager tarafından yönetilen tüm TableAdapter\'lar aynı bağlantı dizes" +
                         "ini kullanmalıdır.");
             }
@@ -11983,15 +11490,6 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                     if (this._coloursTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._coloursTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._coloursTableAdapter.Adapter);
-                    }
-                }
-                if ((this._componentsTableAdapter != null)) {
-                    revertConnections.Add(this._componentsTableAdapter, this._componentsTableAdapter.Connection);
-                    this._componentsTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(workConnection));
-                    this._componentsTableAdapter.Transaction = ((global::System.Data.Common.DbTransaction)(workTransaction));
-                    if (this._componentsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._componentsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._componentsTableAdapter.Adapter);
                     }
                 }
                 if ((this._filesTableAdapter != null)) {
@@ -12075,6 +11573,15 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._versiyonTableAdapter.Adapter);
                     }
                 }
+                if ((this._componentsTableAdapter != null)) {
+                    revertConnections.Add(this._componentsTableAdapter, this._componentsTableAdapter.Connection);
+                    this._componentsTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(workConnection));
+                    this._componentsTableAdapter.Transaction = ((global::System.Data.Common.DbTransaction)(workTransaction));
+                    if (this._componentsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._componentsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._componentsTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -12141,10 +11648,6 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                     this._coloursTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(revertConnections[this._coloursTableAdapter]));
                     this._coloursTableAdapter.Transaction = null;
                 }
-                if ((this._componentsTableAdapter != null)) {
-                    this._componentsTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(revertConnections[this._componentsTableAdapter]));
-                    this._componentsTableAdapter.Transaction = null;
-                }
                 if ((this._filesTableAdapter != null)) {
                     this._filesTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(revertConnections[this._filesTableAdapter]));
                     this._filesTableAdapter.Transaction = null;
@@ -12180,6 +11683,10 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
                 if ((this._versiyonTableAdapter != null)) {
                     this._versiyonTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(revertConnections[this._versiyonTableAdapter]));
                     this._versiyonTableAdapter.Transaction = null;
+                }
+                if ((this._componentsTableAdapter != null)) {
+                    this._componentsTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(revertConnections[this._componentsTableAdapter]));
+                    this._componentsTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
