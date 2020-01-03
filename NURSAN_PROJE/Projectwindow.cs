@@ -331,7 +331,7 @@ namespace NURSAN_PROJE
 
         private void add_capacitor_button_Click(object sender, EventArgs e)
         {
-            db.addComponent("CAPACITOR", add_capacitor_name.Text,Convert.ToInt32(add_capacitor_value_number.Text),5,Convert.ToInt32(add_capacitor_tolerance.Text));
+            db.addComponent("CAPACITOR", add_capacitor_name.Text,Convert.ToInt32(add_capacitor_value_number.Text),multipliertonumber(add_capacitor_value_multipler.Text),Convert.ToInt32(add_capacitor_tolerance.Text));
 
         }
 
@@ -342,22 +342,66 @@ namespace NURSAN_PROJE
 
         private void add_resistor_button_Click(object sender, EventArgs e)
         {
-            db.addComponent("RESISTOR", add_resistor_name.Text, Convert.ToInt32(add_resistor_value.Text), 5, Convert.ToInt32(add_resistor_tolerance.Text));
+            db.addComponent("RESISTOR", add_resistor_name.Text, Convert.ToInt32(add_resistor_value.Text), multipliertonumber(add_resistor_multiplier.Text), Convert.ToInt32(add_resistor_tolerance.Text));
         }
 
         private void add_thermistor_button_Click(object sender, EventArgs e)
         {
             db.addComponent("THERMISTOR",
                             add_thermistor_name.Text,
-                            add_thermistor_tolerance.Text,
-                            add_thermistor_firsttestpoint.Text,
-                            add_thermistor_secondtestpoint.Text,
-                            add_thermistor_minresistance.Text,
-                            add_thermistor_maxresistence.Text,
-                            add_thermistor_minresistancemultiplier.Text,
-                            add_thermistor_maxresistancemultiplier.Text);
+                            Convert.ToInt32(add_thermistor_tolerance.Text),
+                            Convert.ToInt32(add_thermistor_firsttestpoint.Text),
+                            Convert.ToInt32(add_thermistor_secondtestpoint.Text),
+                            Convert.ToInt32(add_thermistor_minresistance.Text),
+                            Convert.ToInt32(add_thermistor_maxresistence.Text),
+                            Convert.ToInt32(add_thermistor_minresistancemultiplier.Text),
+                            Convert.ToInt32(add_thermistor_maxresistancemultiplier.Text));
 
         }
+
+        private void simpleButton14_Click(object sender, EventArgs e)
+        {
+            db.addComponent("GENERIC", add_generic_name.Text, Convert.ToInt32(add_generic_current.Text), 5, Convert.ToInt32(add_generic_voltagedrop.Text), Convert.ToInt32(add_resistor_tolerance.Text));
+
+        }
+        public int multipliertonumber(string multiplier)
+        {
+            int multipliednumber = 0;
+            switch (multiplier)
+            {
+                case "mΩ":
+                    multipliednumber = -3;
+                    break;
+                case "Ω":
+                    multipliednumber = 1;
+                    break;
+                case "KΩ":
+                    multipliednumber = 3;
+                    break;
+                case "MΩ":
+                    multipliednumber = 6;
+                    break;
+                case "uf":
+                    multipliednumber = -6;
+                    break;
+                case "pf":
+                    multipliednumber = -12;
+                    break;
+                case "uA":
+                    multipliednumber = -6;
+                    break;
+                case "mA":
+                    multipliednumber = -3;
+                    break;
+
+
+
+            }
+            return multipliednumber;
+        }
+
+
+
     }
 }
 

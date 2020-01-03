@@ -123,9 +123,6 @@
   <metadata name="maindatasource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>402, 56</value>
   </metadata>
-  <metadata name="maindatasource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>402, 56</value>
-  </metadata>
   <data name="maindatasource.ResultSchemaSerializable" xml:space="preserve">
     <value>PERhdGFTZXQgTmFtZT0ibWFpbmRhdGFzb3VyY2UiPjxWaWV3IE5hbWU9ImFkZHJlY2VudCIgLz48VmlldyBOYW1lPSJyZWNlbnQiPjxGaWVsZCBOYW1lPSJJRF9zb2tldCIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iQWTEsSIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iUGluX3NheWlzaSIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iQW5haHRhcl9zYXlpc2kiIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9IkxlZF9udW1hcmFzaSIgVHlwZT0iVW5rbm93biIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
@@ -135,17 +132,11 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>95</value>
   </metadata>
-  <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1590, 17</value>
-  </metadata>
   <metadata name="realTimeSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>847, 56</value>
   </metadata>
   <metadata name="socketsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1123, 100</value>
-  </metadata>
-  <metadata name="mainsource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1015, 96</value>
   </metadata>
   <metadata name="mainsource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1015, 96</value>
@@ -359,6 +350,9 @@
         5atvx36zhjzLSBESLITB/QMgLpTXht/PJgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1590, 17</value>
+  </metadata>
   <metadata name="projectdatasource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>415, 13</value>
   </metadata>
