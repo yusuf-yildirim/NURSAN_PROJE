@@ -2818,6 +2818,8 @@ namespace NURSAN_PROJE {
             
             private global::System.Data.DataColumn columnPATH;
             
+            private global::System.Data.DataColumn columnDATE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RecentDataTable() {
@@ -2877,6 +2879,14 @@ namespace NURSAN_PROJE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DATEColumn {
+                get {
+                    return this.columnDATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2912,12 +2922,13 @@ namespace NURSAN_PROJE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RecentRow AddRecentRow(long ID, string NAME, string PATH) {
+            public RecentRow AddRecentRow(long ID, string NAME, string PATH, string DATE) {
                 RecentRow rowRecentRow = ((RecentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         NAME,
-                        PATH};
+                        PATH,
+                        DATE};
                 rowRecentRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRecentRow);
                 return rowRecentRow;
@@ -2950,6 +2961,7 @@ namespace NURSAN_PROJE {
                 this.columnID = base.Columns["ID"];
                 this.columnNAME = base.Columns["NAME"];
                 this.columnPATH = base.Columns["PATH"];
+                this.columnDATE = base.Columns["DATE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2961,12 +2973,15 @@ namespace NURSAN_PROJE {
                 base.Columns.Add(this.columnNAME);
                 this.columnPATH = new global::System.Data.DataColumn("PATH", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPATH);
+                this.columnDATE = new global::System.Data.DataColumn("DATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnNAME.AllowDBNull = false;
                 this.columnPATH.AllowDBNull = false;
+                this.columnDATE.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4855,6 +4870,17 @@ namespace NURSAN_PROJE {
                 }
                 set {
                     this[this.tableRecent.PATHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DATE {
+                get {
+                    return ((string)(this[this.tableRecent.DATEColumn]));
+                }
+                set {
+                    this[this.tableRecent.DATEColumn] = value;
                 }
             }
         }
@@ -8872,11 +8898,12 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("NAME", "NAME");
             tableMapping.ColumnMappings.Add("PATH", "PATH");
+            tableMapping.ColumnMappings.Add("DATE", "DATE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM \"main\".\"Recent\" WHERE ((\"ID\" = :Original_ID) AND (\"NAME\" = :Original_" +
-                "NAME) AND (\"PATH\" = :Original_PATH))";
+                "NAME) AND (\"PATH\" = :Original_PATH) AND (\"DATE\" = :Original_DATE))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Devart.Data.SQLite.SQLiteParameter param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "Original_ID";
@@ -8900,9 +8927,17 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
             param.SourceColumn = "PATH";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DATE";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Recent\" (\"ID\", \"NAME\", \"PATH\") VALUES (:ID, :NAME, :PATH)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Recent\" (\"ID\", \"NAME\", \"PATH\", \"DATE\") VALUES (:ID, :NAME, :P" +
+                "ATH, :DATE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "ID";
@@ -8923,10 +8958,17 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "PATH";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DATE";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DATE";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"main\".\"Recent\" SET \"ID\" = :ID, \"NAME\" = :NAME, \"PATH\" = :PATH WHERE ((\"ID" +
-                "\" = :Original_ID) AND (\"NAME\" = :Original_NAME) AND (\"PATH\" = :Original_PATH))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"main\".\"Recent\" SET \"ID\" = :ID, \"NAME\" = :NAME, \"PATH\" = :PATH, \"DATE\" = :" +
+                "DATE WHERE ((\"ID\" = :Original_ID) AND (\"NAME\" = :Original_NAME) AND (\"PATH\" = :O" +
+                "riginal_PATH) AND (\"DATE\" = :Original_DATE))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "ID";
@@ -8946,6 +8988,12 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
             param.SourceColumn = "PATH";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DATE";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DATE";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "Original_ID";
@@ -8969,6 +9017,13 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
             param.SourceColumn = "PATH";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DATE";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8984,7 +9039,7 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
             this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, NAME, PATH FROM main.Recent";
+            this._commandCollection[0].CommandText = "SELECT        ID, NAME, PATH, \"DATE\"\r\nFROM            Recent";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9045,7 +9100,7 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_ID, string Original_NAME, string Original_PATH) {
+        public virtual int Delete(long Original_ID, string Original_NAME, string Original_PATH, string Original_DATE) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_ID));
             if ((Original_NAME == null)) {
                 throw new global::System.ArgumentNullException("Original_NAME");
@@ -9058,6 +9113,12 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_PATH));
+            }
+            if ((Original_DATE == null)) {
+                throw new global::System.ArgumentNullException("Original_DATE");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -9079,7 +9140,7 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long ID, string NAME, string PATH) {
+        public virtual int Insert(long ID, string NAME, string PATH, string DATE) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(ID));
             if ((NAME == null)) {
                 throw new global::System.ArgumentNullException("NAME");
@@ -9092,6 +9153,12 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PATH));
+            }
+            if ((DATE == null)) {
+                throw new global::System.ArgumentNullException("DATE");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -9113,7 +9180,7 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long ID, string NAME, string PATH, long Original_ID, string Original_NAME, string Original_PATH) {
+        public virtual int Update(long ID, string NAME, string PATH, string DATE, long Original_ID, string Original_NAME, string Original_PATH, string Original_DATE) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(ID));
             if ((NAME == null)) {
                 throw new global::System.ArgumentNullException("NAME");
@@ -9127,18 +9194,30 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PATH));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(Original_ID));
+            if ((DATE == null)) {
+                throw new global::System.ArgumentNullException("DATE");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(DATE));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_ID));
             if ((Original_NAME == null)) {
                 throw new global::System.ArgumentNullException("Original_NAME");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_NAME));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_NAME));
             }
             if ((Original_PATH == null)) {
                 throw new global::System.ArgumentNullException("Original_PATH");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_PATH));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_PATH));
+            }
+            if ((Original_DATE == null)) {
+                throw new global::System.ArgumentNullException("Original_DATE");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -9160,8 +9239,8 @@ namespace NURSAN_PROJE.mainsourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NAME, string PATH, long Original_ID, string Original_NAME, string Original_PATH) {
-            return this.Update(Original_ID, NAME, PATH, Original_ID, Original_NAME, Original_PATH);
+        public virtual int Update(string NAME, string PATH, string DATE, long Original_ID, string Original_NAME, string Original_PATH, string Original_DATE) {
+            return this.Update(Original_ID, NAME, PATH, DATE, Original_ID, Original_NAME, Original_PATH, Original_DATE);
         }
     }
     
