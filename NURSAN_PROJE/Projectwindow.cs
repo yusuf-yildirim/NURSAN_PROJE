@@ -195,12 +195,26 @@ namespace NURSAN_PROJE
                 table1.Columns.Add("Soket");
                 table1.Columns.Add("Pin");
                 table1.Columns.Add("Test noktası");
-                for (int i = 1; i <= pinvalue; i++)
+                if(new_socket_auto_assign_pin.Checked == true)
                 {
-                    table1.Rows.Add(newsocketname.Text, i);
+                    for (int i = 1; i <= pinvalue; i++)
+                    {
+                        table1.Rows.Add(newsocketname.Text, i,i);
+                    }
+                    gridControl4.DataSource = table1;
+                    gridControl4.RefreshDataSource();
+
                 }
-                gridControl4.DataSource = table1;
-                gridControl4.RefreshDataSource();
+                else
+                {
+                    for (int i = 1; i <= pinvalue; i++)
+                    {
+                        table1.Rows.Add(newsocketname.Text, i);
+                    }
+                    gridControl4.DataSource = table1;
+                    gridControl4.RefreshDataSource();
+                }
+
                 Console.WriteLine("test");
             }
             catch (FormatException err)
@@ -282,6 +296,11 @@ namespace NURSAN_PROJE
         private void pictureEdit1_EditValueChanged(object sender, EventArgs e)
         {
          
+        }
+
+        private void new_socket_auto_assign_pin_CheckStateChanged(object sender, EventArgs e)
+        {
+            newsocketpinc_TextChanged(this, e);
         }
     }
 }
