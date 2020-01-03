@@ -411,6 +411,51 @@ namespace NURSAN_PROJE.SQL
             }
             return null;
         }
-    
+        ///<summary>
+        ///Projeye splice eklenirken kullanılmalıdır.Tecnicname tüm aynı komponentler için sabit olmalıdır.
+        ///</summary>
+        public void addComponent(String technicname, String name)
+        {
+
+
+
+        }
+        ///<summary>
+        ///Projeye kapasitör ve direnç eklenirken kullanılmalıdır.Tecnicname tüm aynı komponentler için sabit olmalıdır.
+        ///</summary>
+        public void addComponent(String technicname, String name,int value,int valuemultiplier,int tolerence)
+        {
+
+
+
+        }
+        ///<summary>
+        ///Projeye diyot eklenirken kullanılmalıdır.Tecnicname tüm aynı komponentler için sabit olmalıdır
+        ///</summary>
+        public void addComponent(String technicname, String name, int forwardvoltage, int tolerence)
+        {
+
+
+
+        }
+        ///<summary>
+        ///Projeye termistör eklenirken kullanılmalıdır.Tecnicname tüm aynı komponentler için sabit olmalıdır
+        ///</summary>
+        public void addComponent(String technicname ,String name, int Comparasiontolerence,int firsttestpoint, int secondtestpoint,int minResistance,int maxResistence,int minResistincemultiplier,int maxResistenceMultiplier)
+        {
+
+
+
+        }
+        ///<summary>
+        ///Projeye generic component eklenirken kullanılmalıdır.Tecnicname tüm aynı komponentler için sabit olmalıdır
+        ///</summary>
+        public void addComponent(String technicname, String name, int testCurrent,int testCurrentMultiplier, int voltageDrop, int tolerence)
+        {
+
+
+
+        }
+
     }
 }
