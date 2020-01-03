@@ -2,17 +2,12 @@
 using NURSAN_PROJE.SQL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace NURSAN_PROJE
 {
     public partial class determine_pin_locations_window : Form
@@ -63,7 +58,7 @@ namespace NURSAN_PROJE
 
 
             pin_coordinates = Encoding.UTF8.GetString(propertyItem.Value).Trim().Split(' ');
-            for (int i = 0; i < pin_coordinates.Length; i = i+3)
+            for (int i = 0; i < pin_coordinates.Length-1; i = i+3)
             {
                 pin_point = new Point(Convert.ToInt32(pin_coordinates[i+1]),Convert.ToInt32( pin_coordinates[i+2]));
                 bitmap_for_pin_processing = (Bitmap)determine_pin_locations_image.Image;
@@ -132,7 +127,7 @@ namespace NURSAN_PROJE
                 }
             }catch(Exception err)
             {
-                Console.WriteLine(err.Message);
+                MessageBox.Show(err.Message);               
             }
         }
          void Fill4(Bitmap bmp, Point pt, Color c0, Color c1)
@@ -216,21 +211,43 @@ namespace NURSAN_PROJE
 
         private void Determine_pin_locations_SavePins_Click(object sender, EventArgs e)
         {
-
-
-
-            PropertyItem propItem = bitmap_to_be_saved.GetPropertyItem(0x010e);
-            string value_to_be_saved = null;
-            for(int i = 0; i< pin_locations.Count; i++)
+            try
             {
-                value_to_be_saved += pin_locations[i] + " ";
+
+                PropertyItem propItem = bitmap_to_be_saved.PropertyItems[0];
+                SetProperty(ref propItem, 0x010e, "");
+                bitmap_to_be_saved.SetPropertyItem(propItem);
+
+               // PropertyItem propItem = bitmap_to_be_saved.GetPropertyItem(0x010e);
+                string value_to_be_saved = null;
+                for (int i = 0; i < pin_locations.Count; i++)
+                {
+                    value_to_be_saved += pin_locations[i] + " ";
+                }
+                propItem.Len = value_to_be_saved.Length + 1;
+                byte[] bytesText = Encoding.ASCII.GetBytes(value_to_be_saved);
+                propItem.Value = bytesText;
+                bitmap_to_be_saved.SetPropertyItem(propItem);
+
+                db.set_socket_image(socketID_to_be_processed, bitmap_to_be_saved);
             }
-            propItem.Len = value_to_be_saved.Length+1;
-            byte[] bytesText = Encoding.ASCII.GetBytes(value_to_be_saved);
-            propItem.Value = bytesText;
-            bitmap_to_be_saved.SetPropertyItem(propItem);
-            
-            db.set_socket_image(socketID_to_be_processed, bitmap_to_be_saved);
+            catch(Exception ex)
+            {
+                MessageBox.Show("RESİM KAYDEDİLEMEDİ - "+ ex.Message);
+            }
+           
+        }
+        private void SetProperty(ref System.Drawing.Imaging.PropertyItem prop, int iId, string sTxt)
+        {
+            int iLen = sTxt.Length + 1;
+            byte[] bTxt = new Byte[iLen];
+            for (int i = 0; i < iLen - 1; i++)
+                bTxt[i] = (byte)sTxt[i];
+            bTxt[iLen - 1] = 0x00;
+            prop.Id = iId;
+            prop.Type = 2;
+            prop.Value = bTxt;
+            prop.Len = iLen;
         }
     }
 }
