@@ -187,9 +187,14 @@ namespace NURSAN_PROJE
             try
             {
                 int pinvalue = 0;
+                int switchvalue = 0;
                 if (newsocketpinc.Text != "")
                 {
                     pinvalue = Convert.ToInt32(newsocketpinc.Text);
+                }
+                if (newsocketpinc.Text != "")
+                {
+                    switchvalue = Convert.ToInt32(newsocketswc.Text);
                 }
                 table1 = new DataTable("pins");
                 table1.Columns.Add("Soket");
@@ -201,6 +206,11 @@ namespace NURSAN_PROJE
                     {
                         table1.Rows.Add(newsocketname.Text, i,i);
                     }
+                    for (int i = 1; i <= switchvalue; i++)
+                    {
+                        table1.Rows.Add(newsocketname.Text+"-SW(+)", i, i);
+                        table1.Rows.Add(newsocketname.Text+"-SW(-)", i, i);
+                    }
                     gridControl4.DataSource = table1;
                     gridControl4.RefreshDataSource();
 
@@ -211,6 +221,11 @@ namespace NURSAN_PROJE
                     {
                         table1.Rows.Add(newsocketname.Text, i);
                     }
+                    for (int i = 1; i <= switchvalue; i++)
+                    {
+                        table1.Rows.Add(newsocketname.Text + "-SW(+)", i);
+                        table1.Rows.Add(newsocketname.Text + "-SW(-)", i);
+                    }
                     gridControl4.DataSource = table1;
                     gridControl4.RefreshDataSource();
                 }
@@ -220,6 +235,7 @@ namespace NURSAN_PROJE
             catch (FormatException err)
             {
                 Console.WriteLine(newsocketpinc.Text);
+                Console.WriteLine(newsocketswc.Text);
             }
         }
 
@@ -301,6 +317,46 @@ namespace NURSAN_PROJE
         private void new_socket_auto_assign_pin_CheckStateChanged(object sender, EventArgs e)
         {
             newsocketpinc_TextChanged(this, e);
+        }
+
+        private void newsocketswc_EditValueChanged(object sender, EventArgs e)
+        {
+            newsocketpinc_TextChanged(this, e);
+        }
+
+        private void add_splice_button_Click(object sender, EventArgs e)
+        {
+            db.addComponent("SPLICE", add_splice_name.Text);
+        }
+
+        private void add_capacitor_button_Click(object sender, EventArgs e)
+        {
+            db.addComponent("CAPACITOR", add_capacitor_name.Text,Convert.ToInt32(add_capacitor_value_number.Text),5,Convert.ToInt32(add_capacitor_tolerance.Text));
+
+        }
+
+        private void add_diode_button_Click(object sender, EventArgs e)
+        {
+            db.addComponent("DIODE", add_diode_name.Text, Convert.ToInt32(add_diode_value_number .Text), Convert.ToInt32(add_diode_tolerance.Text));
+        }
+
+        private void add_resistor_button_Click(object sender, EventArgs e)
+        {
+            db.addComponent("RESISTOR", add_resistor_name.Text, Convert.ToInt32(add_resistor_value.Text), 5, Convert.ToInt32(add_resistor_tolerance.Text));
+        }
+
+        private void add_thermistor_button_Click(object sender, EventArgs e)
+        {
+            db.addComponent("THERMISTOR",
+                            add_thermistor_name.Text,
+                            add_thermistor_tolerance.Text,
+                            add_thermistor_firsttestpoint.Text,
+                            add_thermistor_secondtestpoint.Text,
+                            add_thermistor_minresistance.Text,
+                            add_thermistor_maxresistence.Text,
+                            add_thermistor_minresistancemultiplier.Text,
+                            add_thermistor_maxresistancemultiplier.Text);
+
         }
     }
 }
