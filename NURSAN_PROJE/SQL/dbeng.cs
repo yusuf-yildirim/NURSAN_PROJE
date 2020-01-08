@@ -121,26 +121,8 @@ namespace NURSAN_PROJE.SQL
             return ds.Tables[0].DefaultView;
 
         }
-
-        public DataTable test()
-        {
-
-
-            tmplog.WriteDebugLog("----------Proje Soketleri Listelemesi Başladı----------", false);
-            getprojectcon();
-
-            ds = new DataSet();
-            da = new SQLiteDataAdapter(@"SELECT PSockets.Adı,PIO_connection.Socket_PIN,PIO_connection.IO_PIN,PSockets.ID_soket,PIO_connection.ID_IO FROM PSockets INNER JOIN PIO_connection ON PIO_connection.ID_soket = PSockets.ID_soket", con);
-            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(ds);
-           
-            tmplog.WriteDebugLog("Proje veritabanı bağlantısı kapatıldı");
-            tmplog.WriteDebugLog("----------Proje Soketleri Listelemesi Tamamlandı----------", false);
-          
-            return ds.Tables[0];
-
-        }
-      public DataTable test2()
+    
+      public DataTable get_project_components()
         {
             getmaincon();
             ds = new DataSet();

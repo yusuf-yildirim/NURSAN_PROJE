@@ -441,63 +441,7 @@ namespace NURSAN_PROJE
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-             try
-             {
-                 DataTable socketlist = db.get_project_sockets().DataViewManager.DataSet.Tables[0];
-                 treeListLookUpEdit1.Properties.DisplayMember = "Soket Adı";
-                 TreeListNode SocketsNode = treeListLookUpEdit1TreeList.AppendNode(null, null);                
-                 for (int i = 0; i < socketlist.Rows.Count; i++)
-                 {
-                     if(i == 0)
-                     {                       
-                         SocketsNode.SetValue("Soket Adı", "SOKETLER");                       
-                     }
-                     TreeListNode node1 = treeListLookUpEdit1TreeList.AppendNode(null, SocketsNode);
-
-                     node1.SetValue("Soket Adı", socketlist.Rows[i][1]);
-                     node1.SetValue("SoketID", socketlist.Rows[i][0]);
-
-                     DataTable socketiolist = db.determineio(socketlist.Rows[i][0].ToString()).Tables[0];
-
-                     for (int y = 0; y < socketiolist.Rows.Count; y++)
-                     {
-                         try
-                         {
-                             TreeListNode childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, node1);
-                             childnode1.SetValue("IOID", socketiolist.Rows[y][0]);
-
-                             childnode1.SetValue("Soket Adı", socketlist.Rows[i][1] + " : " + socketiolist.Rows[y][2]);
-                             if ((int)socketiolist.Rows[y][3] != 0)
-                             {
-                                 childnode1.SetValue("SoketIO", "Cihaz Pin : " + socketiolist.Rows[y][3]);
-                             }
-                         }
-                         catch
-                         {
-
-                         }
-
-                     }
-                   
-
-                }
-                TreeListNode ComponentsNode = treeListLookUpEdit1TreeList.AppendNode(null, null);
-                ComponentsNode.SetValue("Soket Adı", "Komponentler");
-                TreeListNode node2 = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
-
-                node2.SetValue("Soket Adı", "test");
-                node2.SetValue("SoketID", "test");
-               
-                Console.WriteLine("ok");
-                 treeListLookUpEdit1TreeList.Refresh();
-                 //treeListLookUpEdit1TreeList.RefreshDataSource();
-                 treeListLookUpEdit1TreeList.RefreshEditor(true);
-             }
-             catch
-             {
-                Console.WriteLine("fail");
-
-            }
+            
 
 
 
@@ -511,9 +455,101 @@ namespace NURSAN_PROJE
             
         }
 
-     
+        private void treeListLookUpEdit1_Popup(object sender, EventArgs e)
+        {
+            treeListLookUpEdit1TreeList.ClearNodes();
+            try
+            {
+                DataTable socketlist = db.get_project_sockets().DataViewManager.DataSet.Tables[0];
+                treeListLookUpEdit1.Properties.DisplayMember = "Soket Adı";
+                TreeListNode SocketsNode = null;
+                for (int i = 0; i < socketlist.Rows.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        SocketsNode = treeListLookUpEdit1TreeList.AppendNode(null, null);
+                        SocketsNode.SetValue("Soket Adı", "SOKETLER");
+                    }
+                    TreeListNode node1 = treeListLookUpEdit1TreeList.AppendNode(null, SocketsNode);
 
- 
+                    node1.SetValue("Soket Adı", socketlist.Rows[i][1]);
+                    node1.SetValue("SoketID", socketlist.Rows[i][0]);
+
+                    DataTable socketiolist = db.determineio(socketlist.Rows[i][0].ToString()).Tables[0];
+
+                    for (int y = 0; y < socketiolist.Rows.Count; y++)
+                    {
+                        try
+                        {
+                            TreeListNode childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, node1);
+                            childnode1.SetValue("IOID", socketiolist.Rows[y][0]);
+
+                            childnode1.SetValue("Soket Adı", socketlist.Rows[i][1] + " : " + socketiolist.Rows[y][2]);
+                            if ((int)socketiolist.Rows[y][3] != 0)
+                            {
+                                childnode1.SetValue("SoketIO", "Cihaz Pin : " + socketiolist.Rows[y][3]);
+                            }
+                        }
+                        catch
+                        {
+
+                        }
+
+                    }
+
+
+                }
+                TreeListNode ComponentsNode = null;
+                TreeListNode ResistorNode = null;
+                TreeListNode CapacıtorNode = null;
+                DataTable componentlist = db.get_project_components();
+                for (int i = 0; i < componentlist.Rows.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        ComponentsNode = treeListLookUpEdit1TreeList.AppendNode(null, null);
+                        ResistorNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
+                        CapacıtorNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);                       
+                        
+                        ComponentsNode.SetValue("Soket Adı", "Komponentler");
+                        ResistorNode.SetValue("Soket Adı", "Dirençler");
+                        CapacıtorNode.SetValue("Soket Adı", "Kapasitörler");
+                    }
+                    switch (componentlist.Rows[i][2].ToString())
+                    {
+                        case "RESISTOR":
+                            TreeListNode childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, ResistorNode);
+                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
+                            TreeListNode childnode2 = treeListLookUpEdit1TreeList.AppendNode(null, childnode1);
+                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0]+"!!");
+                            break;
+                        case "CAPACITOR":
+                            childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, CapacıtorNode);
+                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
+                            childnode2 = treeListLookUpEdit1TreeList.AppendNode(null, childnode1);
+                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
+                            break;
+
+
+                    }
+
+
+                }
+               
+              
+
+                Console.WriteLine("ok");
+                treeListLookUpEdit1TreeList.Refresh();
+                //treeListLookUpEdit1TreeList.RefreshDataSource();
+                treeListLookUpEdit1TreeList.RefreshEditor(true);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("fail");
+                Console.WriteLine(ex.Message);
+
+            }
+        }
     }
 }
 
