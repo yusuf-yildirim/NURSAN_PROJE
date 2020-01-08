@@ -191,6 +191,12 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
+            this.Where_to_treelist_lookup = new DevExpress.XtraEditors.TreeListLookUpEdit();
+            this.treeList1 = new DevExpress.XtraTreeList.TreeList();
+            this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn4 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
             this.treeListLookUpEdit1 = new DevExpress.XtraEditors.TreeListLookUpEdit();
@@ -201,11 +207,7 @@
             this.IOID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.button1 = new System.Windows.Forms.Button();
-            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -380,12 +382,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ımageListBoxControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
             this.sidePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Where_to_treelist_lookup.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
             this.tabNavigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -696,6 +697,7 @@
             this.tabPane1.Size = new System.Drawing.Size(1556, 775);
             this.tabPane1.TabIndex = 8;
             this.tabPane1.Text = "tabPane1";
+            this.tabPane1.SelectedPageIndexChanged += new System.EventHandler(this.tabPane1_SelectedPageIndexChanged);
             // 
             // tabNavigationPage1
             // 
@@ -1301,7 +1303,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(181, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1199, 746);
+            this.panel2.Size = new System.Drawing.Size(1190, 746);
             this.panel2.TabIndex = 3;
             // 
             // gridControl1
@@ -1313,7 +1315,7 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1});
-            this.gridControl1.Size = new System.Drawing.Size(1199, 746);
+            this.gridControl1.Size = new System.Drawing.Size(1190, 746);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1462,25 +1464,85 @@
             // 
             // sidePanel1
             // 
+            this.sidePanel1.Controls.Add(this.Where_to_treelist_lookup);
             this.sidePanel1.Controls.Add(this.button2);
             this.sidePanel1.Controls.Add(this.textEdit9);
             this.sidePanel1.Controls.Add(this.treeListLookUpEdit1);
             this.sidePanel1.Controls.Add(this.labelControl10);
             this.sidePanel1.Controls.Add(this.button1);
-            this.sidePanel1.Controls.Add(this.textEdit8);
             this.sidePanel1.Controls.Add(this.labelControl9);
-            this.sidePanel1.Controls.Add(this.textEdit7);
-            this.sidePanel1.Controls.Add(this.labelControl8);
-            this.sidePanel1.Controls.Add(this.textEdit6);
             this.sidePanel1.Controls.Add(this.labelControl7);
             this.sidePanel1.Controls.Add(this.labelControl6);
             this.sidePanel1.Controls.Add(this.simpleButton2);
             this.sidePanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sidePanel1.Location = new System.Drawing.Point(1380, 0);
+            this.sidePanel1.Location = new System.Drawing.Point(1371, 0);
             this.sidePanel1.Name = "sidePanel1";
-            this.sidePanel1.Size = new System.Drawing.Size(176, 746);
+            this.sidePanel1.Size = new System.Drawing.Size(185, 746);
             this.sidePanel1.TabIndex = 1;
             this.sidePanel1.Text = "sidePanel1";
+            // 
+            // Where_to_treelist_lookup
+            // 
+            this.Where_to_treelist_lookup.EditValue = "";
+            this.Where_to_treelist_lookup.Location = new System.Drawing.Point(13, 96);
+            this.Where_to_treelist_lookup.MenuManager = this.toolbarFormManager1;
+            this.Where_to_treelist_lookup.Name = "Where_to_treelist_lookup";
+            this.Where_to_treelist_lookup.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.Where_to_treelist_lookup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.Where_to_treelist_lookup.Properties.TreeList = this.treeList1;
+            this.Where_to_treelist_lookup.Size = new System.Drawing.Size(134, 22);
+            this.Where_to_treelist_lookup.TabIndex = 49;
+            this.Where_to_treelist_lookup.Popup += new System.EventHandler(this.Where_to_treelist_lookup_Popup);
+            // 
+            // treeList1
+            // 
+            this.treeList1.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.treeListColumn1,
+            this.treeListColumn2,
+            this.treeListColumn3,
+            this.treeListColumn4});
+            this.treeList1.KeyFieldName = "";
+            this.treeList1.Location = new System.Drawing.Point(-8, 300);
+            this.treeList1.Name = "treeList1";
+            this.treeList1.OptionsBehavior.PopulateServiceColumns = true;
+            this.treeList1.OptionsPrint.PrintReportFooter = false;
+            this.treeList1.OptionsView.ShowIndentAsRowStyle = true;
+            this.treeList1.ParentFieldName = "";
+            this.treeList1.Size = new System.Drawing.Size(400, 200);
+            this.treeList1.TabIndex = 0;
+            // 
+            // treeListColumn1
+            // 
+            this.treeListColumn1.Caption = "Soket Adı";
+            this.treeListColumn1.FieldName = "Soket Adı";
+            this.treeListColumn1.Name = "treeListColumn1";
+            this.treeListColumn1.Visible = true;
+            this.treeListColumn1.VisibleIndex = 0;
+            // 
+            // treeListColumn2
+            // 
+            this.treeListColumn2.Caption = "SoketIO";
+            this.treeListColumn2.FieldName = "SoketIO";
+            this.treeListColumn2.Name = "treeListColumn2";
+            this.treeListColumn2.Visible = true;
+            this.treeListColumn2.VisibleIndex = 1;
+            // 
+            // treeListColumn3
+            // 
+            this.treeListColumn3.Caption = "SoketID";
+            this.treeListColumn3.FieldName = "SoketID";
+            this.treeListColumn3.Name = "treeListColumn3";
+            this.treeListColumn3.Visible = true;
+            this.treeListColumn3.VisibleIndex = 2;
+            // 
+            // treeListColumn4
+            // 
+            this.treeListColumn4.Caption = "IOID";
+            this.treeListColumn4.FieldName = "IOID";
+            this.treeListColumn4.Name = "treeListColumn4";
+            this.treeListColumn4.Visible = true;
+            this.treeListColumn4.VisibleIndex = 3;
             // 
             // button2
             // 
@@ -1581,45 +1643,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // textEdit8
-            // 
-            this.textEdit8.Location = new System.Drawing.Point(13, 211);
-            this.textEdit8.MenuManager = this.toolbarFormManager1;
-            this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Size = new System.Drawing.Size(134, 20);
-            this.textEdit8.TabIndex = 8;
-            // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(4, 192);
+            this.labelControl9.Location = new System.Drawing.Point(6, 140);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(58, 13);
             this.labelControl9.TabIndex = 7;
             this.labelControl9.Text = "Kablo Rengi";
-            // 
-            // textEdit7
-            // 
-            this.textEdit7.Location = new System.Drawing.Point(13, 148);
-            this.textEdit7.MenuManager = this.toolbarFormManager1;
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Size = new System.Drawing.Size(134, 20);
-            this.textEdit7.TabIndex = 6;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(4, 129);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(63, 13);
-            this.labelControl8.TabIndex = 5;
-            this.labelControl8.Text = "Kablo Kontrol";
-            // 
-            // textEdit6
-            // 
-            this.textEdit6.Location = new System.Drawing.Point(13, 94);
-            this.textEdit6.MenuManager = this.toolbarFormManager1;
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(134, 20);
-            this.textEdit6.TabIndex = 4;
             // 
             // labelControl7
             // 
@@ -2977,12 +3007,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
             this.sidePanel1.ResumeLayout(false);
             this.sidePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Where_to_treelist_lookup.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
             this.tabNavigationPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -3094,11 +3123,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit textEdit9;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.TextEdit textEdit8;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.TextEdit textEdit7;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
@@ -3287,5 +3312,11 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn SoketID;
         private DevExpress.XtraTreeList.Columns.TreeListColumn IOID;
         private System.Windows.Forms.Button button1;
+        private DevExpress.XtraEditors.TreeListLookUpEdit Where_to_treelist_lookup;
+        private DevExpress.XtraTreeList.TreeList treeList1;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn3;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn4;
     }
 }
