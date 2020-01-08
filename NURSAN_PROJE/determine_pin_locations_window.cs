@@ -138,7 +138,7 @@ namespace NURSAN_PROJE
             Stack<Point> stack = new Stack<Point>();
             int x0 = pt.X;
             int y0 = pt.Y;
-
+            //TODO  
             stack.Push(new Point(x0, y0));
             int sayacdeneme = 0;
             while (stack.Any())

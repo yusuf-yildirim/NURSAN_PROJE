@@ -35,5 +35,25 @@ namespace NURSAN_PROJE
         {
            
         }
+
+        private void askprojectname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                DBeng db = new DBeng();
+                db.create_project(textEdit1.Text);
+                this.Close();
+            }
+        }
+
+        private void textEdit1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                DBeng db = new DBeng();
+                db.create_project(textEdit1.Text);
+                this.Close();
+            }
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace NURSAN_PROJE
             Application.SetCompatibleTextRenderingDefault(false);
             BonusSkins.Register();
             //  Application.Run(new Projectwindow());
+            tmplog.start_debug();
             Application.Run(args.Length == 0 ? new Projectwindow(string.Empty) : new Projectwindow(args[0]));
           
         }

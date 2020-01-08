@@ -1,0 +1,52 @@
+New Log Created
+8.01.2020 21:57:04: Ana veritabanı bağlantısı açıldı
+----------Proje Soketleri Listelemesi Başladı----------
+8.01.2020 21:57:04: Proje veritabanı bağlantısı açıldı
+8.01.2020 21:57:04: Veriler başarıyla çekildi
+8.01.2020 21:57:04: Proje veritabanı bağlantısı kapatıldı
+----------Proje Soketleri Listelemesi Tamamlandı----------
+8.01.2020 21:57:04: Ana veritabanı bağlantısı açıldı
+8.01.2020 21:57:08: Ana veritabanı bağlantısı açıldı
+----------Projeye Soket Kaydı başladı----------
+8.01.2020 21:57:09: Ana veritabanı bağlantısı açıldı
+8.01.2020 21:57:09: cda32ae8-1640-4213-b6e2-824082e95fc3 id ye sahip soket veritabanında arandı
+8.01.2020 21:57:09: cda32ae8-1640-4213-b6e2-824082e95fc3 id ye sahip soket bağlantıları bağlantı veritabanında arandı
+8.01.2020 21:57:09: cda32ae8-1640-4213-b6e2-824082e95fc3 id ye sahip soket resimleri veritabanında arandı
+8.01.2020 21:57:09: Ana veritabanı bağlantısı kapatıldı
+8.01.2020 21:57:09: Proje veritabanı bağlantısı açıldı
+8.01.2020 21:57:09: Bağlantılar ,soket bilgileri ve resinleri proje veri tabanına aktarıldı!
+8.01.2020 21:57:09: Proje veritabanı bağlantısı kapatıldı!
+----------Soket Kaydı tamamlandı----------
+----------Proje Soketleri Listelemesi Başladı----------
+8.01.2020 21:57:09: Proje veritabanı bağlantısı açıldı
+8.01.2020 21:57:09: Veriler başarıyla çekildi
+8.01.2020 21:57:09: Proje veritabanı bağlantısı kapatıldı
+----------Proje Soketleri Listelemesi Tamamlandı----------
+8.01.2020 21:57:09: Ana veritabanı bağlantısı açıldı
+----------Proje Soketleri Listelemesi Başladı----------
+8.01.2020 21:57:11: Proje veritabanı bağlantısı açıldı
+8.01.2020 21:57:11: Veriler başarıyla çekildi
+8.01.2020 21:57:11: Proje veritabanı bağlantısı kapatıldı
+----------Proje Soketleri Listelemesi Tamamlandı----------
+8.01.2020 21:57:11: Proje veritabanı bağlantısı açıldı
+----------Proje Soketleri Listelemesi Başladı----------
+8.01.2020 21:57:13: Proje veritabanı bağlantısı açıldı
+8.01.2020 21:57:13: Veriler başarıyla çekildi
+8.01.2020 21:57:13: Proje veritabanı bağlantısı kapatıldı
+----------Proje Soketleri Listelemesi Tamamlandı----------
+----------Proje Soketleri Listelemesi Başladı----------
+8.01.2020 21:57:14: Proje veritabanı bağlantısı açıldı
+8.01.2020 21:57:14: Veriler başarıyla çekildi
+8.01.2020 21:57:14: Proje veritabanı bağlantısı kapatıldı
+----------Proje Soketleri Listelemesi Tamamlandı----------
+----------Proje Soketleri Listelemesi Başladı----------
+8.01.2020 21:57:15: Proje veritabanı bağlantısı açıldı
+8.01.2020 21:57:15: Veriler başarıyla çekildi
+8.01.2020 21:57:15: Proje veritabanı bağlantısı kapatıldı
+----------Proje Soketleri Listelemesi Tamamlandı----------
+----------Proje Soketleri Listelemesi Başladı----------
+8.01.2020 21:57:17: Proje veritabanı bağlantısı açıldı
+8.01.2020 21:57:17: Veriler başarıyla çekildi
+8.01.2020 21:57:17: Proje veritabanı bağlantısı kapatıldı
+----------Proje Soketleri Listelemesi Tamamlandı----------
+8.01.2020 21:57:17: Proje veritabanı bağlantısı açıldı

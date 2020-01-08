@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery2 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.label1 = new System.Windows.Forms.Label();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.okaskprojectnamebutton = new DevExpress.XtraEditors.SimpleButton();
@@ -56,6 +56,7 @@
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(157, 20);
             this.textEdit1.TabIndex = 1;
+            this.textEdit1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit1_KeyPress);
             // 
             // okaskprojectnamebutton
             // 
@@ -81,14 +82,14 @@
             // 
             this.sqlDataSource1.ConnectionName = "tablo";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            customSqlQuery1.Name = "create_project";
-            queryParameter1.Name = "project_name";
-            queryParameter1.Type = typeof(string);
-            queryParameter1.ValueInfo = "null";
-            customSqlQuery1.Parameters.Add(queryParameter1);
-            customSqlQuery1.Sql = "insert into proje(ad) values(@project_name)";
+            customSqlQuery2.Name = "create_project";
+            queryParameter2.Name = "project_name";
+            queryParameter2.Type = typeof(string);
+            queryParameter2.ValueInfo = "null";
+            customSqlQuery2.Parameters.Add(queryParameter2);
+            customSqlQuery2.Sql = "insert into proje(ad) values(@project_name)";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery1});
+            customSqlQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9ImNyZWF0ZV9wcm9qZWN0IiAvP" +
     "jwvRGF0YVNldD4=";
             // 
@@ -105,6 +106,7 @@
             this.Name = "askprojectname";
             this.Text = "Yeni Proje İsmi";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.askprojectname_FormClosed);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.askprojectname_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
