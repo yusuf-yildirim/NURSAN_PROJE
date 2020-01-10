@@ -35,7 +35,13 @@ namespace NURSAN_PROJE.SQL
         {
             LocalTables localtables = new LocalTables();
         }
-
+        public void attachDatabase()
+        {
+            //TO-DO         
+            //PROJE VERİ TABANINI ANA VERİTABANINA BAĞLAYIP İŞLEMLERİ TRİGGERLAR İLE HIZLANDIRMAK İÇİN KULLANILACAK
+            //SOKETLER İÇİN İŞLEMLER DÜZENLENECEK
+            //KOMPONENTLER İÇİN İŞLEMLER DÜZENLENECEK
+        }
         private void getmaincon()
         {
             con = new SQLiteConnection("Data Source=" + Application.StartupPath + "\\tablo.db;Version=3;");
@@ -141,7 +147,7 @@ namespace NURSAN_PROJE.SQL
 
             if (GuidCheck(SocketID))
             {
-                getprojectcon();
+                getprojectcon();                
                 DataTable table = new DataTable();
                 da = new SQLiteDataAdapter("select * from PSockets where ID_soket = '" + SocketID + "'", con);
                 SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
