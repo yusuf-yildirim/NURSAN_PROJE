@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration;
 using System.Windows.Forms;
 
 namespace NURSAN_PROJE.Configurator
@@ -14,8 +9,8 @@ namespace NURSAN_PROJE.Configurator
         {
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-            connectionStringsSection.ConnectionStrings["NURSAN_PROJE.Properties.Settings.mainsource"].ConnectionString = @"Data Source=" + Application.StartupPath+ "\\tablo.db";
-            connectionStringsSection.ConnectionStrings["maindatabase"].ConnectionString = @"XpoProvider=SQLite;Data Source=" + Application.StartupPath+ "\\tablo.db";
+            connectionStringsSection.ConnectionStrings["NURSAN_PROJE.Properties.Settings.mainsource"].ConnectionString = @"Data Source=" + Application.StartupPath + "\\tablo.db";
+            connectionStringsSection.ConnectionStrings["maindatabase"].ConnectionString = @"XpoProvider=SQLite;Data Source=" + Application.StartupPath + "\\tablo.db";
             config.Save();
             ConfigurationManager.RefreshSection("connectionStrings");
         }

@@ -1,15 +1,13 @@
-﻿using System;
-using System.Linq;
-using System.Data.SQLite;
-using System.Data;
-using System.Windows.Forms;
+﻿using NURSAN_PROJE.Configurator;
+using System;
 using System.Configuration;
-using System.IO;
-using NURSAN_PROJE.Configurator;
-using System.Diagnostics;
-using System.Threading;
+using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace NURSAN_PROJE.SQL
 {
@@ -22,6 +20,22 @@ namespace NURSAN_PROJE.SQL
         static DataSet ds;
         public static bool created = false;
         Config getconstring = new Config();
+        struct LocalTables//TO-DO
+        {
+            public DataSet tables;
+            int maxorder;
+
+            public void getalltables(SQLiteConnection con)
+            {
+
+            }
+        }
+
+        public DBeng()//TO-DO
+        {
+            LocalTables localtables = new LocalTables();
+        }
+
         private void getmaincon()
         {
             con = new SQLiteConnection("Data Source=" + Application.StartupPath + "\\tablo.db;Version=3;");
@@ -39,7 +53,7 @@ namespace NURSAN_PROJE.SQL
             tmplog.WriteDebugLog("Proje veritabanı bağlantısı açıldı");
         }
 
-        public void connection_add(string origin, string origintype, string destination, string destinationtype,string colorıd)
+        public void connection_add(string origin, string origintype, string destination, string destinationtype, string colorıd)
         {
             getprojectcon();
             cmd = new SQLiteCommand();
@@ -56,19 +70,19 @@ namespace NURSAN_PROJE.SQL
             da = new SQLiteDataAdapter("SELECT MAX(\"Order\") FROM PConnections", con);
             SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
             da.Fill(Orders);
-      
-                try
-                {
-                    return (Convert.ToInt32(Orders.Rows[0][0]) + 1).ToString();
-                }
-                catch
-                {
-                    return "1";
-                }
-                
-          
-           
-            con.Close();
+
+            try
+            {
+                con.Close();
+                return (Convert.ToInt32(Orders.Rows[0][0]) + 1).ToString();
+            }
+            catch
+            {
+                con.Close();
+                return "1";
+
+            }
+
         }
         public DataTable get_ConnectionTable()
         {
@@ -77,17 +91,17 @@ namespace NURSAN_PROJE.SQL
             connections.Columns.Add("NEREYE");
             connections.Columns.Add("KABLO KONTROL");
             connections.Columns.Add("WireColor");
-            connections.Columns.Add("ÖZELLİKLER");           
+            connections.Columns.Add("ÖZELLİKLER");
             tmplog.WriteDebugLog("----------BAĞLANTI LİSTELEME BAŞLADI----------", false);
             getprojectcon();
             ds = new DataSet();
             da = new SQLiteDataAdapter("SELECT * FROM PConnections ORDER BY \"Order\" ASC", con);
             SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
             da.Fill(ds);
-            for(int i = 0;i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 string origin, destination, color;
-                if(ds.Tables[0].Rows[i][3].ToString() == "SOCKET")
+                if (ds.Tables[0].Rows[i][3].ToString() == "SOCKET")
                 {
                     origin = getIOInfo(ds.Tables[0].Rows[i][2].ToString());
                 }
@@ -109,16 +123,36 @@ namespace NURSAN_PROJE.SQL
             return connections;
         }
 
-
+        public bool GuidCheck(string guid)
+        {
+            try
+            {
+                Guid.Parse(guid);
+                return true;
+            }
+            catch
+            {
+                MessageBox.Show("UUID HATASI : " + guid + " ID GEÇERLİ DEĞİL");
+                return false;
+            }
+        }
         private string getSocketNameInfo(String SocketID)
         {
-           
-            getprojectcon();
-            DataTable table = new DataTable();
-            da = new SQLiteDataAdapter("select * from PSockets where ID_soket = '" + SocketID +"'", con);
-            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(table);
-            return table.Rows[0][1].ToString();
+
+            if (GuidCheck(SocketID))
+            {
+                getprojectcon();
+                DataTable table = new DataTable();
+                da = new SQLiteDataAdapter("select * from PSockets where ID_soket = '" + SocketID + "'", con);
+                SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
+                da.Fill(table);
+                return table.Rows[0][1].ToString();
+            }
+            else
+            {
+                return "";
+            }
+
         }
         private string getIOInfo(String ıoID)
         {
@@ -137,15 +171,15 @@ namespace NURSAN_PROJE.SQL
             {
                 return "HATA";
             }
-           
+
         }
         private string getComponentInfo(String componenetID)
-        {            
+        {
             getprojectcon();
             DataTable table = new DataTable();
-            da = new SQLiteDataAdapter("select * from PComponents where ID_component = '" + componenetID+"'", con);
+            da = new SQLiteDataAdapter("select * from PComponents where ID_component = '" + componenetID + "'", con);
             SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(table);            
+            da.Fill(table);
             return table.Rows[0][1].ToString();
         }
         private string getColorInfo(String ColorID)
@@ -154,7 +188,7 @@ namespace NURSAN_PROJE.SQL
             con.Close();
             getmaincon();
             DataTable table = new DataTable();
-            da = new SQLiteDataAdapter("select * from Colours where ID_color = '" + ColorID+"'", con);
+            da = new SQLiteDataAdapter("select * from Colours where ID_color = '" + ColorID + "'", con);
             SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
             da.Fill(table);
             Console.WriteLine("BULUNAN RENK : " + table.Rows[0][1].ToString());
@@ -186,7 +220,7 @@ namespace NURSAN_PROJE.SQL
             da.Fill(ds);
             ds.Tables[0].DefaultView.AllowEdit = true;
             con.Close();
-            tmplog.WriteDebugLog("Ana veritabanı bağlantısı kapatıldı");           
+            tmplog.WriteDebugLog("Ana veritabanı bağlantısı kapatıldı");
             tmplog.WriteDebugLog("----------Ana Veritabanı Soketleri Listelemesi Tamamlandı----------", false);
             return ds.Tables[0].DefaultView;
 
@@ -195,7 +229,7 @@ namespace NURSAN_PROJE.SQL
         {
             tmplog.WriteDebugLog("----------Proje Soketleri Listelemesi Başladı----------", false);
             getprojectcon();
-            
+
             ds = new DataSet();
             da = new SQLiteDataAdapter(@"select[PSockets].[ID_soket], [PSockets].[Adı],
        [PSockets].[Pin_sayisi],
@@ -213,8 +247,8 @@ namespace NURSAN_PROJE.SQL
             return ds.Tables[0].DefaultView;
 
         }
-    
-      public DataTable get_project_components()
+
+        public DataTable get_project_components()
         {
             getmaincon();
             ds = new DataSet();
@@ -235,7 +269,7 @@ namespace NURSAN_PROJE.SQL
             {
                 x.Sockets.AddSocketsRow(soc_parameters[0].ToString(), soc_parameters[1].ToString(), Convert.ToInt32(soc_parameters[2]), Convert.ToInt32(soc_parameters[3]), Convert.ToInt32(soc_parameters[4]));
                 mainsourceTableAdapters.SocketsTableAdapter a = new mainsourceTableAdapters.SocketsTableAdapter();
-                tmplog.WriteDebugLog("Ana veritabanı tabloları na "+ soc_parameters[0].ToString()+" id numaralı soket eklendi");
+                tmplog.WriteDebugLog("Ana veritabanı tabloları na " + soc_parameters[0].ToString() + " id numaralı soket eklendi");
                 a.Update(x.Sockets);
                 a.Dispose();
                 tmplog.WriteDebugLog("Veritabanı ile tablo eşitlendi");
@@ -244,8 +278,8 @@ namespace NURSAN_PROJE.SQL
                     if (tp_parameters[0, i] == null)
                     {
                         break;
-                    }                                        
-                        x.IO_connections.AddIO_connectionsRow(Guid.NewGuid().ToString()  ,soc_parameters[0].ToString(), tp_parameters[1, i], tp_parameters[2, i]);     
+                    }
+                    x.IO_connections.AddIO_connectionsRow(Guid.NewGuid().ToString(), soc_parameters[0].ToString(), tp_parameters[1, i], tp_parameters[2, i]);
                     // cmd.CommandText = "INSERT INTO PIO_connection(ID_soket, Socket_PIN, IO_PIN) values ('" + soc_parameters[0] + "','" + tp_parameters[1, i] + "','" + tp_parameters[2, i] + "');";
                     // cmd.ExecuteNonQuery();
                 }
@@ -264,7 +298,7 @@ namespace NURSAN_PROJE.SQL
         public void unregister_socket(string SocketID)
         {
             tmplog.WriteDebugLog("----------Soket Silme başladı----------", false);
-            getprojectcon();           
+            getprojectcon();
             ds = new DataSet();
             da = new SQLiteDataAdapter($"select *  from PSockets WHERE ID_soket = '{SocketID}'", connection: con);
             tmplog.WriteDebugLog(SocketID + " id ye sahip soket, veritabanında arandı");
@@ -278,7 +312,7 @@ namespace NURSAN_PROJE.SQL
                 cikis = MessageBox.Show("Kaldırmak istediğiniz soket kullanımda, devam etmek istiyormusunuz ?", "Uyarı", MessageBoxButtons.YesNo);
                 if (cikis == DialogResult.Yes)
                 {
-                    getmaincon();                   
+                    getmaincon();
                     cmd = new SQLiteCommand();
                     cmd.Connection = con;
                     cmd.CommandText = $"delete from Sockets where ID_soket ='{SocketID}'";
@@ -294,7 +328,7 @@ namespace NURSAN_PROJE.SQL
             }
             else
             {
-                getmaincon();            
+                getmaincon();
                 cmd = new SQLiteCommand();
                 cmd.Connection = con;
                 cmd.CommandText = $"delete from Sockets where ID_soket = '{SocketID}'";
@@ -307,20 +341,20 @@ namespace NURSAN_PROJE.SQL
                 tmplog.WriteDebugLog("Ana veritabanı bağlantısı kapatıldı");
                 tmplog.WriteDebugLog(SocketID + " id ye sahip soket ve bağlantıları veritabanından silindi.");
             }
-         
+
             tmplog.WriteDebugLog("----------Soket Silme tamamlandı----------", false);
         }
-        
+
         public void register_using_socket(string SocketID)
         {
-            tmplog.WriteDebugLog("----------Projeye Soket Kaydı başladı----------",false);
+            tmplog.WriteDebugLog("----------Projeye Soket Kaydı başladı----------", false);
 
-            getmaincon();          
+            getmaincon();
             ds = new DataSet();
             DataSet ds2 = new DataSet();
             DataSet ds3 = new DataSet();
             da = new SQLiteDataAdapter($"select *  from[Sockets][Sockets] WHERE ID_soket = '{SocketID}'", connection: con);
-            tmplog.WriteDebugLog(SocketID+ " id ye sahip soket veritabanında arandı");
+            tmplog.WriteDebugLog(SocketID + " id ye sahip soket veritabanında arandı");
             SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
             da.Fill(ds);
             da = new SQLiteDataAdapter($"select *  from IO_connections WHERE ID_soket = '{SocketID}'", connection: con);
@@ -333,17 +367,17 @@ namespace NURSAN_PROJE.SQL
             da.Fill(ds3);
             con.Close();
             tmplog.WriteDebugLog("Ana veritabanı bağlantısı kapatıldı");
-            getprojectcon();        
+            getprojectcon();
             cmd = new SQLiteCommand();
             cmd.Connection = con;
             cmd.CommandText = $"insert into PSockets(ID_soket,Adı,\"Pin_sayisi\",\"Anahtar_sayisi\",\"Led_numarasi\") values ('{ds.Tables[0].Rows[0][0].ToString()}','{ds.Tables[0].Rows[0][1].ToString()}','{ds.Tables[0].Rows[0][2].ToString()}','{ds.Tables[0].Rows[0][3].ToString()}','{ds.Tables[0].Rows[0][4].ToString()}');";
-            if(ds3.Tables[0].Rows.Count > 0)
+            if (ds3.Tables[0].Rows.Count > 0)
             {
                 cmd.Parameters.Add("@img", DbType.Binary, ((byte[])(ds3.Tables[0].Rows[0][2])).Length);
                 cmd.CommandText += "INSERT INTO ImageStore(ID_soket, imageBlob) values ('" + ds.Tables[0].Rows[0][0].ToString() + "',@img);";
                 cmd.Parameters["@img"].Value = (byte[])ds3.Tables[0].Rows[0][2];
             }
-          
+
             try
             {
                 using (var transaction = con.BeginTransaction())
@@ -372,7 +406,7 @@ namespace NURSAN_PROJE.SQL
                 else
                 {
                     MessageBox.Show(ex.Message + " KULLANILACAK SOKET KAYDEDİLİRKEN İŞLENMEMİŞ HATA");
-                    tmplog.WriteDebugLog("Soket aktarılamadı! "+ ex.Message, true);
+                    tmplog.WriteDebugLog("Soket aktarılamadı! " + ex.Message, true);
                     tmplog.WriteDebugLog(ex.StackTrace, false);
                 }
             }
@@ -383,7 +417,7 @@ namespace NURSAN_PROJE.SQL
         public void unregister_using_socket(string SocketID)
         {
             tmplog.WriteDebugLog("----------Kullanılan Soket Kaydı Silme başladı----------", false);
-            getprojectcon();          
+            getprojectcon();
             cmd = new SQLiteCommand();
             cmd.Connection = con;
             cmd.CommandText = $"delete from PSockets where ID_soket = '{SocketID}'";
@@ -405,11 +439,11 @@ namespace NURSAN_PROJE.SQL
         public DataSet determineio(String SocketID)
         {
             ds = new DataSet();
-            getprojectcon();           
-            da = new SQLiteDataAdapter($"SELECT * FROM PIO_connection WHERE ID_soket = '{SocketID}'", connection: con);           
+            getprojectcon();
+            da = new SQLiteDataAdapter($"SELECT * FROM PIO_connection WHERE ID_soket = '{SocketID}'", connection: con);
             SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(ds);            
-            return ds;           
+            da.Fill(ds);
+            return ds;
         }
 
         public void create_recent(String path, DevExpress.DataAccess.Sql.SqlDataSource datasource)//TO-DO CHANGE
@@ -472,9 +506,9 @@ namespace NURSAN_PROJE.SQL
                 }
                 catch (Exception ex)
                 {
-                     MessageBox.Show(ex.Message);
-                     MessageBox.Show(ex.StackTrace);
-                   // Console.WriteLine("RESİM YÜKLENEMEDİ");
+                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.StackTrace);
+                    // Console.WriteLine("RESİM YÜKLENEMEDİ");
                     return null;
                 }
             }
@@ -483,9 +517,9 @@ namespace NURSAN_PROJE.SQL
                 Console.WriteLine("RESİM YÜKLENEMEDİ");
                 return null;
             }
-           
+
         }
-        public void set_socket_image(string SocketID,Image img)
+        public void set_socket_image(string SocketID, Image img)
         {
             try
             {
@@ -531,7 +565,7 @@ namespace NURSAN_PROJE.SQL
                     con.Close();
                 }
             }
-          
+
         }
         private static ImageCodecInfo GetEncoderInfo(String mimeType)
         {
@@ -542,13 +576,13 @@ namespace NURSAN_PROJE.SQL
             {
                 if (encoders[j].MimeType == mimeType)
                 {
-                    Console.WriteLine(encoders[j].MimeType );
+                    Console.WriteLine(encoders[j].MimeType);
                     return encoders[j];
                 }
             }
             return null;
         }
-       
+
         public byte[] ImageToByteArray(System.Drawing.Image imageIn)
         {
 
@@ -594,9 +628,9 @@ namespace NURSAN_PROJE.SQL
                 }
                 return data;
             }
-           
+
         }
-         ImageCodecInfo GetEncoderInfo2(string mimeType)
+        ImageCodecInfo GetEncoderInfo2(string mimeType)
         {
             int j;
             ImageCodecInfo[] encoders;
@@ -613,16 +647,16 @@ namespace NURSAN_PROJE.SQL
         ///</summary>
         public void addComponent(String technicname, String name)
         {
-            x.Components.AddComponentsRow(Guid.NewGuid().ToString(), name, technicname,0,0,0,null,null,0,0,0,0,0);
+            x.Components.AddComponentsRow(Guid.NewGuid().ToString(), name, technicname, 0, 0, 0, null, null, 0, 0, 0, 0, 0);
             updateComponents();
 
         }
         ///<summary>
         ///Projeye kapasitör ve direnç eklenirken kullanılmalıdır.Tecnicname tüm aynı komponentler için sabit olmalıdır.
         ///</summary>
-        public void addComponent(String technicname, String name,int value,int valuemultiplier,int tolerence)
+        public void addComponent(String technicname, String name, int value, int valuemultiplier, int tolerence)
         {
-            x.Components.AddComponentsRow(Guid.NewGuid().ToString(), name, technicname, value, valuemultiplier, tolerence, null, null, 0, 0, 0,0,0);
+            x.Components.AddComponentsRow(Guid.NewGuid().ToString(), name, technicname, value, valuemultiplier, tolerence, null, null, 0, 0, 0, 0, 0);
             updateComponents();
 
         }
@@ -631,22 +665,22 @@ namespace NURSAN_PROJE.SQL
         ///</summary>
         public void addComponent(String technicname, String name, int forwardvoltage, int tolerence)
         {
-            x.Components.AddComponentsRow(Guid.NewGuid().ToString(), name, technicname, forwardvoltage, 1, tolerence, null, null, 0, 0, 0,0,0);
+            x.Components.AddComponentsRow(Guid.NewGuid().ToString(), name, technicname, forwardvoltage, 1, tolerence, null, null, 0, 0, 0, 0, 0);
             updateComponents();
 
         }
         ///<summary>
         ///Projeye termistör eklenirken kullanılmalıdır.Tecnicname tüm aynı komponentler için sabit olmalıdır
         ///</summary>
-        public void addComponent(String technicname ,String name, int Comparasiontolerence,int firsttestpoint, int secondtestpoint,int minResistance,int maxResistence,int minResistincemultiplier,int maxResistenceMultiplier)
+        public void addComponent(String technicname, String name, int Comparasiontolerence, int firsttestpoint, int secondtestpoint, int minResistance, int maxResistence, int minResistincemultiplier, int maxResistenceMultiplier)
         {
-            x.Components.AddComponentsRow(Guid.NewGuid().ToString(),name,technicname,0,0,0,firsttestpoint.ToString(),secondtestpoint.ToString(),minResistance,minResistincemultiplier,maxResistence,Comparasiontolerence,maxResistenceMultiplier);
-            updateComponents();            
+            x.Components.AddComponentsRow(Guid.NewGuid().ToString(), name, technicname, 0, 0, 0, firsttestpoint.ToString(), secondtestpoint.ToString(), minResistance, minResistincemultiplier, maxResistence, Comparasiontolerence, maxResistenceMultiplier);
+            updateComponents();
         }
         ///<summary>
         ///Projeye generic component eklenirken kullanılmalıdır.Tecnicname tüm aynı komponentler için sabit olmalıdır
         ///</summary>
-        public void addComponent(String technicname, String name, int testCurrent,int testCurrentMultiplier, int voltageDrop, int tolerence)
+        public void addComponent(String technicname, String name, int testCurrent, int testCurrentMultiplier, int voltageDrop, int tolerence)
         {
 
 

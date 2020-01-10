@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using NURSAN_PROJE.SQL;
+using System;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using NURSAN_PROJE.SQL;
 
 namespace NURSAN_PROJE
 {
@@ -23,7 +15,7 @@ namespace NURSAN_PROJE
         {
             DBeng db = new DBeng();
             db.create_project(textEdit1.Text);
-            this.Close();                     
+            this.Close();
         }
 
         private void cancelaskprojectnamebutton_Click(object sender, EventArgs e)
@@ -33,7 +25,7 @@ namespace NURSAN_PROJE
 
         private void askprojectname_FormClosed(object sender, FormClosedEventArgs e)
         {
-           
+
         }
 
         private void askprojectname_KeyPress(object sender, KeyPressEventArgs e)

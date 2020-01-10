@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NURSAN_PROJE
+﻿namespace NURSAN_PROJE
 {
     public enum Çarpan
     {

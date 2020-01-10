@@ -2,7 +2,6 @@
 using NURSAN_PROJE.SQL;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
@@ -33,15 +32,15 @@ namespace NURSAN_PROJE
         Point pin_point;
         Bitmap bitmap_for_pin_processing;
         Color point_color_for_pin_processing;
-        public determine_pin_locations_window(string SocketID,Bitmap img)
+        public determine_pin_locations_window(string SocketID, Bitmap img)
         {
             InitializeComponent();
             //CheckForIllegalCrossThreadCalls = false;
             PropertyItem[] propertyItem2 = img.PropertyItems;
             bitmap_to_be_saved = new Bitmap(img);
-            
-            
-            for(int i =0; i < propertyItem2.Length; i++)
+
+
+            for (int i = 0; i < propertyItem2.Length; i++)
             {
                 bitmap_to_be_saved.SetPropertyItem(propertyItem2[i]);
                 Console.WriteLine(propertyItem2[i]);
@@ -52,15 +51,15 @@ namespace NURSAN_PROJE
             pin_locations = new List<String>();
             determine_pin_locations_image.Image = socketimage_to_be_processed;
             socketID_to_be_processed = SocketID;
-            
+
 
             propertyItem = bitmap_to_be_saved.GetPropertyItem(0x010e);
 
 
             pin_coordinates = Encoding.UTF8.GetString(propertyItem.Value).Trim().Split(' ');
-            for (int i = 0; i < pin_coordinates.Length-1; i = i+3)
+            for (int i = 0; i < pin_coordinates.Length - 1; i = i + 3)
             {
-                pin_point = new Point(Convert.ToInt32(pin_coordinates[i+1]),Convert.ToInt32( pin_coordinates[i+2]));
+                pin_point = new Point(Convert.ToInt32(pin_coordinates[i + 1]), Convert.ToInt32(pin_coordinates[i + 2]));
                 bitmap_for_pin_processing = (Bitmap)determine_pin_locations_image.Image;
                 point_color_for_pin_processing = bitmap_for_pin_processing.GetPixel(pin_point.X, pin_point.Y);
                 if (point_color_for_pin_processing != Color.FromArgb(255, 255, 0, 0))
@@ -71,10 +70,10 @@ namespace NURSAN_PROJE
                     Fill4(bitmap_for_pin_processing, pin_point, point_color_for_pin_processing, Color.Red);
                 }
                 determine_pin_locations_image.Image = bitmap_for_pin_processing;
-                
+
             }
         }
-        
+
         Bitmap bitmap_to_be_saved;
         private void determine_pin_locations_selectimage_Click(object sender, EventArgs e)
         {
@@ -111,10 +110,10 @@ namespace NURSAN_PROJE
                     if (c0 != Color.FromArgb(255, 255, 0, 0))
                     {
                         Console.WriteLine("girdi");
-                        pin_locations.Add(pincount+1 + " " +sPt.X.ToString() + " " + sPt.Y.ToString());
+                        pin_locations.Add(pincount + 1 + " " + sPt.X.ToString() + " " + sPt.Y.ToString());
                         determine_pin_locations_determinedpins.Items.Add(++pincount + ". pin = " + sPt.X.ToString() + " " + sPt.Y.ToString());
                         Bitmap denemeimg = new Bitmap(bmp);
-                         Fill4(denemeimg, sPt, c0, Color.Red);
+                        Fill4(denemeimg, sPt, c0, Color.Red);
                         //Fill4(bmp, sPt, c0, Color.Red);
                         determine_pin_locations_image.Image = denemeimg;
                     }
@@ -125,12 +124,13 @@ namespace NURSAN_PROJE
                     }
 
                 }
-            }catch(Exception err)
+            }
+            catch (Exception err)
             {
-                MessageBox.Show(err.Message);               
+                MessageBox.Show(err.Message);
             }
         }
-         void Fill4(Bitmap bmp, Point pt, Color c0, Color c1)
+        void Fill4(Bitmap bmp, Point pt, Color c0, Color c1)
         {
             Color cx = bmp.GetPixel(pt.X, pt.Y);
             if (cx.GetBrightness() < 0.01f) return;  // optional, to prevent filling a black grid
@@ -180,7 +180,7 @@ namespace NURSAN_PROJE
 
                 if (determine_pin_locations_image.Image != null)
                 {
-                    Point undo_pin_point = new Point(Convert.ToInt32(pin_locations[pin_locations.Count-1].Split(' ')[1]) , Convert.ToInt32(pin_locations[pin_locations.Count-1].Split(' ')[2]));
+                    Point undo_pin_point = new Point(Convert.ToInt32(pin_locations[pin_locations.Count - 1].Split(' ')[1]), Convert.ToInt32(pin_locations[pin_locations.Count - 1].Split(' ')[2]));
                     Bitmap bmp = (Bitmap)determine_pin_locations_image.Image;
                     Color c0 = bmp.GetPixel(undo_pin_point.X, undo_pin_point.Y);
                     if (c0 != Color.FromArgb(255, 255, 0, 0))
@@ -194,9 +194,9 @@ namespace NURSAN_PROJE
                         Fill4(bmp, undo_pin_point, c0, Color.White);
                         determine_pin_locations_image.Image = bmp;
                     }
-                    pin_locations.RemoveAt(pin_locations.Count-1);
-                    determine_pin_locations_determinedpins.Items.RemoveAt(determine_pin_locations_determinedpins.Items.Count-1);
-                    if(pincount > 0)
+                    pin_locations.RemoveAt(pin_locations.Count - 1);
+                    determine_pin_locations_determinedpins.Items.RemoveAt(determine_pin_locations_determinedpins.Items.Count - 1);
+                    if (pincount > 0)
                     {
                         pincount--;
                     }
@@ -218,7 +218,7 @@ namespace NURSAN_PROJE
                 SetProperty(ref propItem, 0x010e, "");
                 bitmap_to_be_saved.SetPropertyItem(propItem);
 
-               // PropertyItem propItem = bitmap_to_be_saved.GetPropertyItem(0x010e);
+                // PropertyItem propItem = bitmap_to_be_saved.GetPropertyItem(0x010e);
                 string value_to_be_saved = null;
                 for (int i = 0; i < pin_locations.Count; i++)
                 {
@@ -231,11 +231,11 @@ namespace NURSAN_PROJE
 
                 db.set_socket_image(socketID_to_be_processed, bitmap_to_be_saved);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("RESİM KAYDEDİLEMEDİ - "+ ex.Message);
+                MessageBox.Show("RESİM KAYDEDİLEMEDİ - " + ex.Message);
             }
-           
+
         }
         private void SetProperty(ref System.Drawing.Imaging.PropertyItem prop, int iId, string sTxt)
         {
