@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using DevExpress.XtraTreeList.Nodes;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace NURSAN_PROJE
 {
@@ -126,11 +127,35 @@ namespace NURSAN_PROJE
 
         private void SimpleButton2_Click(object sender, EventArgs e)
         {
+            string origin= null, origintype= null, destination=null, destinationtype=null, color=null;
+            if(treeListLookUpEdit1TreeList.FocusedNode["IOID"].ToString().Length > 0)
+            {
+                origin = treeListLookUpEdit1TreeList.FocusedNode["IOID"].ToString();
+                origintype = "SOCKET";
+            }
+            else if(treeListLookUpEdit1TreeList.FocusedNode["ComponentID"].ToString().Length > 0){
+                origin = treeListLookUpEdit1TreeList.FocusedNode["ComponentID"].ToString();
+                origintype = "COMPONENT";
+            }
+            if (treeList1.FocusedNode["IOID"].ToString().Length > 0)
+            {
+                destination = treeList1.FocusedNode["IOID"].ToString();
+                destinationtype = "SOCKET";
+            }
+            else if (treeList1.FocusedNode["ComponentID"].ToString().Length > 0)
+            {
+                destination = treeList1.FocusedNode["ComponentID"].ToString();
+                destinationtype = "COMPONENT";
+            }
+
+         
+             color = gridLookUpEdit1View.GetRowCellValue(gridLookUpEdit1View.GetSelectedRows()[0], "ID_color").ToString();
             /*DBeng test = new DBeng();
             test.connection_add(textEdit5.Text, textEdit6.Text, textEdit7.Text, textEdit8.Text);
             projectdatasource.Fill();
             gridControl1.RefreshDataSource();*/
-           
+            db.connection_add(origin, origintype, destination, destinationtype, color);
+            gridControl1.DataSource = db.get_ConnectionTable();
 
         }
 
@@ -271,6 +296,7 @@ namespace NURSAN_PROJE
 
         private void selected_sockets_delete_button_Click(object sender, EventArgs e)
         {
+            //popupControlContainer1.ShowPopup(Cursor.Position);
             try
             {
                 if (gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString().Length != 0)
@@ -456,120 +482,12 @@ namespace NURSAN_PROJE
 
         private void treeListLookUpEdit1_Popup(object sender, EventArgs e)
         {
-            treeListLookUpEdit1TreeList.ClearNodes();
-            try
-            {
-                DataTable socketlist = db.get_project_sockets().DataViewManager.DataSet.Tables[0];
-                treeListLookUpEdit1.Properties.DisplayMember = "Soket Adı";
-                TreeListNode SocketsNode = null;
-                for (int i = 0; i < socketlist.Rows.Count; i++)
-                {
-                    if (i == 0)
-                    {
-                        SocketsNode = treeListLookUpEdit1TreeList.AppendNode(null, null);
-                        SocketsNode.SetValue("Soket Adı", "SOKETLER");
-                    }
-                    TreeListNode node1 = treeListLookUpEdit1TreeList.AppendNode(null, SocketsNode);
-
-                    node1.SetValue("Soket Adı", socketlist.Rows[i][1]);
-                    node1.SetValue("SoketID", socketlist.Rows[i][0]);
-
-                    DataTable socketiolist = db.determineio(socketlist.Rows[i][0].ToString()).Tables[0];
-
-                    for (int y = 0; y < socketiolist.Rows.Count; y++)
-                    {
-                        try
-                        {
-                            TreeListNode childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, node1);
-                            childnode1.SetValue("IOID", socketiolist.Rows[y][0]);
-
-                            childnode1.SetValue("Soket Adı", socketlist.Rows[i][1] + " : " + socketiolist.Rows[y][2]);
-                            if (Convert.ToInt32( socketiolist.Rows[y][3]) != 0)
-                            {
-                                childnode1.SetValue("SoketIO", "Cihaz Pin : " + socketiolist.Rows[y][3]);
-                            }
-                        }
-                        catch
-                        {
-
-                        }
-                    }
-                }
-                TreeListNode ComponentsNode = null;
-                TreeListNode ResistorNode = null;
-                TreeListNode CapacitorNode = null;
-                TreeListNode SpliceNode = null;
-                TreeListNode DiodeNode = null;
-                TreeListNode GenericComponentNode = null;
-                DataTable componentlist = db.get_project_components();
-                for (int i = 0; i < componentlist.Rows.Count; i++)
-                {
-                    if (i == 0)
-                    {
-                        ComponentsNode = treeListLookUpEdit1TreeList.AppendNode(null, null);
-                        ResistorNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
-                        CapacitorNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);                       
-                        SpliceNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
-                        DiodeNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
-                        GenericComponentNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);                       
-                        
-                        ComponentsNode.SetValue("Soket Adı", "Komponentler");
-                        ResistorNode.SetValue("Soket Adı", "Dirençler");
-                        CapacitorNode.SetValue("Soket Adı", "Kapasitörler");
-                        SpliceNode.SetValue("Soket Adı", "Düğümler");
-                        DiodeNode.SetValue("Soket Adı", "Diyotlar");
-                        GenericComponentNode.SetValue("Soket Adı", "Genel Bileşenler");
-                    }
-                    switch (componentlist.Rows[i][2].ToString())
-                    {
-                        case "RESISTOR":
-                            TreeListNode childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, ResistorNode);
-                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
-                            TreeListNode childnode2 = treeListLookUpEdit1TreeList.AppendNode(null, childnode1);
-                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0]+"!!");
-                            break;
-                        case "CAPACITOR":
-                            childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, CapacitorNode);
-                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
-                            childnode2 = treeListLookUpEdit1TreeList.AppendNode(null, childnode1);
-                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
-                            break;
-                        case "SPLICE":
-                            childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, SpliceNode);
-                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
-                            childnode2 = treeListLookUpEdit1TreeList.AppendNode(null, childnode1);
-                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
-                            break;
-                        case "DIODE":
-                            childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, DiodeNode);
-                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
-                            childnode2 = treeListLookUpEdit1TreeList.AppendNode(null, childnode1);
-                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
-                            break;
-                        case "GENERIC":
-                            childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, GenericComponentNode);
-                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
-                            childnode2 = treeListLookUpEdit1TreeList.AppendNode(null, childnode1);
-                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
-                            break;
-                    }
-                }
-                Console.WriteLine("ok");
-                treeListLookUpEdit1TreeList.Refresh();
-                //treeListLookUpEdit1TreeList.RefreshDataSource();
-                treeListLookUpEdit1TreeList.RefreshEditor(true);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("fail");
-                Console.WriteLine(ex.Message);
-
-            }
+        
         }
 
         private void Where_to_treelist_lookup_Popup(object sender, EventArgs e)
         {
-
+            
             treeList1.ClearNodes();
             try
             {
@@ -686,6 +604,136 @@ namespace NURSAN_PROJE
             if(tabPane1.SelectedPageIndex == 1)
             {
                 treeListLookUpEdit1_Popup(sender, EventArgs.Empty);
+            }
+        }
+
+        private void Colors_lookup_BeforePopup(object sender, EventArgs e)
+        {
+            Colors.DataSource = db.get_Colors();
+            Console.WriteLine("Renkler listelendi");         
+                      gridLookUpEdit1View.RowCellStyle += (senders, es) => {
+                          GridView view = sender as GridView;                        
+                          if (es.Column.FieldName == "HexCode")
+                          {
+                              System.Drawing.Color col = System.Drawing.ColorTranslator.FromHtml(es.CellValue.ToString());
+                              es.Appearance.BackColor = col;
+
+
+                          }
+                      };
+
+        }
+
+        private void treeListLookUpEdit1_BeforePopup(object sender, EventArgs e)
+        {
+            treeListLookUpEdit1TreeList.ClearNodes();
+            try
+            {
+                DataTable socketlist = db.get_project_sockets().DataViewManager.DataSet.Tables[0];
+                treeListLookUpEdit1.Properties.DisplayMember = "Soket Adı";
+                TreeListNode SocketsNode = null;
+                for (int i = 0; i < socketlist.Rows.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        SocketsNode = treeListLookUpEdit1TreeList.AppendNode(null, null);
+                        SocketsNode.SetValue("Soket Adı", "SOKETLER");
+                    }
+                    TreeListNode node1 = treeListLookUpEdit1TreeList.AppendNode(null, SocketsNode);
+
+                    node1.SetValue("Soket Adı", socketlist.Rows[i][1]);
+                    node1.SetValue("SoketID", socketlist.Rows[i][0]);
+
+                    DataTable socketiolist = db.determineio(socketlist.Rows[i][0].ToString()).Tables[0];
+
+                    for (int y = 0; y < socketiolist.Rows.Count; y++)
+                    {
+                        try
+                        {
+                            TreeListNode childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, node1);
+                            childnode1.SetValue("IOID", socketiolist.Rows[y][0]);
+
+                            childnode1.SetValue("Soket Adı", socketlist.Rows[i][1] + " : " + socketiolist.Rows[y][2]);
+                            if (Convert.ToInt32(socketiolist.Rows[y][3]) != 0)
+                            {
+                                childnode1.SetValue("SoketIO", "Cihaz Pin : " + socketiolist.Rows[y][3]);
+                            }
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                }
+                TreeListNode ComponentsNode = null;
+                TreeListNode ResistorNode = null;
+                TreeListNode CapacitorNode = null;
+                TreeListNode SpliceNode = null;
+                TreeListNode DiodeNode = null;
+                TreeListNode GenericComponentNode = null;
+                DataTable componentlist = db.get_project_components();
+                for (int i = 0; i < componentlist.Rows.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        ComponentsNode = treeListLookUpEdit1TreeList.AppendNode(null, null);
+                        ResistorNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
+                        CapacitorNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
+                        SpliceNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
+                        DiodeNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
+                        GenericComponentNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
+
+                        ComponentsNode.SetValue("Soket Adı", "Komponentler");
+                        ResistorNode.SetValue("Soket Adı", "Dirençler");
+                        CapacitorNode.SetValue("Soket Adı", "Kapasitörler");
+                        SpliceNode.SetValue("Soket Adı", "Düğümler");
+                        DiodeNode.SetValue("Soket Adı", "Diyotlar");
+                        GenericComponentNode.SetValue("Soket Adı", "Genel Bileşenler");
+                    }
+                    switch (componentlist.Rows[i][2].ToString())
+                    {
+                        case "RESISTOR":
+                            TreeListNode childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, ResistorNode);
+                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
+                            TreeListNode childnode2 = treeListLookUpEdit1TreeList.AppendNode(null, childnode1);
+                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
+                            break;
+                        case "CAPACITOR":
+                            childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, CapacitorNode);
+                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
+                            childnode2 = treeListLookUpEdit1TreeList.AppendNode(null, childnode1);
+                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
+                            break;
+                        case "SPLICE":
+                            childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, SpliceNode);
+                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
+                            childnode2 = treeListLookUpEdit1TreeList.AppendNode(null, childnode1);
+                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
+                            break;
+                        case "DIODE":
+                            childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, DiodeNode);
+                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
+                            childnode2 = treeListLookUpEdit1TreeList.AppendNode(null, childnode1);
+                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
+                            break;
+                        case "GENERIC":
+                            childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, GenericComponentNode);
+                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
+                            childnode2 = treeListLookUpEdit1TreeList.AppendNode(null, childnode1);
+                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
+                            break;
+                    }
+                }
+                Console.WriteLine("ok");
+                treeListLookUpEdit1TreeList.Refresh();
+                //treeListLookUpEdit1TreeList.RefreshDataSource();
+                treeListLookUpEdit1TreeList.RefreshEditor(true);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("fail");
+                Console.WriteLine(ex.Message);
+
             }
         }
     }

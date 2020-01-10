@@ -39,51 +39,143 @@ namespace NURSAN_PROJE.SQL
             tmplog.WriteDebugLog("Proje veritabanı bağlantısı açıldı");
         }
 
-        public void connection_add(string nereden, string nereye, string kablodı, string kablorengi)
+        public void connection_add(string origin, string origintype, string destination, string destinationtype,string colorıd)
         {
-            getmaincon();
+            getprojectcon();
             cmd = new SQLiteCommand();
             cmd.Connection = con;
-            cmd.CommandText = "insert into TEST(NEREDEN,NEREYE,\"KABLO KONTROL\",\"KABLO RENGİ\") values ('" + nereden + "','" + nereye + "','" + kablodı + "','" + kablorengi + "')";
+            cmd.CommandText = "insert into PConnections(ID_connection,\"Order\",Origin,OriginType,Destination,DestinationType,Id_color) values ('" + Guid.NewGuid().ToString() + "','" + getlastconnectionorder() + "','" + origin + "','" + origintype + "','" + destination + "','" + destinationtype + "','" + colorıd + "')";
+            Console.WriteLine(cmd.CommandText);
             cmd.ExecuteNonQuery();
             con.Close();
         }
-        public void get_ConnectionTable()
+        public string getlastconnectionorder()
+        {
+            getprojectcon();
+            DataTable Orders = new DataTable();
+            da = new SQLiteDataAdapter("SELECT MAX(\"Order\") FROM PConnections", con);
+            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
+            da.Fill(Orders);
+      
+                try
+                {
+                    return (Convert.ToInt32(Orders.Rows[0][0]) + 1).ToString();
+                }
+                catch
+                {
+                    return "1";
+                }
+                
+          
+           
+            con.Close();
+        }
+        public DataTable get_ConnectionTable()
         {
             DataTable connections = new DataTable("CONNECTİONS");
             connections.Columns.Add("NEREDEN");
             connections.Columns.Add("NEREYE");
             connections.Columns.Add("KABLO KONTROL");
-            connections.Columns.Add("KABLO RENGİ");
-            connections.Columns.Add("ÖZELLİKLER");
-            //TO-DO
+            connections.Columns.Add("WireColor");
+            connections.Columns.Add("ÖZELLİKLER");           
             tmplog.WriteDebugLog("----------BAĞLANTI LİSTELEME BAŞLADI----------", false);
             getprojectcon();
             ds = new DataSet();
-            da = new SQLiteDataAdapter("select * from PConnections", con);
+            da = new SQLiteDataAdapter("SELECT * FROM PConnections ORDER BY \"Order\" ASC", con);
             SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
             da.Fill(ds);
             for(int i = 0;i < ds.Tables[0].Rows.Count; i++)
             {
-                connections.Rows.Add("","","","","");  //TO-DO
+                string origin, destination, color;
+                if(ds.Tables[0].Rows[i][3].ToString() == "SOCKET")
+                {
+                    origin = getIOInfo(ds.Tables[0].Rows[i][2].ToString());
+                }
+                else
+                {
+                    origin = getComponentInfo(ds.Tables[0].Rows[i][2].ToString());
+                }
+                if (ds.Tables[0].Rows[i][5].ToString() == "SOCKET")
+                {
+                    destination = getIOInfo(ds.Tables[0].Rows[i][4].ToString());
+                }
+                else
+                {
+                    destination = getComponentInfo(ds.Tables[0].Rows[i][4].ToString());
+                }
+                color = getColorInfo(ds.Tables[0].Rows[i][6].ToString());
+                connections.Rows.Add(origin, destination, color, color, color);  //TO-DO
             }
+            return connections;
         }
 
 
-        private void getSocketInfo(String SocketID)
+        private string getSocketNameInfo(String SocketID)
         {
-            //TO-DO
+           
+            getprojectcon();
+            DataTable table = new DataTable();
+            da = new SQLiteDataAdapter("select * from PSockets where ID_soket = '" + SocketID +"'", con);
+            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
+            da.Fill(table);
+            return table.Rows[0][1].ToString();
         }
-        private void getIOInfo(String ıoID)
+        private string getIOInfo(String ıoID)
         {
-            //TO-DO
+            try
+            {
+                string answ = null;
+                getprojectcon();
+                DataTable table = new DataTable();
+                da = new SQLiteDataAdapter("select * from PIO_connection where ID_IO = '" + ıoID + "'", con);
+                SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
+                da.Fill(table);
+                answ += getSocketNameInfo(table.Rows[0][1].ToString()) + " : " + table.Rows[0][2];
+                return answ;
+            }
+            catch
+            {
+                return "HATA";
+            }
+           
         }
-        private void getComponentInfo(String componenetID)
+        private string getComponentInfo(String componenetID)
+        {            
+            getprojectcon();
+            DataTable table = new DataTable();
+            da = new SQLiteDataAdapter("select * from PComponents where ID_component = '" + componenetID+"'", con);
+            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
+            da.Fill(table);            
+            return table.Rows[0][1].ToString();
+        }
+        private string getColorInfo(String ColorID)
         {
-            //TO-DO
+            string color;
+            con.Close();
+            getmaincon();
+            DataTable table = new DataTable();
+            da = new SQLiteDataAdapter("select * from Colours where ID_color = '" + ColorID+"'", con);
+            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
+            da.Fill(table);
+            Console.WriteLine("BULUNAN RENK : " + table.Rows[0][1].ToString());
+            color = table.Rows[0][1].ToString();
+            return color;
         }
 
-
+        public DataTable get_Colors()
+        {
+            tmplog.WriteDebugLog("---------RENK Listelemesi Başladı----------", false);
+            getmaincon();
+            ds = new DataSet();
+            da = new SQLiteDataAdapter("select * from Colours", con);
+            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
+            da.Fill(ds);
+            ds.Tables[0].DefaultView.AllowEdit = true;
+            con.Close();
+            tmplog.WriteDebugLog("Ana veritabanı bağlantısı kapatıldı");
+            tmplog.WriteDebugLog("----------RENK Listelemesi Tamamlandı----------", false);
+            return ds.Tables[0];
+        }
         public DataView get_saved_sockets()
         {
             tmplog.WriteDebugLog("----------Ana Veritabanı Soketleri Listelemesi Başladı----------", false);
