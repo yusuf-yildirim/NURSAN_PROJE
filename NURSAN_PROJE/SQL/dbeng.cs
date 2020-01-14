@@ -22,14 +22,15 @@ namespace NURSAN_PROJE.SQL
         Config getconstring = new Config();
         struct LocalTables//TO-DO
         {
-            public DataSet tables;
+            public DataSet tables ;
             int maxorder;
+       
 
             public void getalltables(SQLiteConnection con)
             {
 
             }
-        }
+        };
 
         public DBeng()//TO-DO
         {
@@ -58,22 +59,31 @@ namespace NURSAN_PROJE.SQL
             con.Open();
             tmplog.WriteDebugLog("Proje veritabanı bağlantısı açıldı");
         }
+        public DataTable getPhase()
+        {
+            getprojectcon();
+            DataTable phase = new DataTable();
+            da = new SQLiteDataAdapter("SELECT * FROM tbl_etap", con);
+            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
+            da.Fill(phase);
+            return phase;
 
-        public void connection_add(string origin, string origintype, string destination, string destinationtype, string colorıd)
+        }
+        public void connection_add(string origin, string origintype, string destination, string destinationtype, string colorıd,string phaseid)
         {
             getprojectcon();
             cmd = new SQLiteCommand();
             cmd.Connection = con;
-            cmd.CommandText = "insert into PConnections(ID_connection,\"Order\",Origin,OriginType,Destination,DestinationType,Id_color) values ('" + Guid.NewGuid().ToString() + "','" + getlastconnectionorder() + "','" + origin + "','" + origintype + "','" + destination + "','" + destinationtype + "','" + colorıd + "')";
+            cmd.CommandText = "insert into PConnections(ID_connection,\"Order\",Origin,OriginType,Destination,DestinationType,Id_color,ID_etap_1) values ('" + Guid.NewGuid().ToString() + "','" + getlastconnectionorder(phaseid) + "','" + origin + "','" + origintype + "','" + destination + "','" + destinationtype + "','" + colorıd + "','" + phaseid + "')";
             Console.WriteLine(cmd.CommandText);
             cmd.ExecuteNonQuery();
             con.Close();
         }
-        public string getlastconnectionorder()
+        public string getlastconnectionorder(string phaseid)
         {
             getprojectcon();
             DataTable Orders = new DataTable();
-            da = new SQLiteDataAdapter("SELECT MAX(\"Order\") FROM PConnections", con);
+            da = new SQLiteDataAdapter("SELECT MAX(\"Order\") FROM PConnections Where ID_etap_1= '"+phaseid+"'",con);
             SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
             da.Fill(Orders);
 
@@ -90,7 +100,17 @@ namespace NURSAN_PROJE.SQL
             }
 
         }
-        public DataTable get_ConnectionTable()
+        public void addPhase(string phaseName)
+        {
+            getprojectcon();
+            cmd = new SQLiteCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "insert into tbl_etap values('"+Guid.NewGuid().ToString()+ "','"+phaseName+"')";
+            Console.WriteLine(cmd.CommandText);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public DataTable get_ConnectionTable(string phaseid)
         {
             DataTable connections = new DataTable("CONNECTİONS");
             connections.Columns.Add("NEREDEN");
@@ -101,7 +121,7 @@ namespace NURSAN_PROJE.SQL
             tmplog.WriteDebugLog("----------BAĞLANTI LİSTELEME BAŞLADI----------", false);
             getprojectcon();
             ds = new DataSet();
-            da = new SQLiteDataAdapter("SELECT * FROM PConnections ORDER BY \"Order\" ASC", con);
+            da = new SQLiteDataAdapter("SELECT * FROM PConnections Where ID_etap_1= '" + phaseid + "' ORDER BY \"Order\" ASC", con);
             SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
             da.Fill(ds);
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)

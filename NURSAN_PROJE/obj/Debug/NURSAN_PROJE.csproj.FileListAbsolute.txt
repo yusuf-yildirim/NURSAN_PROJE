@@ -834,3 +834,4 @@ D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\de\DevExpress.
 D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\es\DevExpress.Dialogs.v19.2.Core.resources.dll
 D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\ja\DevExpress.Dialogs.v19.2.Core.resources.dll
 D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\bin\Debug\ru\DevExpress.Dialogs.v19.2.Core.resources.dll
+D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.askPhase.resources

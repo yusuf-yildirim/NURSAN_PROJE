@@ -83,8 +83,8 @@ namespace NURSAN_PROJE
 
 
             color = gridLookUpEdit1View.GetRowCellValue(gridLookUpEdit1View.GetSelectedRows()[0], "ID_color").ToString();
-            db.connection_add(origin, origintype, destination, destinationtype, color);
-            gridControl1.DataSource = db.get_ConnectionTable();
+            db.connection_add(origin, origintype, destination, destinationtype, color, gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString()) ;
+            gridControl1.DataSource = db.get_ConnectionTable(gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString());
 
         }
 
@@ -666,6 +666,53 @@ namespace NURSAN_PROJE
                 Console.WriteLine("fail");
                 Console.WriteLine(ex.Message);
 
+            }
+        }
+
+        private void panel2_Enter(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void tabPane1_TabIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabPane1_TabStopChanged(object sender, EventArgs e)
+        {
+           
+         
+        }
+
+        private void tabPane1_SelectedPageChanging(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangingEventArgs e)
+        {
+            gridControl7.DataSource = db.getPhase();
+            gridView7.FocusedRowHandle =0;
+
+
+        }
+
+        private void gridView7_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {          
+            gridControl1.DataSource = db.get_ConnectionTable(gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString());
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {           
+            using (askPhase form = new askPhase())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    //Create a property in SetIPAddressForm to return the input of user.                
+                    db.addPhase(form.phasename);
+                    gridControl7.DataSource = db.getPhase();
+                    gridView7.FocusedRowHandle = 0;
+                }
+                else
+                {
+                    MessageBox.Show("İŞLEM İPTAL EDİLDİ");
+                }
             }
         }
     }
