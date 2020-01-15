@@ -219,10 +219,10 @@
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.realTimeSource3 = new DevExpress.Data.RealTimeSource();
             this.component_tabpane = new DevExpress.XtraBars.Navigation.TabPane();
             this.add_component_tabpane = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.listBoxControl1 = new DevExpress.XtraEditors.ListBoxControl();
-            this.realTimeSource3 = new DevExpress.Data.RealTimeSource();
             this.label1 = new System.Windows.Forms.Label();
             this.find_components_in_the_listbox_textedit = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -321,7 +321,6 @@
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::NURSAN_PROJE.WaitForm2), true, true, true);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.recentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).BeginInit();
@@ -425,7 +424,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // recentBindingSource
@@ -679,7 +677,7 @@
             this.tabNavigationPage3,
             this.workflow_page});
             this.tabPane1.RegularSize = new System.Drawing.Size(1556, 775);
-            this.tabPane1.SelectedPage = this.tabNavigationPage3;
+            this.tabPane1.SelectedPage = this.tabNavigationPage1;
             this.tabPane1.Size = new System.Drawing.Size(1556, 775);
             this.tabPane1.TabIndex = 8;
             this.tabPane1.Text = "tabPane1";
@@ -1693,7 +1691,6 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.dataGridView1);
             this.panelControl1.Controls.Add(this.component_tabpane);
             this.panelControl1.Controls.Add(this.gridControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1701,6 +1698,10 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1556, 746);
             this.panelControl1.TabIndex = 2;
+            // 
+            // realTimeSource3
+            // 
+            this.realTimeSource3.DisplayableProperties = null;
             // 
             // component_tabpane
             // 
@@ -1787,10 +1788,6 @@
             ıtemTemplateBase1.Rows.Add(tableRowDefinition3);
             ıtemTemplateBase1.Rows.Add(tableRowDefinition4);
             this.listBoxControl1.Templates.Add(ıtemTemplateBase1);
-            // 
-            // realTimeSource3
-            // 
-            this.realTimeSource3.DisplayableProperties = null;
             // 
             // label1
             // 
@@ -2523,6 +2520,7 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.FieldName = "ID_component";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 0;
@@ -2792,16 +2790,6 @@
             // 
             this.splashScreenManager1.ClosingDelay = 500;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.realTimeSource3;
-            this.dataGridView1.Location = new System.Drawing.Point(458, 182);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 15;
-            // 
             // Projectwindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2941,7 +2929,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3175,6 +3162,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
