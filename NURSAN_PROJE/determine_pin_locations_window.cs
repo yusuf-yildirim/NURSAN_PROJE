@@ -16,10 +16,13 @@ namespace NURSAN_PROJE
         string socketID_to_be_processed;
         DBeng db;
         PropertyItem propertyItem;
-
+        DataManager manager;
+        DataManager.TableUpdater updater;
         public determine_pin_locations_window(string SocketID)
         {
             db = new DBeng();
+            manager = new DataManager();
+            updater = new DataManager.TableUpdater(manager);
             InitializeComponent();
             pin_locations = new List<String>();
             //socketimage_to_be_processed = new Bitmap("dummy filename");
@@ -233,7 +236,7 @@ namespace NURSAN_PROJE
                 propItem.Value = bytesText;
                 bitmap_to_be_saved.SetPropertyItem(propItem);
 
-                db.set_socket_image(socketID_to_be_processed, bitmap_to_be_saved);
+                manager.setSocketImage(socketID_to_be_processed, bitmap_to_be_saved);
             }
             catch (Exception ex)
             {

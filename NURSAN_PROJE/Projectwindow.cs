@@ -18,12 +18,15 @@ namespace NURSAN_PROJE
 
 
         DataTable table1;
+        DataManager manager;
+        DataManager.TableUpdater updater;
         readonly DBeng db;
         public Projectwindow(string path)
         {
 
             DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
             db = new DBeng();
+        
             Config conf = new Config();
             this.Hide();
             InitializeComponent();
@@ -46,16 +49,17 @@ namespace NURSAN_PROJE
             {
                 MessageBox.Show(ex.Message);
             }
-
+            manager = new DataManager();
+            updater = new DataManager.TableUpdater(manager);
+            Task.Factory.StartNew(() => refresh_socket_grids());
         }
 
         private void Projectwindow_Load(object sender, EventArgs e)
         {
             // TODO: Bu kod satırı 'mainsource.Components' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
             this.componentsTableAdapter.Fill(this.mainsource.Components);
-            // TODO: Bu kod satırı 'mainsource.Sockets' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            this.socketsTableAdapter.Fill(this.mainsource.Sockets);
-            Task.Factory.StartNew(() => refresh_socket_grids());
+            // TODO: Bu kod satırı 'mainsource.Sockets' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.           
+            
         }
 
         private void SimpleButton2_Click(object sender, EventArgs e)
@@ -111,7 +115,8 @@ namespace NURSAN_PROJE
                     }
                 }
                 */
-                Task.Factory.StartNew(() => db.register_socket(arr, arr2)).ContinueWith(delegate { refresh_socket_grids(); });
+                
+                Task.Factory.StartNew(() => manager.addSocket(arr, arr2)).ContinueWith(delegate { refresh_socket_grids(); });
                 navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
 
                 foreach (TextEdit t in newsocketvargroup.Controls)
@@ -151,7 +156,9 @@ namespace NURSAN_PROJE
         {
             if (registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString().Length > 0)
             {
-                Task.Factory.StartNew(() => db.register_using_socket(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString())).ContinueWith(delegate { refresh_socket_grids(); });
+                manager.socket2Project(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString());
+                refresh_socket_grids();
+               // Task.Factory.StartNew(() => manager.socket2Project(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString())).ContinueWith(delegate { refresh_socket_grids(); });
             }
 
         }
@@ -163,13 +170,12 @@ namespace NURSAN_PROJE
 
         private void selected_sockets_delete_button_Click(object sender, EventArgs e)
         {
-            //popupControlContainer1.ShowPopup(Cursor.Position);
-            db.GuidCheck(newsocketname.Text);
+            //popupControlContainer1.ShowPopup(Cursor.Position);           
             try
             {
                 if (gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString().Length != 0)
                 {
-                    Task.Factory.StartNew(() => db.unregister_using_socket(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString())).ContinueWith(delegate { refresh_socket_grids(); });
+                    Task.Factory.StartNew(() => manager.deleteProjectSocket(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString())).ContinueWith(delegate { refresh_socket_grids(); });
                 }
             }
             catch (Exception ex)
@@ -178,11 +184,16 @@ namespace NURSAN_PROJE
             }
         }
 
+        public void updateTable()
+        {
+            
+        }
         public void refresh_socket_grids()
         {
-            realTimeSource2.DataSource = db.get_project_sockets();
+            realTimeSource2.DataSource = manager.getProjectSockets();
+            realTimeSource1.DataSource = manager.getMainSockets();
             // realTimeSource1.DataSource = db.get_saved_sockets();
-            this.socketsTableAdapter.Fill(this.mainsource.Sockets);
+            //this.socketsTableAdapter.Fill(this.mainsource.Sockets);
             this.componentsTableAdapter.Fill(this.mainsource.Components);
         }
 
@@ -192,7 +203,7 @@ namespace NURSAN_PROJE
             {
                 if (registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString().Length > 0)
                 {
-                    Task.Factory.StartNew(() => db.unregister_socket(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString())).ContinueWith(delegate { refresh_socket_grids(); });
+                    Task.Factory.StartNew(() => manager.deleteMainSocket(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString())).ContinueWith(delegate { refresh_socket_grids(); });
                 }
             }
             catch (Exception ex)
@@ -227,7 +238,7 @@ namespace NURSAN_PROJE
         {
             try
             {
-                registeredsocketimg.Image = db.get_socket_image(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString());
+                registeredsocketimg.Image = manager.getSocketImage(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString());
                 gridControl4.Visible = false;
                 new_socket_auto_assign_pin.Visible = false;
                 Console.WriteLine(registeredsocketgridview.GetRowCellValue(e.FocusedRowHandle, registeredsocketgridview.Columns[0]).ToString());
@@ -367,7 +378,7 @@ namespace NURSAN_PROJE
             treeList1.ClearNodes();
             try
             {
-                DataTable socketlist = db.get_project_sockets().DataViewManager.DataSet.Tables[0];
+                DataTable socketlist = manager.getProjectSockets();
                 Where_to_treelist_lookup.Properties.DisplayMember = "Soket Adı";
                 TreeListNode SocketsNode = null;
                 for (int i = 0; i < socketlist.Rows.Count; i++)
@@ -382,7 +393,7 @@ namespace NURSAN_PROJE
                     node1.SetValue("Soket Adı", socketlist.Rows[i][1]);
                     node1.SetValue("SoketID", socketlist.Rows[i][0]);
 
-                    DataTable socketiolist = db.determineio(socketlist.Rows[i][0].ToString()).Tables[0];
+                    DataTable socketiolist = manager.getIObySocketID(socketlist.Rows[i][0].ToString());
 
                     for (int y = 0; y < socketiolist.Rows.Count; y++)
                     {
@@ -409,7 +420,7 @@ namespace NURSAN_PROJE
                 TreeListNode SpliceNode = null;
                 TreeListNode DiodeNode = null;
                 TreeListNode GenericComponentNode = null;
-                DataTable componentlist = db.get_project_components();
+                DataTable componentlist = manager.getMainComponents();//TO-DO!!!
                 for (int i = 0; i < componentlist.Rows.Count; i++)
                 {
                     if (i == 0)
@@ -470,7 +481,7 @@ namespace NURSAN_PROJE
             catch (Exception ex)
             {
                 Console.WriteLine("fail");
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
 
             }
         }
@@ -485,7 +496,7 @@ namespace NURSAN_PROJE
 
         private void Colors_lookup_BeforePopup(object sender, EventArgs e)
         {
-            Colors.DataSource = db.get_Colors();
+            Colors.DataSource = manager.getColors();
             Console.WriteLine("Renkler listelendi");
             gridLookUpEdit1View.RowCellStyle += (senders, es) =>
             {
@@ -506,7 +517,7 @@ namespace NURSAN_PROJE
             treeListLookUpEdit1TreeList.ClearNodes();
             try
             {
-                DataTable socketlist = db.get_project_sockets().DataViewManager.DataSet.Tables[0];
+                DataTable socketlist = manager.getProjectSockets();
                 treeListLookUpEdit1.Properties.DisplayMember = "Soket Adı";
                 TreeListNode SocketsNode = null;
                 for (int i = 0; i < socketlist.Rows.Count; i++)
@@ -521,7 +532,7 @@ namespace NURSAN_PROJE
                     node1.SetValue("Soket Adı", socketlist.Rows[i][1]);
                     node1.SetValue("SoketID", socketlist.Rows[i][0]);
 
-                    DataTable socketiolist = db.determineio(socketlist.Rows[i][0].ToString()).Tables[0];
+                    DataTable socketiolist = manager.getIObySocketID(socketlist.Rows[i][0].ToString());
 
                     for (int y = 0; y < socketiolist.Rows.Count; y++)
                     {
@@ -548,7 +559,7 @@ namespace NURSAN_PROJE
                 TreeListNode SpliceNode = null;
                 TreeListNode DiodeNode = null;
                 TreeListNode GenericComponentNode = null;
-                DataTable componentlist = db.get_project_components();
+                DataTable componentlist = manager.getMainComponents();//TO-DO!!!!
                 for (int i = 0; i < componentlist.Rows.Count; i++)
                 {
                     if (i == 0)
@@ -632,7 +643,7 @@ namespace NURSAN_PROJE
 
         private void tabPane1_SelectedPageChanging(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangingEventArgs e)
         {
-            gridControl7.DataSource = db.getPhase();
+            gridControl7.DataSource = manager.getPhases();
             gridView7.FocusedRowHandle =0;
 
 
@@ -650,8 +661,8 @@ namespace NURSAN_PROJE
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     //Create a property in SetIPAddressForm to return the input of user.                
-                    db.addPhase(form.phasename);
-                    gridControl7.DataSource = db.getPhase();
+                    manager.addPhase(form.phasename);
+                    gridControl7.DataSource = manager.getPhases();
                     gridView7.FocusedRowHandle = 0;
                 }
                 else
@@ -763,7 +774,7 @@ namespace NURSAN_PROJE
 
                     if (gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString().Length != 0)
                     {
-                        DataTable deneme = db.determineio(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString()).Tables[0];
+                        DataTable deneme = manager.getIObySocketID(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
                         if (deneme.Rows.Count < 1)
                         {
                             Console.WriteLine(deneme.Rows.Count + " 55555555555555555555555555");
@@ -793,7 +804,6 @@ namespace NURSAN_PROJE
             if(gridControl4.Visible == true && new_socket_auto_assign_pin.Visible == true)
             {
 
-                db.GuidCheck(edit_socket_name.Text);
                 string[,] arr2 = new string[3, 999];
                 if (errorprovider_checktext_null())
                 {
@@ -814,7 +824,7 @@ namespace NURSAN_PROJE
                         }
                     }
 
-                    Task.Factory.StartNew(() => db.register_socket(arr, arr2)).ContinueWith(delegate { refresh_socket_grids(); });//TODO-----------------------------------
+                    Task.Factory.StartNew(() => manager.addSocket(arr, arr2)).ContinueWith(delegate { refresh_socket_grids(); });//TODO-----------------------------------
                     navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
 
                 }
@@ -826,7 +836,7 @@ namespace NURSAN_PROJE
             }
             else
             {
-                db.GuidCheck(edit_socket_name.Text);
+              
                 string[,] arr2 = new string[3, 999];
                 if (errorprovider_checktext_null())
                 {
@@ -847,7 +857,7 @@ namespace NURSAN_PROJE
                         }
                     }
                     */
-                    Task.Factory.StartNew(() => db.register_socket(arr, arr2)).ContinueWith(delegate { refresh_socket_grids(); });//TODO-----------------------------------
+                    Task.Factory.StartNew(() => manager.addSocket(arr, arr2)).ContinueWith(delegate { refresh_socket_grids(); });//TODO-----------------------------------
                     navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
 
                 }

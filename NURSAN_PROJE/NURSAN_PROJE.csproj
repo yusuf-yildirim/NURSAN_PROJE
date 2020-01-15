@@ -196,6 +196,7 @@
     <Compile Include="SQL\IO.cs" />
     <Compile Include="SQL\LocalTables.cs" />
     <Compile Include="SQL\Misc.cs" />
+    <Compile Include="SQL\Phase.cs" />
     <Compile Include="SQL\Sockets.cs" />
     <Compile Include="tmplog.cs" />
     <EmbeddedResource Include="askPhase.resx">

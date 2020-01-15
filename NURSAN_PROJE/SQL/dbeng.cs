@@ -49,16 +49,7 @@ namespace NURSAN_PROJE.SQL
             con.Open();
             tmplog.WriteDebugLog("Proje veritabanı bağlantısı açıldı");
         }
-        public DataTable getPhase()//güncelleme gerekir
-        {
-            getprojectcon();
-            DataTable phase = new DataTable();
-            da = new SQLiteDataAdapter("SELECT * FROM tbl_etap", con);
-            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(phase);
-            return phase;
 
-        }
         public void connection_add(string origin, string origintype, string destination, string destinationtype, string colorıd,string phaseid)//güncelleme gerekir
         {
             getprojectcon();
@@ -90,17 +81,7 @@ namespace NURSAN_PROJE.SQL
             }
 
         }
-        public void addPhase(string phaseName)//güncelleme gerekir
-        {
-            /*  getprojectcon();
-              cmd = new SQLiteCommand();
-              cmd.Connection = con;
-              cmd.CommandText = "insert into tbl_etap values('"+Guid.NewGuid().ToString()+ "','"+phaseName+"')";
-              Console.WriteLine(cmd.CommandText);
-              cmd.ExecuteNonQuery();
-              con.Close();*/
-           
-        }
+
         public DataTable get_ConnectionTable(string phaseid)
         {
             DataTable connections = new DataTable("CONNECTİONS");
@@ -140,35 +121,18 @@ namespace NURSAN_PROJE.SQL
             return connections;
         }
 
-        public bool GuidCheck(string guid)
-        {
-            try
-            {
-                Guid.Parse(guid);
-                return true;
-            }
-            catch
-            {
-                MessageBox.Show("UUID HATASI : " + guid + " ID GEÇERLİ DEĞİL");
-                return false;
-            }
-        }
+  
         private string getSocketNameInfo(String SocketID)
         {
 
-            if (GuidCheck(SocketID))
-            {
+           
                 getprojectcon();                
                 DataTable table = new DataTable();
                 da = new SQLiteDataAdapter("select * from PSockets where ID_soket = '" + SocketID + "'", con);
                 SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
                 da.Fill(table);
                 return table.Rows[0][1].ToString();
-            }
-            else
-            {
-                return "";
-            }
+         
 
         }
         private string getIOInfo(String ıoID)
@@ -213,255 +177,7 @@ namespace NURSAN_PROJE.SQL
             return color;
         }
 
-        public DataTable get_Colors()
-        {
-            tmplog.WriteDebugLog("---------RENK Listelemesi Başladı----------", false);
-            getmaincon();
-            ds = new DataSet();
-            da = new SQLiteDataAdapter("select * from Colours", con);
-            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(ds);
-            ds.Tables[0].DefaultView.AllowEdit = true;
-            con.Close();
-            tmplog.WriteDebugLog("Ana veritabanı bağlantısı kapatıldı");
-            tmplog.WriteDebugLog("----------RENK Listelemesi Tamamlandı----------", false);
-            return ds.Tables[0];
-        }
-        public DataView get_saved_sockets()
-        {
-            tmplog.WriteDebugLog("----------Ana Veritabanı Soketleri Listelemesi Başladı----------", false);
-            getmaincon();
-            ds = new DataSet();
-            da = new SQLiteDataAdapter("select *  from[Sockets][Sockets]", con);
-            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(ds);
-            ds.Tables[0].DefaultView.AllowEdit = true;
-            con.Close();
-            tmplog.WriteDebugLog("Ana veritabanı bağlantısı kapatıldı");
-            tmplog.WriteDebugLog("----------Ana Veritabanı Soketleri Listelemesi Tamamlandı----------", false);
-            return ds.Tables[0].DefaultView;
 
-        }
-        public DataView get_project_sockets()
-        {
-            tmplog.WriteDebugLog("----------Proje Soketleri Listelemesi Başladı----------", false);
-            getprojectcon();
-
-            ds = new DataSet();
-            da = new SQLiteDataAdapter(@"select[PSockets].[ID_soket], [PSockets].[Adı],
-       [PSockets].[Pin_sayisi],
-       [PSockets].[Anahtar_sayisi],
-       [PSockets].[Led_numarasi]
-  from[PSockets][PSockets]
-", con);
-            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(ds);
-            tmplog.WriteDebugLog("Veriler başarıyla çekildi");
-            ds.Tables[0].DefaultView.AllowEdit = true;
-            con.Close();
-            tmplog.WriteDebugLog("Proje veritabanı bağlantısı kapatıldı");
-            tmplog.WriteDebugLog("----------Proje Soketleri Listelemesi Tamamlandı----------", false);
-            return ds.Tables[0].DefaultView;
-
-        }
-
-        public DataTable get_project_components()
-        {
-            getmaincon();
-            ds = new DataSet();
-            da = new SQLiteDataAdapter(@"SELECT Components.ID_component,Components.Component_Name,Components.Tur FROM Components", con);
-            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(ds);
-            tmplog.WriteDebugLog("Veriler başarıyla çekildi");
-            ds.Tables[0].DefaultView.AllowEdit = true;
-            con.Close();
-            return ds.Tables[0];
-        }
-
-
-        public void register_socket(object[] soc_parameters, string[,] tp_parameters)//TAŞINDI
-        {
-            tmplog.WriteDebugLog("----------Yeni Soket Ekleme başladı----------", false);
-            try
-            {
-                x.Sockets.AddSocketsRow(soc_parameters[0].ToString(), soc_parameters[1].ToString(), Convert.ToInt32(soc_parameters[2]), Convert.ToInt32(soc_parameters[3]), Convert.ToInt32(soc_parameters[4]));
-                mainsourceTableAdapters.SocketsTableAdapter a = new mainsourceTableAdapters.SocketsTableAdapter();
-                tmplog.WriteDebugLog("Ana veritabanı tabloları na " + soc_parameters[0].ToString() + " id numaralı soket eklendi");
-                a.Update(x.Sockets);
-                a.Dispose();
-                tmplog.WriteDebugLog("Veritabanı ile tablo eşitlendi");
-                for (int i = 0; i < tp_parameters.GetLength(1); i++)
-                {
-                    if (tp_parameters[0, i] == null)
-                    {
-                        break;
-                    }
-                    x.IO_connections.AddIO_connectionsRow(Guid.NewGuid().ToString(), soc_parameters[0].ToString(), tp_parameters[1, i], tp_parameters[2, i]);
-                    // cmd.CommandText = "INSERT INTO PIO_connection(ID_soket, Socket_PIN, IO_PIN) values ('" + soc_parameters[0] + "','" + tp_parameters[1, i] + "','" + tp_parameters[2, i] + "');";
-                    // cmd.ExecuteNonQuery();
-                }
-                mainsourceTableAdapters.IO_connectionsTableAdapter ax = new mainsourceTableAdapters.IO_connectionsTableAdapter();
-                ax.Update(x.IO_connections);
-                tmplog.WriteDebugLog("Bağlantı tablosu güncellendi ve veritabanı ile eşitlendi");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.StackTrace);
-                tmplog.WriteDebugLog("Bir hata oluştu:");
-                tmplog.WriteDebugLog(ex.StackTrace, true);
-            }
-            tmplog.WriteDebugLog("----------Yeni Soket Ekleme tamamlandı----------", false);
-        }
-        public void unregister_socket(string SocketID)//güncelleme gerekir
-        {
-            tmplog.WriteDebugLog("----------Soket Silme başladı----------", false);
-            getprojectcon();
-            ds = new DataSet();
-            da = new SQLiteDataAdapter($"select *  from PSockets WHERE ID_soket = '{SocketID}'", connection: con);
-            tmplog.WriteDebugLog(SocketID + " id ye sahip soket, veritabanında arandı");
-            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(ds);
-            con.Close();
-            tmplog.WriteDebugLog("Proje veritabanı bağlantısı kapatıldı");
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                DialogResult cikis = new DialogResult();
-                cikis = MessageBox.Show("Kaldırmak istediğiniz soket kullanımda, devam etmek istiyormusunuz ?", "Uyarı", MessageBoxButtons.YesNo);
-                if (cikis == DialogResult.Yes)
-                {
-                    getmaincon();
-                    cmd = new SQLiteCommand();
-                    cmd.Connection = con;
-                    cmd.CommandText = $"delete from Sockets where ID_soket ='{SocketID}'";
-                    cmd.ExecuteNonQuery();
-                    cmd.CommandText = $"delete from IO_connections where ID_soket = '{SocketID}'";
-                    cmd.ExecuteNonQuery();
-                    cmd.CommandText = $"delete from ImageStore where ID_soket = '{SocketID}'";
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    tmplog.WriteDebugLog("Ana veritabanı bağlantısı kapatıldı");
-                    tmplog.WriteDebugLog(SocketID + " id ye sahip soket ve bağlantıları veritabanından silindi.");
-                }
-            }
-            else
-            {
-                getmaincon();
-                cmd = new SQLiteCommand();
-                cmd.Connection = con;
-                cmd.CommandText = $"delete from Sockets where ID_soket = '{SocketID}'";
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = $"delete from IO_connections where ID_soket = '{SocketID}'";
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = $"delete from ImageStore where ID_soket = '{SocketID}'";
-                cmd.ExecuteNonQuery();
-                con.Close();
-                tmplog.WriteDebugLog("Ana veritabanı bağlantısı kapatıldı");
-                tmplog.WriteDebugLog(SocketID + " id ye sahip soket ve bağlantıları veritabanından silindi.");
-            }
-
-            tmplog.WriteDebugLog("----------Soket Silme tamamlandı----------", false);
-        }
-
-        public void register_using_socket(string SocketID)//güncelleme gerekir
-        {
-            tmplog.WriteDebugLog("----------Projeye Soket Kaydı başladı----------", false);
-
-            getmaincon();
-            ds = new DataSet();
-            DataSet ds2 = new DataSet();
-            DataSet ds3 = new DataSet();
-            da = new SQLiteDataAdapter($"select *  from[Sockets][Sockets] WHERE ID_soket = '{SocketID}'", connection: con);
-            tmplog.WriteDebugLog(SocketID + " id ye sahip soket veritabanında arandı");
-            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(ds);
-            da = new SQLiteDataAdapter($"select *  from IO_connections WHERE ID_soket = '{SocketID}'", connection: con);
-            tmplog.WriteDebugLog(SocketID + " id ye sahip soket bağlantıları bağlantı veritabanında arandı");
-            sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(ds2);
-            da = new SQLiteDataAdapter($"select *  from ImageStore WHERE ID_soket = '{SocketID}'", connection: con);
-            tmplog.WriteDebugLog(SocketID + " id ye sahip soket resimleri veritabanında arandı");
-            sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(ds3);
-            con.Close();
-            tmplog.WriteDebugLog("Ana veritabanı bağlantısı kapatıldı");
-            getprojectcon();
-            cmd = new SQLiteCommand();
-            cmd.Connection = con;
-            cmd.CommandText = $"insert into PSockets(ID_soket,Adı,\"Pin_sayisi\",\"Anahtar_sayisi\",\"Led_numarasi\") values ('{ds.Tables[0].Rows[0][0].ToString()}','{ds.Tables[0].Rows[0][1].ToString()}','{ds.Tables[0].Rows[0][2].ToString()}','{ds.Tables[0].Rows[0][3].ToString()}','{ds.Tables[0].Rows[0][4].ToString()}');";
-            if (ds3.Tables[0].Rows.Count > 0)
-            {
-                cmd.Parameters.Add("@img", DbType.Binary, ((byte[])(ds3.Tables[0].Rows[0][2])).Length);
-                cmd.CommandText += "INSERT INTO ImageStore(ID_soket, imageBlob) values ('" + ds.Tables[0].Rows[0][0].ToString() + "',@img);";
-                cmd.Parameters["@img"].Value = (byte[])ds3.Tables[0].Rows[0][2];
-            }
-
-            try
-            {
-                using (var transaction = con.BeginTransaction())
-                {
-                    cmd.ExecuteNonQuery();
-                    for (int i = 0; i < ds2.Tables[0].Rows.Count; i++)
-                    {
-                        cmd.CommandText = "INSERT INTO PIO_connection(ID_IO,ID_soket, Socket_PIN, IO_PIN) values ('" + ds2.Tables[0].Rows[i][0].ToString() + "','" + ds.Tables[0].Rows[0][0].ToString() + "','" + ds2.Tables[0].Rows[i][2] + "','" + ds2.Tables[0].Rows[i][3] + "');";
-                        cmd.ExecuteNonQuery();
-                    }
-                    transaction.Commit();
-                    tmplog.WriteDebugLog("Bağlantılar ,soket bilgileri ve resinleri proje veri tabanına aktarıldı!");
-                }
-            }
-            catch (SQLiteException ex)
-            {
-                //  MessageBox.Show(ex.ErrorCode.ToString());
-                if (ex.ErrorCode == 19)
-                {
-                    MessageBox.Show("SOKET ZATEN KULLANIMDA");
-                    MessageBox.Show(ex.StackTrace);
-                    MessageBox.Show(ex.Message);
-                    tmplog.WriteDebugLog("Soket aktarılamadı! SOKET ZATEN KULLANIMDA", true);
-                    tmplog.WriteDebugLog(ex.StackTrace, false);
-                }
-                else
-                {
-                    MessageBox.Show(ex.Message + " KULLANILACAK SOKET KAYDEDİLİRKEN İŞLENMEMİŞ HATA");
-                    tmplog.WriteDebugLog("Soket aktarılamadı! " + ex.Message, true);
-                    tmplog.WriteDebugLog(ex.StackTrace, false);
-                }
-            }
-            con.Close();
-            tmplog.WriteDebugLog("Proje veritabanı bağlantısı kapatıldı!");
-            tmplog.WriteDebugLog("----------Soket Kaydı tamamlandı----------", false);
-        }
-        public void unregister_using_socket(string SocketID)//güncelleme gerekir
-        {
-            tmplog.WriteDebugLog("----------Kullanılan Soket Kaydı Silme başladı----------", false);
-            getprojectcon();
-            cmd = new SQLiteCommand();
-            cmd.Connection = con;
-            cmd.CommandText = $"delete from PSockets where ID_soket = '{SocketID}'";
-            tmplog.WriteDebugLog("Socket silindi");
-            cmd.ExecuteNonQuery();
-            cmd.CommandText = $"delete from PIO_connection where ID_soket = '{SocketID}'";
-            tmplog.WriteDebugLog("Soket bağlantıları silindi");
-            cmd.ExecuteNonQuery();
-            cmd.CommandText = $"delete from ImageStore where ID_soket = '{SocketID}'";
-            tmplog.WriteDebugLog("Soket resimleri silindi");
-            cmd.ExecuteNonQuery();
-            con.Close();
-            tmplog.WriteDebugLog("Proje veritabanı kapatıldı!");
-            tmplog.WriteDebugLog("----------Kullanılan Soket Kaydı Silme tamamlandı----------", false);
-        }
-        ///<summary>
-        ///Gönderilen Soket ID si için IO bağlantıları arar ve dataset olarak döndürür.
-        ///</summary>
-        public DataSet determineio(String SocketID)
-        {
-            ds = new DataSet();
-            getprojectcon();            
-            da = new SQLiteDataAdapter($"SELECT * FROM PIO_connection WHERE ID_soket = '{SocketID}'", connection: con);
-            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(ds);
-            return ds;
-        }
 
         public void create_recent(String path, DevExpress.DataAccess.Sql.SqlDataSource datasource)//TO-DO CHANGE
         {
@@ -494,171 +210,7 @@ namespace NURSAN_PROJE.SQL
             }
 
         }
-        public Image get_socket_image(string SocketID)//TAŞINDI
-        {
-            getmaincon();
-            ds = new DataSet();
-            da = new SQLiteDataAdapter($"select *  from ImageStore where ID_soket='{SocketID}'", con);
-            SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
-            da.Fill(ds);
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                try
-                {
 
-                    byte[] data = (byte[])ds.Tables[0].Rows[0][2];
-                    using (var ms = new MemoryStream(data))
-                    {
-                        Image deneme = Image.FromStream(ms);
-                        Image workaround = (Image)deneme.Clone();
-                        for (int i = 0; i < workaround.PropertyIdList.Length; i++)
-                        {
-                            Console.WriteLine(workaround.PropertyIdList[i] + " -------------------");
-
-                        }
-                        return workaround;
-
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    MessageBox.Show(ex.StackTrace);
-                    // Console.WriteLine("RESİM YÜKLENEMEDİ");
-                    return null;
-                }
-            }
-            else
-            {
-                Console.WriteLine("RESİM YÜKLENEMEDİ");
-                return null;
-            }
-
-        }
-        public void set_socket_image(string SocketID, Image img)
-        {
-            try
-            {
-                using (SQLiteConnection con = _getmaincon())
-                {
-
-                    con.Open();
-
-                    byte[] data = ImageToByteArray(img);
-
-
-                    SQLiteCommand cmd = new SQLiteCommand(con);
-
-                    cmd.CommandText = $"INSERT INTO ImageStore(ID_soket,imageBlob) VALUES ('{SocketID}',@img)";
-                    cmd.Prepare();
-
-                    cmd.Parameters.Add("@img", DbType.Binary, data.Length);
-                    cmd.Parameters["@img"].Value = data;
-                    cmd.ExecuteNonQuery();
-
-                    con.Close();
-                }
-            }
-            catch
-            {
-                using (SQLiteConnection con = _getmaincon())
-                {
-
-                    con.Open();
-
-                    byte[] data = ImageToByteArray(img);
-
-
-                    SQLiteCommand cmd = new SQLiteCommand(con);
-
-                    cmd.CommandText = $"UPDATE ImageStore SET imageBlob = @img WHERE ID_soket= '{SocketID}'";
-                    cmd.Prepare();
-
-                    cmd.Parameters.Add("@img", DbType.Binary, data.Length);
-                    cmd.Parameters["@img"].Value = data;
-                    cmd.ExecuteNonQuery();
-
-                    con.Close();
-                }
-            }
-
-        }
-        private static ImageCodecInfo GetEncoderInfo(String mimeType)
-        {
-            int j;
-            ImageCodecInfo[] encoders;
-            encoders = ImageCodecInfo.GetImageEncoders();
-            for (j = 0; j < encoders.Length; ++j)
-            {
-                if (encoders[j].MimeType == mimeType)
-                {
-                    Console.WriteLine(encoders[j].MimeType);
-                    return encoders[j];
-                }
-            }
-            return null;
-        }
-
-        public byte[] ImageToByteArray(System.Drawing.Image imageIn)
-        {
-
-            try
-            {
-                using (var ms = new MemoryStream())
-                {
-
-                    imageIn.Save(ms, imageIn.RawFormat);
-                    byte[] bytesText = ms.ToArray();
-                    return bytesText;
-                }
-            }
-            catch
-            {
-                /*Bitmap myBitmap;
-                ImageCodecInfo myImageCodecInfo;
-                Encoder myEncoder;
-                EncoderParameter myEncoderParameter;
-                EncoderParameters myEncoderParameters;
-
-                // Create a Bitmap object based on a BMP file.
-                myBitmap = new Bitmap(imageIn);
-                myImageCodecInfo = GetEncoderInfo2("image/jpeg");
-
-                myEncoder = Encoder.Quality;
-                myEncoder = Encoder.
-
-                myEncoderParameters = new EncoderParameters(1);
-                myEncoderParameter = new EncoderParameter(myEncoder, 80L);
-                myEncoderParameters.Param[0] = myEncoderParameter;
-                myBitmap.Save("temp.jpg", myImageCodecInfo, myEncoderParameters);*/
-                imageIn.Save("temp.jpg", ImageFormat.Jpeg);
-                byte[] data = null;
-
-                try
-                {
-                    data = File.ReadAllBytes("temp.jpg");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
-                return data;
-            }
-
-        }
-        ImageCodecInfo GetEncoderInfo2(string mimeType)
-        {
-            int j;
-            ImageCodecInfo[] encoders;
-            encoders = ImageCodecInfo.GetImageEncoders();
-            for (j = 0; j < encoders.Length; ++j)
-            {
-                if (encoders[j].MimeType == mimeType)
-                    return encoders[j];
-            }
-            return null;
-        }
         ///<summary>
         ///Projeye splice eklenirken kullanılmalıdır.Tecnicname tüm aynı komponentler için sabit olmalıdır.
         ///</summary>

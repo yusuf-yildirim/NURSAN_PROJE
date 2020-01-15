@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NURSAN_PROJE.SQL
 {
@@ -17,30 +18,39 @@ namespace NURSAN_PROJE.SQL
         }
       
         public DataTable getMainSockets()
-        {
-            return LocalTables.localtables.maintables.Tables["Sockets"];
+        {            
+            return getFromLocalTablesmain("Sockets");
         }
         public DataTable getProjectSockets()
         {
-            return LocalTables.localtables.projecttables.Tables["PSockets"];
+            return getFromLocalTablesproject("PSockets");
+
         }
         public Image getSocketImage(String SocketID)
         {
-           return blob2Image((byte[])LocalTables.localtables.maintables.Tables["ImageStore"].Select("ID_soket ='" + SocketID + "'").ElementAt(0).ItemArray.ElementAt(2));
+           return blob2Image((byte[])getFromLocalTablesmain("ImageStore").Select("ID_soket ='" + SocketID + "'").ElementAt(0).ItemArray.ElementAt(2));
         }
-        public void getPhases()
+        public DataTable getPhases()
         {
-
-        }
-        public void getComponents()
+            return getFromLocalTablesproject("tbl_etap");
+        }        
+        public DataTable getMainComponents()
         {
-
+            return getFromLocalTablesmain("Components");
+        }
+        public DataTable getColors()
+        {
+            return getFromLocalTablesmain("Colours");
+        }
+        public DataTable getIObySocketID(string SocketID)
+        {
+            MessageBox.Show(SocketID);
+            return getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'").CopyToDataTable();      
         }
 
 
 
-
-
+      
 
 
 

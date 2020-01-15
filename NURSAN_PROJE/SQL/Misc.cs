@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,7 +27,6 @@ namespace NURSAN_PROJE.SQL
         }
         private Image blob2Image(byte[] imagedata)
         {
-
             try
             {
 
@@ -52,7 +53,78 @@ namespace NURSAN_PROJE.SQL
                 return null;
             }
         }
+        private byte[] image2Blob(System.Drawing.Image imageIn)
+        {
 
+            try
+            {
+                using (var ms = new MemoryStream())
+                {
 
+                    imageIn.Save(ms, imageIn.RawFormat);
+                    byte[] bytesText = ms.ToArray();
+                    return bytesText;
+                }
+            }
+            catch
+            {
+
+                imageIn.Save("temp.jpg", ImageFormat.Jpeg);
+                byte[] data = null;
+
+                try
+                {
+                    data = File.ReadAllBytes("temp.jpg");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                return data;
+            }
+        }
+
+        private string imageSize(Image image,int bytelength)
+        {
+            string jpegByteSize;
+            using (var ms = new MemoryStream(bytelength)) // estimatedLength can be original fileLength
+            {
+                image.Save(ms, ImageFormat.Jpeg); // save image to stream in Jpeg format    
+                jpegByteSize = ms.Length.ToString();
+                return jpegByteSize; 
+            }
+        }
+        public bool GuidCheck(string guid)
+        {
+            try
+            {
+                Guid.Parse(guid);
+                return true;
+            }
+            catch
+            {
+                MessageBox.Show("UUID HATASI : " + guid + " ID GEÇERLİ DEĞİL");
+                return false;
+            }
+        }
+        private DataTable getFromLocalTablesmain(string tablename)          
+        {
+            return LocalTables.localtables.maintables.Tables[tablename];
+        }
+        private DataTable getFromLocalTablesproject(string tablename)
+        {
+            return LocalTables.localtables.projecttables.Tables[tablename];
+        }
+       /*public static DataTable Delete(this DataTable table, string filter)
+        {
+            table.Select(filter).Delete();
+            return table;
+        }
+        public static void Delete(this IEnumerable<DataRow> rows)
+        {
+            foreach (var row in rows)
+                row.Delete();
+        }
+        */
     }
 }
