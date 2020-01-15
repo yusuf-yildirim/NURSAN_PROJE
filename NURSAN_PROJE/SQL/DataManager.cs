@@ -44,10 +44,13 @@ namespace NURSAN_PROJE.SQL
         }
         public DataTable getIObySocketID(string SocketID)
         {
-            MessageBox.Show(SocketID);
             return getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'").CopyToDataTable();      
         }
-
+        public DataTable getConnectionbyPhase(string phaseid)
+        {
+            update_ConnectionTable(phaseid);
+            return getFromLocalTablesproject("CONNECTIONS");
+        }
 
 
       

@@ -56,9 +56,7 @@ namespace NURSAN_PROJE
 
         private void Projectwindow_Load(object sender, EventArgs e)
         {
-            // TODO: Bu kod satırı 'mainsource.Components' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            this.componentsTableAdapter.Fill(this.mainsource.Components);
-            // TODO: Bu kod satırı 'mainsource.Sockets' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.           
+            
             
         }
 
@@ -88,8 +86,8 @@ namespace NURSAN_PROJE
 
 
             color = gridLookUpEdit1View.GetRowCellValue(gridLookUpEdit1View.GetSelectedRows()[0], "ID_color").ToString();
-            db.connection_add(origin, origintype, destination, destinationtype, color, gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString()) ;
-            gridControl1.DataSource = db.get_ConnectionTable(gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString());
+            manager.addConnection(origin, origintype, destination, destinationtype, color, gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString()) ;
+            gridControl1.DataSource = manager.getConnectionbyPhase(gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString());
 
         }
 
@@ -194,7 +192,7 @@ namespace NURSAN_PROJE
             realTimeSource1.DataSource = manager.getMainSockets();
             // realTimeSource1.DataSource = db.get_saved_sockets();
             //this.socketsTableAdapter.Fill(this.mainsource.Sockets);
-            this.componentsTableAdapter.Fill(this.mainsource.Components);
+          
         }
 
         private void unregistermainsocket_button_Click(object sender, EventArgs e)
@@ -215,9 +213,11 @@ namespace NURSAN_PROJE
 
         private void pictureEdit1_Click(object sender, EventArgs e)
         {
+            Task.Factory.StartNew(() => splashScreenManager1.ShowWaitForm());
             if (registeredsocketimg.Image != null)
             {
                 new determine_pin_locations_window(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString(), (Bitmap)registeredsocketimg.Image).ShowDialog();
+                splashScreenManager1.CloseWaitForm();
             }
             else
             {
@@ -651,7 +651,7 @@ namespace NURSAN_PROJE
 
         private void gridView7_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {          
-            gridControl1.DataSource = db.get_ConnectionTable(gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString());
+            gridControl1.DataSource = manager.getConnectionbyPhase(gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString());
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)

@@ -1,11 +1,13 @@
 ﻿using NURSAN_PROJE.SQL;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NURSAN_PROJE
 {
     public partial class askprojectname : DevExpress.XtraEditors.XtraForm
     {
+        bool finish = false;
         public askprojectname()
         {
             InitializeComponent();
@@ -13,8 +15,13 @@ namespace NURSAN_PROJE
 
         private void okaskprojectnamebutton_Click(object sender, EventArgs e)
         {
-            DBeng db = new DBeng();
-            db.create_project(textEdit1.Text);
+
+            backgroundWorker1.RunWorkerAsync();        
+            splashScreenManager1.ShowWaitForm();
+            while(finish == false)
+            {
+
+            }
             this.Close();
         }
 
@@ -22,7 +29,10 @@ namespace NURSAN_PROJE
         {
             this.Close();
         }
-
+        private void createproject()
+        {
+          
+        }
         private void askprojectname_FormClosed(object sender, FormClosedEventArgs e)
         {
 
@@ -32,8 +42,12 @@ namespace NURSAN_PROJE
         {
             if (e.KeyChar == (char)13)
             {
-                DBeng db = new DBeng();
-                db.create_project(textEdit1.Text);
+                backgroundWorker1.RunWorkerAsync();
+                splashScreenManager1.ShowWaitForm();
+                while (finish == false)
+                {
+
+                }
                 this.Close();
             }
         }
@@ -42,10 +56,21 @@ namespace NURSAN_PROJE
         {
             if (e.KeyChar == (char)13)
             {
-                DBeng db = new DBeng();
-                db.create_project(textEdit1.Text);
+                backgroundWorker1.RunWorkerAsync();
+                splashScreenManager1.ShowWaitForm();
+                while (finish == false)
+                {
+
+                }
                 this.Close();
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            DBeng db = new DBeng();
+            db.create_project(textEdit1.Text);
+            finish = true;
         }
     }
 }

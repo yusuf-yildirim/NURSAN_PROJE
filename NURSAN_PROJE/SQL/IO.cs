@@ -19,5 +19,20 @@ namespace NURSAN_PROJE.SQL
                 LocalTables.localtables.maintables.Tables["IO_connections"].Rows.Add(Guid.NewGuid().ToString(), soc_parameters[0].ToString(), tp_parameters[1, i], tp_parameters[2, i]);
             }
         }
+        private string getIOInfo(String ıoID)
+        {
+            try
+            {
+                string answ = null;             
+                var rows = getFromLocalTablesproject("PIO_connection").Select("ID_IO = '" + ıoID + "'");
+                answ += getSocketNameInfo(rows[0][1].ToString()) + " : " + rows[0][2].ToString();
+                return answ;
+            }
+            catch
+            {
+                return "HATA";
+            }
+
+        }
     }
 }

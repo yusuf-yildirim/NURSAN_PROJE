@@ -24,8 +24,6 @@ namespace NURSAN_PROJE.SQL
             {
                 localtables = new LocalTablesStruct();
                 localtables.initialize();
-                
-                //  localtablesproject = new LocalTablesStruct();
                 getalltables();
             }
             else
@@ -46,7 +44,7 @@ namespace NURSAN_PROJE.SQL
             {
                 projecttables = new DataSet();
                 maintables = new DataSet();
-                maxorder = 0;
+                maxorder = 0;               
             }
         };
 

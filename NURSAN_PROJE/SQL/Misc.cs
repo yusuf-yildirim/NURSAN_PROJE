@@ -40,7 +40,7 @@ namespace NURSAN_PROJE.SQL
                         Console.WriteLine(workaround.PropertyIdList[i] + " -------------------");
 
                     }
-                    return workaround;
+                    return workaround;                
 
                 }
 

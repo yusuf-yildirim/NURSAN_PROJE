@@ -29,67 +29,67 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery2 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery5 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column19 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression19 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table7 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column20 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression20 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column21 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression21 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column22 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression22 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column23 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression23 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery3 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter5 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter6 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery9 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.Column column37 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression37 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table13 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column38 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression38 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column39 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression39 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column40 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression40 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column41 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression41 = new DevExpress.DataAccess.Sql.ColumnExpression();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Projectwindow));
-            DevExpress.XtraEditors.TableLayout.ItemTemplateBase ıtemTemplateBase2 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition4 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement3 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
-            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement4 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery6 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column24 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression24 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table8 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column25 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression25 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table9 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column26 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression26 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table10 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column27 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression27 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Join join3 = new DevExpress.DataAccess.Sql.Join();
-            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo3 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
-            DevExpress.DataAccess.Sql.Join join4 = new DevExpress.DataAccess.Sql.Join();
-            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo4 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery7 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column28 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression28 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table11 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column29 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression29 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column30 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression30 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column31 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression31 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery8 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column32 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression32 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table12 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column33 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression33 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column34 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression34 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column35 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression35 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column36 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression36 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.Utils.Animation.Transition transition2 = new DevExpress.Utils.Animation.Transition();
+            DevExpress.XtraEditors.TableLayout.ItemTemplateBase ıtemTemplateBase3 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition5 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition6 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement5 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement6 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery10 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.Column column42 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression42 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table14 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column43 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression43 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table15 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column44 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression44 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table16 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column45 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression45 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Join join5 = new DevExpress.DataAccess.Sql.Join();
+            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo5 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
+            DevExpress.DataAccess.Sql.Join join6 = new DevExpress.DataAccess.Sql.Join();
+            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo6 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery11 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.Column column46 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression46 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table17 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column47 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression47 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column48 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression48 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column49 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression49 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery12 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.Column column50 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression50 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table18 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column51 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression51 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column52 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression52 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column53 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression53 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column54 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression54 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.Utils.Animation.Transition transition3 = new DevExpress.Utils.Animation.Transition();
             this.recentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maindatasource = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
@@ -152,8 +152,7 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.registeredsocketgrid = new DevExpress.XtraGrid.GridControl();
-            this.socketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mainsource = new NURSAN_PROJE.mainsource();
+            this.realTimeSource1 = new DevExpress.Data.RealTimeSource();
             this.registeredsocketgridview = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colAdı = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPin_sayisi = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -312,6 +311,7 @@
             this.diagramShape5 = new DevExpress.XtraDiagram.DiagramShape();
             this.diagramConnector1 = new DevExpress.XtraDiagram.DiagramConnector();
             this.diagramConnector2 = new DevExpress.XtraDiagram.DiagramConnector();
+            this.socketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projectdatasource = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.treeListBand1 = new DevExpress.XtraTreeList.Columns.TreeListBand();
             this.treeListBand2 = new DevExpress.XtraTreeList.Columns.TreeListBand();
@@ -321,9 +321,7 @@
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.socketsTableAdapter = new NURSAN_PROJE.mainsourceTableAdapters.SocketsTableAdapter();
-            this.componentsTableAdapter = new NURSAN_PROJE.mainsourceTableAdapters.ComponentsTableAdapter();
-            this.realTimeSource1 = new DevExpress.Data.RealTimeSource();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::NURSAN_PROJE.WaitForm2), true, true, true);
             ((System.ComponentModel.ISupportInitialize)(this.recentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).BeginInit();
@@ -359,8 +357,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.registeredsocketgrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socketsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainsource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.registeredsocketgridview)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -424,6 +420,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.workflow_page.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.diagramControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socketsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_connectionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorprovider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
@@ -440,43 +437,43 @@
             // 
             this.maindatasource.ConnectionName = "maindatabase";
             this.maindatasource.Name = "maindatasource";
-            customSqlQuery2.Name = "addrecent";
-            queryParameter3.Name = "NAME";
-            queryParameter3.Type = typeof(string);
-            queryParameter3.ValueInfo = "TEST İSİM";
-            queryParameter4.Name = "PATH";
-            queryParameter4.Type = typeof(string);
-            queryParameter4.ValueInfo = "./TEST YOL";
-            customSqlQuery2.Parameters.Add(queryParameter3);
-            customSqlQuery2.Parameters.Add(queryParameter4);
-            customSqlQuery2.Sql = "INSERT INTO Recent(NAME,PATH) VALUES(@NAME, @PATH)";
-            columnExpression19.ColumnName = "ID_soket";
-            table7.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"153\" />";
-            table7.Name = "tbl_Socket";
-            columnExpression19.Table = table7;
-            column19.Expression = columnExpression19;
-            columnExpression20.ColumnName = "Adı";
-            columnExpression20.Table = table7;
-            column20.Expression = columnExpression20;
-            columnExpression21.ColumnName = "Pin_sayisi";
-            columnExpression21.Table = table7;
-            column21.Expression = columnExpression21;
-            columnExpression22.ColumnName = "Anahtar_sayisi";
-            columnExpression22.Table = table7;
-            column22.Expression = columnExpression22;
-            columnExpression23.ColumnName = "Led_numarasi";
-            columnExpression23.Table = table7;
-            column23.Expression = columnExpression23;
-            selectQuery5.Columns.Add(column19);
-            selectQuery5.Columns.Add(column20);
-            selectQuery5.Columns.Add(column21);
-            selectQuery5.Columns.Add(column22);
-            selectQuery5.Columns.Add(column23);
-            selectQuery5.Name = "recent";
-            selectQuery5.Tables.Add(table7);
+            customSqlQuery3.Name = "addrecent";
+            queryParameter5.Name = "NAME";
+            queryParameter5.Type = typeof(string);
+            queryParameter5.ValueInfo = "TEST İSİM";
+            queryParameter6.Name = "PATH";
+            queryParameter6.Type = typeof(string);
+            queryParameter6.ValueInfo = "./TEST YOL";
+            customSqlQuery3.Parameters.Add(queryParameter5);
+            customSqlQuery3.Parameters.Add(queryParameter6);
+            customSqlQuery3.Sql = "INSERT INTO Recent(NAME,PATH) VALUES(@NAME, @PATH)";
+            columnExpression37.ColumnName = "ID_soket";
+            table13.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"153\" />";
+            table13.Name = "tbl_Socket";
+            columnExpression37.Table = table13;
+            column37.Expression = columnExpression37;
+            columnExpression38.ColumnName = "Adı";
+            columnExpression38.Table = table13;
+            column38.Expression = columnExpression38;
+            columnExpression39.ColumnName = "Pin_sayisi";
+            columnExpression39.Table = table13;
+            column39.Expression = columnExpression39;
+            columnExpression40.ColumnName = "Anahtar_sayisi";
+            columnExpression40.Table = table13;
+            column40.Expression = columnExpression40;
+            columnExpression41.ColumnName = "Led_numarasi";
+            columnExpression41.Table = table13;
+            column41.Expression = columnExpression41;
+            selectQuery9.Columns.Add(column37);
+            selectQuery9.Columns.Add(column38);
+            selectQuery9.Columns.Add(column39);
+            selectQuery9.Columns.Add(column40);
+            selectQuery9.Columns.Add(column41);
+            selectQuery9.Name = "recent";
+            selectQuery9.Tables.Add(table13);
             this.maindatasource.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery2,
-            selectQuery5});
+            customSqlQuery3,
+            selectQuery9});
             this.maindatasource.ResultSchemaSerializable = resources.GetString("maindatasource.ResultSchemaSerializable");
             // 
             // toolbarFormManager1
@@ -726,7 +723,8 @@
             this.change_configured_sockets_page});
             this.navigationPane1.RegularSize = new System.Drawing.Size(493, 742);
             this.navigationPane1.SelectedPage = this.change_configured_sockets_page;
-            this.navigationPane1.Size = new System.Drawing.Size(493, 742);
+            this.navigationPane1.Size = new System.Drawing.Size(98, 742);
+            this.navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
             this.navigationPane1.TabIndex = 42;
             this.navigationPane1.Text = "SOKET DÜZENLE";
             this.navigationPane1.TransitionType = DevExpress.Utils.Animation.Transitions.Push;
@@ -1124,15 +1122,9 @@
             this.registeredsocketgrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.registeredsocketgridview});
             // 
-            // socketsBindingSource
+            // realTimeSource1
             // 
-            this.socketsBindingSource.DataMember = "Sockets";
-            this.socketsBindingSource.DataSource = this.mainsource;
-            // 
-            // mainsource
-            // 
-            this.mainsource.DataSetName = "mainsource";
-            this.mainsource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.realTimeSource1.DisplayableProperties = null;
             // 
             // registeredsocketgridview
             // 
@@ -1808,33 +1800,32 @@
             this.listBoxControl3.Name = "listBoxControl3";
             this.listBoxControl3.Size = new System.Drawing.Size(226, 450);
             this.listBoxControl3.TabIndex = 1;
-            tableColumnDefinition3.Length.Value = 44D;
-            tableColumnDefinition4.Length.Value = 61D;
-            ıtemTemplateBase2.Columns.Add(tableColumnDefinition3);
-            ıtemTemplateBase2.Columns.Add(tableColumnDefinition4);
-            templatedItemElement3.FieldName = "Component_Name";
-            templatedItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            templatedItemElement3.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement3.Text = "Component_Name";
-            templatedItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            templatedItemElement4.ColumnIndex = 1;
-            templatedItemElement4.FieldName = "Deger";
-            templatedItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            templatedItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement4.Text = "Deger";
-            templatedItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            ıtemTemplateBase2.Elements.Add(templatedItemElement3);
-            ıtemTemplateBase2.Elements.Add(templatedItemElement4);
-            ıtemTemplateBase2.Name = "template1";
-            tableRowDefinition2.Length.Value = 13D;
-            ıtemTemplateBase2.Rows.Add(tableRowDefinition2);
-            this.listBoxControl3.Templates.Add(ıtemTemplateBase2);
+            tableColumnDefinition5.Length.Value = 44D;
+            tableColumnDefinition6.Length.Value = 61D;
+            ıtemTemplateBase3.Columns.Add(tableColumnDefinition5);
+            ıtemTemplateBase3.Columns.Add(tableColumnDefinition6);
+            templatedItemElement5.FieldName = "Component_Name";
+            templatedItemElement5.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement5.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement5.Text = "Component_Name";
+            templatedItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement6.ColumnIndex = 1;
+            templatedItemElement6.FieldName = "Deger";
+            templatedItemElement6.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement6.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement6.Text = "Deger";
+            templatedItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            ıtemTemplateBase3.Elements.Add(templatedItemElement5);
+            ıtemTemplateBase3.Elements.Add(templatedItemElement6);
+            ıtemTemplateBase3.Name = "template1";
+            tableRowDefinition3.Length.Value = 13D;
+            ıtemTemplateBase3.Rows.Add(tableRowDefinition3);
+            this.listBoxControl3.Templates.Add(ıtemTemplateBase3);
             this.listBoxControl3.ValueMember = "Component_Name";
             // 
             // componentsBindingSource
             // 
             this.componentsBindingSource.DataMember = "Components";
-            this.componentsBindingSource.DataSource = this.mainsource;
             // 
             // new_component_tabpane
             // 
@@ -2705,98 +2696,102 @@
             new DevExpress.Utils.PointFloat(33F, 303F),
             new DevExpress.Utils.PointFloat(100F, 303F)});
             // 
+            // socketsBindingSource
+            // 
+            this.socketsBindingSource.DataMember = "Sockets";
+            // 
             // projectdatasource
             // 
             this.projectdatasource.ConnectionName = "tablo";
             this.projectdatasource.Name = "projectdatasource";
-            columnExpression24.ColumnName = "Adı";
-            table8.MetaSerializable = "<Meta X=\"185\" Y=\"30\" Width=\"125\" Height=\"153\" />";
-            table8.Name = "tbl_Socket";
-            columnExpression24.Table = table8;
-            column24.Expression = columnExpression24;
-            column25.Alias = "tbl_Socket_1_Adı";
-            columnExpression25.ColumnName = "Adı";
-            table9.Alias = "tbl_Socket_1";
-            table9.MetaSerializable = "<Meta X=\"190\" Y=\"200\" Width=\"125\" Height=\"153\" />";
-            table9.Name = "tbl_Socket";
-            columnExpression25.Table = table9;
-            column25.Expression = columnExpression25;
-            columnExpression26.ColumnName = "Kablo_Ad";
-            table10.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"305\" />";
-            table10.Name = "tbl_connection";
-            columnExpression26.Table = table10;
-            column26.Expression = columnExpression26;
-            columnExpression27.ColumnName = "Yorum";
-            columnExpression27.Table = table10;
-            column27.Expression = columnExpression27;
-            selectQuery6.Columns.Add(column24);
-            selectQuery6.Columns.Add(column25);
-            selectQuery6.Columns.Add(column26);
-            selectQuery6.Columns.Add(column27);
-            selectQuery6.Name = "tbl_connection";
-            relationColumnInfo3.NestedKeyColumn = "ID_soket";
-            relationColumnInfo3.ParentKeyColumn = "ID_soket_1";
-            join3.KeyColumns.Add(relationColumnInfo3);
-            join3.Nested = table8;
-            join3.Parent = table10;
-            relationColumnInfo4.NestedKeyColumn = "ID_soket";
-            relationColumnInfo4.ParentKeyColumn = "ID_soket_2";
-            join4.KeyColumns.Add(relationColumnInfo4);
-            join4.Nested = table9;
-            join4.Parent = table10;
-            selectQuery6.Relations.Add(join3);
-            selectQuery6.Relations.Add(join4);
-            selectQuery6.Tables.Add(table10);
-            selectQuery6.Tables.Add(table8);
-            selectQuery6.Tables.Add(table9);
-            columnExpression28.ColumnName = "image_id";
-            table11.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"134\" />";
-            table11.Name = "ImageStore";
-            columnExpression28.Table = table11;
-            column28.Expression = columnExpression28;
-            columnExpression29.ColumnName = "imageFileName";
-            columnExpression29.Table = table11;
-            column29.Expression = columnExpression29;
-            columnExpression30.ColumnName = "imageBlob";
-            columnExpression30.Table = table11;
-            column30.Expression = columnExpression30;
-            columnExpression31.ColumnName = "imageFileSizeBytes";
-            columnExpression31.Table = table11;
-            column31.Expression = columnExpression31;
-            selectQuery7.Columns.Add(column28);
-            selectQuery7.Columns.Add(column29);
-            selectQuery7.Columns.Add(column30);
-            selectQuery7.Columns.Add(column31);
-            selectQuery7.Name = "imageStore";
-            selectQuery7.Tables.Add(table11);
-            columnExpression32.ColumnName = "ID_soket";
-            table12.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"153\" />";
-            table12.Name = "tbl_Socket_using";
-            columnExpression32.Table = table12;
-            column32.Expression = columnExpression32;
-            columnExpression33.ColumnName = "Adı";
-            columnExpression33.Table = table12;
-            column33.Expression = columnExpression33;
-            columnExpression34.ColumnName = "Pin_sayisi";
-            columnExpression34.Table = table12;
-            column34.Expression = columnExpression34;
-            columnExpression35.ColumnName = "Anahtar_sayisi";
-            columnExpression35.Table = table12;
-            column35.Expression = columnExpression35;
-            columnExpression36.ColumnName = "Led_numarasi";
-            columnExpression36.Table = table12;
-            column36.Expression = columnExpression36;
-            selectQuery8.Columns.Add(column32);
-            selectQuery8.Columns.Add(column33);
-            selectQuery8.Columns.Add(column34);
-            selectQuery8.Columns.Add(column35);
-            selectQuery8.Columns.Add(column36);
-            selectQuery8.Name = "tbl_Socket_using";
-            selectQuery8.Tables.Add(table12);
+            columnExpression42.ColumnName = "Adı";
+            table14.MetaSerializable = "<Meta X=\"185\" Y=\"30\" Width=\"125\" Height=\"153\" />";
+            table14.Name = "tbl_Socket";
+            columnExpression42.Table = table14;
+            column42.Expression = columnExpression42;
+            column43.Alias = "tbl_Socket_1_Adı";
+            columnExpression43.ColumnName = "Adı";
+            table15.Alias = "tbl_Socket_1";
+            table15.MetaSerializable = "<Meta X=\"190\" Y=\"200\" Width=\"125\" Height=\"153\" />";
+            table15.Name = "tbl_Socket";
+            columnExpression43.Table = table15;
+            column43.Expression = columnExpression43;
+            columnExpression44.ColumnName = "Kablo_Ad";
+            table16.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"305\" />";
+            table16.Name = "tbl_connection";
+            columnExpression44.Table = table16;
+            column44.Expression = columnExpression44;
+            columnExpression45.ColumnName = "Yorum";
+            columnExpression45.Table = table16;
+            column45.Expression = columnExpression45;
+            selectQuery10.Columns.Add(column42);
+            selectQuery10.Columns.Add(column43);
+            selectQuery10.Columns.Add(column44);
+            selectQuery10.Columns.Add(column45);
+            selectQuery10.Name = "tbl_connection";
+            relationColumnInfo5.NestedKeyColumn = "ID_soket";
+            relationColumnInfo5.ParentKeyColumn = "ID_soket_1";
+            join5.KeyColumns.Add(relationColumnInfo5);
+            join5.Nested = table14;
+            join5.Parent = table16;
+            relationColumnInfo6.NestedKeyColumn = "ID_soket";
+            relationColumnInfo6.ParentKeyColumn = "ID_soket_2";
+            join6.KeyColumns.Add(relationColumnInfo6);
+            join6.Nested = table15;
+            join6.Parent = table16;
+            selectQuery10.Relations.Add(join5);
+            selectQuery10.Relations.Add(join6);
+            selectQuery10.Tables.Add(table16);
+            selectQuery10.Tables.Add(table14);
+            selectQuery10.Tables.Add(table15);
+            columnExpression46.ColumnName = "image_id";
+            table17.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"134\" />";
+            table17.Name = "ImageStore";
+            columnExpression46.Table = table17;
+            column46.Expression = columnExpression46;
+            columnExpression47.ColumnName = "imageFileName";
+            columnExpression47.Table = table17;
+            column47.Expression = columnExpression47;
+            columnExpression48.ColumnName = "imageBlob";
+            columnExpression48.Table = table17;
+            column48.Expression = columnExpression48;
+            columnExpression49.ColumnName = "imageFileSizeBytes";
+            columnExpression49.Table = table17;
+            column49.Expression = columnExpression49;
+            selectQuery11.Columns.Add(column46);
+            selectQuery11.Columns.Add(column47);
+            selectQuery11.Columns.Add(column48);
+            selectQuery11.Columns.Add(column49);
+            selectQuery11.Name = "imageStore";
+            selectQuery11.Tables.Add(table17);
+            columnExpression50.ColumnName = "ID_soket";
+            table18.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"153\" />";
+            table18.Name = "tbl_Socket_using";
+            columnExpression50.Table = table18;
+            column50.Expression = columnExpression50;
+            columnExpression51.ColumnName = "Adı";
+            columnExpression51.Table = table18;
+            column51.Expression = columnExpression51;
+            columnExpression52.ColumnName = "Pin_sayisi";
+            columnExpression52.Table = table18;
+            column52.Expression = columnExpression52;
+            columnExpression53.ColumnName = "Anahtar_sayisi";
+            columnExpression53.Table = table18;
+            column53.Expression = columnExpression53;
+            columnExpression54.ColumnName = "Led_numarasi";
+            columnExpression54.Table = table18;
+            column54.Expression = columnExpression54;
+            selectQuery12.Columns.Add(column50);
+            selectQuery12.Columns.Add(column51);
+            selectQuery12.Columns.Add(column52);
+            selectQuery12.Columns.Add(column53);
+            selectQuery12.Columns.Add(column54);
+            selectQuery12.Name = "tbl_Socket_using";
+            selectQuery12.Tables.Add(table18);
             this.projectdatasource.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery6,
-            selectQuery7,
-            selectQuery8});
+            selectQuery10,
+            selectQuery11,
+            selectQuery12});
             this.projectdatasource.ResultSchemaSerializable = resources.GetString("projectdatasource.ResultSchemaSerializable");
             // 
             // treeListBand1
@@ -2817,18 +2812,18 @@
             // 
             // transitionManager1
             // 
-            transition2.BarWaitingIndicatorProperties.Caption = "";
-            transition2.BarWaitingIndicatorProperties.Description = "";
-            transition2.Control = null;
-            transition2.LineWaitingIndicatorProperties.AnimationElementCount = 5;
-            transition2.LineWaitingIndicatorProperties.Caption = "";
-            transition2.LineWaitingIndicatorProperties.Description = "";
-            transition2.RingWaitingIndicatorProperties.AnimationElementCount = 5;
-            transition2.RingWaitingIndicatorProperties.Caption = "";
-            transition2.RingWaitingIndicatorProperties.Description = "";
-            transition2.WaitingIndicatorProperties.Caption = "";
-            transition2.WaitingIndicatorProperties.Description = "";
-            this.transitionManager1.Transitions.Add(transition2);
+            transition3.BarWaitingIndicatorProperties.Caption = "";
+            transition3.BarWaitingIndicatorProperties.Description = "";
+            transition3.Control = null;
+            transition3.LineWaitingIndicatorProperties.AnimationElementCount = 5;
+            transition3.LineWaitingIndicatorProperties.Caption = "";
+            transition3.LineWaitingIndicatorProperties.Description = "";
+            transition3.RingWaitingIndicatorProperties.AnimationElementCount = 5;
+            transition3.RingWaitingIndicatorProperties.Caption = "";
+            transition3.RingWaitingIndicatorProperties.Description = "";
+            transition3.WaitingIndicatorProperties.Caption = "";
+            transition3.WaitingIndicatorProperties.Description = "";
+            this.transitionManager1.Transitions.Add(transition3);
             // 
             // errorprovider
             // 
@@ -2850,17 +2845,9 @@
             this.gridView3.GridControl = this.gridControl3;
             this.gridView3.Name = "gridView3";
             // 
-            // socketsTableAdapter
+            // splashScreenManager1
             // 
-            this.socketsTableAdapter.ClearBeforeFill = true;
-            // 
-            // componentsTableAdapter
-            // 
-            this.componentsTableAdapter.ClearBeforeFill = true;
-            // 
-            // realTimeSource1
-            // 
-            this.realTimeSource1.DisplayableProperties = null;
+            this.splashScreenManager1.ClosingDelay = 500;
             // 
             // Projectwindow
             // 
@@ -2924,8 +2911,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.registeredsocketgrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socketsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainsource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.registeredsocketgridview)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -2998,6 +2983,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.workflow_page.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.diagramControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socketsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_connectionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorprovider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
@@ -3110,9 +3096,9 @@
         private DevExpress.XtraGrid.GridControl gridControl4;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.Data.RealTimeSource realTimeSource2;
-        private mainsource mainsource;
+        
         private System.Windows.Forms.BindingSource socketsBindingSource;
-        private mainsourceTableAdapters.SocketsTableAdapter socketsTableAdapter;
+       
         private DevExpress.XtraEditors.PictureEdit registeredsocketimg;
         private DevExpress.XtraBars.Navigation.TabNavigationPage workflow_page;
         private DevExpress.XtraDiagram.DiagramControl diagramControl1;
@@ -3198,7 +3184,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl43;
         private DevExpress.XtraEditors.LabelControl labelControl44;
         private System.Windows.Forms.BindingSource componentsBindingSource;
-        private mainsourceTableAdapters.ComponentsTableAdapter componentsTableAdapter;
+        
         private DevExpress.XtraGrid.Columns.GridColumn colID_component;
         private DevExpress.XtraGrid.Columns.GridColumn colComponent_Name;
         private DevExpress.XtraGrid.Columns.GridColumn colTur;
@@ -3244,5 +3230,6 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.TextEdit find_components_in_the_listbox_textedit;
         private DevExpress.Data.RealTimeSource realTimeSource1;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }
