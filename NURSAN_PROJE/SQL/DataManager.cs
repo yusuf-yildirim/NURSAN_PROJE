@@ -38,6 +38,10 @@ namespace NURSAN_PROJE.SQL
         {
             return getFromLocalTablesmain("Components");
         }
+        public DataTable getProjectComponents()
+        {
+            return getFromLocalTablesproject("PComponents");
+        }
         public DataTable getColors()
         {
             return getFromLocalTablesmain("Colours");

@@ -107,6 +107,14 @@ namespace NURSAN_PROJE.SQL
                 return false;
             }
         }
+        public void getIOPointNumber()
+        {
+            //var rows = 
+
+
+
+
+        }
         private DataTable getFromLocalTablesmain(string tablename)          
         {
             return LocalTables.localtables.maintables.Tables[tablename];

@@ -188,8 +188,8 @@ namespace NURSAN_PROJE
         }
         public void refresh_socket_grids()
         {
-            realTimeSource2.DataSource = manager.getProjectSockets();
-            realTimeSource1.DataSource = manager.getMainSockets();
+            projectsocketsource.DataSource = manager.getProjectSockets();
+            mainsocketsource.DataSource = manager.getMainSockets();
             
           
         }
@@ -270,31 +270,31 @@ namespace NURSAN_PROJE
 
         private void add_splice_button_Click(object sender, EventArgs e)
         {
-            db.addComponent("SPLICE", add_splice_name.Text);
+            manager.addComponent("SPLICE", add_splice_name.Text);
             refresh_socket_grids();
         }
 
         private void add_capacitor_button_Click(object sender, EventArgs e)
         {
-            db.addComponent("CAPACITOR", add_capacitor_name.Text, Convert.ToInt32(add_capacitor_value_number.Text), multipliertonumber(add_capacitor_value_multipler.Text), Convert.ToInt32(add_capacitor_tolerance.Text));
+            manager.addComponent("CAPACITOR", add_capacitor_name.Text, Convert.ToInt32(add_capacitor_value_number.Text), multipliertonumber(add_capacitor_value_multipler.Text), Convert.ToInt32(add_capacitor_tolerance.Text));
             refresh_socket_grids();
         }
 
         private void add_diode_button_Click(object sender, EventArgs e)
         {
-            db.addComponent("DIODE", add_diode_name.Text, Convert.ToInt32(add_diode_value_number.Text), Convert.ToInt32(add_diode_tolerance.Text));
+            manager.addComponent("DIODE", add_diode_name.Text, Convert.ToInt32(add_diode_value_number.Text), Convert.ToInt32(add_diode_tolerance.Text));
             refresh_socket_grids();
         }
 
         private void add_resistor_button_Click(object sender, EventArgs e)
         {
-            db.addComponent("RESISTOR", add_resistor_name.Text, Convert.ToInt32(add_resistor_value.Text), multipliertonumber(add_resistor_multiplier.Text), Convert.ToInt32(add_resistor_tolerance.Text));
+            manager.addComponent("RESISTOR", add_resistor_name.Text, Convert.ToInt32(add_resistor_value.Text), multipliertonumber(add_resistor_multiplier.Text), Convert.ToInt32(add_resistor_tolerance.Text));
             refresh_socket_grids();
         }
 
         private void add_thermistor_button_Click(object sender, EventArgs e)
         {
-            db.addComponent("THERMISTOR",
+            manager.addComponent("THERMISTOR",
                             add_thermistor_name.Text,
                             Convert.ToInt32(add_thermistor_tolerance.Text),
                             Convert.ToInt32(add_thermistor_firsttestpoint.Text),
@@ -308,7 +308,7 @@ namespace NURSAN_PROJE
 
         private void simpleButton14_Click(object sender, EventArgs e)
         {
-            db.addComponent("GENERIC", add_generic_name.Text, Convert.ToInt32(add_generic_current.Text), 5, Convert.ToInt32(add_generic_voltagedrop.Text), Convert.ToInt32(add_resistor_tolerance.Text));
+            manager.addComponent("GENERIC", add_generic_name.Text, Convert.ToInt32(add_generic_current.Text), 5, Convert.ToInt32(add_generic_voltagedrop.Text), Convert.ToInt32(add_resistor_tolerance.Text));
             refresh_socket_grids();
         }
         public int multipliertonumber(string multiplier)
@@ -349,7 +349,9 @@ namespace NURSAN_PROJE
 
         private void simpleButton13_Click(object sender, EventArgs e)
         {
-
+            DataTable temp = manager.getMainComponents();
+            manager.componenet2project(temp.Rows[listBoxControl1.SelectedIndex][0].ToString());
+            projectcomponentsource.DataSource = manager.getProjectComponents();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -672,18 +674,7 @@ namespace NURSAN_PROJE
             }
         }
 
-        private void find_components_in_the_listbox_textedit_TextChanged(object sender, EventArgs e)
-        {
-            string searchString = find_components_in_the_listbox_textedit.Text;
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                int index = listBoxControl1.FindString(searchString);
-                if (index != -1)
-                {
-                    listBoxControl1.SetSelected(index, true);
-                }
-            }
-        }
+    
 
         private void edit_socket_pinnumber_EditValueChanged(object sender, EventArgs e)
         {
@@ -881,7 +872,7 @@ namespace NURSAN_PROJE
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            realTimeSource3.DataSource = manager.getMainComponents();
+            maincomponentsource.DataSource = manager.getMainComponents();
             Console.WriteLine(manager.getMainComponents().Rows.Count);
             //DİĞER HEPSİ GİBİ YAPILMASINA RAĞMEN BU DATASOURCE VERİLERİ GÖSTERMİYOR !??!?
         }

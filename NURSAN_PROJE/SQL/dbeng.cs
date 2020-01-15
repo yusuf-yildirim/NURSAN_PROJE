@@ -63,58 +63,7 @@ namespace NURSAN_PROJE.SQL
 
         }
 
-        ///<summary>
-        ///Projeye splice eklenirken kullanılmalıdır.Tecnicname tüm aynı komponentler için sabit olmalıdır.
-        ///</summary>
-        public void addComponent(String technicname, String name)
-        {
-         //   x.Components.AddComponentsRow(Guid.NewGuid().ToString(), name, technicname, 0, 0, 0, null, null, 0, 0, 0, 0, 0);
-            updateComponents();
-
-        }
-        ///<summary>
-        ///Projeye kapasitör ve direnç eklenirken kullanılmalıdır.Tecnicname tüm aynı komponentler için sabit olmalıdır.
-        ///</summary>
-        public void addComponent(String technicname, String name, int value, int valuemultiplier, int tolerence)
-        {
-         //   x.Components.AddComponentsRow(Guid.NewGuid().ToString(), name, technicname, value, valuemultiplier, tolerence, null, null, 0, 0, 0, 0, 0);
-            updateComponents();
-
-        }
-        ///<summary>
-        ///Projeye diyot eklenirken kullanılmalıdır.Tecnicname tüm aynı komponentler için sabit olmalıdır
-        ///</summary>
-        public void addComponent(String technicname, String name, int forwardvoltage, int tolerence)
-        {
-         //   x.Components.AddComponentsRow(Guid.NewGuid().ToString(), name, technicname, forwardvoltage, 1, tolerence, null, null, 0, 0, 0, 0, 0);
-            updateComponents();
-
-        }
-        ///<summary>
-        ///Projeye termistör eklenirken kullanılmalıdır.Tecnicname tüm aynı komponentler için sabit olmalıdır
-        ///</summary>
-        public void addComponent(String technicname, String name, int Comparasiontolerence, int firsttestpoint, int secondtestpoint, int minResistance, int maxResistence, int minResistincemultiplier, int maxResistenceMultiplier)
-        {
-         //   x.Components.AddComponentsRow(Guid.NewGuid().ToString(), name, technicname, 0, 0, 0, firsttestpoint.ToString(), secondtestpoint.ToString(), minResistance, minResistincemultiplier, maxResistence, Comparasiontolerence, maxResistenceMultiplier);
-            updateComponents();
-        }
-        ///<summary>
-        ///Projeye generic component eklenirken kullanılmalıdır.Tecnicname tüm aynı komponentler için sabit olmalıdır
-        ///</summary>
-        public void addComponent(String technicname, String name, int testCurrent, int testCurrentMultiplier, int voltageDrop, int tolerence)
-        {
-
-
-        //    x.Components.AddComponentsRow(Guid.NewGuid().ToString(), name, technicname, testCurrent, testCurrentMultiplier, tolerence, null, null, voltageDrop, 0, 0, 0, 0);
-            updateComponents();
-        }
-        public void updateComponents()
-        {
-            //!!!!!!!!!!mainsourceTableAdapters.ComponentsTableAdapter a = new mainsourceTableAdapters.ComponentsTableAdapter();
-           // a.Update(x.Components);
-            //a.Dispose();
-            
-        }
+      
 
 
 
