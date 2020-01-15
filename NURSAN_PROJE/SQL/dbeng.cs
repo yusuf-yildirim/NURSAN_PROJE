@@ -20,21 +20,11 @@ namespace NURSAN_PROJE.SQL
         static DataSet ds;
         public static bool created = false;
         Config getconstring = new Config();
-        struct LocalTables//TO-DO
-        {
-            public DataSet tables ;
-            int maxorder;
-       
 
-            public void getalltables(SQLiteConnection con)
-            {
-
-            }
-        };
 
         public DBeng()//TO-DO
         {
-            LocalTables localtables = new LocalTables();
+           
         }
         public void attachDatabase()
         {
@@ -59,7 +49,7 @@ namespace NURSAN_PROJE.SQL
             con.Open();
             tmplog.WriteDebugLog("Proje veritabanı bağlantısı açıldı");
         }
-        public DataTable getPhase()
+        public DataTable getPhase()//güncelleme gerekir
         {
             getprojectcon();
             DataTable phase = new DataTable();
@@ -69,7 +59,7 @@ namespace NURSAN_PROJE.SQL
             return phase;
 
         }
-        public void connection_add(string origin, string origintype, string destination, string destinationtype, string colorıd,string phaseid)
+        public void connection_add(string origin, string origintype, string destination, string destinationtype, string colorıd,string phaseid)//güncelleme gerekir
         {
             getprojectcon();
             cmd = new SQLiteCommand();
@@ -79,7 +69,7 @@ namespace NURSAN_PROJE.SQL
             cmd.ExecuteNonQuery();
             con.Close();
         }
-        public string getlastconnectionorder(string phaseid)
+        public string getlastconnectionorder(string phaseid)//güncelleme gerekir
         {
             getprojectcon();
             DataTable Orders = new DataTable();
@@ -100,15 +90,16 @@ namespace NURSAN_PROJE.SQL
             }
 
         }
-        public void addPhase(string phaseName)
+        public void addPhase(string phaseName)//güncelleme gerekir
         {
-            getprojectcon();
-            cmd = new SQLiteCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "insert into tbl_etap values('"+Guid.NewGuid().ToString()+ "','"+phaseName+"')";
-            Console.WriteLine(cmd.CommandText);
-            cmd.ExecuteNonQuery();
-            con.Close();
+            /*  getprojectcon();
+              cmd = new SQLiteCommand();
+              cmd.Connection = con;
+              cmd.CommandText = "insert into tbl_etap values('"+Guid.NewGuid().ToString()+ "','"+phaseName+"')";
+              Console.WriteLine(cmd.CommandText);
+              cmd.ExecuteNonQuery();
+              con.Close();*/
+           
         }
         public DataTable get_ConnectionTable(string phaseid)
         {
@@ -288,7 +279,7 @@ namespace NURSAN_PROJE.SQL
         }
 
 
-        public void register_socket(object[] soc_parameters, string[,] tp_parameters)
+        public void register_socket(object[] soc_parameters, string[,] tp_parameters)//güncelleme gerekir
         {
             tmplog.WriteDebugLog("----------Yeni Soket Ekleme başladı----------", false);
             try
@@ -321,7 +312,7 @@ namespace NURSAN_PROJE.SQL
             }
             tmplog.WriteDebugLog("----------Yeni Soket Ekleme tamamlandı----------", false);
         }
-        public void unregister_socket(string SocketID)
+        public void unregister_socket(string SocketID)//güncelleme gerekir
         {
             tmplog.WriteDebugLog("----------Soket Silme başladı----------", false);
             getprojectcon();
@@ -371,7 +362,7 @@ namespace NURSAN_PROJE.SQL
             tmplog.WriteDebugLog("----------Soket Silme tamamlandı----------", false);
         }
 
-        public void register_using_socket(string SocketID)
+        public void register_using_socket(string SocketID)//güncelleme gerekir
         {
             tmplog.WriteDebugLog("----------Projeye Soket Kaydı başladı----------", false);
 
@@ -440,7 +431,7 @@ namespace NURSAN_PROJE.SQL
             tmplog.WriteDebugLog("Proje veritabanı bağlantısı kapatıldı!");
             tmplog.WriteDebugLog("----------Soket Kaydı tamamlandı----------", false);
         }
-        public void unregister_using_socket(string SocketID)
+        public void unregister_using_socket(string SocketID)//güncelleme gerekir
         {
             tmplog.WriteDebugLog("----------Kullanılan Soket Kaydı Silme başladı----------", false);
             getprojectcon();
@@ -466,6 +457,7 @@ namespace NURSAN_PROJE.SQL
         {
             ds = new DataSet();
             getprojectcon();
+            
             da = new SQLiteDataAdapter($"SELECT * FROM PIO_connection WHERE ID_soket = '{SocketID}'", connection: con);
             SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
             da.Fill(ds);
@@ -718,7 +710,110 @@ namespace NURSAN_PROJE.SQL
             mainsourceTableAdapters.ComponentsTableAdapter a = new mainsourceTableAdapters.ComponentsTableAdapter();
             a.Update(x.Components);
             a.Dispose();
+            
         }
 
+
+
+
+
+
+        public DataTable GetDataTable(string tablename, Databases db)
+        {
+           
+            if (db == Databases.Main)
+            {
+                con = new SQLiteConnection("Data Source=" + Application.StartupPath + "\\tablo.db;Version=3;");
+                DataTable DT = new DataTable();
+                con.Open();
+                cmd = con.CreateCommand();
+                cmd.CommandText = string.Format("SELECT * FROM {0}", tablename);
+                da = new SQLiteDataAdapter(cmd);
+                da.AcceptChangesDuringFill = false;
+                da.Fill(DT);
+                con.Close();
+                DT.TableName = tablename;
+                foreach (DataRow row in DT.Rows)
+                {
+                    row.AcceptChanges();
+                }
+                return DT;
+            }
+            else if(db == Databases.Project)
+            {
+                con = new SQLiteConnection(getconstring.get_conn_string("tablo") + ";Version=3;");
+                DataTable DT = new DataTable();
+                con.Open();
+                cmd = con.CreateCommand();
+                cmd.CommandText = string.Format("SELECT * FROM {0}", tablename);
+                da = new SQLiteDataAdapter(cmd);
+                da.AcceptChangesDuringFill = false;
+                da.Fill(DT);
+                con.Close();
+                DT.TableName = tablename;
+                foreach (DataRow row in DT.Rows)
+                {
+                    row.AcceptChanges();
+                }
+                return DT;
+            }
+            else
+            {
+                MessageBox.Show("UNEXPECTED ERROR");
+                return null;
+            }
+
+        }
+        public void SaveDataTable(DataTable DT, Databases db)
+        {
+            if (db == Databases.Main)
+            {
+                con = new SQLiteConnection("Data Source=" + Application.StartupPath + "\\tablo.db;Version=3;");
+                try
+                {
+                    con.Open();
+                    cmd = con.CreateCommand();
+                    cmd.CommandText = string.Format("SELECT * FROM {0}", DT.TableName);
+                    da = new SQLiteDataAdapter(cmd);
+                    SQLiteCommandBuilder builder = new SQLiteCommandBuilder(da);
+                    da.Update(DT);
+                    con.Close();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+
+
+            }
+            else if(db == Databases.Project)
+            {
+                con = new SQLiteConnection(getconstring.get_conn_string("tablo") + ";Version=3;");
+                try
+                {
+                    con.Open();
+                    cmd = con.CreateCommand();
+                    cmd.CommandText = string.Format("SELECT * FROM {0}", DT.TableName);
+                    da = new SQLiteDataAdapter(cmd);
+                    SQLiteCommandBuilder builder = new SQLiteCommandBuilder(da);
+                    da.Update(DT);
+                    con.Close();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("UNEXPECTED ERROR");
+            }
+          
+        }
+
+
+
+
     }
+ 
 }

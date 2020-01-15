@@ -189,7 +189,12 @@
       <DependentUpon>Projectwindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQL\Components.cs" />
+    <Compile Include="SQL\Connections.cs" />
+    <Compile Include="SQL\DataManager.cs" />
     <Compile Include="SQL\DBeng.cs" />
+    <Compile Include="SQL\LocalTables.cs" />
+    <Compile Include="SQL\Sockets.cs" />
     <Compile Include="tmplog.cs" />
     <EmbeddedResource Include="askPhase.resx">
       <DependentUpon>askPhase.cs</DependentUpon>
