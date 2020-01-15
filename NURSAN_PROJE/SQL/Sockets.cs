@@ -104,6 +104,7 @@ namespace NURSAN_PROJE.SQL
                 {
                     byte[] data = image2Blob(img);
                     LocalTables.localtables.maintables.Tables["ImageStore"].Rows.Add(SocketID, null, data, imageSize(img, data.Length));
+               
                    
                 }
         }

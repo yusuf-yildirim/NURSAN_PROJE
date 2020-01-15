@@ -90,9 +90,14 @@ namespace NURSAN_PROJE.SQL
             using (var ms = new MemoryStream(bytelength)) // estimatedLength can be original fileLength
             {
                 image.Save(ms, ImageFormat.Jpeg); // save image to stream in Jpeg format    
-                jpegByteSize = ms.Length.ToString();
+                jpegByteSize = ConvertBytesToMegabytes(ms.Length);
+                MessageBox.Show(jpegByteSize);
                 return jpegByteSize; 
             }
+        }
+        static string ConvertBytesToMegabytes(long bytes)
+        {
+            return ((bytes / 1024f) / 1024f).ToString();
         }
         public bool GuidCheck(string guid)
         {
