@@ -279,7 +279,7 @@ namespace NURSAN_PROJE.SQL
         }
 
 
-        public void register_socket(object[] soc_parameters, string[,] tp_parameters)//güncelleme gerekir
+        public void register_socket(object[] soc_parameters, string[,] tp_parameters)//TAŞINDI
         {
             tmplog.WriteDebugLog("----------Yeni Soket Ekleme başladı----------", false);
             try
@@ -456,8 +456,7 @@ namespace NURSAN_PROJE.SQL
         public DataSet determineio(String SocketID)
         {
             ds = new DataSet();
-            getprojectcon();
-            
+            getprojectcon();            
             da = new SQLiteDataAdapter($"SELECT * FROM PIO_connection WHERE ID_soket = '{SocketID}'", connection: con);
             SQLiteCommandBuilder sql_command_builder = new SQLiteCommandBuilder(da);
             da.Fill(ds);
@@ -495,7 +494,7 @@ namespace NURSAN_PROJE.SQL
             }
 
         }
-        public Image get_socket_image(string SocketID)
+        public Image get_socket_image(string SocketID)//TAŞINDI
         {
             getmaincon();
             ds = new DataSet();
