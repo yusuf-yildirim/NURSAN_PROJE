@@ -190,8 +190,7 @@ namespace NURSAN_PROJE
         {
             realTimeSource2.DataSource = manager.getProjectSockets();
             realTimeSource1.DataSource = manager.getMainSockets();
-            // realTimeSource1.DataSource = db.get_saved_sockets();
-            //this.socketsTableAdapter.Fill(this.mainsource.Sockets);
+            
           
         }
 
@@ -678,10 +677,10 @@ namespace NURSAN_PROJE
             string searchString = find_components_in_the_listbox_textedit.Text;
             if (!string.IsNullOrEmpty(searchString))
             {
-                int index = listBoxControl3.FindString(searchString);
+                int index = listBoxControl1.FindString(searchString);
                 if (index != -1)
                 {
-                    listBoxControl3.SetSelected(index, true);
+                    listBoxControl1.SetSelected(index, true);
                 }
             }
         }
@@ -878,6 +877,13 @@ namespace NURSAN_PROJE
         private void gridView6_Click(object sender, EventArgs e)
         {
             //gridView6_FocusedRowChanged(this, null);
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            realTimeSource3.DataSource = manager.getMainComponents();
+            Console.WriteLine(manager.getMainComponents().Rows.Count);
+            //DİĞER HEPSİ GİBİ YAPILMASINA RAĞMEN BU DATASOURCE VERİLERİ GÖSTERMİYOR !??!?
         }
     }
 }
