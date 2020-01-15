@@ -37,6 +37,8 @@ namespace NURSAN_PROJE
         Color point_color_for_pin_processing;
         public determine_pin_locations_window(string SocketID, Bitmap img)
         {
+            manager = new DataManager();
+            updater = new DataManager.TableUpdater(manager);
             InitializeComponent();
             //CheckForIllegalCrossThreadCalls = false;
             PropertyItem[] propertyItem2 = img.PropertyItems;
@@ -244,7 +246,8 @@ namespace NURSAN_PROJE
             }
             catch (Exception ex)
             {
-                MessageBox.Show("RESİM KAYDEDİLEMEDİ - " + ex.Message);
+                MessageBox.Show("RESİM KAYDEDİLEMEDİ - " + ex.Message+" - "+ex.StackTrace);
+             
             }
 
         }
