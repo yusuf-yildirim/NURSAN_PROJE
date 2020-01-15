@@ -93,17 +93,19 @@ namespace NURSAN_PROJE.SQL
         }
         public void setSocketImage(string SocketID, Image img)
         {
-            try
-            {
-               byte[] data = image2Blob(img);
-               LocalTables.localtables.maintables.Tables["ImageStore"].Rows.Add(SocketID, null, data, imageSize(img, data.Length));            
-              
-            }
-            catch
-            {
-                byte[] data = image2Blob(img);
-                LocalTables.localtables.maintables.Tables["ImageStore"].Select("ID_soket ='" + SocketID + "'").SetValue(data, 2);
-            }
+                     
+                if (LocalTables.localtables.maintables.Tables["ImageStore"].Select("ID_soket = '" + SocketID + "'").Length > 0)
+                {
+                    byte[] data = image2Blob(img);
+                    LocalTables.localtables.maintables.Tables["ImageStore"].Select("ID_soket ='" + SocketID + "'")[0][2] = data;
+                  
+                }
+                else
+                {
+                    byte[] data = image2Blob(img);
+                    LocalTables.localtables.maintables.Tables["ImageStore"].Rows.Add(SocketID, null, data, imageSize(img, data.Length));
+                   
+                }
         }
 
         private string getSocketNameInfo(String SocketID)
