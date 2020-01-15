@@ -57,8 +57,12 @@ namespace NURSAN_PROJE
 
 
             pin_coordinates = Encoding.UTF8.GetString(propertyItem.Value).Trim().Split(' ');
-            for (int i = 0; i < pin_coordinates.Length - 1; i = i + 3)
+           
+
+
+            for (int i = 0; i < pin_coordinates.Length - 2; i = i + 3)
             {
+                //Console.WriteLine(i+"==" +pin_coordinates[i + 1]+ " --- " + pin_coordinates[i + 2]+ "///////" + pin_coordinates.Length);
                 pin_point = new Point(Convert.ToInt32(pin_coordinates[i + 1]), Convert.ToInt32(pin_coordinates[i + 2]));
                 bitmap_for_pin_processing = (Bitmap)determine_pin_locations_image.Image;
                 point_color_for_pin_processing = bitmap_for_pin_processing.GetPixel(pin_point.X, pin_point.Y);
