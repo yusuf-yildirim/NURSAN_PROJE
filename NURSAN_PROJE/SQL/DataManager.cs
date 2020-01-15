@@ -12,9 +12,11 @@ namespace NURSAN_PROJE.SQL
     partial class DataManager
     {
         LocalTables localTables;
+        private static bool initialize = true;
         public DataManager()
         {
-            localTables = new LocalTables(true);            
+            localTables = new LocalTables(initialize);
+            initialize = false;
         }
       
         public DataTable getMainSockets()

@@ -28,8 +28,8 @@ namespace NURSAN_PROJE.SQL
             }
             else
             {
-                localtables = new LocalTablesStruct();
-                localtables.initialize();
+                /*localtables = new LocalTablesStruct();
+                localtables.initialize();*/
             }
            
         }

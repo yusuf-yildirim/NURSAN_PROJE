@@ -56,9 +56,7 @@ namespace NURSAN_PROJE.SQL
             else
             {
                 MessageBox.Show("Soket Bulunmuyor Güncelleme İptal Edildi");
-            }
-            TableUpdater x = new TableUpdater(this);
-            x.updateTable(getFromLocalTablesproject("PIO_connection"), Databases.Project);
+            }  
 
         }
         private string getIOInfo(String ıoID)
