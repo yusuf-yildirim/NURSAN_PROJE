@@ -21,7 +21,7 @@ namespace NURSAN_PROJE.SQL
             }
             catch
             {
-                MessageBox.Show("BU METİN SAYIYA DÖNÜŞTÜRÜLEMEZ");
+                MessageBox.Show("BU METİN SAYIYA DÖNÜŞTÜRÜLEMEZ = "+source.ToString());
                 return 0;
             }
         }

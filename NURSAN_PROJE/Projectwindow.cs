@@ -249,7 +249,8 @@ namespace NURSAN_PROJE
             }
             catch (Exception err)
             {
-                Console.WriteLine(err.Message);
+                registeredsocketimg.Image = null;
+                Console.WriteLine("252 - RESİM YOK");
             }
         }
 
@@ -824,13 +825,13 @@ namespace NURSAN_PROJE
                         }
                     }
 
-                    Task.Factory.StartNew(() => manager.addSocket(arr, arr2)).ContinueWith(delegate { refresh_socket_grids(); });//TODO-----------------------------------
+                    Task.Factory.StartNew(() => manager.updateIObySocketID(arr[0].ToString(), arr2)).ContinueWith(delegate { refresh_socket_grids(); });//TODO-----YENİ KODA GEÇİRDİM AMA BURAYA GELMİYOR YUSUF BURAYA BAK
                     navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
 
                 }
                 else
                 {
-                    Console.WriteLine("hata yok");
+                    Console.WriteLine("hata yok--");
                 }
 
             }
@@ -849,14 +850,15 @@ namespace NURSAN_PROJE
                     arr[2] = Convert.ToInt32(edit_socket_pinnumber.Text);
                     arr[3] = Convert.ToInt32(edit_socket_switchnumber.Text);
                     arr[4] = Convert.ToInt32(edit_socket_lednumber.Text);
-                   /* for (int i = 0; i < gridView4.RowCount; i++)
-                    {
-                        for (int z = 0; z < gridView4.Columns.Count; z++)
-                        {
-                            arr2[z, i] = gridView4.GetRowCellValue(i, gridView4.Columns[z]).ToString();
-                        }
-                    }
-                    */
+                    /* for (int i = 0; i < gridView4.RowCount; i++)
+                     {
+                         for (int z = 0; z < gridView4.Columns.Count; z++)
+                         {
+                             arr2[z, i] = gridView4.GetRowCellValue(i, gridView4.Columns[z]).ToString();
+                         }
+                     }
+                     */
+                    Console.WriteLine("ÇAĞIRILDI - 861");
                     Task.Factory.StartNew(() => manager.addSocket(arr, arr2)).ContinueWith(delegate { refresh_socket_grids(); });//TODO-----------------------------------
                     navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
 

@@ -20,7 +20,7 @@ namespace NURSAN_PROJE.SQL
         {
             try
             {
-                return str2ınt(getFromLocalTablesproject("PConnections").Select("ID_etap_1 = '" + phaseid + "'", "Order DESC")[0][1]) + 1.ToString();
+                return (str2ınt(getFromLocalTablesproject("PConnections").Select("ID_etap_1 = '" + phaseid + "'", "Order DESC")[0][1]) + 1).ToString();
             }
             catch
             {
@@ -77,7 +77,16 @@ namespace NURSAN_PROJE.SQL
                 color = getColorInfo(row[6].ToString());
                 connections.Rows.Add(origin, destination, color, color, color);  //TO-DO
             }
-            LocalTables.localtables.projecttables.Tables.Add(connections);            
+            try
+            {
+                LocalTables.localtables.projecttables.Tables.Add(connections);
+            }
+            catch
+            {
+                LocalTables.localtables.projecttables.Tables.Remove("CONNECTIONS");
+                LocalTables.localtables.projecttables.Tables.Add(connections);
+            }
+                       
         }
 
 

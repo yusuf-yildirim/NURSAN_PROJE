@@ -22,6 +22,7 @@ namespace NURSAN_PROJE
             {
 
             }
+            splashScreenManager1.CloseWaitForm();
             this.Close();
         }
 
@@ -48,6 +49,7 @@ namespace NURSAN_PROJE
                 {
 
                 }
+                splashScreenManager1.CloseWaitForm();
                 this.Close();
             }
         }
@@ -62,6 +64,7 @@ namespace NURSAN_PROJE
                 {
 
                 }
+                splashScreenManager1.CloseWaitForm();
                 this.Close();
             }
         }
