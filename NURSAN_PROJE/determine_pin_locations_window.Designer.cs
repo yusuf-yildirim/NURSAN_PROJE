@@ -37,6 +37,7 @@
             this.determine_pin_locations_resetallpins = new DevExpress.XtraEditors.SimpleButton();
             this.determine_pin_locations_determinedpins = new DevExpress.XtraEditors.ListBoxControl();
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::NURSAN_PROJE.WaitForm2), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.determine_pin_locations_image.Properties)).BeginInit();
@@ -119,6 +120,10 @@
             this.xtraOpenFileDialog1.FileName = "xtraOpenFileDialog1";
             this.xtraOpenFileDialog1.Filter = ".jpg,.png,.bmp";
             // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
+            // 
             // determine_pin_locations_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,5 +150,6 @@
         private DevExpress.XtraEditors.SimpleButton Determine_pin_locations_SavePins;
         private DevExpress.XtraEditors.XtraOpenFileDialog xtraOpenFileDialog1;
         private DevExpress.XtraEditors.SimpleButton determine_pin_locations_undo;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

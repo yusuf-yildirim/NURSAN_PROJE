@@ -71,7 +71,7 @@ namespace NURSAN_PROJE
                 point_color_for_pin_processing = bitmap_for_pin_processing.GetPixel(pin_point.X, pin_point.Y);
                 if (point_color_for_pin_processing != Color.FromArgb(255, 255, 0, 0))
                 {
-                    Console.WriteLine("girdi");
+                   // Console.WriteLine("girdi");
                     pin_locations.Add(pincount + 1 + " " + pin_point.X.ToString() + " " + pin_point.Y.ToString());
                     determine_pin_locations_determinedpins.Items.Add(++pincount + ". pin = " + pin_point.X.ToString() + " " + pin_point.Y.ToString());
                     Fill4(bitmap_for_pin_processing, pin_point, point_color_for_pin_processing, Color.Red);
@@ -106,6 +106,7 @@ namespace NURSAN_PROJE
         int pincount = 0;
         private void determine_pin_locations_image_MouseClick(object sender, MouseEventArgs e)
         {
+            splashScreenManager1.ShowWaitForm();
             try
             {
 
@@ -116,7 +117,7 @@ namespace NURSAN_PROJE
                     Color c0 = bmp.GetPixel(sPt.X, sPt.Y);
                     if (c0 != Color.FromArgb(255, 255, 0, 0))
                     {
-                        Console.WriteLine("girdi");
+                        //Console.WriteLine("girdi");
                         pin_locations.Add(pincount + 1 + " " + sPt.X.ToString() + " " + sPt.Y.ToString());
                         determine_pin_locations_determinedpins.Items.Add(++pincount + ". pin = " + sPt.X.ToString() + " " + sPt.Y.ToString());
                         Bitmap denemeimg = new Bitmap(bmp);
@@ -136,6 +137,7 @@ namespace NURSAN_PROJE
             {
                 MessageBox.Show(err.Message);
             }
+            splashScreenManager1.CloseWaitForm();
         }
         void Fill4(Bitmap bmp, Point pt, Color c0, Color c1)
         {
@@ -182,6 +184,7 @@ namespace NURSAN_PROJE
 
         private void determine_pin_locations_undo_Click(object sender, EventArgs e)
         {
+            splashScreenManager1.ShowWaitForm();
             try
             {
 
@@ -192,7 +195,7 @@ namespace NURSAN_PROJE
                     Color c0 = bmp.GetPixel(undo_pin_point.X, undo_pin_point.Y);
                     if (c0 != Color.FromArgb(255, 255, 0, 0))
                     {
-                        Console.WriteLine("girdi");
+                       // Console.WriteLine("girdi");
                         Fill4(bmp, undo_pin_point, c0, Color.Red);
                         determine_pin_locations_image.Image = bmp;
                     }
@@ -214,6 +217,7 @@ namespace NURSAN_PROJE
             {
                 Console.WriteLine(err.Message);
             }
+            splashScreenManager1.CloseWaitForm();
         }
 
         private void Determine_pin_locations_SavePins_Click(object sender, EventArgs e)

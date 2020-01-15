@@ -37,7 +37,7 @@ namespace NURSAN_PROJE.SQL
                     Image workaround = (Image)deneme.Clone();
                     for (int i = 0; i < workaround.PropertyIdList.Length; i++)
                     {
-                        Console.WriteLine(workaround.PropertyIdList[i] + " -------------------");
+                      //  Console.WriteLine(workaround.PropertyIdList[i] + " -------------------");
 
                     }
                     return workaround;                

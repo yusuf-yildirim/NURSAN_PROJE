@@ -743,7 +743,7 @@ namespace NURSAN_PROJE
                     gridControl4.RefreshDataSource();
                 }
 
-                Console.WriteLine("test");
+                //Console.WriteLine("test");
             }
             catch (FormatException err)
             {

@@ -85,7 +85,7 @@
             this.projectlistbox.Appearance.Options.UseFont = true;
             this.projectlistbox.AppearanceHighlight.BackColor = System.Drawing.Color.WhiteSmoke;
             this.projectlistbox.AppearanceHighlight.BackColor2 = System.Drawing.Color.Gainsboro;
-            this.projectlistbox.AppearanceHighlight.Font = new System.Drawing.Font("Tahoma", 199.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.projectlistbox.AppearanceHighlight.Font = new System.Drawing.Font("Tahoma", 214.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.projectlistbox.AppearanceHighlight.FontSizeDelta = 15;
             this.projectlistbox.AppearanceHighlight.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.projectlistbox.AppearanceHighlight.Options.UseBackColor = true;
