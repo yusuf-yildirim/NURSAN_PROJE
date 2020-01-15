@@ -17,15 +17,9 @@ namespace NURSAN_PROJE.SQL
         static SQLiteConnection con;
         static SQLiteDataAdapter da;
         static SQLiteCommand cmd;
-        static DataSet ds;
         public static bool created = false;
         Config getconstring = new Config();
 
-
-        public DBeng()//TO-DO
-        {
-           
-        }
         public void attachDatabase()
         {
             //TO-DO         
@@ -33,22 +27,6 @@ namespace NURSAN_PROJE.SQL
             //SOKETLER İÇİN İŞLEMLER DÜZENLENECEK
             //KOMPONENTLER İÇİN İŞLEMLER DÜZENLENECEK
         }
-        private void getmaincon()
-        {
-            con = new SQLiteConnection("Data Source=" + Application.StartupPath + "\\tablo.db;Version=3;");
-            con.Open();
-            tmplog.WriteDebugLog("Ana veritabanı bağlantısı açıldı");
-        }
-        private SQLiteConnection _getmaincon()
-        {
-            return con = new SQLiteConnection("Data Source=" + Application.StartupPath + "\\tablo.db;Version=3;");
-        }
-        private void getprojectcon()
-        {
-            con = new SQLiteConnection(getconstring.get_conn_string("tablo") + ";Version=3;");
-            con.Open();
-            tmplog.WriteDebugLog("Proje veritabanı bağlantısı açıldı");
-        }       
 
 
 
