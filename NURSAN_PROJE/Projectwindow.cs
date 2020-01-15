@@ -149,7 +149,24 @@ namespace NURSAN_PROJE
             }
             return exit_code;
         }
+        private bool errorprovider_editsockets_isinputpopulated()
+        {
+            bool exit_code = true;
+            foreach (TextEdit t in groupControl1.Controls)
+            {
+                if (string.IsNullOrEmpty(t.Text))
+                {
+                    errorprovider.SetError(t, "Bu alan boş geçilemez", DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical);
+                    exit_code = false;
+                }
+                else
+                {
+                    errorprovider.SetError(t, "", DevExpress.XtraEditors.DXErrorProvider.ErrorType.None);
+                }
 
+            }
+            return exit_code;
+        }
         private void simpleButton9_Click(object sender, EventArgs e)
         {
             if (registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString().Length > 0)
@@ -221,6 +238,8 @@ namespace NURSAN_PROJE
             else
             {
                 new determine_pin_locations_window(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString()).ShowDialog();
+                splashScreenManager1.CloseWaitForm();
+
             }
             GC.Collect();
 
@@ -796,7 +815,7 @@ namespace NURSAN_PROJE
             {
 
                 string[,] arr2 = new string[3, 999];
-                if (errorprovider_checktext_null())
+                if (errorprovider_editsockets_isinputpopulated())
                 {
                     object[] arr = new object[5];
                     if (gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString().Length != 0)
@@ -829,7 +848,7 @@ namespace NURSAN_PROJE
             {
               
                 string[,] arr2 = new string[3, 999];
-                if (errorprovider_checktext_null())
+                if (errorprovider_editsockets_isinputpopulated())
                 {
                     object[] arr = new object[5];
                     if (registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString().Length != 0)
