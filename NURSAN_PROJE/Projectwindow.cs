@@ -1,6 +1,7 @@
 ﻿using DevExpress.DataAccess.Sql;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraTab;
 using DevExpress.XtraTreeList.Nodes;
 using NURSAN_PROJE.Configurator;
 using NURSAN_PROJE.SQL;
@@ -100,6 +101,8 @@ namespace NURSAN_PROJE
                 arr[2] = Convert.ToInt32(newsocketpinc.Text);
                 arr[3] = Convert.ToInt32(newsocketswc.Text);
                 arr[4] = Convert.ToInt32(newsocketledc.Text);
+
+                /*
                 for (int i = 0; i < gridView4.RowCount; i++)
                 {
                     for (int z = 0; z < gridView4.Columns.Count; z++)
@@ -107,7 +110,7 @@ namespace NURSAN_PROJE
                         arr2[z, i] = gridView4.GetRowCellValue(i, gridView4.Columns[z]).ToString();
                     }
                 }
-
+                */
                 Task.Factory.StartNew(() => db.register_socket(arr, arr2)).ContinueWith(delegate { refresh_socket_grids(); });
                 navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
 
@@ -155,72 +158,7 @@ namespace NURSAN_PROJE
 
         private void newsocketpinc_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                int pinvalue = 0;
-                int switchvalue = 0;
-                if (!string.IsNullOrEmpty(newsocketpinc.Text))
-                {
-                    pinvalue = Convert.ToInt32(newsocketpinc.Text);
-                }
-
-                if (!string.IsNullOrEmpty(newsocketpinc.Text))
-                {
-                    switchvalue = Convert.ToInt32(newsocketswc.Text);
-                }
-                table1 = new DataTable("pins");
-                table1.Columns.Add("Soket");
-                table1.Columns.Add("Pin");
-                table1.Columns.Add("Test noktası");
-                if (new_socket_auto_assign_pin.Checked == true)
-                {
-                    for (int i = 1; i <= pinvalue + (switchvalue * 2); i++)
-                    {
-
-                        if (i > pinvalue)
-                        {
-                            table1.Rows.Add(newsocketname.Text + "-SW(+)", i, i);
-                            table1.Rows.Add(newsocketname.Text + "-SW(-)", i + 1, i + 1);
-                            i++;
-                        }
-                        else
-                        {
-                            table1.Rows.Add(newsocketname.Text, i, i);
-                        }
-                    }
-
-                    gridControl4.DataSource = table1;
-                    gridControl4.RefreshDataSource();
-
-                }
-                else
-                {
-                    for (int i = 1; i <= pinvalue + (switchvalue * 2); i++)
-                    {
-
-                        if (i > pinvalue)
-                        {
-                            table1.Rows.Add(newsocketname.Text + "-SW(+)", i);
-                            table1.Rows.Add(newsocketname.Text + "-SW(-)", i + 1);
-                            i++;
-                        }
-                        else
-                        {
-                            table1.Rows.Add(newsocketname.Text, i);
-                        }
-                    }
-                    gridControl4.DataSource = table1;
-                    gridControl4.RefreshDataSource();
-                }
-
-                Console.WriteLine("test");
-            }
-            catch (FormatException err)
-            {
-                Console.WriteLine(newsocketpinc.Text);
-                Console.WriteLine(newsocketswc.Text);
-                Console.WriteLine(err.Message);
-            }
+           
         }
 
         private void selected_sockets_delete_button_Click(object sender, EventArgs e)
@@ -290,6 +228,13 @@ namespace NURSAN_PROJE
             try
             {
                 registeredsocketimg.Image = db.get_socket_image(registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString());
+                gridControl4.Visible = false;
+                new_socket_auto_assign_pin.Visible = false;
+                Console.WriteLine(registeredsocketgridview.GetRowCellValue(e.FocusedRowHandle, registeredsocketgridview.Columns[0]).ToString());
+                edit_socket_name.Text = registeredsocketgridview.GetRowCellValue(e.FocusedRowHandle, registeredsocketgridview.Columns[0]).ToString();
+                edit_socket_lednumber.Text = registeredsocketgridview.GetRowCellValue(e.FocusedRowHandle, registeredsocketgridview.Columns[3]).ToString();
+                edit_socket_pinnumber.Text = registeredsocketgridview.GetRowCellValue(e.FocusedRowHandle, registeredsocketgridview.Columns[1]).ToString();
+                edit_socket_switchnumber.Text = registeredsocketgridview.GetRowCellValue(e.FocusedRowHandle, registeredsocketgridview.Columns[2]).ToString();
             }
             catch (Exception err)
             {
@@ -304,7 +249,7 @@ namespace NURSAN_PROJE
 
         private void new_socket_auto_assign_pin_CheckStateChanged(object sender, EventArgs e)
         {
-            newsocketpinc_TextChanged(this, e);
+            edit_socket_pinnumber_EditValueChanged(this, e);
         }
 
         private void newsocketswc_EditValueChanged(object sender, EventArgs e)
@@ -714,6 +659,213 @@ namespace NURSAN_PROJE
                     MessageBox.Show("İŞLEM İPTAL EDİLDİ");
                 }
             }
+        }
+
+        private void find_components_in_the_listbox_textedit_TextChanged(object sender, EventArgs e)
+        {
+            string searchString = find_components_in_the_listbox_textedit.Text;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                int index = listBoxControl3.FindString(searchString);
+                if (index != -1)
+                {
+                    listBoxControl3.SetSelected(index, true);
+                }
+            }
+        }
+
+        private void edit_socket_pinnumber_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int pinvalue = 0;
+                int switchvalue = 0;
+                if (!string.IsNullOrEmpty(edit_socket_pinnumber.Text) && !string.IsNullOrEmpty(edit_socket_pinnumber.Text))
+                {
+                    
+                    pinvalue = Convert.ToInt32(edit_socket_pinnumber.Text);
+                    switchvalue = Convert.ToInt32(edit_socket_switchnumber.Text);
+                }
+
+                table1 = new DataTable("pins");
+                table1.Columns.Add("Soket");
+                table1.Columns.Add("Pin");
+                table1.Columns.Add("Test noktası");
+                if (new_socket_auto_assign_pin.Checked == true)
+                {
+                    for (int i = 1; i <= pinvalue + (switchvalue * 2); i++)
+                    {
+
+                        if (i > pinvalue)
+                        {
+                            table1.Rows.Add(edit_socket_name.Text + "-SW(+)", i, i);
+                            table1.Rows.Add(edit_socket_name.Text + "-SW(-)", i + 1, i + 1);
+                            i++;
+                        }
+                        else
+                        {
+                            table1.Rows.Add(edit_socket_name.Text, i, i);
+                        }
+                    }
+
+                    gridControl4.DataSource = table1;
+                    gridControl4.RefreshDataSource();
+
+                }
+                else
+                {
+                    for (int i = 1; i <= pinvalue + (switchvalue * 2); i++)
+                    {
+
+                        if (i > pinvalue)
+                        {
+                            table1.Rows.Add(edit_socket_name.Text + "-SW(+)", i);
+                            table1.Rows.Add(edit_socket_name.Text + "-SW(-)", i + 1);
+                            i++;
+                        }
+                        else
+                        {
+                            table1.Rows.Add(edit_socket_name.Text, i);
+                        }
+                    }
+                    gridControl4.DataSource = table1;
+                    gridControl4.RefreshDataSource();
+                }
+
+                Console.WriteLine("test");
+            }
+            catch (FormatException err)
+            {
+                Console.WriteLine(edit_socket_pinnumber.Text);
+                Console.WriteLine(edit_socket_switchnumber.Text);
+                Console.WriteLine(err.Message);
+            }
+        }
+
+        private void edit_socket_switchnumber_EditValueChanged(object sender, EventArgs e)
+        {
+            edit_socket_pinnumber_EditValueChanged(this, e);
+        }
+
+        private void gridView6_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            gridControl4.Visible = true;
+            new_socket_auto_assign_pin.Visible = true;
+            try
+            {
+                Console.WriteLine(gridView6.GetRowCellValue(e.FocusedRowHandle, gridView6.Columns[0]).ToString());
+                edit_socket_name.Text = gridView6.GetRowCellValue(e.FocusedRowHandle, gridView6.Columns[0]).ToString();
+                edit_socket_lednumber.Text = gridView6.GetRowCellValue(e.FocusedRowHandle, gridView6.Columns[3]).ToString();
+                edit_socket_pinnumber.Text = gridView6.GetRowCellValue(e.FocusedRowHandle, gridView6.Columns[1]).ToString();
+                edit_socket_switchnumber.Text = gridView6.GetRowCellValue(e.FocusedRowHandle, gridView6.Columns[2]).ToString();
+                try
+                {
+
+                    if (gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString().Length != 0)
+                    {
+                        DataTable deneme = db.determineio(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString()).Tables[0];
+                        if (deneme.Rows.Count < 1)
+                        {
+                            Console.WriteLine(deneme.Rows.Count + " 55555555555555555555555555");
+                            edit_socket_pinnumber_EditValueChanged(this, e);
+                        }
+                        else
+                        {
+                            gridControl4.DataSource = deneme;
+                        }
+                    }
+                }
+                catch
+                {
+                    edit_socket_pinnumber_EditValueChanged(this, e);
+                }
+            }
+            catch(Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+
+
+        }
+
+        private void edit_socket_save_button_Click(object sender, EventArgs e)
+        {
+            if(gridControl4.Visible == true && new_socket_auto_assign_pin.Visible == true)
+            {
+
+                db.GuidCheck(edit_socket_name.Text);
+                string[,] arr2 = new string[3, 999];
+                if (errorprovider_checktext_null())
+                {
+                    object[] arr = new object[5];
+                    if (gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString().Length != 0)
+                    {
+                        arr[0] = gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString();
+                    }
+                    arr[1] = (edit_socket_name.Text);
+                    arr[2] = Convert.ToInt32(edit_socket_pinnumber.Text);
+                    arr[3] = Convert.ToInt32(edit_socket_switchnumber.Text);
+                    arr[4] = Convert.ToInt32(edit_socket_lednumber.Text);
+                    for (int i = 0; i < gridView4.RowCount; i++)
+                    {
+                        for (int z = 0; z < gridView4.Columns.Count; z++)
+                        {
+                            arr2[z, i] = gridView4.GetRowCellValue(i, gridView4.Columns[z]).ToString();
+                        }
+                    }
+
+                    Task.Factory.StartNew(() => db.register_socket(arr, arr2)).ContinueWith(delegate { refresh_socket_grids(); });//TODO-----------------------------------
+                    navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
+
+                }
+                else
+                {
+                    Console.WriteLine("hata yok");
+                }
+
+            }
+            else
+            {
+                db.GuidCheck(edit_socket_name.Text);
+                string[,] arr2 = new string[3, 999];
+                if (errorprovider_checktext_null())
+                {
+                    object[] arr = new object[5];
+                    if (registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString().Length != 0)
+                    {
+                        arr[0] = registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString();
+                    }
+                    arr[1] = (edit_socket_name.Text);
+                    arr[2] = Convert.ToInt32(edit_socket_pinnumber.Text);
+                    arr[3] = Convert.ToInt32(edit_socket_switchnumber.Text);
+                    arr[4] = Convert.ToInt32(edit_socket_lednumber.Text);
+                   /* for (int i = 0; i < gridView4.RowCount; i++)
+                    {
+                        for (int z = 0; z < gridView4.Columns.Count; z++)
+                        {
+                            arr2[z, i] = gridView4.GetRowCellValue(i, gridView4.Columns[z]).ToString();
+                        }
+                    }
+                    */
+                    Task.Factory.StartNew(() => db.register_socket(arr, arr2)).ContinueWith(delegate { refresh_socket_grids(); });//TODO-----------------------------------
+                    navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
+
+                }
+                else
+                {
+                    Console.WriteLine("hata yok");
+                }
+            }
+        }
+
+        private void registeredsocketgridview_Click(object sender, EventArgs e)
+        {
+            //gridView5_FocusedRowChanged(this, null);
+        }
+
+        private void gridView6_Click(object sender, EventArgs e)
+        {
+            //gridView6_FocusedRowChanged(this, null);
         }
     }
 }

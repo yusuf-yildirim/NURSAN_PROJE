@@ -29,67 +29,67 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery3 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter5 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter6 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery9 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column37 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression37 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table13 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column38 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression38 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column39 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression39 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column40 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression40 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column41 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression41 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery1 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.Column column1 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression1 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table1 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column2 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression2 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column3 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression3 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column4 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression4 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column5 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression5 = new DevExpress.DataAccess.Sql.ColumnExpression();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Projectwindow));
-            DevExpress.XtraEditors.TableLayout.ItemTemplateBase ıtemTemplateBase3 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition5 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition6 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement5 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
-            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement6 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery10 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column42 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression42 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table14 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column43 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression43 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table15 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column44 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression44 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table16 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column45 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression45 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Join join5 = new DevExpress.DataAccess.Sql.Join();
-            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo5 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
-            DevExpress.DataAccess.Sql.Join join6 = new DevExpress.DataAccess.Sql.Join();
-            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo6 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery11 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column46 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression46 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table17 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column47 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression47 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column48 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression48 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column49 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression49 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery12 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column50 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression50 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table18 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column51 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression51 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column52 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression52 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column53 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression53 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column54 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression54 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.Utils.Animation.Transition transition3 = new DevExpress.Utils.Animation.Transition();
+            DevExpress.XtraEditors.TableLayout.ItemTemplateBase ıtemTemplateBase1 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement1 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement2 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery2 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.Column column6 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression6 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column7 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression7 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table3 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column8 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression8 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table4 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column9 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression9 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Join join1 = new DevExpress.DataAccess.Sql.Join();
+            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo1 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
+            DevExpress.DataAccess.Sql.Join join2 = new DevExpress.DataAccess.Sql.Join();
+            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo2 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery3 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.Column column10 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression10 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table5 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column11 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression11 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column12 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression12 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column13 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression13 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery4 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.Column column14 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression14 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table6 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column15 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression15 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column16 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression16 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column17 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression17 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column18 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression18 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.Utils.Animation.Transition transition1 = new DevExpress.Utils.Animation.Transition();
             this.recentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maindatasource = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
@@ -117,7 +117,6 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.new_socket_auto_assign_pin = new DevExpress.XtraEditors.CheckEdit();
             this.newsocketvargroup = new DevExpress.XtraEditors.GroupControl();
             this.newsocketname = new DevExpress.XtraEditors.TextEdit();
             this.newsocketswc = new DevExpress.XtraEditors.TextEdit();
@@ -128,22 +127,20 @@
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.change_configured_sockets_page = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
+            this.new_socket_auto_assign_pin = new DevExpress.XtraEditors.CheckEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.edit_socket_name = new DevExpress.XtraEditors.TextEdit();
             this.edit_socket_switchnumber = new DevExpress.XtraEditors.TextEdit();
             this.edit_socket_lednumber = new DevExpress.XtraEditors.TextEdit();
             this.edit_socket_pinnumber = new DevExpress.XtraEditors.TextEdit();
             this.labelControl41 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
+            this.edit_socket_save_button = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl42 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl43 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl44 = new DevExpress.XtraEditors.LabelControl();
-            this.gridControl5 = new DevExpress.XtraGrid.GridControl();
-            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.registeredsocketimg = new DevExpress.XtraEditors.PictureEdit();
@@ -218,21 +215,13 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.component_tabpane = new DevExpress.XtraBars.Navigation.TabPane();
             this.add_component_tabpane = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.find_components_in_the_listbox_textedit = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
             this.listBoxControl3 = new DevExpress.XtraEditors.ListBoxControl();
             this.componentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit4 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxEdit3 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.new_component_tabpane = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.add_splice_button = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -346,25 +335,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
             this.navigationPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.new_socket_auto_assign_pin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newsocketvargroup)).BeginInit();
             this.newsocketvargroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newsocketname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newsocketswc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newsocketledc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newsocketpinc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.change_configured_sockets_page.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.new_socket_auto_assign_pin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_switchnumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_lednumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_pinnumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
@@ -399,13 +385,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.component_tabpane)).BeginInit();
             this.component_tabpane.SuspendLayout();
             this.add_component_tabpane.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.find_components_in_the_listbox_textedit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.componentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
             this.new_component_tabpane.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.add_splice_name.Properties)).BeginInit();
             this.add_capacitor_tab.SuspendLayout();
@@ -457,43 +439,43 @@
             // 
             this.maindatasource.ConnectionName = "maindatabase";
             this.maindatasource.Name = "maindatasource";
-            customSqlQuery3.Name = "addrecent";
-            queryParameter5.Name = "NAME";
-            queryParameter5.Type = typeof(string);
-            queryParameter5.ValueInfo = "TEST İSİM";
-            queryParameter6.Name = "PATH";
-            queryParameter6.Type = typeof(string);
-            queryParameter6.ValueInfo = "./TEST YOL";
-            customSqlQuery3.Parameters.Add(queryParameter5);
-            customSqlQuery3.Parameters.Add(queryParameter6);
-            customSqlQuery3.Sql = "INSERT INTO Recent(NAME,PATH) VALUES(@NAME, @PATH)";
-            columnExpression37.ColumnName = "ID_soket";
-            table13.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"153\" />";
-            table13.Name = "tbl_Socket";
-            columnExpression37.Table = table13;
-            column37.Expression = columnExpression37;
-            columnExpression38.ColumnName = "Adı";
-            columnExpression38.Table = table13;
-            column38.Expression = columnExpression38;
-            columnExpression39.ColumnName = "Pin_sayisi";
-            columnExpression39.Table = table13;
-            column39.Expression = columnExpression39;
-            columnExpression40.ColumnName = "Anahtar_sayisi";
-            columnExpression40.Table = table13;
-            column40.Expression = columnExpression40;
-            columnExpression41.ColumnName = "Led_numarasi";
-            columnExpression41.Table = table13;
-            column41.Expression = columnExpression41;
-            selectQuery9.Columns.Add(column37);
-            selectQuery9.Columns.Add(column38);
-            selectQuery9.Columns.Add(column39);
-            selectQuery9.Columns.Add(column40);
-            selectQuery9.Columns.Add(column41);
-            selectQuery9.Name = "recent";
-            selectQuery9.Tables.Add(table13);
+            customSqlQuery1.Name = "addrecent";
+            queryParameter1.Name = "NAME";
+            queryParameter1.Type = typeof(string);
+            queryParameter1.ValueInfo = "TEST İSİM";
+            queryParameter2.Name = "PATH";
+            queryParameter2.Type = typeof(string);
+            queryParameter2.ValueInfo = "./TEST YOL";
+            customSqlQuery1.Parameters.Add(queryParameter1);
+            customSqlQuery1.Parameters.Add(queryParameter2);
+            customSqlQuery1.Sql = "INSERT INTO Recent(NAME,PATH) VALUES(@NAME, @PATH)";
+            columnExpression1.ColumnName = "ID_soket";
+            table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"153\" />";
+            table1.Name = "tbl_Socket";
+            columnExpression1.Table = table1;
+            column1.Expression = columnExpression1;
+            columnExpression2.ColumnName = "Adı";
+            columnExpression2.Table = table1;
+            column2.Expression = columnExpression2;
+            columnExpression3.ColumnName = "Pin_sayisi";
+            columnExpression3.Table = table1;
+            column3.Expression = columnExpression3;
+            columnExpression4.ColumnName = "Anahtar_sayisi";
+            columnExpression4.Table = table1;
+            column4.Expression = columnExpression4;
+            columnExpression5.ColumnName = "Led_numarasi";
+            columnExpression5.Table = table1;
+            column5.Expression = columnExpression5;
+            selectQuery1.Columns.Add(column1);
+            selectQuery1.Columns.Add(column2);
+            selectQuery1.Columns.Add(column3);
+            selectQuery1.Columns.Add(column4);
+            selectQuery1.Columns.Add(column5);
+            selectQuery1.Name = "recent";
+            selectQuery1.Tables.Add(table1);
             this.maindatasource.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery3,
-            selectQuery9});
+            customSqlQuery1,
+            selectQuery1});
             this.maindatasource.ResultSchemaSerializable = resources.GetString("maindatasource.ResultSchemaSerializable");
             // 
             // toolbarFormManager1
@@ -743,8 +725,7 @@
             this.change_configured_sockets_page});
             this.navigationPane1.RegularSize = new System.Drawing.Size(493, 742);
             this.navigationPane1.SelectedPage = this.change_configured_sockets_page;
-            this.navigationPane1.Size = new System.Drawing.Size(98, 742);
-            this.navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
+            this.navigationPane1.Size = new System.Drawing.Size(493, 742);
             this.navigationPane1.TabIndex = 42;
             this.navigationPane1.Text = "SOKET DÜZENLE";
             this.navigationPane1.TransitionType = DevExpress.Utils.Animation.Transitions.Push;
@@ -752,27 +733,15 @@
             // navigationPage1
             // 
             this.navigationPage1.Caption = "YENİ SOKET TANIMLAMA";
-            this.navigationPage1.Controls.Add(this.new_socket_auto_assign_pin);
             this.navigationPage1.Controls.Add(this.newsocketvargroup);
             this.navigationPage1.Controls.Add(this.labelControl18);
             this.navigationPage1.Controls.Add(this.simpleButton11);
             this.navigationPage1.Controls.Add(this.labelControl15);
             this.navigationPage1.Controls.Add(this.labelControl16);
             this.navigationPage1.Controls.Add(this.labelControl17);
-            this.navigationPage1.Controls.Add(this.gridControl4);
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.PageText = "SOKET EKLE";
             this.navigationPage1.Size = new System.Drawing.Size(373, 694);
-            // 
-            // new_socket_auto_assign_pin
-            // 
-            this.new_socket_auto_assign_pin.Location = new System.Drawing.Point(90, 162);
-            this.new_socket_auto_assign_pin.MenuManager = this.toolbarFormManager1;
-            this.new_socket_auto_assign_pin.Name = "new_socket_auto_assign_pin";
-            this.new_socket_auto_assign_pin.Properties.Caption = "Pin numaralarını otomatik sırala";
-            this.new_socket_auto_assign_pin.Size = new System.Drawing.Size(167, 20);
-            this.new_socket_auto_assign_pin.TabIndex = 42;
-            this.new_socket_auto_assign_pin.CheckStateChanged += new System.EventHandler(this.new_socket_auto_assign_pin_CheckStateChanged);
             // 
             // newsocketvargroup
             // 
@@ -841,7 +810,7 @@
             // 
             // simpleButton11
             // 
-            this.simpleButton11.Location = new System.Drawing.Point(90, 589);
+            this.simpleButton11.Location = new System.Drawing.Point(77, 223);
             this.simpleButton11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton11.Name = "simpleButton11";
             this.simpleButton11.Size = new System.Drawing.Size(173, 46);
@@ -884,45 +853,29 @@
             this.labelControl17.TabIndex = 36;
             this.labelControl17.Text = "Pin sayısı";
             // 
-            // gridControl4
-            // 
-            this.gridControl4.Location = new System.Drawing.Point(3, 188);
-            this.gridControl4.MainView = this.gridView4;
-            this.gridControl4.MenuManager = this.toolbarFormManager1;
-            this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(343, 367);
-            this.gridControl4.TabIndex = 41;
-            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView4});
-            // 
-            // gridView4
-            // 
-            this.gridView4.GridControl = this.gridControl4;
-            this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsView.ShowGroupPanel = false;
-            // 
             // change_configured_sockets_page
             // 
             this.change_configured_sockets_page.Caption = "SOKET DÜZENLE";
-            this.change_configured_sockets_page.Controls.Add(this.checkEdit2);
+            this.change_configured_sockets_page.Controls.Add(this.new_socket_auto_assign_pin);
             this.change_configured_sockets_page.Controls.Add(this.groupControl1);
             this.change_configured_sockets_page.Controls.Add(this.labelControl41);
-            this.change_configured_sockets_page.Controls.Add(this.simpleButton10);
+            this.change_configured_sockets_page.Controls.Add(this.edit_socket_save_button);
             this.change_configured_sockets_page.Controls.Add(this.labelControl42);
             this.change_configured_sockets_page.Controls.Add(this.labelControl43);
             this.change_configured_sockets_page.Controls.Add(this.labelControl44);
-            this.change_configured_sockets_page.Controls.Add(this.gridControl5);
+            this.change_configured_sockets_page.Controls.Add(this.gridControl4);
             this.change_configured_sockets_page.Name = "change_configured_sockets_page";
-            this.change_configured_sockets_page.Size = new System.Drawing.Size(0, 0);
+            this.change_configured_sockets_page.Size = new System.Drawing.Size(373, 694);
             // 
-            // checkEdit2
+            // new_socket_auto_assign_pin
             // 
-            this.checkEdit2.Location = new System.Drawing.Point(90, 189);
-            this.checkEdit2.MenuManager = this.toolbarFormManager1;
-            this.checkEdit2.Name = "checkEdit2";
-            this.checkEdit2.Properties.Caption = "Pin numaralarını otomatik sırala";
-            this.checkEdit2.Size = new System.Drawing.Size(167, 20);
-            this.checkEdit2.TabIndex = 50;
+            this.new_socket_auto_assign_pin.Location = new System.Drawing.Point(96, 199);
+            this.new_socket_auto_assign_pin.MenuManager = this.toolbarFormManager1;
+            this.new_socket_auto_assign_pin.Name = "new_socket_auto_assign_pin";
+            this.new_socket_auto_assign_pin.Properties.Caption = "Pin numaralarını otomatik sırala";
+            this.new_socket_auto_assign_pin.Size = new System.Drawing.Size(167, 20);
+            this.new_socket_auto_assign_pin.TabIndex = 42;
+            this.new_socket_auto_assign_pin.CheckStateChanged += new System.EventHandler(this.new_socket_auto_assign_pin_CheckStateChanged);
             // 
             // groupControl1
             // 
@@ -955,6 +908,7 @@
             this.edit_socket_switchnumber.Name = "edit_socket_switchnumber";
             this.edit_socket_switchnumber.Size = new System.Drawing.Size(117, 20);
             this.edit_socket_switchnumber.TabIndex = 40;
+            this.edit_socket_switchnumber.EditValueChanged += new System.EventHandler(this.edit_socket_switchnumber_EditValueChanged);
             // 
             // edit_socket_lednumber
             // 
@@ -973,6 +927,7 @@
             this.edit_socket_pinnumber.Name = "edit_socket_pinnumber";
             this.edit_socket_pinnumber.Size = new System.Drawing.Size(117, 20);
             this.edit_socket_pinnumber.TabIndex = 34;
+            this.edit_socket_pinnumber.EditValueChanged += new System.EventHandler(this.edit_socket_pinnumber_EditValueChanged);
             // 
             // labelControl41
             // 
@@ -987,14 +942,15 @@
             this.labelControl41.TabIndex = 46;
             this.labelControl41.Text = "İsim";
             // 
-            // simpleButton10
+            // edit_socket_save_button
             // 
-            this.simpleButton10.Location = new System.Drawing.Point(90, 616);
-            this.simpleButton10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.simpleButton10.Name = "simpleButton10";
-            this.simpleButton10.Size = new System.Drawing.Size(173, 46);
-            this.simpleButton10.TabIndex = 44;
-            this.simpleButton10.Text = "Kaydet";
+            this.edit_socket_save_button.Location = new System.Drawing.Point(90, 616);
+            this.edit_socket_save_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.edit_socket_save_button.Name = "edit_socket_save_button";
+            this.edit_socket_save_button.Size = new System.Drawing.Size(173, 46);
+            this.edit_socket_save_button.TabIndex = 44;
+            this.edit_socket_save_button.Text = "Kaydet";
+            this.edit_socket_save_button.Click += new System.EventHandler(this.edit_socket_save_button_Click);
             // 
             // labelControl42
             // 
@@ -1031,22 +987,22 @@
             this.labelControl44.TabIndex = 45;
             this.labelControl44.Text = "Pin sayısı";
             // 
-            // gridControl5
+            // gridControl4
             // 
-            this.gridControl5.Location = new System.Drawing.Point(3, 215);
-            this.gridControl5.MainView = this.gridView5;
-            this.gridControl5.MenuManager = this.toolbarFormManager1;
-            this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(343, 367);
-            this.gridControl5.TabIndex = 49;
-            this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView5});
+            this.gridControl4.Location = new System.Drawing.Point(4, 225);
+            this.gridControl4.MainView = this.gridView4;
+            this.gridControl4.MenuManager = this.toolbarFormManager1;
+            this.gridControl4.Name = "gridControl4";
+            this.gridControl4.Size = new System.Drawing.Size(366, 386);
+            this.gridControl4.TabIndex = 41;
+            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
             // 
-            // gridView5
+            // gridView4
             // 
-            this.gridView5.GridControl = this.gridControl5;
-            this.gridView5.Name = "gridView5";
-            this.gridView5.OptionsView.ShowGroupPanel = false;
+            this.gridView4.GridControl = this.gridControl4;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsView.ShowGroupPanel = false;
             // 
             // panelControl3
             // 
@@ -1069,7 +1025,7 @@
             // 
             // checkEdit1
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(642, 308);
+            this.checkEdit1.Location = new System.Drawing.Point(642, 307);
             this.checkEdit1.MenuManager = this.toolbarFormManager1;
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Caption = "Atamaları Aktar";
@@ -1078,12 +1034,12 @@
             // 
             // registeredsocketimg
             // 
-            this.registeredsocketimg.Location = new System.Drawing.Point(642, 110);
+            this.registeredsocketimg.Location = new System.Drawing.Point(632, 110);
             this.registeredsocketimg.MenuManager = this.toolbarFormManager1;
             this.registeredsocketimg.Name = "registeredsocketimg";
             this.registeredsocketimg.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.registeredsocketimg.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.registeredsocketimg.Size = new System.Drawing.Size(120, 98);
+            this.registeredsocketimg.Size = new System.Drawing.Size(147, 98);
             this.registeredsocketimg.TabIndex = 38;
             this.registeredsocketimg.EditValueChanged += new System.EventHandler(this.pictureEdit1_EditValueChanged);
             this.registeredsocketimg.Click += new System.EventHandler(this.pictureEdit1_Click);
@@ -1095,7 +1051,7 @@
             this.gridControl6.MainView = this.gridView6;
             this.gridControl6.MenuManager = this.toolbarFormManager1;
             this.gridControl6.Name = "gridControl6";
-            this.gridControl6.Size = new System.Drawing.Size(544, 377);
+            this.gridControl6.Size = new System.Drawing.Size(544, 616);
             this.gridControl6.TabIndex = 37;
             this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
@@ -1117,6 +1073,8 @@
             this.gridView6.OptionsPrint.EnableAppearanceEvenRow = true;
             this.gridView6.OptionsPrint.EnableAppearanceOddRow = true;
             this.gridView6.OptionsView.ShowGroupPanel = false;
+            this.gridView6.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView6_FocusedRowChanged);
+            this.gridView6.Click += new System.EventHandler(this.gridView6_Click);
             // 
             // gridColumn4
             // 
@@ -1189,6 +1147,7 @@
             this.registeredsocketgridview.OptionsPrint.EnableAppearanceOddRow = true;
             this.registeredsocketgridview.OptionsView.ShowGroupPanel = false;
             this.registeredsocketgridview.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView5_FocusedRowChanged);
+            this.registeredsocketgridview.Click += new System.EventHandler(this.registeredsocketgridview_Click);
             // 
             // colAdı
             // 
@@ -1250,10 +1209,11 @@
             // simpleButton12
             // 
             this.simpleButton12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton12.ImageOptions.Image")));
-            this.simpleButton12.Location = new System.Drawing.Point(594, 27);
+            this.simpleButton12.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.simpleButton12.Location = new System.Drawing.Point(577, 27);
             this.simpleButton12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton12.Name = "simpleButton12";
-            this.simpleButton12.Size = new System.Drawing.Size(32, 24);
+            this.simpleButton12.Size = new System.Drawing.Size(49, 32);
             this.simpleButton12.TabIndex = 33;
             // 
             // unregistermainsocket_button
@@ -1262,10 +1222,11 @@
             this.unregistermainsocket_button.Appearance.Options.UseForeColor = true;
             this.unregistermainsocket_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.unregistermainsocket_button.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("unregistermainsocket_button.ImageOptions.Image")));
-            this.unregistermainsocket_button.Location = new System.Drawing.Point(540, 27);
+            this.unregistermainsocket_button.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.unregistermainsocket_button.Location = new System.Drawing.Point(523, 27);
             this.unregistermainsocket_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.unregistermainsocket_button.Name = "unregistermainsocket_button";
-            this.unregistermainsocket_button.Size = new System.Drawing.Size(31, 24);
+            this.unregistermainsocket_button.Size = new System.Drawing.Size(48, 32);
             this.unregistermainsocket_button.TabIndex = 32;
             this.unregistermainsocket_button.Click += new System.EventHandler(this.unregistermainsocket_button_Click);
             // 
@@ -1275,14 +1236,14 @@
             this.selected_sockets_delete_button.Name = "selected_sockets_delete_button";
             this.selected_sockets_delete_button.Size = new System.Drawing.Size(49, 31);
             this.selected_sockets_delete_button.TabIndex = 29;
-            this.selected_sockets_delete_button.Text = "x";
+            this.selected_sockets_delete_button.Text = "X";
             this.selected_sockets_delete_button.Click += new System.EventHandler(this.selected_sockets_delete_button_Click);
             // 
             // simpleButton9
             // 
             this.simpleButton9.Location = new System.Drawing.Point(659, 245);
             this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(81, 34);
+            this.simpleButton9.Size = new System.Drawing.Size(96, 34);
             this.simpleButton9.TabIndex = 28;
             this.simpleButton9.Text = ">";
             this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
@@ -1587,10 +1548,10 @@
             // 
             // textEdit9
             // 
-            this.textEdit9.Location = new System.Drawing.Point(15, 271);
+            this.textEdit9.Location = new System.Drawing.Point(13, 222);
             this.textEdit9.MenuManager = this.toolbarFormManager1;
             this.textEdit9.Name = "textEdit9";
-            this.textEdit9.Size = new System.Drawing.Size(132, 20);
+            this.textEdit9.Size = new System.Drawing.Size(134, 20);
             this.textEdit9.TabIndex = 10;
             // 
             // treeListLookUpEdit1
@@ -1659,7 +1620,7 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(6, 252);
+            this.labelControl10.Location = new System.Drawing.Point(6, 203);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(42, 13);
             this.labelControl10.TabIndex = 9;
@@ -1710,7 +1671,7 @@
             // 
             // Colors_lookup
             // 
-            this.Colors_lookup.Location = new System.Drawing.Point(13, 171);
+            this.Colors_lookup.Location = new System.Drawing.Point(13, 159);
             this.Colors_lookup.MenuManager = this.toolbarFormManager1;
             this.Colors_lookup.Name = "Colors_lookup";
             this.Colors_lookup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1769,7 +1730,7 @@
             this.add_genericcomponent_tab,
             this.tabNavigationPage9});
             this.component_tabpane.RegularSize = new System.Drawing.Size(284, 742);
-            this.component_tabpane.SelectedPage = this.new_component_tabpane;
+            this.component_tabpane.SelectedPage = this.add_component_tabpane;
             this.component_tabpane.Size = new System.Drawing.Size(284, 742);
             this.component_tabpane.TabIndex = 14;
             this.component_tabpane.Text = "tabPane2";
@@ -1777,40 +1738,50 @@
             // add_component_tabpane
             // 
             this.add_component_tabpane.Caption = "Bileşen Ekle";
+            this.add_component_tabpane.Controls.Add(this.label1);
+            this.add_component_tabpane.Controls.Add(this.find_components_in_the_listbox_textedit);
+            this.add_component_tabpane.Controls.Add(this.labelControl8);
             this.add_component_tabpane.Controls.Add(this.simpleButton1);
-            this.add_component_tabpane.Controls.Add(this.comboBoxEdit1);
             this.add_component_tabpane.Controls.Add(this.simpleButton13);
             this.add_component_tabpane.Controls.Add(this.listBoxControl3);
-            this.add_component_tabpane.Controls.Add(this.simpleButton8);
-            this.add_component_tabpane.Controls.Add(this.labelControl11);
-            this.add_component_tabpane.Controls.Add(this.comboBoxEdit4);
-            this.add_component_tabpane.Controls.Add(this.textEdit10);
-            this.add_component_tabpane.Controls.Add(this.labelControl14);
-            this.add_component_tabpane.Controls.Add(this.label1);
-            this.add_component_tabpane.Controls.Add(this.comboBoxEdit3);
-            this.add_component_tabpane.Controls.Add(this.labelControl12);
-            this.add_component_tabpane.Controls.Add(this.comboBoxEdit2);
-            this.add_component_tabpane.Controls.Add(this.labelControl13);
             this.add_component_tabpane.Name = "add_component_tabpane";
             this.add_component_tabpane.Size = new System.Drawing.Size(284, 710);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 173);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Ara";
+            // 
+            // find_components_in_the_listbox_textedit
+            // 
+            this.find_components_in_the_listbox_textedit.Location = new System.Drawing.Point(59, 170);
+            this.find_components_in_the_listbox_textedit.MenuManager = this.toolbarFormManager1;
+            this.find_components_in_the_listbox_textedit.Name = "find_components_in_the_listbox_textedit";
+            this.find_components_in_the_listbox_textedit.Size = new System.Drawing.Size(197, 20);
+            this.find_components_in_the_listbox_textedit.TabIndex = 19;
+            this.find_components_in_the_listbox_textedit.TextChanged += new System.EventHandler(this.find_components_in_the_listbox_textedit_TextChanged);
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(59, 128);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(159, 24);
+            this.labelControl8.TabIndex = 18;
+            this.labelControl8.Text = "Tanımlı Bileşenler";
+            // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(30, 223);
+            this.simpleButton1.Location = new System.Drawing.Point(30, 30);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(105, 23);
+            this.simpleButton1.Size = new System.Drawing.Size(226, 46);
             this.simpleButton1.TabIndex = 14;
             this.simpleButton1.Text = "Yeni Bileşen Tanımla";
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(120, 48);
-            this.comboBoxEdit1.MenuManager = this.toolbarFormManager1;
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEdit1.TabIndex = 5;
             // 
             // simpleButton13
             // 
@@ -1826,136 +1797,42 @@
             // 
             this.listBoxControl3.DataSource = this.componentsBindingSource;
             this.listBoxControl3.DisplayMember = "Component_Name";
+            this.listBoxControl3.HotTrackItems = true;
+            this.listBoxControl3.IncrementalSearch = true;
             this.listBoxControl3.ItemHeight = 56;
             this.listBoxControl3.Items.AddRange(new object[] {
             "Common component-1"});
-            this.listBoxControl3.Location = new System.Drawing.Point(30, 257);
+            this.listBoxControl3.Location = new System.Drawing.Point(30, 196);
             this.listBoxControl3.Name = "listBoxControl3";
-            this.listBoxControl3.Size = new System.Drawing.Size(226, 389);
+            this.listBoxControl3.Size = new System.Drawing.Size(226, 450);
             this.listBoxControl3.TabIndex = 1;
-            tableColumnDefinition5.Length.Value = 44D;
-            tableColumnDefinition6.Length.Value = 61D;
-            ıtemTemplateBase3.Columns.Add(tableColumnDefinition5);
-            ıtemTemplateBase3.Columns.Add(tableColumnDefinition6);
-            templatedItemElement5.FieldName = "Component_Name";
-            templatedItemElement5.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            templatedItemElement5.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement5.Text = "Component_Name";
-            templatedItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            templatedItemElement6.ColumnIndex = 1;
-            templatedItemElement6.FieldName = "Deger";
-            templatedItemElement6.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            templatedItemElement6.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement6.Text = "Deger";
-            templatedItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            ıtemTemplateBase3.Elements.Add(templatedItemElement5);
-            ıtemTemplateBase3.Elements.Add(templatedItemElement6);
-            ıtemTemplateBase3.Name = "template1";
-            tableRowDefinition3.Length.Value = 13D;
-            ıtemTemplateBase3.Rows.Add(tableRowDefinition3);
-            this.listBoxControl3.Templates.Add(ıtemTemplateBase3);
+            tableColumnDefinition1.Length.Value = 44D;
+            tableColumnDefinition2.Length.Value = 61D;
+            ıtemTemplateBase1.Columns.Add(tableColumnDefinition1);
+            ıtemTemplateBase1.Columns.Add(tableColumnDefinition2);
+            templatedItemElement1.FieldName = "Component_Name";
+            templatedItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement1.Text = "Component_Name";
+            templatedItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement2.ColumnIndex = 1;
+            templatedItemElement2.FieldName = "Deger";
+            templatedItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement2.Text = "Deger";
+            templatedItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            ıtemTemplateBase1.Elements.Add(templatedItemElement1);
+            ıtemTemplateBase1.Elements.Add(templatedItemElement2);
+            ıtemTemplateBase1.Name = "template1";
+            tableRowDefinition1.Length.Value = 13D;
+            ıtemTemplateBase1.Rows.Add(tableRowDefinition1);
+            this.listBoxControl3.Templates.Add(ıtemTemplateBase1);
             this.listBoxControl3.ValueMember = "Component_Name";
             // 
             // componentsBindingSource
             // 
             this.componentsBindingSource.DataMember = "Components";
             this.componentsBindingSource.DataSource = this.mainsource;
-            // 
-            // simpleButton8
-            // 
-            this.simpleButton8.Location = new System.Drawing.Point(109, 194);
-            this.simpleButton8.Name = "simpleButton8";
-            this.simpleButton8.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton8.TabIndex = 12;
-            this.simpleButton8.Text = "Ekle";
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(48, 84);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(31, 19);
-            this.labelControl11.TabIndex = 2;
-            this.labelControl11.Text = "İsim";
-            // 
-            // comboBoxEdit4
-            // 
-            this.comboBoxEdit4.Location = new System.Drawing.Point(120, 155);
-            this.comboBoxEdit4.MenuManager = this.toolbarFormManager1;
-            this.comboBoxEdit4.Name = "comboBoxEdit4";
-            this.comboBoxEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit4.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEdit4.TabIndex = 11;
-            // 
-            // textEdit10
-            // 
-            this.textEdit10.Location = new System.Drawing.Point(120, 85);
-            this.textEdit10.MenuManager = this.toolbarFormManager1;
-            this.textEdit10.Name = "textEdit10";
-            this.textEdit10.Size = new System.Drawing.Size(100, 20);
-            this.textEdit10.TabIndex = 3;
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(48, 158);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(65, 19);
-            this.labelControl14.TabIndex = 10;
-            this.labelControl14.Text = "Toleransı";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label1.Location = new System.Drawing.Point(43, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 19);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Tür";
-            // 
-            // comboBoxEdit3
-            // 
-            this.comboBoxEdit3.Location = new System.Drawing.Point(183, 119);
-            this.comboBoxEdit3.MenuManager = this.toolbarFormManager1;
-            this.comboBoxEdit3.Name = "comboBoxEdit3";
-            this.comboBoxEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit3.Size = new System.Drawing.Size(36, 20);
-            this.comboBoxEdit3.TabIndex = 9;
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(75, 6);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(135, 24);
-            this.labelControl12.TabIndex = 6;
-            this.labelControl12.Text = "Bileşen Ekleme";
-            // 
-            // comboBoxEdit2
-            // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(120, 119);
-            this.comboBoxEdit2.MenuManager = this.toolbarFormManager1;
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(48, 20);
-            this.comboBoxEdit2.TabIndex = 8;
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(48, 121);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(46, 19);
-            this.labelControl13.TabIndex = 7;
-            this.labelControl13.Text = "Değeri";
             // 
             // new_component_tabpane
             // 
@@ -2218,7 +2095,7 @@
             this.add_resistor_tab.Controls.Add(this.labelControl28);
             this.add_resistor_tab.Controls.Add(this.labelControl29);
             this.add_resistor_tab.Name = "add_resistor_tab";
-            this.add_resistor_tab.Size = new System.Drawing.Size(1556, 746);
+            this.add_resistor_tab.Size = new System.Drawing.Size(284, 710);
             // 
             // add_resistor_value
             // 
@@ -2830,94 +2707,94 @@
             // 
             this.projectdatasource.ConnectionName = "tablo";
             this.projectdatasource.Name = "projectdatasource";
-            columnExpression42.ColumnName = "Adı";
-            table14.MetaSerializable = "<Meta X=\"185\" Y=\"30\" Width=\"125\" Height=\"153\" />";
-            table14.Name = "tbl_Socket";
-            columnExpression42.Table = table14;
-            column42.Expression = columnExpression42;
-            column43.Alias = "tbl_Socket_1_Adı";
-            columnExpression43.ColumnName = "Adı";
-            table15.Alias = "tbl_Socket_1";
-            table15.MetaSerializable = "<Meta X=\"190\" Y=\"200\" Width=\"125\" Height=\"153\" />";
-            table15.Name = "tbl_Socket";
-            columnExpression43.Table = table15;
-            column43.Expression = columnExpression43;
-            columnExpression44.ColumnName = "Kablo_Ad";
-            table16.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"305\" />";
-            table16.Name = "tbl_connection";
-            columnExpression44.Table = table16;
-            column44.Expression = columnExpression44;
-            columnExpression45.ColumnName = "Yorum";
-            columnExpression45.Table = table16;
-            column45.Expression = columnExpression45;
-            selectQuery10.Columns.Add(column42);
-            selectQuery10.Columns.Add(column43);
-            selectQuery10.Columns.Add(column44);
-            selectQuery10.Columns.Add(column45);
-            selectQuery10.Name = "tbl_connection";
-            relationColumnInfo5.NestedKeyColumn = "ID_soket";
-            relationColumnInfo5.ParentKeyColumn = "ID_soket_1";
-            join5.KeyColumns.Add(relationColumnInfo5);
-            join5.Nested = table14;
-            join5.Parent = table16;
-            relationColumnInfo6.NestedKeyColumn = "ID_soket";
-            relationColumnInfo6.ParentKeyColumn = "ID_soket_2";
-            join6.KeyColumns.Add(relationColumnInfo6);
-            join6.Nested = table15;
-            join6.Parent = table16;
-            selectQuery10.Relations.Add(join5);
-            selectQuery10.Relations.Add(join6);
-            selectQuery10.Tables.Add(table16);
-            selectQuery10.Tables.Add(table14);
-            selectQuery10.Tables.Add(table15);
-            columnExpression46.ColumnName = "image_id";
-            table17.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"134\" />";
-            table17.Name = "ImageStore";
-            columnExpression46.Table = table17;
-            column46.Expression = columnExpression46;
-            columnExpression47.ColumnName = "imageFileName";
-            columnExpression47.Table = table17;
-            column47.Expression = columnExpression47;
-            columnExpression48.ColumnName = "imageBlob";
-            columnExpression48.Table = table17;
-            column48.Expression = columnExpression48;
-            columnExpression49.ColumnName = "imageFileSizeBytes";
-            columnExpression49.Table = table17;
-            column49.Expression = columnExpression49;
-            selectQuery11.Columns.Add(column46);
-            selectQuery11.Columns.Add(column47);
-            selectQuery11.Columns.Add(column48);
-            selectQuery11.Columns.Add(column49);
-            selectQuery11.Name = "imageStore";
-            selectQuery11.Tables.Add(table17);
-            columnExpression50.ColumnName = "ID_soket";
-            table18.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"153\" />";
-            table18.Name = "tbl_Socket_using";
-            columnExpression50.Table = table18;
-            column50.Expression = columnExpression50;
-            columnExpression51.ColumnName = "Adı";
-            columnExpression51.Table = table18;
-            column51.Expression = columnExpression51;
-            columnExpression52.ColumnName = "Pin_sayisi";
-            columnExpression52.Table = table18;
-            column52.Expression = columnExpression52;
-            columnExpression53.ColumnName = "Anahtar_sayisi";
-            columnExpression53.Table = table18;
-            column53.Expression = columnExpression53;
-            columnExpression54.ColumnName = "Led_numarasi";
-            columnExpression54.Table = table18;
-            column54.Expression = columnExpression54;
-            selectQuery12.Columns.Add(column50);
-            selectQuery12.Columns.Add(column51);
-            selectQuery12.Columns.Add(column52);
-            selectQuery12.Columns.Add(column53);
-            selectQuery12.Columns.Add(column54);
-            selectQuery12.Name = "tbl_Socket_using";
-            selectQuery12.Tables.Add(table18);
+            columnExpression6.ColumnName = "Adı";
+            table2.MetaSerializable = "<Meta X=\"185\" Y=\"30\" Width=\"125\" Height=\"153\" />";
+            table2.Name = "tbl_Socket";
+            columnExpression6.Table = table2;
+            column6.Expression = columnExpression6;
+            column7.Alias = "tbl_Socket_1_Adı";
+            columnExpression7.ColumnName = "Adı";
+            table3.Alias = "tbl_Socket_1";
+            table3.MetaSerializable = "<Meta X=\"190\" Y=\"200\" Width=\"125\" Height=\"153\" />";
+            table3.Name = "tbl_Socket";
+            columnExpression7.Table = table3;
+            column7.Expression = columnExpression7;
+            columnExpression8.ColumnName = "Kablo_Ad";
+            table4.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"305\" />";
+            table4.Name = "tbl_connection";
+            columnExpression8.Table = table4;
+            column8.Expression = columnExpression8;
+            columnExpression9.ColumnName = "Yorum";
+            columnExpression9.Table = table4;
+            column9.Expression = columnExpression9;
+            selectQuery2.Columns.Add(column6);
+            selectQuery2.Columns.Add(column7);
+            selectQuery2.Columns.Add(column8);
+            selectQuery2.Columns.Add(column9);
+            selectQuery2.Name = "tbl_connection";
+            relationColumnInfo1.NestedKeyColumn = "ID_soket";
+            relationColumnInfo1.ParentKeyColumn = "ID_soket_1";
+            join1.KeyColumns.Add(relationColumnInfo1);
+            join1.Nested = table2;
+            join1.Parent = table4;
+            relationColumnInfo2.NestedKeyColumn = "ID_soket";
+            relationColumnInfo2.ParentKeyColumn = "ID_soket_2";
+            join2.KeyColumns.Add(relationColumnInfo2);
+            join2.Nested = table3;
+            join2.Parent = table4;
+            selectQuery2.Relations.Add(join1);
+            selectQuery2.Relations.Add(join2);
+            selectQuery2.Tables.Add(table4);
+            selectQuery2.Tables.Add(table2);
+            selectQuery2.Tables.Add(table3);
+            columnExpression10.ColumnName = "image_id";
+            table5.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"134\" />";
+            table5.Name = "ImageStore";
+            columnExpression10.Table = table5;
+            column10.Expression = columnExpression10;
+            columnExpression11.ColumnName = "imageFileName";
+            columnExpression11.Table = table5;
+            column11.Expression = columnExpression11;
+            columnExpression12.ColumnName = "imageBlob";
+            columnExpression12.Table = table5;
+            column12.Expression = columnExpression12;
+            columnExpression13.ColumnName = "imageFileSizeBytes";
+            columnExpression13.Table = table5;
+            column13.Expression = columnExpression13;
+            selectQuery3.Columns.Add(column10);
+            selectQuery3.Columns.Add(column11);
+            selectQuery3.Columns.Add(column12);
+            selectQuery3.Columns.Add(column13);
+            selectQuery3.Name = "imageStore";
+            selectQuery3.Tables.Add(table5);
+            columnExpression14.ColumnName = "ID_soket";
+            table6.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"153\" />";
+            table6.Name = "tbl_Socket_using";
+            columnExpression14.Table = table6;
+            column14.Expression = columnExpression14;
+            columnExpression15.ColumnName = "Adı";
+            columnExpression15.Table = table6;
+            column15.Expression = columnExpression15;
+            columnExpression16.ColumnName = "Pin_sayisi";
+            columnExpression16.Table = table6;
+            column16.Expression = columnExpression16;
+            columnExpression17.ColumnName = "Anahtar_sayisi";
+            columnExpression17.Table = table6;
+            column17.Expression = columnExpression17;
+            columnExpression18.ColumnName = "Led_numarasi";
+            columnExpression18.Table = table6;
+            column18.Expression = columnExpression18;
+            selectQuery4.Columns.Add(column14);
+            selectQuery4.Columns.Add(column15);
+            selectQuery4.Columns.Add(column16);
+            selectQuery4.Columns.Add(column17);
+            selectQuery4.Columns.Add(column18);
+            selectQuery4.Name = "tbl_Socket_using";
+            selectQuery4.Tables.Add(table6);
             this.projectdatasource.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery10,
-            selectQuery11,
-            selectQuery12});
+            selectQuery2,
+            selectQuery3,
+            selectQuery4});
             this.projectdatasource.ResultSchemaSerializable = resources.GetString("projectdatasource.ResultSchemaSerializable");
             // 
             // treeListBand1
@@ -2938,18 +2815,18 @@
             // 
             // transitionManager1
             // 
-            transition3.BarWaitingIndicatorProperties.Caption = "";
-            transition3.BarWaitingIndicatorProperties.Description = "";
-            transition3.Control = null;
-            transition3.LineWaitingIndicatorProperties.AnimationElementCount = 5;
-            transition3.LineWaitingIndicatorProperties.Caption = "";
-            transition3.LineWaitingIndicatorProperties.Description = "";
-            transition3.RingWaitingIndicatorProperties.AnimationElementCount = 5;
-            transition3.RingWaitingIndicatorProperties.Caption = "";
-            transition3.RingWaitingIndicatorProperties.Description = "";
-            transition3.WaitingIndicatorProperties.Caption = "";
-            transition3.WaitingIndicatorProperties.Description = "";
-            this.transitionManager1.Transitions.Add(transition3);
+            transition1.BarWaitingIndicatorProperties.Caption = "";
+            transition1.BarWaitingIndicatorProperties.Description = "";
+            transition1.Control = null;
+            transition1.LineWaitingIndicatorProperties.AnimationElementCount = 5;
+            transition1.LineWaitingIndicatorProperties.Caption = "";
+            transition1.LineWaitingIndicatorProperties.Description = "";
+            transition1.RingWaitingIndicatorProperties.AnimationElementCount = 5;
+            transition1.RingWaitingIndicatorProperties.Caption = "";
+            transition1.RingWaitingIndicatorProperties.Description = "";
+            transition1.WaitingIndicatorProperties.Caption = "";
+            transition1.WaitingIndicatorProperties.Description = "";
+            this.transitionManager1.Transitions.Add(transition1);
             // 
             // errorprovider
             // 
@@ -3016,26 +2893,23 @@
             this.navigationPane1.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
             this.navigationPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.new_socket_auto_assign_pin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.newsocketvargroup)).EndInit();
             this.newsocketvargroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.newsocketname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.newsocketswc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.newsocketledc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.newsocketpinc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.change_configured_sockets_page.ResumeLayout(false);
             this.change_configured_sockets_page.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.new_socket_auto_assign_pin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_switchnumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_lednumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_pinnumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
@@ -3074,13 +2948,9 @@
             this.component_tabpane.ResumeLayout(false);
             this.add_component_tabpane.ResumeLayout(false);
             this.add_component_tabpane.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.find_components_in_the_listbox_textedit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.componentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
             this.new_component_tabpane.ResumeLayout(false);
             this.new_component_tabpane.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.add_splice_name.Properties)).EndInit();
@@ -3180,17 +3050,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.TextEdit textEdit10;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.SimpleButton simpleButton8;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit4;
-        private DevExpress.XtraEditors.LabelControl labelControl14;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit3;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colNEREDEN;
@@ -3322,19 +3181,16 @@
         private DevExpress.XtraEditors.TextEdit add_generic_name;
         private DevExpress.XtraEditors.LabelControl labelControl34;
         private DevExpress.XtraEditors.ComboBoxEdit add_generic_current;
-        private DevExpress.XtraEditors.CheckEdit checkEdit2;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit edit_socket_name;
         private DevExpress.XtraEditors.TextEdit edit_socket_switchnumber;
         private DevExpress.XtraEditors.TextEdit edit_socket_lednumber;
         private DevExpress.XtraEditors.TextEdit edit_socket_pinnumber;
         private DevExpress.XtraEditors.LabelControl labelControl41;
-        private DevExpress.XtraEditors.SimpleButton simpleButton10;
+        private DevExpress.XtraEditors.SimpleButton edit_socket_save_button;
         private DevExpress.XtraEditors.LabelControl labelControl42;
         private DevExpress.XtraEditors.LabelControl labelControl43;
         private DevExpress.XtraEditors.LabelControl labelControl44;
-        private DevExpress.XtraGrid.GridControl gridControl5;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
         private System.Windows.Forms.BindingSource componentsBindingSource;
         private mainsourceTableAdapters.ComponentsTableAdapter componentsTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colID_component;
@@ -3378,5 +3234,8 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.TextEdit find_components_in_the_listbox_textedit;
     }
 }
