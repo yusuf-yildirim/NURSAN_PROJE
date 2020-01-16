@@ -103,6 +103,56 @@ namespace NURSAN_PROJE.SQL
 
 
         }
+
+        public void updateSocketInfo(string SocketID,string socketname,string pinc,string swcc,string ledn)
+        {
+            var rows = getFromLocalTablesproject("PSockets").Select("ID_soket ='" + SocketID + "'");
+            int pindifference = 0;
+            int swcdifference = 0;
+            if(Convert.ToInt32(rows[0][2])- Convert.ToInt32(pinc) != 0)
+            {
+                if(Convert.ToInt32(rows[0][2]) - Convert.ToInt32(pinc) < 0)
+                {
+                    pindifference = (Convert.ToInt32(rows[0][2]) - Convert.ToInt32(pinc));
+                }
+                else if(Convert.ToInt32(rows[0][2]) - Convert.ToInt32(pinc) > 0)
+                {
+                    pindifference = (Convert.ToInt32(rows[0][2]) - Convert.ToInt32(pinc));
+                }
+            }
+            if (Convert.ToInt32(rows[0][3]) - Convert.ToInt32(swcc) != 0)
+            {
+                if (Convert.ToInt32(rows[0][3]) - Convert.ToInt32(swcc) < 0)
+                {
+                    swcdifference = (Convert.ToInt32(rows[0][3]) - Convert.ToInt32(swcc));
+                }
+                else if (Convert.ToInt32(rows[0][3]) - Convert.ToInt32(swcc) > 0)
+                {
+                    swcdifference = (Convert.ToInt32(rows[0][3]) - Convert.ToInt32(swcc));
+                }
+            }
+            int totaldifference = pindifference + swcdifference;
+            var ıorows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
+            if (totaldifference < 0)
+            {
+                for (int i = 0; i < totaldifference; i++)
+                {
+                    ıorows.Last().Delete();
+                }
+            }
+            else if(totaldifference > 0)
+            {
+                for (int i = 0; i < totaldifference; i++)
+                {
+                    getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), SocketID, Convert.ToInt32(rows[0][1])+(i+1), null);
+                }
+            }
+          
+            rows[0][0] = socketname;
+            rows[0][1] = pinc;
+            rows[0][2] = swcc;
+            rows[0][3] = ledn;
+        }
         public void setSocketImage(string SocketID, Image img)
         {
                      
