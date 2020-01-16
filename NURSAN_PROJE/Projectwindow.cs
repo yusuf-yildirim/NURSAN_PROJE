@@ -779,31 +779,39 @@ namespace NURSAN_PROJE
                 edit_socket_lednumber.Text = gridView6.GetRowCellValue(e.FocusedRowHandle, gridView6.Columns[3]).ToString();
                 edit_socket_pinnumber.Text = gridView6.GetRowCellValue(e.FocusedRowHandle, gridView6.Columns[1]).ToString();
                 edit_socket_switchnumber.Text = gridView6.GetRowCellValue(e.FocusedRowHandle, gridView6.Columns[2]).ToString();
+                Console.WriteLine("made it here");
                 try
                 {
 
                     if (gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString().Length != 0)
                     {
+                        Console.WriteLine("up in the deneme");
+                        Console.WriteLine(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
                         DataTable deneme = manager.getIObySocketID(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
-                        if (deneme.Rows.Count < 1)
+                        Console.WriteLine(deneme.Rows[0][0].ToString());
+                        if (deneme.Rows[0][0].ToString() == "") 
                         {
                             Console.WriteLine(deneme.Rows.Count + " 55555555555555555555555555");
                             edit_socket_pinnumber_EditValueChanged(this, e);
                         }
                         else
                         {
+                            Console.WriteLine("else else west");
                             gridControl4.DataSource = deneme;
+                            gridControl4.RefreshDataSource();
+
                         }
                     }
                 }
                 catch
                 {
+                    Console.WriteLine(" gridview catch");
                     edit_socket_pinnumber_EditValueChanged(this, e);
                 }
             }
             catch(Exception err)
             {
-                Console.WriteLine(err.Message);
+                Console.WriteLine(err.Message + " BURADA");
             }
 
 
