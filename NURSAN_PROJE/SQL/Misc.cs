@@ -113,10 +113,40 @@ namespace NURSAN_PROJE.SQL
         }
         public void getIOPointNumber()
         {
-            //var rows = 
+            var rows = getFromLocalTablesproject("PIO_connection").Select("","IO_PIN ASC");           
+            int syc = 1;
+            int freepoint = 0;           
+            foreach(var row in rows)
+            {
+                try
+                {
+                    if (row[3] != DBNull.Value)
+                    {                        
+                        if (Convert.ToInt32(row[3]) == syc)
+                        {
+                            syc++;
+                            continue;
+                        }
+                        else
+                        {
+                            freepoint = syc + 1;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("WARNING! " + row[0] + " is not assigned test point!");
 
-
-
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+             
+              
+            }
+            MessageBox.Show(syc.ToString());
 
         }
         private DataTable getFromLocalTablesmain(string tablename)          

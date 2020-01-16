@@ -25,10 +25,19 @@ namespace NURSAN_PROJE.SQL
             for (int i = 0; i < tp_parameters.GetLength(1); i++)
             {
                 if (tp_parameters[0, i] == null)
-                {
+                {                   
                     break;
                 }
-                LocalTables.localtables.projecttables.Tables["PIO_connection"].Rows.Add(Guid.NewGuid().ToString(), SocketID, tp_parameters[1, i], tp_parameters[2, i]);
+              
+                    if (tp_parameters[2, i].Length > 0)
+                    {
+                        LocalTables.localtables.projecttables.Tables["PIO_connection"].Rows.Add(Guid.NewGuid().ToString(), SocketID, tp_parameters[1, i], tp_parameters[2, i]);
+                    }
+                    else
+                    {
+                        LocalTables.localtables.projecttables.Tables["PIO_connection"].Rows.Add(Guid.NewGuid().ToString(), SocketID, tp_parameters[1, i], null);
+                    }
+                   
             }
         }
         public void updateIObySocketID(string SocketID, string[,] tp_parameters)
@@ -37,19 +46,19 @@ namespace NURSAN_PROJE.SQL
             {
                 if(getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'").Length > 0)
                 {
-                    Console.WriteLine("Yok");
+                    Console.WriteLine("Var");
                     var rows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
                     int i = 0;
                     foreach(var row in rows)
                     {
-                        row[2] = tp_parameters[0, i];
-                        row[3] = tp_parameters[1, i];
+                        row[2] = tp_parameters[1, i];
+                        row[3] = tp_parameters[2, i];                       
                         i++;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Var");
+                    Console.WriteLine("Yok");
                     addIOforSocket(SocketID, tp_parameters);
                 }
             }
