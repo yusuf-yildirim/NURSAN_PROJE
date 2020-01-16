@@ -10,17 +10,7 @@ namespace NURSAN_PROJE.SQL
 {
     public partial class DataManager
     {
-        private void addIOforSocket(object[] soc_parameters, string[,] tp_parameters)
-        {
-            for (int i = 0; i < tp_parameters.GetLength(1); i++)
-            {
-                if (tp_parameters[0, i] == null)
-                {
-                    break;
-                }
-                LocalTables.localtables.maintables.Tables["IO_connections"].Rows.Add(Guid.NewGuid().ToString(), soc_parameters[0].ToString(), tp_parameters[1, i], tp_parameters[2, i]);
-            }
-        }
+    
         private void addIOforSocket(string SocketID, string[,] tp_parameters)
         {
             for (int i = 0; i < tp_parameters.GetLength(1); i++)
@@ -90,19 +80,59 @@ namespace NURSAN_PROJE.SQL
         private void updateMappedIOTable(string SocketID)
         {
             DataTable iotable = new DataTable("MAPPEDIO");
-            iotable.Columns.Add("PİN ADI");
-            iotable.Columns.Add("SOKET PİNİ:)");
-            iotable.Columns.Add("IO PİNİ");
-            var rows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
-            
-            foreach(var row in rows)
+            int i = 0;
+            try
             {
-                string pinname, socketpin, ıopin;
-                pinname = getSocketNameInfo(row[1].ToString());
-                socketpin = row[2].ToString();
-                ıopin = row[3].ToString();
-                iotable.Rows.Add(pinname, socketpin, ıopin);
+                
+                iotable.Columns.Add("PİN ADI");
+                iotable.Columns.Add("SOKET PİNİ:)");
+                iotable.Columns.Add("IO PİNİ");
+                var rows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
+                DataTable temp = new DataTable();
+                temp.Columns.Add("PİN ADI");
+                temp.Columns.Add("SOKET PİNİ:)");
+                temp.Columns.Add("IO PİNİ");
+                int tempi = 1;
+                foreach (var row in rows)
+                {
+                    string pinname, socketpin, ıopin;
+                    socketpin = row[2].ToString();
+                    ıopin = row[3].ToString();
+                    if (row[4] == DBNull.Value)
+                    {
+                        pinname = getSocketNameInfo(row[1].ToString());
+                        iotable.Rows.Add(pinname, socketpin, ıopin);
+
+                    }
+                    else
+                    {
+                        if (row[4].ToString() == "-")
+                        {
+                            pinname = getSocketNameInfo(row[1].ToString()) + "-SWC"+tempi+"(-)";
+                        }
+                        else
+                        {
+                            pinname = getSocketNameInfo(row[1].ToString()) + "-SWC"+ tempi + "(+)";
+                            tempi++;
+                        }
+                        
+                        temp.Rows.Add(pinname, socketpin, ıopin);
+                       
+                    }
+
+
+                }
+                foreach (DataRow rowtemp in temp.Rows)
+                {
+                    iotable.ImportRow(rowtemp);
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show(ex.Message);
+            }
+            
             try
             {
                 LocalTables.localtables.projecttables.Tables.Add(iotable);
@@ -112,6 +142,11 @@ namespace NURSAN_PROJE.SQL
                 LocalTables.localtables.projecttables.Tables.Remove("MAPPEDIO");
                 LocalTables.localtables.projecttables.Tables.Add(iotable);
             }
+
+        }
+        private void remapPinNumber()
+        {
+
 
         }
         private string getIOInfo(String ıoID)

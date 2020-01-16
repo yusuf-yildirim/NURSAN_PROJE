@@ -11,14 +11,14 @@ namespace NURSAN_PROJE.SQL
 {
     public partial class DataManager
     {
-        public void addSocket(object[] soc_parameters, string[,] tp_parameters)
+        public void addSocket(object[] soc_parameters)
         {
             LocalTables.localtables.maintables.Tables["Sockets"].Rows.Add(soc_parameters[0].ToString(), 
                                                                           soc_parameters[1].ToString(), 
                                                                           str2ınt(soc_parameters[2]),
                                                                           str2ınt(soc_parameters[3]),
                                                                           str2ınt(soc_parameters[4]));
-            addIOforSocket( soc_parameters, tp_parameters);
+          
         }
   
         public void deleteProjectSocket(string SocketID)
@@ -82,19 +82,29 @@ namespace NURSAN_PROJE.SQL
                 var imagerow = LocalTables.localtables.maintables.Tables["ImageStore"].Select(searchexp);
                 var iorow = LocalTables.localtables.maintables.Tables["IO_connections"].Select(searchexp);
                 getFromLocalTablesproject("PSockets").ImportRow(socketrow[0]);
-                if (iorow.Length > 0)
+                int swcc, pinc;
+                swcc = Convert.ToInt32(socketrow[0][3]);
+                pinc = Convert.ToInt32(socketrow[0][2]);
+                int order = 0;
+                for (int i = 0; i < pinc; i++)
                 {
-                    foreach (var row in iorow)
-                        getFromLocalTablesproject("PIO_connection").ImportRow(row);
+                    getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), socketrow[0][0], i + 1, null,null);
+                    order = i + 1;
                 }
-                else
+                for (int i = 0; i < swcc*2; i++)
                 {
-                    for(int i = 0; i< Convert.ToInt32(socketrow[0][2])+ Convert.ToInt32(socketrow[0][3])*2; i++)
+                    if(i%2 == 0)
                     {
-                        getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), socketrow[0][0], i+1, null);
+                        getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), socketrow[0][0], i + 1 + order, null, "-");
                     }
-                   
+                    else
+                    {
+                        getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), socketrow[0][0], i + 1 + order, null, "+");
+
+                    }
+
                 }
+         
                
                 
                 getFromLocalTablesproject("ImageStore").ImportRow(imagerow[0]);
@@ -104,7 +114,7 @@ namespace NURSAN_PROJE.SQL
 
         }
 
-        public void updateSocketInfo(string SocketID,string socketname,string pinc,string swcc,string ledn)
+        public void updateSocketInfo(string SocketID,string socketname,string pinc,string swcc,string ledn)//TO-DO
         {
             var rows = getFromLocalTablesproject("PSockets").Select("ID_soket ='" + SocketID + "'");
             int pindifference = 0;
@@ -133,16 +143,28 @@ namespace NURSAN_PROJE.SQL
             }
             int totalprevpin = Convert.ToInt32(rows[0][2]) + Convert.ToInt32(rows[0][3])*2;
             var ıorows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
+            
            // MessageBox.Show("FARK : "+ pindifference);
            // MessageBox.Show("FARK : "+ swcdifference);
             if (pindifference > 0)
-            {                
+            {
+                int searchpin = ıorows.Length-1;
                 for (int i = 0; i < pindifference; i++)
                 {
-                    ıorows.Last().Delete();
-                    ıorows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
-                    totalprevpin--;
-                  //  MessageBox.Show("Silindi pin" );
+                    MessageBox.Show(searchpin.ToString());
+                    if (ıorows[searchpin][4].ToString().Length != 1 || ıorows[searchpin][4].ToString().Length != 1)
+                    {
+                        ıorows[searchpin].Delete();
+                        ıorows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
+                        totalprevpin--;
+                        searchpin--;
+                    }
+                    else
+                    {
+                        i--;
+                        searchpin--;
+                          
+                    }
                 }
             }
             else if(pindifference < 0)
@@ -151,18 +173,26 @@ namespace NURSAN_PROJE.SQL
                 for (int i = 0; i < pindifference; i++)
                 {
                     getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), SocketID, (totalprevpin + (i + 1)).ToString(), null);
-                    totalprevpin++;
-                    // MessageBox.Show("Eklendi pin");
                 }
-
+                totalprevpin = totalprevpin + pindifference;
             }
             if(swcdifference < 0)
             {
                 swcdifference = swcdifference * -1;
+              
                 for (int i = 0; i < swcdifference*2; i++)
                 {
-                    getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), SocketID,(totalprevpin + (i+1)).ToString(), null);
-                  //  MessageBox.Show("Eklendi swc");
+                    if(i%2 == 0)
+                    {
+                        getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), SocketID, (totalprevpin + (i +1)).ToString(),null ,"-");
+                   
+                    }
+                    else
+                    {
+                        getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), SocketID, (totalprevpin + (i+1 )).ToString(),null ,"+");
+
+                    }
+                    //  MessageBox.Show("Eklendi swc");
                 }
             }
             else if (swcdifference > 0)

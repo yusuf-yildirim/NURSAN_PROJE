@@ -114,7 +114,7 @@ namespace NURSAN_PROJE
                 }
                 */
                 
-                Task.Factory.StartNew(() => manager.addSocket(arr, arr2)).ContinueWith(delegate { refresh_socket_grids(); });
+                Task.Factory.StartNew(() => manager.addSocket(arr)).ContinueWith(delegate { refresh_socket_grids(); });
                 navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
 
                 foreach (TextEdit t in newsocketvargroup.Controls)
@@ -792,7 +792,7 @@ namespace NURSAN_PROJE
                     {
                         Console.WriteLine("up in the deneme");
                         Console.WriteLine(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
-                        assign_pin_datatable = manager.getIObySocketID(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
+                        assign_pin_datatable = manager.getIObySocketIDMapped(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
                         Console.WriteLine(assign_pin_datatable.Rows.Count);
 
                         for (int i = 0; i < assign_pin_datatable.Rows.Count; i++)
@@ -940,7 +940,7 @@ namespace NURSAN_PROJE
                 manager.updateSocketInfo(socketid, edit_socket_name.Text, edit_socket_pinnumber.Text, edit_socket_switchnumber.Text, edit_socket_lednumber.Text);
                 Console.WriteLine("4");
 
-                assign_pin_datatable = manager.getIObySocketID(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
+                assign_pin_datatable = manager.getIObySocketIDMapped(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
                 Console.WriteLine("5");
 
                 gridControl4.DataSource = assign_pin_datatable;

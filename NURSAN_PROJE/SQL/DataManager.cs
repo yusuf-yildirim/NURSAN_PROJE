@@ -48,10 +48,14 @@ namespace NURSAN_PROJE.SQL
         {
             return getFromLocalTablesmain("Colours");
         }
-        public DataTable getIObySocketID(string SocketID)
+        public DataTable getIObySocketIDMapped(string SocketID)
         {
             updateMappedIOTable(SocketID);
             return getFromLocalTablesproject("MAPPEDIO");      
+        }
+        public DataTable getIObySocketID(string SocketID)
+        {
+            return getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'").CopyToDataTable();
         }
         public DataTable getConnectionbyPhase(string phaseid)
         {
