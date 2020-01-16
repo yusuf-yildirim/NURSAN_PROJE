@@ -131,20 +131,47 @@ namespace NURSAN_PROJE.SQL
                     swcdifference = (Convert.ToInt32(rows[0][3]) - Convert.ToInt32(swcc));
                 }
             }
-            int totaldifference = pindifference + swcdifference;
+            int totalprevpin = Convert.ToInt32(rows[0][2]) + Convert.ToInt32(rows[0][3])*2;
             var ıorows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
-            if (totaldifference < 0)
-            {
-                for (int i = 0; i < totaldifference; i++)
+           // MessageBox.Show("FARK : "+ pindifference);
+           // MessageBox.Show("FARK : "+ swcdifference);
+            if (pindifference > 0)
+            {                
+                for (int i = 0; i < pindifference; i++)
                 {
                     ıorows.Last().Delete();
+                    ıorows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
+                    totalprevpin--;
+                  //  MessageBox.Show("Silindi pin" );
                 }
             }
-            else if(totaldifference > 0)
+            else if(pindifference < 0)
             {
-                for (int i = 0; i < totaldifference; i++)
+                pindifference = pindifference * -1;
+                for (int i = 0; i < pindifference; i++)
                 {
-                    getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), SocketID, Convert.ToInt32(rows[0][1])+(i+1), null);
+                    getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), SocketID, (totalprevpin + (i + 1)).ToString(), null);
+                    totalprevpin++;
+                    // MessageBox.Show("Eklendi pin");
+                }
+
+            }
+            if(swcdifference < 0)
+            {
+                swcdifference = swcdifference * -1;
+                for (int i = 0; i < swcdifference*2; i++)
+                {
+                    getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), SocketID,(totalprevpin + (i+1)).ToString(), null);
+                  //  MessageBox.Show("Eklendi swc");
+                }
+            }
+            else if (swcdifference > 0)
+            {
+                for (int i = 0; i < swcdifference*2; i++)
+                {
+                    ıorows.Last().Delete();
+                    ıorows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
+                 //   MessageBox.Show("Silindi swc");
                 }
             }
           
