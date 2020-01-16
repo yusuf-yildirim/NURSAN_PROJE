@@ -49,8 +49,6 @@ namespace NURSAN_PROJE.SQL
             connections.Columns.Add("KABLO KONTROL");
             connections.Columns.Add("WireColor");
             connections.Columns.Add("ÖZELLİKLER");
-            tmplog.WriteDebugLog("----------BAĞLANTI LİSTELEME BAŞLADI----------", false);
-
             var rows = getFromLocalTablesproject("PConnections").Select("ID_etap_1 = '" + phaseid + "'","Order ASC");
 
           //  da = new SQLiteDataAdapter("SELECT * FROM PConnections Where ID_etap_1= '" + phaseid + "' ORDER BY \"Order\" ASC", con);

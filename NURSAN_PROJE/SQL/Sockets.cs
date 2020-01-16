@@ -91,7 +91,7 @@ namespace NURSAN_PROJE.SQL
                 {
                     for(int i = 0; i< Convert.ToInt32(socketrow[0][2])+ Convert.ToInt32(socketrow[0][3])*2; i++)
                     {
-                        getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), socketrow[0][0], i, null);
+                        getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), socketrow[0][0], i+1, null);
                     }
                    
                 }

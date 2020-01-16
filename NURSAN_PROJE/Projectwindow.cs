@@ -893,7 +893,7 @@ namespace NURSAN_PROJE
                      }
                      */
                     Console.WriteLine("ÇAĞIRILDI - 861");
-                    Task.Factory.StartNew(() => manager.addSocket(arr, arr2)).ContinueWith(delegate { refresh_socket_grids(); });//TODO-----------------------------------
+                    Task.Factory.StartNew(() => manager.updateIObySocketID(arr[0].ToString(), arr2)).ContinueWith(delegate { refresh_socket_grids(); });//TODO-----------------------------------
                     navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
 
                 }

@@ -50,7 +50,8 @@ namespace NURSAN_PROJE.SQL
         }
         public DataTable getIObySocketID(string SocketID)
         {
-            return getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'").CopyToDataTable();      
+            updateMappedIOTable(SocketID);
+            return getFromLocalTablesproject("MAPPEDIO");      
         }
         public DataTable getConnectionbyPhase(string phaseid)
         {

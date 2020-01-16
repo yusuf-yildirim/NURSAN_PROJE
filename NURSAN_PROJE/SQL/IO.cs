@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,13 +52,29 @@ namespace NURSAN_PROJE.SQL
                     int i = 0;
                     foreach(var row in rows)
                     {
-                        row[2] = tp_parameters[1, i];
-                        row[3] = tp_parameters[2, i];                       
+                        try
+                        {
+                            if (tp_parameters[2, i].Length>0)
+                            {
+                                row[2] = tp_parameters[1, i];
+                                row[3] = tp_parameters[2, i];
+                            }
+                            else
+                            {
+                                Console.WriteLine("WARNING IO:64");
+                            }          
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.StackTrace);
+                            Console.WriteLine("WARNING IO:69");
+                        }
                         i++;
                     }
                 }
                 else
                 {
+                    MessageBox.Show("Eğer kod buraya girdiyse todo ekle!");
                     Console.WriteLine("Yok");
                     addIOforSocket(SocketID, tp_parameters);
                 }
@@ -66,6 +83,35 @@ namespace NURSAN_PROJE.SQL
             {
                 MessageBox.Show("Soket Bulunmuyor Güncelleme İptal Edildi");
             }  
+
+        }
+
+
+        private void updateMappedIOTable(string SocketID)
+        {
+            DataTable iotable = new DataTable("MAPPEDIO");
+            iotable.Columns.Add("PİN ADI");
+            iotable.Columns.Add("SOKET PİNİ:)");
+            iotable.Columns.Add("IO PİNİ");
+            var rows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
+            
+            foreach(var row in rows)
+            {
+                string pinname, socketpin, ıopin;
+                pinname = getSocketNameInfo(row[1].ToString());
+                socketpin = row[2].ToString();
+                ıopin = row[3].ToString();
+                iotable.Rows.Add(pinname, socketpin, ıopin);
+            }
+            try
+            {
+                LocalTables.localtables.projecttables.Tables.Add(iotable);
+            }
+            catch
+            {
+                LocalTables.localtables.projecttables.Tables.Remove("MAPPEDIO");
+                LocalTables.localtables.projecttables.Tables.Add(iotable);
+            }
 
         }
         private string getIOInfo(String ıoID)
