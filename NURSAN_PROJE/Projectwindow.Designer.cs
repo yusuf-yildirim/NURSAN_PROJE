@@ -985,7 +985,6 @@
             // 
             // gridControl4
             // 
-            this.gridControl4.DataSource = this.bindingSource1;
             this.gridControl4.Location = new System.Drawing.Point(4, 225);
             this.gridControl4.MainView = this.gridView4;
             this.gridControl4.MenuManager = this.toolbarFormManager1;
