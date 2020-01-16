@@ -700,12 +700,15 @@ namespace NURSAN_PROJE
 
             if(new_socket_auto_assign_pin.Checked == true)
             {
-                
+                manager.setstartpointing(true);
                 foreach (DataRow row in assign_pin_datatable.Rows)
                 {
-                    manager.setstartpointing(true);
+                    
                     //MessageBox.Show(manager.getIOPointNumber());
-                    row[2] = Convert.ToInt32(manager.getIOPointNumber());
+                    if (row[2].ToString().Length < 1)
+                    {
+                        row[2] = Convert.ToInt32(manager.getIOPointNumber());
+                    }
                 }
                 manager.setstartpointing(false);
             }
@@ -854,6 +857,7 @@ namespace NURSAN_PROJE
 
         private void edit_socket_save_button_Click(object sender, EventArgs e)
         {
+            manager.manualpointing(false, 0);
             if(gridControl4.Visible == true && new_socket_auto_assign_pin.Visible == true)
             {
 
@@ -970,6 +974,62 @@ namespace NURSAN_PROJE
 
         private void new_socket_auto_assign_pin_CheckedChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void gridView4_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            // MessageBox.Show("Hücre Güncellendi");
+         
+        }
+
+        private void gridView4_ShownEditor(object sender, EventArgs e)
+        {
+           
+                
+        }
+
+        private void gridView4_HiddenEditor(object sender, EventArgs e)
+        {
+           
+             
+
+            
+
+
+            // Table1BindingSource.EndEdit()
+            //  MessageBox.Show(gridView4.ActiveEditor.EditValue.ToString());
+        }
+
+        private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+           // MessageBox.Show("Değişti");
+            if(e.Column.FieldName == "IO PİNİ")
+            {
+                edit_socket_save_button.Enabled = true;
+
+                if (!manager.checkIOpoint(gridView4.GetRowCellValue(gridView4.GetSelectedRows()[0], "IO PİNİ").ToString()))
+                {
+
+                    XtraMessageBox.Show("Yazılan IO zaten kullanımda" + gridView4.GetRowCellValue(gridView6.GetSelectedRows()[0], "IO PİNİ").ToString(), "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    gridView4.CancelUpdateCurrentRow();
+                }
+                else
+                {
+                    manager.manualpointing(true, Convert.ToInt32(gridView4.GetRowCellValue(gridView4.GetSelectedRows()[0], "IO PİNİ").ToString()));
+                    gridView4.CloseEditor();
+                    gridView4.UpdateCurrentRow();
+                }
+            }
+        }
+
+        private void gridView4_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            //MessageBox.Show("Değişiyor");
+            if (e.Column.FieldName == "IO PİNİ")
+            {
+                edit_socket_save_button.Enabled = false;
+            }
 
         }
     }

@@ -152,8 +152,30 @@ namespace NURSAN_PROJE.SQL
             return syc.ToString();
 
         }
+        public bool checkIOpoint(string point)
+        {
+            var rows = getFromLocalTablesproject("PIO_connection").Select("IO_PIN ="+Convert.ToInt32(point)+"", "IO_PIN ASC");
+            if(rows.Length > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public void setstartpointing(bool state)
         {
+            if(pointingstarted == true && state == true)
+            {
+                pointingstarted = false;
+                var rows = getFromLocalTablesproject("PIO_connection").Select("ID_IO = 'TEMP'");
+
+                foreach (var row in rows)
+                {
+                    row.Delete();
+                }
+            }
             pointingstarted = state;
             if(state == false)
             {
@@ -163,6 +185,23 @@ namespace NURSAN_PROJE.SQL
                 {
                     row.Delete();
                 }
+            }
+        }
+        public void manualpointing(bool state,int ıo)
+        {
+            pointingstarted = state;
+            if (state == false)
+            {
+                var rows = getFromLocalTablesproject("PIO_connection").Select("ID_IO = 'TEMP'");
+
+                foreach (var row in rows)
+                {
+                    row.Delete();
+                }
+            }
+            else
+            {
+                getFromLocalTablesproject("PIO_connection").Rows.Add("TEMP", "TEMP", "TEMP", ıo, "TEMP");
             }
         }
         private DataTable getFromLocalTablesmain(string tablename)          
