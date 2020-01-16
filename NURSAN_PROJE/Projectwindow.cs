@@ -327,7 +327,8 @@ namespace NURSAN_PROJE
 
         private void simpleButton14_Click(object sender, EventArgs e)
         {
-            manager.addComponent("GENERIC", add_generic_name.Text, Convert.ToInt32(add_generic_current.Text), 5, Convert.ToInt32(add_generic_voltagedrop.Text), Convert.ToInt32(add_resistor_tolerance.Text));
+            string[] generic_current = add_generic_current.Text.Split(' ');
+            manager.addComponent("GENERIC", add_generic_name.Text, Convert.ToInt32(generic_current[0]), multipliertonumber(generic_current[1]), Convert.ToInt32(add_generic_voltagedrop.Text), Convert.ToInt32(add_resistor_tolerance.Text));
             refresh_socket_grids();
         }
         public int multipliertonumber(string multiplier)
@@ -1031,6 +1032,11 @@ namespace NURSAN_PROJE
                 edit_socket_save_button.Enabled = false;
             }
 
+        }
+
+        private void add_capacitor_value_multipler_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
