@@ -771,7 +771,7 @@ namespace NURSAN_PROJE
         {
             edit_socket_pinnumber_EditValueChanged(this, e);
         }
-
+        DataTable assign_pin_datatable;
         private void gridView6_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             gridControl4.Visible = true;
@@ -792,22 +792,22 @@ namespace NURSAN_PROJE
                     {
                         Console.WriteLine("up in the deneme");
                         Console.WriteLine(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
-                        DataTable deneme = manager.getIObySocketID(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
-                        Console.WriteLine(deneme.Rows.Count);
+                        assign_pin_datatable = manager.getIObySocketID(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
+                        Console.WriteLine(assign_pin_datatable.Rows.Count);
 
-                        for (int i = 0; i < deneme.Rows.Count; i++)
+                        for (int i = 0; i < assign_pin_datatable.Rows.Count; i++)
                         {
                             Console.WriteLine();
-                            for (int j = 0; j < deneme.Columns.Count; j++)
+                            for (int j = 0; j < assign_pin_datatable.Columns.Count; j++)
                             {
                                
-                                    Console.Write(deneme.Rows[i][j].ToString());
+                                    Console.Write(assign_pin_datatable.Rows[i][j].ToString());
                                     Console.Write(" ");
                                 
                             }
                         }
-                            Console.WriteLine(deneme.Rows[0][0].ToString());
-                        if (deneme.Rows[0][0].ToString() == "") 
+                            Console.WriteLine(assign_pin_datatable.Rows[0][0].ToString());
+                        if (assign_pin_datatable.Rows[0][0].ToString() == "") 
                         {
                             edit_socket_pinnumber_EditValueChanged(this, e);
                         }
@@ -815,7 +815,7 @@ namespace NURSAN_PROJE
                         {
                             Console.WriteLine("else else west");
 
-                            gridControl4.DataSource = deneme;
+                            gridControl4.DataSource = assign_pin_datatable;
                             gridControl4.RefreshDataSource();
                             
                             //gridControl5.DataSource = deneme;
@@ -922,6 +922,35 @@ namespace NURSAN_PROJE
             maincomponentsource.DataSource = manager.getMainComponents();
             Console.WriteLine(manager.getMainComponents().Rows.Count);
             //DİĞER HEPSİ GİBİ YAPILMASINA RAĞMEN BU DATASOURCE VERİLERİ GÖSTERMİYOR !??!?
+        }
+
+
+        private void save_socket_data_button_Click(object sender, EventArgs e)
+        {
+            string socketid;
+            Console.WriteLine("1----------------------");
+
+            if (gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString().Length != 0)
+            {
+                Console.WriteLine("2");
+
+                socketid = gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString();
+                Console.WriteLine("3");
+
+                manager.updateSocketInfo(socketid, edit_socket_name.Text, edit_socket_pinnumber.Text, edit_socket_switchnumber.Text, edit_socket_lednumber.Text);
+                Console.WriteLine("4");
+
+                assign_pin_datatable = manager.getIObySocketID(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
+                Console.WriteLine("5");
+
+                gridControl4.DataSource = assign_pin_datatable;
+                Console.WriteLine("6");
+
+                gridControl4.RefreshDataSource();
+                Console.WriteLine("7");
+
+            }
+
         }
     }
 }

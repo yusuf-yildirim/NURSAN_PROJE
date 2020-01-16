@@ -148,10 +148,10 @@ namespace NURSAN_PROJE.SQL
                 }
             }
           
-            rows[0][0] = socketname;
-            rows[0][1] = pinc;
-            rows[0][2] = swcc;
-            rows[0][3] = ledn;
+            rows[0][1] = socketname;
+            rows[0][2] = pinc;
+            rows[0][3] = swcc;
+            rows[0][4] = ledn;
         }
         public void setSocketImage(string SocketID, Image img)
         {
