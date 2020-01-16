@@ -33,6 +33,7 @@ namespace NURSAN_PROJE.SQL
                             else
                             {
                                 row[2] = tp_parameters[1, i];
+                                row[3] = DBNull.Value;
                                 Console.WriteLine("WARNING IO:64");
                             }          
                         }
@@ -90,11 +91,11 @@ namespace NURSAN_PROJE.SQL
                     {
                         if (row[4].ToString() == "-")
                         {
-                            pinname = getSocketNameInfo(row[1].ToString()) + "-SWC"+tempi+"(-)";
+                            pinname = getSocketNameInfo(row[1].ToString()) + "-SW-" + tempi+"(-)";
                         }
                         else
                         {
-                            pinname = getSocketNameInfo(row[1].ToString()) + "-SWC"+ tempi + "(+)";
+                            pinname = getSocketNameInfo(row[1].ToString()) + "-SW-"+ tempi + "(+)";
                             tempi++;
                         }
                         

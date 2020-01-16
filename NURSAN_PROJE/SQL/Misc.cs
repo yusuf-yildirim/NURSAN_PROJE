@@ -164,6 +164,27 @@ namespace NURSAN_PROJE.SQL
                 return true;
             }
         }
+        public string checkIOpointWhoUse(string point,string name)
+        {
+            var rows = getFromLocalTablesproject("PIO_connection").Select("IO_PIN =" + Convert.ToInt32(point) + "", "IO_PIN ASC");
+           
+            if (rows.Length > 0)
+            {
+                if(rows[0][1].ToString() == "TEMP")
+                {
+                    return name;
+                }
+                else
+                {
+                    var rows2 = getFromLocalTablesproject("PSockets").Select("ID_soket ='" + rows[0][1] + "'");
+                    return rows2[0][1].ToString();
+                }             
+            }
+            else
+            {
+                return "NULL";
+            }
+        }
         public void setstartpointing(bool state)
         {
             if(pointingstarted == true && state == true)

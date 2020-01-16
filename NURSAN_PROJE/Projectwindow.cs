@@ -702,9 +702,15 @@ namespace NURSAN_PROJE
             if(new_socket_auto_assign_pin.Checked == true)
             {
                 manager.setstartpointing(true);
-                foreach (DataRow row in assign_pin_datatable.Rows)
+                for (int i = 0; i < gridView4.RowCount; i++)
                 {
-                    
+                    if (gridView4.GetRowCellValue(gridView4.GetRowHandle(i), "IO PİNİ").ToString().Length > 0)
+                    {
+                        manager.manualpointing(true, Convert.ToInt32(gridView4.GetRowCellValue(gridView4.GetRowHandle(i), "IO PİNİ").ToString()));
+                    }
+                }
+                foreach (DataRow row in assign_pin_datatable.Rows)
+                {                   
                     //MessageBox.Show(manager.getIOPointNumber());
                     if (row[2].ToString().Length < 1)
                     {
@@ -713,77 +719,9 @@ namespace NURSAN_PROJE
                 }
                 manager.setstartpointing(false);
             }
-          
-           
 
-            /**************DEPRECATED***********/
-           /* try
-            {
-                int pinvalue = 0;
-                int switchvalue = 0;
-                if (!string.IsNullOrEmpty(edit_socket_pinnumber.Text) && !string.IsNullOrEmpty(edit_socket_pinnumber.Text))
-                {
-                    
-                    pinvalue = Convert.ToInt32(edit_socket_pinnumber.Text);
-                    switchvalue = Convert.ToInt32(edit_socket_switchnumber.Text);
-                }
+            new_socket_auto_assign_pin.Checked = false;
 
-                table1 = new DataTable("pins");
-                table1.Columns.Add("Soket");
-                table1.Columns.Add("Pin");
-                table1.Columns.Add("Test noktası");
-                if (new_socket_auto_assign_pin.Checked == true)
-                {
-                    for (int i = 1; i <= pinvalue + (switchvalue * 2); i++)
-                    {
-
-                        if (i > pinvalue)
-                        {
-                            table1.Rows.Add(edit_socket_name.Text + "-SW(+)", i, i);
-                            table1.Rows.Add(edit_socket_name.Text + "-SW(-)", i + 1, i + 1);
-                            i++;
-                        }
-                        else
-                        {
-                            table1.Rows.Add(edit_socket_name.Text, i, i);
-                        }
-                    }
-                    bindingSource1.DataSource = table1;
-                   //gridControl4.DataSource = table1;
-                    //gridControl4.RefreshDataSource();
-
-                }
-                else
-                {
-                    for (int i = 1; i <= pinvalue + (switchvalue * 2); i++)
-                    {
-
-                        if (i > pinvalue)
-                        {
-                            table1.Rows.Add(edit_socket_name.Text + "-SW(+)", i);
-                            table1.Rows.Add(edit_socket_name.Text + "-SW(-)", i + 1);
-                            i++;
-                        }
-                        else
-                        {
-                            table1.Rows.Add(edit_socket_name.Text, i);
-                        }
-                    }
-                    //gridControl4.DataSource = table1;
-                    //gridControl4.RefreshDataSource();
-                    bindingSource1.DataSource = table1;
-
-                }
-
-                //Console.WriteLine("test");
-            }
-            catch (FormatException err)
-            {
-                Console.WriteLine(edit_socket_pinnumber.Text);
-                Console.WriteLine(edit_socket_switchnumber.Text);
-                Console.WriteLine(err.Message);
-            }*/
-            /**************DEPRECATED***********/
         }
 
         private void edit_socket_switchnumber_EditValueChanged(object sender, EventArgs e)
@@ -814,32 +752,8 @@ namespace NURSAN_PROJE
                         assign_pin_datatable = manager.getIObySocketIDMapped(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
                         Console.WriteLine(assign_pin_datatable.Rows.Count);
 
-                        for (int i = 0; i < assign_pin_datatable.Rows.Count; i++)
-                        {
-                            Console.WriteLine();
-                            for (int j = 0; j < assign_pin_datatable.Columns.Count; j++)
-                            {
-                               
-                                    Console.Write(assign_pin_datatable.Rows[i][j].ToString());
-                                    Console.Write(" ");
-                                
-                            }
-                        }
-                            Console.WriteLine(assign_pin_datatable.Rows[0][0].ToString());
-                        if (assign_pin_datatable.Rows[0][0].ToString() == "") 
-                        {
-                            edit_socket_pinnumber_EditValueChanged(this, e);
-                        }
-                        else
-                        {
-                            Console.WriteLine("else else west");
-
                             gridControl4.DataSource = assign_pin_datatable;
                             gridControl4.RefreshDataSource();
-                            
-                            //gridControl5.DataSource = deneme;
-
-                        }
                     }
                 }
                 catch
@@ -858,10 +772,8 @@ namespace NURSAN_PROJE
 
         private void edit_socket_save_button_Click(object sender, EventArgs e)
         {
-            manager.manualpointing(false, 0);
             if(gridControl4.Visible == true && new_socket_auto_assign_pin.Visible == true)
             {
-
                 string[,] arr2 = new string[3, 999];
                 if (errorprovider_editsockets_isinputpopulated())
                 {
@@ -878,12 +790,12 @@ namespace NURSAN_PROJE
                     {
                         for (int z = 0; z < gridView4.Columns.Count; z++)
                         {
-                            arr2[z, i] = gridView4.GetRowCellValue(i, gridView4.Columns[z]).ToString();
+                            arr2[z, i] = gridView4.GetRowCellValue(i, gridView4.Columns[z]).ToString();                          
                         }
                     }
 
                     Task.Factory.StartNew(() => manager.updateIObySocketID(arr[0].ToString(), arr2)).ContinueWith(delegate { refresh_socket_grids(); });//TODO-----YENİ KODA GEÇİRDİM AMA BURAYA GELMİYOR YUSUF BURAYA BAK
-                    navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
+                   // navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
 
                 }
                 else
@@ -917,7 +829,7 @@ namespace NURSAN_PROJE
                      */
                     Console.WriteLine("ÇAĞIRILDI - 861");
                     Task.Factory.StartNew(() => manager.updateIObySocketID(arr[0].ToString(), arr2)).ContinueWith(delegate { refresh_socket_grids(); });//TODO-----------------------------------
-                    navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
+                   // navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
 
                 }
                 else
@@ -948,8 +860,7 @@ namespace NURSAN_PROJE
         private void save_socket_data_button_Click(object sender, EventArgs e)
         {
             string socketid;
-            Console.WriteLine("1----------------------");
-
+           
             if (gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString().Length != 0)
             {
                 Console.WriteLine("2");
@@ -980,8 +891,6 @@ namespace NURSAN_PROJE
 
         private void gridView4_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
-            // MessageBox.Show("Hücre Güncellendi");
-         
         }
 
         private void gridView4_ShownEditor(object sender, EventArgs e)
@@ -992,35 +901,16 @@ namespace NURSAN_PROJE
 
         private void gridView4_HiddenEditor(object sender, EventArgs e)
         {
-           
-             
-
-            
-
-
-            // Table1BindingSource.EndEdit()
-            //  MessageBox.Show(gridView4.ActiveEditor.EditValue.ToString());
         }
 
         private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-           // MessageBox.Show("Değişti");
+          
             if(e.Column.FieldName == "IO PİNİ")
             {
                 edit_socket_save_button.Enabled = true;
-
-                if (!manager.checkIOpoint(gridView4.GetRowCellValue(gridView4.GetSelectedRows()[0], "IO PİNİ").ToString()))
-                {
-
-                    XtraMessageBox.Show("Yazılan IO zaten kullanımda" + gridView4.GetRowCellValue(gridView6.GetSelectedRows()[0], "IO PİNİ").ToString(), "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    gridView4.CancelUpdateCurrentRow();
-                }
-                else
-                {
-                    manager.manualpointing(true, Convert.ToInt32(gridView4.GetRowCellValue(gridView4.GetSelectedRows()[0], "IO PİNİ").ToString()));
-                    gridView4.CloseEditor();
-                    gridView4.UpdateCurrentRow();
-                }
+                validate = true;
+   
             }
         }
 
@@ -1029,6 +919,7 @@ namespace NURSAN_PROJE
             //MessageBox.Show("Değişiyor");
             if (e.Column.FieldName == "IO PİNİ")
             {
+                validate = true;
                 edit_socket_save_button.Enabled = false;
             }
 
@@ -1037,6 +928,46 @@ namespace NURSAN_PROJE
         private void add_capacitor_value_multipler_Click(object sender, EventArgs e)
         {
             
+        }
+
+        bool validate = false;
+        private void gridView4_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
+        {
+            if(validate == true)
+            {
+                for (int i = 0; i < gridView4.RowCount; i++)
+                {
+                    if(gridView4.GetRowCellValue(gridView4.GetRowHandle(i), "IO PİNİ").ToString().Length > 0)
+                    {
+                       
+                        manager.manualpointing(true, Convert.ToInt32(gridView4.GetRowCellValue(gridView4.GetRowHandle(i), "IO PİNİ").ToString()));
+                       
+                    }
+                   
+
+                }
+                if (e.Value.ToString().Length > 0)
+                {
+                    if (!manager.checkIOpoint(e.Value.ToString()))
+                    {
+                       // XtraMessageBox.Show("Yazılan IO zaten kullanımda" + gridView4.GetRowCellValue(gridView6.GetSelectedRows()[0], "IO PİNİ").ToString(), "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        e.Valid = false;
+                        e.ErrorText = "Test noktası daha önce " +manager.checkIOpointWhoUse(e.Value.ToString(),edit_socket_name.Text)+" isimli soket tarafından kullanılmış!";
+                    }
+                    else
+                    {
+                        e.Valid = true;
+                    }
+                }
+                else
+                {
+                    e.Valid = true;
+                }
+               
+            }
+            manager.manualpointing(false, 0);
+            gridView4.CloseEditor();
+            gridView4.UpdateCurrentRow();
         }
     }
 }

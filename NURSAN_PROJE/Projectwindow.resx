@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="recentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>155, 56</value>
+    <value>17, 56</value>
   </metadata>
   <metadata name="maindatasource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>1451, 17</value>
   </metadata>
   <data name="maindatasource.ResultSchemaSerializable" xml:space="preserve">
     <value>PERhdGFTZXQgTmFtZT0ibWFpbmRhdGFzb3VyY2UiPjxWaWV3IE5hbWU9ImFkZHJlY2VudCIgLz48VmlldyBOYW1lPSJyZWNlbnQiPjxGaWVsZCBOYW1lPSJJRF9zb2tldCIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iQWTEsSIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iUGluX3NheWlzaSIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iQW5haHRhcl9zYXlpc2kiIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9IkxlZF9udW1hcmFzaSIgVHlwZT0iVW5rbm93biIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
@@ -136,7 +136,7 @@
     <value>194, 17</value>
   </metadata>
   <metadata name="mainsocketsource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>577, 56</value>
+    <value>439, 56</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="simpleButton12.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -348,25 +348,25 @@
 </value>
   </data>
   <metadata name="Colors.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>491, 56</value>
+    <value>353, 56</value>
   </metadata>
   <metadata name="maincomponentsource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>726, 56</value>
+    <value>588, 56</value>
   </metadata>
   <metadata name="projectcomponentsource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>903, 56</value>
+    <value>765, 56</value>
   </metadata>
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1116, 17</value>
   </metadata>
   <metadata name="popupMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1228, 56</value>
+    <value>1090, 56</value>
   </metadata>
   <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1091, 56</value>
+    <value>953, 56</value>
   </metadata>
   <metadata name="socketsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>320, 56</value>
+    <value>182, 56</value>
   </metadata>
   <metadata name="projectdatasource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>688, 17</value>
