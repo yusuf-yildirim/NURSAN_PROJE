@@ -969,6 +969,22 @@ namespace NURSAN_PROJE
             gridView4.CloseEditor();
             gridView4.UpdateCurrentRow();
         }
+
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DataManager.TableUpdater updater = new DataManager.TableUpdater(manager);
+
+            foreach(string tablename in Enum.GetNames(typeof(MainTableName)))
+            {
+                updater.updateTable(LocalTables.localtables.maintables.Tables[tablename], Databases.Main);
+
+            }
+            foreach (string tablename in Enum.GetNames(typeof(ProjectTableName)))
+            {
+                updater.updateTable(LocalTables.localtables.projecttables.Tables[tablename], Databases.Project);
+
+            }
+        }
     }
 }
 

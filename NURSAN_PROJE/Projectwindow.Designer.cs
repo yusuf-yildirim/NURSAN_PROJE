@@ -652,6 +652,7 @@
             this.barButtonItem11.Caption = "Kaydet";
             this.barButtonItem11.Id = 7;
             this.barButtonItem11.Name = "barButtonItem11";
+            this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -761,7 +762,8 @@
             this.change_configured_sockets_page});
             this.navigationPane1.RegularSize = new System.Drawing.Size(493, 742);
             this.navigationPane1.SelectedPage = this.change_configured_sockets_page;
-            this.navigationPane1.Size = new System.Drawing.Size(493, 742);
+            this.navigationPane1.Size = new System.Drawing.Size(98, 742);
+            this.navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
             this.navigationPane1.TabIndex = 42;
             this.navigationPane1.Text = "SOKET DÜZENLE";
             this.navigationPane1.TransitionType = DevExpress.Utils.Animation.Transitions.Push;
@@ -902,7 +904,7 @@
             this.change_configured_sockets_page.Controls.Add(this.labelControl44);
             this.change_configured_sockets_page.Controls.Add(this.gridControl4);
             this.change_configured_sockets_page.Name = "change_configured_sockets_page";
-            this.change_configured_sockets_page.Size = new System.Drawing.Size(373, 694);
+            this.change_configured_sockets_page.Size = new System.Drawing.Size(0, 0);
             // 
             // save_socket_data_button
             // 
