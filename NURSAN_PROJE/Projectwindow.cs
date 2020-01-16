@@ -697,6 +697,7 @@ namespace NURSAN_PROJE
 
         private void edit_socket_pinnumber_EditValueChanged(object sender, EventArgs e)
         {
+            /**************DEPRECATED***********/
             try
             {
                 int pinvalue = 0;
@@ -763,6 +764,7 @@ namespace NURSAN_PROJE
                 Console.WriteLine(edit_socket_switchnumber.Text);
                 Console.WriteLine(err.Message);
             }
+            /**************DEPRECATED***********/
         }
 
         private void edit_socket_switchnumber_EditValueChanged(object sender, EventArgs e)
@@ -782,6 +784,7 @@ namespace NURSAN_PROJE
                 edit_socket_pinnumber.Text = gridView6.GetRowCellValue(e.FocusedRowHandle, gridView6.Columns[1]).ToString();
                 edit_socket_switchnumber.Text = gridView6.GetRowCellValue(e.FocusedRowHandle, gridView6.Columns[2]).ToString();
                 Console.WriteLine("made it here");
+                
                 try
                 {
 
@@ -812,10 +815,10 @@ namespace NURSAN_PROJE
                         {
                             Console.WriteLine("else else west");
 
-                            //gridControl4.DataSource = deneme;
-                            //gridControl4.RefreshDataSource();
+                            gridControl4.DataSource = deneme;
+                            gridControl4.RefreshDataSource();
                             
-                            gridControl5.DataSource = deneme;
+                            //gridControl5.DataSource = deneme;
 
                         }
                     }
