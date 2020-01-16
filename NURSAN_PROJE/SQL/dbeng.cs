@@ -154,11 +154,13 @@ namespace NURSAN_PROJE.SQL
                 catch (Exception Ex)
                 {
                     MessageBox.Show(Ex.Message);
+                    Console.WriteLine(Ex.Message);
                 }
             }
             else
             {
                 MessageBox.Show("UNEXPECTED ERROR");
+                Console.WriteLine("UNEXPECTED ERROR");
             }
           
         }

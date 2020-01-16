@@ -307,6 +307,20 @@
             this.diagramShape5 = new DevExpress.XtraDiagram.DiagramShape();
             this.diagramConnector1 = new DevExpress.XtraDiagram.DiagramConnector();
             this.diagramConnector2 = new DevExpress.XtraDiagram.DiagramConnector();
+            this.tabNavigationPage4 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.initializebutton = new DevExpress.XtraEditors.SimpleButton();
+            this.projecttablesyncbutton = new DevExpress.XtraEditors.SimpleButton();
+            this.maintablesyncbutton = new DevExpress.XtraEditors.SimpleButton();
+            this.loadprojecttablebutton = new DevExpress.XtraEditors.SimpleButton();
+            this.loadmaintablebutton = new DevExpress.XtraEditors.SimpleButton();
+            this.projecttablelist = new DevExpress.XtraEditors.ListBoxControl();
+            this.maintableslist = new DevExpress.XtraEditors.ListBoxControl();
+            this.projecttablegrid = new DevExpress.XtraGrid.GridControl();
+            this.projecttablegridview = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.maintablegrid = new DevExpress.XtraGrid.GridControl();
+            this.maintablegridview = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.socketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projectdatasource = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -416,6 +430,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.workflow_page.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.diagramControl1)).BeginInit();
+            this.tabNavigationPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projecttablelist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintableslist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projecttablegrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projecttablegridview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintablegrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintablegridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socketsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_connectionBindingSource)).BeginInit();
@@ -708,6 +731,7 @@
             this.tabPane1.Controls.Add(this.tabNavigationPage2);
             this.tabPane1.Controls.Add(this.tabNavigationPage3);
             this.tabPane1.Controls.Add(this.workflow_page);
+            this.tabPane1.Controls.Add(this.tabNavigationPage4);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane1.Location = new System.Drawing.Point(0, 54);
             this.tabPane1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -716,7 +740,8 @@
             this.tabNavigationPage1,
             this.tabNavigationPage2,
             this.tabNavigationPage3,
-            this.workflow_page});
+            this.workflow_page,
+            this.tabNavigationPage4});
             this.tabPane1.RegularSize = new System.Drawing.Size(1556, 775);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
             this.tabPane1.Size = new System.Drawing.Size(1556, 775);
@@ -801,6 +826,7 @@
             this.newsocketname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.newsocketname.MenuManager = this.toolbarFormManager1;
             this.newsocketname.Name = "newsocketname";
+            this.newsocketname.Properties.Validating += new System.ComponentModel.CancelEventHandler(this.newsocketname_Properties_Validating);
             this.newsocketname.Size = new System.Drawing.Size(117, 20);
             this.newsocketname.TabIndex = 39;
             // 
@@ -1254,6 +1280,7 @@
             this.simpleButton12.Name = "simpleButton12";
             this.simpleButton12.Size = new System.Drawing.Size(49, 32);
             this.simpleButton12.TabIndex = 33;
+            this.simpleButton12.Click += new System.EventHandler(this.simpleButton12_Click);
             // 
             // unregistermainsocket_button
             // 
@@ -2758,6 +2785,133 @@
             new DevExpress.Utils.PointFloat(33F, 303F),
             new DevExpress.Utils.PointFloat(100F, 303F)});
             // 
+            // tabNavigationPage4
+            // 
+            this.tabNavigationPage4.Caption = "DATABASE CHECK";
+            this.tabNavigationPage4.Controls.Add(this.checkEdit2);
+            this.tabNavigationPage4.Controls.Add(this.checkEdit1);
+            this.tabNavigationPage4.Controls.Add(this.initializebutton);
+            this.tabNavigationPage4.Controls.Add(this.projecttablesyncbutton);
+            this.tabNavigationPage4.Controls.Add(this.maintablesyncbutton);
+            this.tabNavigationPage4.Controls.Add(this.loadprojecttablebutton);
+            this.tabNavigationPage4.Controls.Add(this.loadmaintablebutton);
+            this.tabNavigationPage4.Controls.Add(this.projecttablelist);
+            this.tabNavigationPage4.Controls.Add(this.maintableslist);
+            this.tabNavigationPage4.Controls.Add(this.projecttablegrid);
+            this.tabNavigationPage4.Controls.Add(this.maintablegrid);
+            this.tabNavigationPage4.Name = "tabNavigationPage4";
+            this.tabNavigationPage4.Size = new System.Drawing.Size(1556, 746);
+            // 
+            // checkEdit2
+            // 
+            this.checkEdit2.Location = new System.Drawing.Point(695, 419);
+            this.checkEdit2.MenuManager = this.toolbarFormManager1;
+            this.checkEdit2.Name = "checkEdit2";
+            this.checkEdit2.Properties.Caption = "Load Database Table";
+            this.checkEdit2.Size = new System.Drawing.Size(156, 20);
+            this.checkEdit2.TabIndex = 10;
+            // 
+            // checkEdit1
+            // 
+            this.checkEdit1.Location = new System.Drawing.Point(696, 361);
+            this.checkEdit1.MenuManager = this.toolbarFormManager1;
+            this.checkEdit1.Name = "checkEdit1";
+            this.checkEdit1.Properties.Caption = "Load Database Table";
+            this.checkEdit1.Size = new System.Drawing.Size(156, 20);
+            this.checkEdit1.TabIndex = 9;
+            this.checkEdit1.CheckStateChanged += new System.EventHandler(this.checkEdit1_CheckStateChanged);
+            // 
+            // initializebutton
+            // 
+            this.initializebutton.Location = new System.Drawing.Point(732, 388);
+            this.initializebutton.Name = "initializebutton";
+            this.initializebutton.Size = new System.Drawing.Size(75, 23);
+            this.initializebutton.TabIndex = 8;
+            this.initializebutton.Text = "INITIALIZE";
+            this.initializebutton.Click += new System.EventHandler(this.initializebutton_Click);
+            // 
+            // projecttablesyncbutton
+            // 
+            this.projecttablesyncbutton.Location = new System.Drawing.Point(1487, 17);
+            this.projecttablesyncbutton.Name = "projecttablesyncbutton";
+            this.projecttablesyncbutton.Size = new System.Drawing.Size(48, 40);
+            this.projecttablesyncbutton.TabIndex = 7;
+            this.projecttablesyncbutton.Text = "Sync";
+            this.projecttablesyncbutton.Click += new System.EventHandler(this.projecttablesyncbutton_Click);
+            // 
+            // maintablesyncbutton
+            // 
+            this.maintablesyncbutton.Location = new System.Drawing.Point(640, 17);
+            this.maintablesyncbutton.Name = "maintablesyncbutton";
+            this.maintablesyncbutton.Size = new System.Drawing.Size(48, 40);
+            this.maintablesyncbutton.TabIndex = 6;
+            this.maintablesyncbutton.Text = "Sync";
+            this.maintablesyncbutton.Click += new System.EventHandler(this.maintablesyncbutton_Click);
+            // 
+            // loadprojecttablebutton
+            // 
+            this.loadprojecttablebutton.Location = new System.Drawing.Point(695, 440);
+            this.loadprojecttablebutton.Name = "loadprojecttablebutton";
+            this.loadprojecttablebutton.Size = new System.Drawing.Size(156, 50);
+            this.loadprojecttablebutton.TabIndex = 5;
+            this.loadprojecttablebutton.Text = "LOAD PROJECT TABLE";
+            this.loadprojecttablebutton.Click += new System.EventHandler(this.loadprojecttablebutton_Click);
+            // 
+            // loadmaintablebutton
+            // 
+            this.loadmaintablebutton.Location = new System.Drawing.Point(696, 308);
+            this.loadmaintablebutton.Name = "loadmaintablebutton";
+            this.loadmaintablebutton.Size = new System.Drawing.Size(156, 50);
+            this.loadmaintablebutton.TabIndex = 4;
+            this.loadmaintablebutton.Text = "LOAD MAIN TABLE";
+            this.loadmaintablebutton.Click += new System.EventHandler(this.loadmaintablebutton_Click);
+            // 
+            // projecttablelist
+            // 
+            this.projecttablelist.Location = new System.Drawing.Point(695, 492);
+            this.projecttablelist.Name = "projecttablelist";
+            this.projecttablelist.Size = new System.Drawing.Size(157, 242);
+            this.projecttablelist.TabIndex = 3;
+            // 
+            // maintableslist
+            // 
+            this.maintableslist.Location = new System.Drawing.Point(695, 63);
+            this.maintableslist.Name = "maintableslist";
+            this.maintableslist.Size = new System.Drawing.Size(157, 242);
+            this.maintableslist.TabIndex = 2;
+            // 
+            // projecttablegrid
+            // 
+            this.projecttablegrid.Location = new System.Drawing.Point(858, 63);
+            this.projecttablegrid.MainView = this.projecttablegridview;
+            this.projecttablegrid.MenuManager = this.toolbarFormManager1;
+            this.projecttablegrid.Name = "projecttablegrid";
+            this.projecttablegrid.Size = new System.Drawing.Size(677, 671);
+            this.projecttablegrid.TabIndex = 1;
+            this.projecttablegrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.projecttablegridview});
+            // 
+            // projecttablegridview
+            // 
+            this.projecttablegridview.GridControl = this.projecttablegrid;
+            this.projecttablegridview.Name = "projecttablegridview";
+            // 
+            // maintablegrid
+            // 
+            this.maintablegrid.Location = new System.Drawing.Point(12, 63);
+            this.maintablegrid.MainView = this.maintablegridview;
+            this.maintablegrid.MenuManager = this.toolbarFormManager1;
+            this.maintablegrid.Name = "maintablegrid";
+            this.maintablegrid.Size = new System.Drawing.Size(677, 671);
+            this.maintablegrid.TabIndex = 0;
+            this.maintablegrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.maintablegridview});
+            // 
+            // maintablegridview
+            // 
+            this.maintablegridview.GridControl = this.maintablegrid;
+            this.maintablegridview.Name = "maintablegridview";
+            // 
             // socketsBindingSource
             // 
             this.socketsBindingSource.DataMember = "Sockets";
@@ -3044,6 +3198,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.workflow_page.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.diagramControl1)).EndInit();
+            this.tabNavigationPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projecttablelist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintableslist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projecttablegrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projecttablegridview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintablegrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintablegridview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.socketsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_connectionBindingSource)).EndInit();
@@ -3289,5 +3452,19 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage4;
+        private DevExpress.XtraEditors.SimpleButton loadprojecttablebutton;
+        private DevExpress.XtraEditors.SimpleButton loadmaintablebutton;
+        private DevExpress.XtraEditors.ListBoxControl projecttablelist;
+        private DevExpress.XtraEditors.ListBoxControl maintableslist;
+        private DevExpress.XtraGrid.GridControl projecttablegrid;
+        private DevExpress.XtraGrid.Views.Grid.GridView projecttablegridview;
+        private DevExpress.XtraGrid.GridControl maintablegrid;
+        private DevExpress.XtraGrid.Views.Grid.GridView maintablegridview;
+        private DevExpress.XtraEditors.SimpleButton projecttablesyncbutton;
+        private DevExpress.XtraEditors.SimpleButton maintablesyncbutton;
+        private DevExpress.XtraEditors.SimpleButton initializebutton;
+        private DevExpress.XtraEditors.CheckEdit checkEdit2;
+        private DevExpress.XtraEditors.CheckEdit checkEdit1;
     }
 }

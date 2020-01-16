@@ -63,7 +63,10 @@ namespace NURSAN_PROJE.SQL
             return getFromLocalTablesproject("CONNECTIONS");
         }
 
-
+        public DataTable getDatabaseTable(string tablename, Databases type)
+        {
+            return localTables.getSpecifiedTableFromDatabase(tablename, type);
+        }
       
 
 

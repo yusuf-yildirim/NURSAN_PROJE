@@ -903,72 +903,14 @@ namespace NURSAN_PROJE
         {
         }
 
-        private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-          
-            if(e.Column.FieldName == "IO PİNİ")
-            {
-                edit_socket_save_button.Enabled = true;
-                validate = true;
-   
-            }
-        }
-
-        private void gridView4_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            //MessageBox.Show("Değişiyor");
-            if (e.Column.FieldName == "IO PİNİ")
-            {
-                validate = true;
-                edit_socket_save_button.Enabled = false;
-            }
-
-        }
+  
 
         private void add_capacitor_value_multipler_Click(object sender, EventArgs e)
         {
             
         }
 
-        bool validate = false;
-        private void gridView4_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
-        {
-            if(validate == true)
-            {
-                for (int i = 0; i < gridView4.RowCount; i++)
-                {
-                    if(gridView4.GetRowCellValue(gridView4.GetRowHandle(i), "IO PİNİ").ToString().Length > 0)
-                    {
-                       
-                        manager.manualpointing(true, Convert.ToInt32(gridView4.GetRowCellValue(gridView4.GetRowHandle(i), "IO PİNİ").ToString()));
-                       
-                    }
-                   
-
-                }
-                if (e.Value.ToString().Length > 0)
-                {
-                    if (!manager.checkIOpoint(e.Value.ToString()))
-                    {
-                       // XtraMessageBox.Show("Yazılan IO zaten kullanımda" + gridView4.GetRowCellValue(gridView6.GetSelectedRows()[0], "IO PİNİ").ToString(), "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        e.Valid = false;
-                        e.ErrorText = "Test noktası daha önce " +manager.checkIOpointWhoUse(e.Value.ToString(),edit_socket_name.Text)+" isimli soket tarafından kullanılmış!";
-                    }
-                    else
-                    {
-                        e.Valid = true;
-                    }
-                }
-                else
-                {
-                    e.Valid = true;
-                }
-               
-            }
-            manager.manualpointing(false, 0);
-            gridView4.CloseEditor();
-            gridView4.UpdateCurrentRow();
-        }
+ 
 
         private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -985,6 +927,16 @@ namespace NURSAN_PROJE
 
             }
         }
+
+ 
+
+        private void simpleButton12_Click(object sender, EventArgs e)
+        {
+            newsocketname.CausesValidation = false;
+            newsocketname.DoValidate();
+        }
+
+     
     }
 }
 

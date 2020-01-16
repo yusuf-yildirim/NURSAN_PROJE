@@ -66,7 +66,10 @@ namespace NURSAN_PROJE.SQL
         }
 
 
-
+        public DataTable getSpecifiedTableFromDatabase(string tablename, Databases type)
+        {
+            return database.GetDataTable(tablename, type);
+        }
 
 
 
