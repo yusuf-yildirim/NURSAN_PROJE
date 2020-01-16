@@ -111,7 +111,8 @@ namespace NURSAN_PROJE.SQL
                 return false;
             }
         }
-        public void getIOPointNumber()
+        bool pointingstarted = false;
+        public string getIOPointNumber()
         {
             var rows = getFromLocalTablesproject("PIO_connection").Select("","IO_PIN ASC");           
             int syc = 1;
@@ -146,8 +147,23 @@ namespace NURSAN_PROJE.SQL
              
               
             }
-            MessageBox.Show(syc.ToString());
+            //  MessageBox.Show();
+            getFromLocalTablesproject("PIO_connection").Rows.Add("TEMP", "TEMP", "TEMP", syc, "TEMP");
+            return syc.ToString();
 
+        }
+        public void setstartpointing(bool state)
+        {
+            pointingstarted = state;
+            if(state == false)
+            {
+                var rows = getFromLocalTablesproject("PIO_connection").Select("ID_IO = 'TEMP'");
+
+                foreach(var row in rows)
+                {
+                    row.Delete();
+                }
+            }
         }
         private DataTable getFromLocalTablesmain(string tablename)          
         {

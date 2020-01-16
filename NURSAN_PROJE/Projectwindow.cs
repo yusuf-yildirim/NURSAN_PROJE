@@ -697,8 +697,23 @@ namespace NURSAN_PROJE
 
         private void edit_socket_pinnumber_EditValueChanged(object sender, EventArgs e)
         {
+
+            if(new_socket_auto_assign_pin.Checked == true)
+            {
+                
+                foreach (DataRow row in assign_pin_datatable.Rows)
+                {
+                    manager.setstartpointing(true);
+                    //MessageBox.Show(manager.getIOPointNumber());
+                    row[2] = Convert.ToInt32(manager.getIOPointNumber());
+                }
+                manager.setstartpointing(false);
+            }
+          
+           
+
             /**************DEPRECATED***********/
-            try
+           /* try
             {
                 int pinvalue = 0;
                 int switchvalue = 0;
@@ -763,7 +778,7 @@ namespace NURSAN_PROJE
                 Console.WriteLine(edit_socket_pinnumber.Text);
                 Console.WriteLine(edit_socket_switchnumber.Text);
                 Console.WriteLine(err.Message);
-            }
+            }*/
             /**************DEPRECATED***********/
         }
 
@@ -950,6 +965,11 @@ namespace NURSAN_PROJE
                 Console.WriteLine("7");
 
             }
+
+        }
+
+        private void new_socket_auto_assign_pin_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }

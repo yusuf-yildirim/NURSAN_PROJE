@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -81,6 +82,14 @@ namespace NURSAN_PROJE.SQL
                 var socketrow = LocalTables.localtables.maintables.Tables["Sockets"].Select(searchexp);
                 var imagerow = LocalTables.localtables.maintables.Tables["ImageStore"].Select(searchexp);
                 var iorow = LocalTables.localtables.maintables.Tables["IO_connections"].Select(searchexp);
+                if (imagerow.Length > 0)
+                {
+                    getFromLocalTablesproject("ImageStore").ImportRow(imagerow[0]);
+                }
+                else
+                {
+                    XtraMessageBox.Show("Soket resmi belirlenmemiş!", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 getFromLocalTablesproject("PSockets").ImportRow(socketrow[0]);
                 int swcc, pinc;
                 swcc = Convert.ToInt32(socketrow[0][3]);
@@ -103,11 +112,9 @@ namespace NURSAN_PROJE.SQL
 
                     }
 
-                }
-         
-               
+                }            
+              
                 
-                getFromLocalTablesproject("ImageStore").ImportRow(imagerow[0]);
 
             }
 
@@ -116,99 +123,61 @@ namespace NURSAN_PROJE.SQL
 
         public void updateSocketInfo(string SocketID,string socketname,string pinc,string swcc,string ledn)//TO-DO
         {
-            var rows = getFromLocalTablesproject("PSockets").Select("ID_soket ='" + SocketID + "'");
-            int pindifference = 0;
-            int swcdifference = 0;
-            if(Convert.ToInt32(rows[0][2])- Convert.ToInt32(pinc) != 0)
+            var socketrows = getFromLocalTablesproject("PSockets").Select("ID_soket ='" + SocketID + "'");
+            socketrows[0][1] = socketname;
+            if(str2ınt(ledn) >= 0 && str2ınt(ledn) <= 1024)
             {
-                if(Convert.ToInt32(rows[0][2]) - Convert.ToInt32(pinc) < 0)
-                {
-                    pindifference = (Convert.ToInt32(rows[0][2]) - Convert.ToInt32(pinc));
-                }
-                else if(Convert.ToInt32(rows[0][2]) - Convert.ToInt32(pinc) > 0)
-                {
-                    pindifference = (Convert.ToInt32(rows[0][2]) - Convert.ToInt32(pinc));
-                }
+                socketrows[0][4] = ledn;
             }
-            if (Convert.ToInt32(rows[0][3]) - Convert.ToInt32(swcc) != 0)
+            else
             {
-                if (Convert.ToInt32(rows[0][3]) - Convert.ToInt32(swcc) < 0)
-                {
-                    swcdifference = (Convert.ToInt32(rows[0][3]) - Convert.ToInt32(swcc));
-                }
-                else if (Convert.ToInt32(rows[0][3]) - Convert.ToInt32(swcc) > 0)
-                {
-                    swcdifference = (Convert.ToInt32(rows[0][3]) - Convert.ToInt32(swcc));
-                }
+                XtraMessageBox.Show("Led numarası 0 ile 1024 arasında olmalıdır!", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            int totalprevpin = Convert.ToInt32(rows[0][2]) + Convert.ToInt32(rows[0][3])*2;
-            var ıorows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
-            
-           // MessageBox.Show("FARK : "+ pindifference);
-           // MessageBox.Show("FARK : "+ swcdifference);
-            if (pindifference > 0)
+           
+            if (socketrows[0][2].ToString() != pinc || socketrows[0][3].ToString() != swcc)
             {
-                int searchpin = ıorows.Length-1;
-                for (int i = 0; i < pindifference; i++)
+                DialogResult result = XtraMessageBox.Show("Soket pin ve switch sayısını değiştirmek pin atamalarının silinmesine neden olur.\n Devam Etmek istiyormusunuz?", "UYARI", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show(searchpin.ToString());
-                    if (ıorows[searchpin][4].ToString().Length != 1 || ıorows[searchpin][4].ToString().Length != 1)
+                    var iorows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
+                    socketrows[0][2] = pinc;
+                    socketrows[0][3] = swcc;
+                    foreach (var row in iorows)
                     {
-                        ıorows[searchpin].Delete();
-                        ıorows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
-                        totalprevpin--;
-                        searchpin--;
+                        row.Delete();
                     }
-                    else
+                    int pinnumber = 0;
+                    for (int i = 0; i < str2ınt(pinc); i++)
                     {
-                        i--;
-                        searchpin--;
-                          
+                        getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), SocketID, i + 1, null, null);
+                        pinnumber = i + 1;
                     }
-                }
-            }
-            else if(pindifference < 0)
-            {
-                pindifference = pindifference * -1;
-                for (int i = 0; i < pindifference; i++)
-                {
-                    getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), SocketID, (totalprevpin + (i + 1)).ToString(), null);
-                }
-                totalprevpin = totalprevpin + pindifference;
-            }
-            if(swcdifference < 0)
-            {
-                swcdifference = swcdifference * -1;
-              
-                for (int i = 0; i < swcdifference*2; i++)
-                {
-                    if(i%2 == 0)
+                    for (int i = 0; i < str2ınt(swcc) * 2; i++)
                     {
-                        getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), SocketID, (totalprevpin + (i +1)).ToString(),null ,"-");
-                   
-                    }
-                    else
-                    {
-                        getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), SocketID, (totalprevpin + (i+1 )).ToString(),null ,"+");
+                        if (i % 2 == 0)
+                        {
+                            getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), SocketID, i + 1 + pinnumber, null, "-");
+                        }
+                        else
+                        {
+                            getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), SocketID, i + 1 + pinnumber, null, "+");
+
+                        }
+
 
                     }
-                    //  MessageBox.Show("Eklendi swc");
                 }
-            }
-            else if (swcdifference > 0)
-            {
-                for (int i = 0; i < swcdifference*2; i++)
+                else
                 {
-                    ıorows.Last().Delete();
-                    ıorows = getFromLocalTablesproject("PIO_connection").Select("ID_soket ='" + SocketID + "'");
-                 //   MessageBox.Show("Silindi swc");
+                    Console.WriteLine("SOCKET UPDATE ABORTED!");
                 }
+
             }
-          
-            rows[0][1] = socketname;
-            rows[0][2] = pinc;
-            rows[0][3] = swcc;
-            rows[0][4] = ledn;
+
+
+
+
+
         }
         public void setSocketImage(string SocketID, Image img)
         {

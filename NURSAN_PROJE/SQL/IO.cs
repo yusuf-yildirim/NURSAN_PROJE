@@ -11,26 +11,7 @@ namespace NURSAN_PROJE.SQL
     public partial class DataManager
     {
     
-        private void addIOforSocket(string SocketID, string[,] tp_parameters)
-        {
-            for (int i = 0; i < tp_parameters.GetLength(1); i++)
-            {
-                if (tp_parameters[0, i] == null)
-                {                   
-                    break;
-                }
-              
-                    if (tp_parameters[2, i].Length > 0)
-                    {
-                        LocalTables.localtables.projecttables.Tables["PIO_connection"].Rows.Add(Guid.NewGuid().ToString(), SocketID, tp_parameters[1, i], tp_parameters[2, i]);
-                    }
-                    else
-                    {
-                        LocalTables.localtables.projecttables.Tables["PIO_connection"].Rows.Add(Guid.NewGuid().ToString(), SocketID, tp_parameters[1, i], null);
-                    }
-                   
-            }
-        }
+   
         public void updateIObySocketID(string SocketID, string[,] tp_parameters)
         {
             if(getFromLocalTablesproject("PSockets").Select("ID_soket ='" + SocketID + "'").Length > 0)
@@ -51,6 +32,7 @@ namespace NURSAN_PROJE.SQL
                             }
                             else
                             {
+                                row[2] = tp_parameters[1, i];
                                 Console.WriteLine("WARNING IO:64");
                             }          
                         }
@@ -66,7 +48,7 @@ namespace NURSAN_PROJE.SQL
                 {
                     MessageBox.Show("Eğer kod buraya girdiyse todo ekle!");
                     Console.WriteLine("Yok");
-                    addIOforSocket(SocketID, tp_parameters);
+                  
                 }
             }
             else
@@ -144,11 +126,7 @@ namespace NURSAN_PROJE.SQL
             }
 
         }
-        private void remapPinNumber()
-        {
-
-
-        }
+  
         private string getIOInfo(String ıoID)
         {
             try
