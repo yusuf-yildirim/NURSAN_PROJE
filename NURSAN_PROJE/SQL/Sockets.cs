@@ -81,9 +81,21 @@ namespace NURSAN_PROJE.SQL
                 var socketrow = LocalTables.localtables.maintables.Tables["Sockets"].Select(searchexp);
                 var imagerow = LocalTables.localtables.maintables.Tables["ImageStore"].Select(searchexp);
                 var iorow = LocalTables.localtables.maintables.Tables["IO_connections"].Select(searchexp);
-                getFromLocalTablesproject("PSockets").ImportRow(socketrow[0]);               
-                foreach (var row in iorow)
-                    getFromLocalTablesproject("PIO_connection").ImportRow(row);
+                getFromLocalTablesproject("PSockets").ImportRow(socketrow[0]);
+                if (iorow.Length > 0)
+                {
+                    foreach (var row in iorow)
+                        getFromLocalTablesproject("PIO_connection").ImportRow(row);
+                }
+                else
+                {
+                    for(int i = 0; i< Convert.ToInt32(socketrow[0][2])+ Convert.ToInt32(socketrow[0][3]); i++)
+                    {
+                        getFromLocalTablesproject("PIO_connection").Rows.Add(Guid.NewGuid().ToString(), socketrow[0][0], i, null);
+                    }
+                   
+                }
+               
                 
                 getFromLocalTablesproject("ImageStore").ImportRow(imagerow[0]);
 
