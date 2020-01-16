@@ -140,6 +140,7 @@
             this.labelControl43 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl44 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl4 = new DevExpress.XtraGrid.GridControl();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
@@ -315,6 +316,8 @@
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::NURSAN_PROJE.WaitForm2), true, true, true);
+            this.gridControl5 = new DevExpress.XtraGrid.GridControl();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.recentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).BeginInit();
@@ -342,6 +345,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_lednumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_pinnumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
@@ -418,6 +422,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             this.SuspendLayout();
             // 
             // recentBindingSource
@@ -979,6 +985,7 @@
             // 
             // gridControl4
             // 
+            this.gridControl4.DataSource = this.bindingSource1;
             this.gridControl4.Location = new System.Drawing.Point(4, 225);
             this.gridControl4.MainView = this.gridView4;
             this.gridControl4.MenuManager = this.toolbarFormManager1;
@@ -997,6 +1004,7 @@
             // panelControl3
             // 
             this.panelControl3.AutoSize = true;
+            this.panelControl3.Controls.Add(this.gridControl5);
             this.panelControl3.Controls.Add(this.checkEdit1);
             this.panelControl3.Controls.Add(this.registeredsocketimg);
             this.panelControl3.Controls.Add(this.gridControl6);
@@ -2773,6 +2781,22 @@
             // 
             this.splashScreenManager1.ClosingDelay = 500;
             // 
+            // gridControl5
+            // 
+            this.gridControl5.Location = new System.Drawing.Point(472, 263);
+            this.gridControl5.MainView = this.gridView5;
+            this.gridControl5.MenuManager = this.toolbarFormManager1;
+            this.gridControl5.Name = "gridControl5";
+            this.gridControl5.Size = new System.Drawing.Size(528, 386);
+            this.gridControl5.TabIndex = 43;
+            this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView5});
+            // 
+            // gridView5
+            // 
+            this.gridView5.GridControl = this.gridControl5;
+            this.gridView5.Name = "gridView5";
+            // 
             // Projectwindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2826,6 +2850,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_lednumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_pinnumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
@@ -2912,6 +2937,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3146,5 +3173,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.Data.RealTimeSource projectcomponentsource;
         private DevExpress.XtraEditors.SearchControl searchControl2;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private DevExpress.XtraGrid.GridControl gridControl5;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
     }
 }
