@@ -190,6 +190,9 @@
     <Compile Include="SQL\Phase.cs" />
     <Compile Include="SQL\Sockets.cs" />
     <Compile Include="tmplog.cs" />
+    <Compile Include="UserInteractions.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Validation.cs">
       <SubType>Form</SubType>
     </Compile>

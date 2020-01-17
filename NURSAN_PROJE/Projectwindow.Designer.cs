@@ -787,8 +787,7 @@
             this.change_configured_sockets_page});
             this.navigationPane1.RegularSize = new System.Drawing.Size(493, 742);
             this.navigationPane1.SelectedPage = this.change_configured_sockets_page;
-            this.navigationPane1.Size = new System.Drawing.Size(98, 742);
-            this.navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
+            this.navigationPane1.Size = new System.Drawing.Size(493, 742);
             this.navigationPane1.TabIndex = 42;
             this.navigationPane1.Text = "SOKET DÜZENLE";
             this.navigationPane1.TransitionType = DevExpress.Utils.Animation.Transitions.Push;
@@ -822,6 +821,7 @@
             // 
             // newsocketname
             // 
+            this.newsocketname.CausesValidation = false;
             this.newsocketname.Location = new System.Drawing.Point(3, 3);
             this.newsocketname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.newsocketname.MenuManager = this.toolbarFormManager1;
@@ -832,6 +832,7 @@
             // 
             // newsocketswc
             // 
+            this.newsocketswc.CausesValidation = false;
             this.newsocketswc.Location = new System.Drawing.Point(3, 107);
             this.newsocketswc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.newsocketswc.MenuManager = this.toolbarFormManager1;
@@ -839,18 +840,22 @@
             this.newsocketswc.Size = new System.Drawing.Size(117, 20);
             this.newsocketswc.TabIndex = 40;
             this.newsocketswc.EditValueChanged += new System.EventHandler(this.newsocketswc_EditValueChanged);
+            this.newsocketswc.Validating += new System.ComponentModel.CancelEventHandler(this.newsocketswc_Validating);
             // 
             // newsocketledc
             // 
+            this.newsocketledc.CausesValidation = false;
             this.newsocketledc.Location = new System.Drawing.Point(3, 70);
             this.newsocketledc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.newsocketledc.MenuManager = this.toolbarFormManager1;
             this.newsocketledc.Name = "newsocketledc";
             this.newsocketledc.Size = new System.Drawing.Size(117, 20);
             this.newsocketledc.TabIndex = 39;
+            this.newsocketledc.Validating += new System.ComponentModel.CancelEventHandler(this.newsocketledc_Validating);
             // 
             // newsocketpinc
             // 
+            this.newsocketpinc.CausesValidation = false;
             this.newsocketpinc.Location = new System.Drawing.Point(3, 35);
             this.newsocketpinc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.newsocketpinc.MenuManager = this.toolbarFormManager1;
@@ -858,6 +863,7 @@
             this.newsocketpinc.Size = new System.Drawing.Size(117, 20);
             this.newsocketpinc.TabIndex = 34;
             this.newsocketpinc.TextChanged += new System.EventHandler(this.newsocketpinc_TextChanged);
+            this.newsocketpinc.Validating += new System.ComponentModel.CancelEventHandler(this.newsocketpinc_Validating);
             // 
             // labelControl18
             // 
@@ -930,7 +936,7 @@
             this.change_configured_sockets_page.Controls.Add(this.labelControl44);
             this.change_configured_sockets_page.Controls.Add(this.gridControl4);
             this.change_configured_sockets_page.Name = "change_configured_sockets_page";
-            this.change_configured_sockets_page.Size = new System.Drawing.Size(0, 0);
+            this.change_configured_sockets_page.Size = new System.Drawing.Size(373, 694);
             // 
             // save_socket_data_button
             // 
@@ -993,6 +999,7 @@
             this.edit_socket_lednumber.Name = "edit_socket_lednumber";
             this.edit_socket_lednumber.Size = new System.Drawing.Size(117, 20);
             this.edit_socket_lednumber.TabIndex = 39;
+            this.edit_socket_lednumber.Validating += new System.ComponentModel.CancelEventHandler(this.edit_socket_lednumber_Validating);
             // 
             // edit_socket_pinnumber
             // 
@@ -1003,6 +1010,7 @@
             this.edit_socket_pinnumber.Size = new System.Drawing.Size(117, 20);
             this.edit_socket_pinnumber.TabIndex = 34;
             this.edit_socket_pinnumber.EditValueChanged += new System.EventHandler(this.edit_socket_pinnumber_EditValueChanged);
+            this.edit_socket_pinnumber.Validating += new System.ComponentModel.CancelEventHandler(this.edit_socket_pinnumber_Validating);
             // 
             // labelControl41
             // 

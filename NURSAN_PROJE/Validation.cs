@@ -1,9 +1,11 @@
-﻿using NURSAN_PROJE.SQL;
+﻿using DevExpress.XtraEditors;
+using NURSAN_PROJE.SQL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NURSAN_PROJE
 {
@@ -67,11 +69,7 @@ namespace NURSAN_PROJE
         }
 
 
-        //TO-DO
-        private void newsocketname_Properties_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-           // e.Cancel = true;
-        }
+     
 
      
 
@@ -140,6 +138,170 @@ namespace NURSAN_PROJE
         {
         
         }
+
+
+
+
+
+        bool addsocketvalidateresult = true;
+        
+        //TO-DO
+        private void newsocketname_Properties_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+           
+            if (newsocketname.Text.Length > 0)
+            {
+                if (manager.checknameAvailability(newsocketname.Text))
+                {
+                    e.Cancel = false;
+                    addsocketvalidateresult = false;
+                   
+                }
+                else
+                {
+                    
+                    newsocketname.ErrorText = "Bu isim daha önce kullanılmış!";
+                    e.Cancel = true;
+                    addsocketvalidateresult = true;
+                    
+                }
+            }
+            else
+            {
+                newsocketname.ErrorText = "Bu alan boş bırakılamaz!";
+                e.Cancel = true;
+                addsocketvalidateresult = true;
+                
+                
+            }
+          
+        }
+        private void newsocketpinc_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                Convert.ToInt32(newsocketpinc.Text);
+                if (Convert.ToInt32(newsocketpinc.Text) <= 0)
+                {
+                    newsocketpinc.ErrorText = "Lütfen bu alana sıfır dan büyük bir sayı giriniz!";
+                    e.Cancel = true;
+                    addsocketvalidateresult = true;
+                   
+
+                }
+                else
+                {
+                    e.Cancel = false;
+                    if (addsocketvalidateresult == false)
+                        addsocketvalidateresult = false;
+
+                    
+                }
+            }
+            catch
+            {
+                newsocketpinc.ErrorText = "Lütfen bu alana bir sayı giriniz!";
+                e.Cancel = true;                
+                addsocketvalidateresult = true;
+                
+                
+            }
+         
+
+        }
+        private void newsocketledc_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                Convert.ToInt32(newsocketledc.Text);
+                if (manager.checklednumberAvailability(newsocketledc.Text))
+                {
+                    e.Cancel = false;
+                    if (addsocketvalidateresult == false)
+                        addsocketvalidateresult = false;                 
+                    
+                }
+                else
+                {
+                    e.Cancel = true;
+                    addsocketvalidateresult = true;                    
+                    newsocketledc.ErrorText = "Bu led numarası daha önce kullanılmış!";
+                    
+                }
+            }
+            catch
+            {
+                e.Cancel = true;
+                addsocketvalidateresult = true;                
+                newsocketledc.ErrorText = "Lütfen bu alana bir sayı giriniz";
+                
+            }
+         
+        }
+        private void newsocketswc_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                Convert.ToInt32(newsocketswc.Text);
+                if (Convert.ToInt32(newsocketswc.Text) > 0)
+                {
+                    e.Cancel = false;    
+                    if(addsocketvalidateresult == false)
+                    addsocketvalidateresult = false;    
+                   
+                }
+                else
+                {
+                    e.Cancel = true;
+                    addsocketvalidateresult = true;
+                    newsocketswc.ErrorText = "Lütfen bu alana sıfır dan büyük bir sayı giriniz!";
+                }
+            }
+            catch
+            {
+                e.Cancel = true;
+                addsocketvalidateresult = true;
+                newsocketswc.ErrorText = "Lütfen bu alana bir sayı giriniz";
+            }
+        }
+        private bool errorprovider_editsockets_isinputpopulated()
+        {
+            bool exit_code = true;
+            foreach (TextEdit t in groupControl1.Controls)
+            {
+                if (string.IsNullOrEmpty(t.Text))
+                {
+                    errorprovider.SetError(t, "Bu alan boş geçilemez", DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical);
+                    exit_code = false;
+                }
+                else
+                {
+                    errorprovider.SetError(t, "", DevExpress.XtraEditors.DXErrorProvider.ErrorType.None);
+                }
+
+            }
+            return exit_code;
+        }
+        //BOŞ GEÇİLMEMESİ GEREKEN PARAMETRELERİN KONTROLÜ! YENİ SOKET
+        private bool errorprovider_checktext_null()
+        {
+            bool exit_code = true;
+            foreach (TextEdit t in newsocketvargroup.Controls)
+            {
+                if (string.IsNullOrEmpty(t.Text))
+                {
+                    errorprovider.SetError(t, "Bu alan boş geçilemez", DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical);
+                    exit_code = false;
+                }
+                else
+                {
+                    errorprovider.SetError(t, "", DevExpress.XtraEditors.DXErrorProvider.ErrorType.None);
+                }
+
+            }
+            return exit_code;
+        }
+
     }
 
 }

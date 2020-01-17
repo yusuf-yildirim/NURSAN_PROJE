@@ -233,6 +233,31 @@ namespace NURSAN_PROJE.SQL
         {
             return LocalTables.localtables.projecttables.Tables[tablename];
         }
+
+        public bool checknameAvailability(String name)
+        {
+            var rows = getFromLocalTablesmain("Sockets").Select("Adı ='" + name + "'");
+            if(rows.Length > 0)
+            {
+               return false;
+            }
+            else
+            {
+               return true;
+            }
+        }
+        public bool checklednumberAvailability(String lednumber)
+        {
+            var rows = getFromLocalTablesmain("Sockets").Select("Led_numarasi =" + lednumber + "");
+            if (rows.Length > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
        /*public static DataTable Delete(this DataTable table, string filter)
         {
             table.Select(filter).Delete();

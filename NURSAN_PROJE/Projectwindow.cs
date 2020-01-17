@@ -93,80 +93,20 @@ namespace NURSAN_PROJE
 
         private void simpleButton11_Click(object sender, EventArgs e)
         {
-            string[,] arr2 = new string[3, 999];
-            if (errorprovider_checktext_null())
+            //TO-DO
+            addsocketvalidateresult = true;
+            newsocketname.DoValidate();
+            newsocketpinc.DoValidate();
+            newsocketledc.DoValidate();
+            newsocketswc.DoValidate();
+            if(addsocketvalidateresult == false)
             {
-                object[] arr = new object[5];
-
-                arr[0] = System.Guid.NewGuid().ToString();
-                arr[1] = (newsocketname.Text);
-                arr[2] = Convert.ToInt32(newsocketpinc.Text);
-                arr[3] = Convert.ToInt32(newsocketswc.Text);
-                arr[4] = Convert.ToInt32(newsocketledc.Text);
-
-                /*
-                for (int i = 0; i < gridView4.RowCount; i++)
-                {
-                    for (int z = 0; z < gridView4.Columns.Count; z++)
-                    {
-                        arr2[z, i] = gridView4.GetRowCellValue(i, gridView4.Columns[z]).ToString();
-                    }
-                }
-                */
-                
-                Task.Factory.StartNew(() => manager.addSocket(arr)).ContinueWith(delegate { refresh_socket_grids(); });
-                navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
-
-                foreach (TextEdit t in newsocketvargroup.Controls)
-                {
-                    t.Text = "";
-                }
+                addMainSocket();
             }
-            else
-            {
-                Console.WriteLine("hata yok");
-            }
-
 
         }
 
-        //BOŞ GEÇİLMEMESİ GEREKEN PARAMETRELERİN KONTROLÜ! YENİ SOKET
-        private bool errorprovider_checktext_null()
-        {
-            bool exit_code = true;
-            foreach (TextEdit t in newsocketvargroup.Controls)
-            {
-                if (string.IsNullOrEmpty(t.Text))
-                {
-                    errorprovider.SetError(t, "Bu alan boş geçilemez", DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical);
-                    exit_code = false;
-                }
-                else
-                {
-                    errorprovider.SetError(t, "", DevExpress.XtraEditors.DXErrorProvider.ErrorType.None);
-                }
-
-            }
-            return exit_code;
-        }
-        private bool errorprovider_editsockets_isinputpopulated()
-        {
-            bool exit_code = true;
-            foreach (TextEdit t in groupControl1.Controls)
-            {
-                if (string.IsNullOrEmpty(t.Text))
-                {
-                    errorprovider.SetError(t, "Bu alan boş geçilemez", DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical);
-                    exit_code = false;
-                }
-                else
-                {
-                    errorprovider.SetError(t, "", DevExpress.XtraEditors.DXErrorProvider.ErrorType.None);
-                }
-
-            }
-            return exit_code;
-        }
+   
         private void simpleButton9_Click(object sender, EventArgs e)
         {
             if (registeredsocketgridview.GetRowCellValue(registeredsocketgridview.GetSelectedRows()[0], "ID_soket").ToString().Length > 0)
@@ -930,9 +870,18 @@ namespace NURSAN_PROJE
  
 
         private void simpleButton12_Click(object sender, EventArgs e)
+        {         
+                  
+        }
+
+        private void edit_socket_lednumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            newsocketname.CausesValidation = false;
-            newsocketname.DoValidate();
+         
+        }
+
+        private void edit_socket_pinnumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
         }
 
      
