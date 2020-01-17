@@ -923,8 +923,7 @@ namespace NURSAN_PROJE
             }
             foreach (string tablename in Enum.GetNames(typeof(ProjectTableName)))
             {
-                updater.updateTable(LocalTables.localtables.projecttables.Tables[tablename], Databases.Project);
-
+                updater.updateTable(manager.getFromLocalTablesproject(tablename), Databases.Project);
             }
         }
 

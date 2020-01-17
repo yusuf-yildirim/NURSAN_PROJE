@@ -229,7 +229,7 @@ namespace NURSAN_PROJE.SQL
         {
             return LocalTables.localtables.maintables.Tables[tablename];
         }
-        private DataTable getFromLocalTablesproject(string tablename)
+        public DataTable getFromLocalTablesproject(string tablename)
         {
             return LocalTables.localtables.projecttables.Tables[tablename];
         }

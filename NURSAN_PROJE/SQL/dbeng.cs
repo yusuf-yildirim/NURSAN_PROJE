@@ -141,15 +141,16 @@ namespace NURSAN_PROJE.SQL
             else if(db == Databases.Project)
             {
                 con = new SQLiteConnection(getconstring.get_conn_string("tablo") + ";Version=3;");
+                Console.WriteLine("Proje veritabanı " +DT.TableName.ToString() + " tablosu "+DT.Rows.Count.ToString() + " tane satır ile güncelleniyor!");
                 try
                 {
                     con.Open();
                     cmd = con.CreateCommand();
                     cmd.CommandText = string.Format("SELECT * FROM {0}", DT.TableName);
                     da = new SQLiteDataAdapter(cmd);
-                    SQLiteCommandBuilder builder = new SQLiteCommandBuilder(da);
-                    da.Update(DT);
-                    con.Close();
+                    SQLiteCommandBuilder builder = new SQLiteCommandBuilder(da);                    
+                    da.Update(DT);                    
+                    con.Close();                    
                 }
                 catch (Exception Ex)
                 {
@@ -165,7 +166,7 @@ namespace NURSAN_PROJE.SQL
           
         }
 
-
+  
 
 
     }

@@ -80,8 +80,7 @@ namespace NURSAN_PROJE.SQL
             {
                 LoadOption loadop = new LoadOption();
                 var socketrow = LocalTables.localtables.maintables.Tables["Sockets"].Select(searchexp);
-                var imagerow = LocalTables.localtables.maintables.Tables["ImageStore"].Select(searchexp);
-                var iorow = LocalTables.localtables.maintables.Tables["IO_connections"].Select(searchexp);
+                var imagerow = LocalTables.localtables.maintables.Tables["ImageStore"].Select(searchexp);               
                 if (imagerow.Length > 0)
                 {
                     getFromLocalTablesproject("ImageStore").ImportRow(imagerow[0]);
@@ -91,6 +90,7 @@ namespace NURSAN_PROJE.SQL
                     XtraMessageBox.Show("Soket resmi belirlenmemiş!", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 getFromLocalTablesproject("PSockets").ImportRow(socketrow[0]);
+                getFromLocalTablesproject("PSockets").Rows.Add("TEST", "TEST", 0, 0, 0);
                 int swcc, pinc;
                 swcc = Convert.ToInt32(socketrow[0][3]);
                 pinc = Convert.ToInt32(socketrow[0][2]);
