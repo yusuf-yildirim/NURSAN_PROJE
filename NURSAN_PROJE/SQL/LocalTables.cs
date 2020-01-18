@@ -48,6 +48,9 @@ namespace NURSAN_PROJE.SQL
             }
         };
 
+        ///<summary>
+        ///Local tableları veritabanından doldurur.
+        ///</summary>
         public void getalltables()
         {
             foreach (string tablename in Enum.GetNames(typeof(MainTableName)))
@@ -65,7 +68,9 @@ namespace NURSAN_PROJE.SQL
             this.database.SaveDataTable(table, database);
         }
 
-
+        ///<summary>
+        ///İstenen veritabanıyla ilgili tabloyu döndürür.
+        ///</summary>
         public DataTable getSpecifiedTableFromDatabase(string tablename, Databases type)
         {
             return database.GetDataTable(tablename, type);

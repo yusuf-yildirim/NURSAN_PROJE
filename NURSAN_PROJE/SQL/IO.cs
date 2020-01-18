@@ -10,8 +10,10 @@ namespace NURSAN_PROJE.SQL
 {
     public partial class DataManager
     {
-    
-   
+
+        ///<summary>
+        ///Bir sokete ait IO bağlantılarını günceller.
+        ///</summary>
         public void updateIObySocketID(string SocketID, string[,] tp_parameters)
         {
             if(getFromLocalTablesproject("PSockets").Select("ID_soket ='" + SocketID + "'").Length > 0)
@@ -59,7 +61,9 @@ namespace NURSAN_PROJE.SQL
 
         }
 
-
+        ///<summary>
+        ///Kullanıcıya gösterilecek düzenlenmiş IO bağlantı tabosunu günceller.
+        ///</summary>
         private void updateMappedIOTable(string SocketID)
         {
             DataTable iotable = new DataTable("MAPPEDIO");
@@ -127,7 +131,10 @@ namespace NURSAN_PROJE.SQL
             }
 
         }
-  
+
+        ///<summary>
+        ///IO bilgisini 'soketadı : bağlantı_numarası' şeklinde döndürür.
+        ///</summary>
         private string getIOInfo(String ıoID)
         {
             try

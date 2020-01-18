@@ -30,7 +30,9 @@ namespace NURSAN_PROJE.SQL
 
 
 
-
+        ///<summary>
+        ///Son açılan dosya kaydını gerçekleştirir.
+        ///</summary>
         public void create_recent(String path, DevExpress.DataAccess.Sql.SqlDataSource datasource)//TO-DO CHANGE
         {
             datasource.Queries[0].Parameters[0].Value = path.Split('\\')[(path.Split('\\')).Count() - 1];
@@ -38,6 +40,9 @@ namespace NURSAN_PROJE.SQL
             datasource.Fill();
         }
 
+        ///<summary>
+        ///Proje dosyasını yaratır ve ilk ayarlamaları db.ini dosyasına göre yapar.
+        ///</summary>
         public void create_project(string name)
         {
             try
@@ -62,14 +67,9 @@ namespace NURSAN_PROJE.SQL
             }
 
         }
-
-      
-
-
-
-
-
-        //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+        ///<summary>
+        ///Çağırıldığı yere istenen tabloyu istenen veritabanından DataTable olarak döndürür.
+        ///</summary>
         public DataTable GetDataTable(string tablename, Databases db)
         {
            
@@ -116,6 +116,10 @@ namespace NURSAN_PROJE.SQL
             }
 
         }
+
+        ///<summary>
+        ///İstenen tabloyu istenen veritabanıyla senkronize eder.
+        ///</summary>
         public void SaveDataTable(DataTable DT, Databases db)
         {
             if (db == Databases.Main)

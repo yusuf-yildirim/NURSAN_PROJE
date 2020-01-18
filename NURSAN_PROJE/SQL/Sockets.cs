@@ -12,6 +12,10 @@ namespace NURSAN_PROJE.SQL
 {
     public partial class DataManager
     {
+
+        ///<summary>
+        ///Ana veritabanına soket ekler. 5 elemanlı bir object dizisi gerekir.Elemanların sıralaması tabloya uygun olmalıdır.
+        ///</summary>
         public void addSocket(object[] soc_parameters)
         {
             LocalTables.localtables.maintables.Tables["Sockets"].Rows.Add(soc_parameters[0].ToString(), 
@@ -21,7 +25,9 @@ namespace NURSAN_PROJE.SQL
                                                                           str2ınt(soc_parameters[4]));
           
         }
-  
+        ///<summary>
+        ///Proje soketini(resimler ve ıo bağlantıları dahil olarak) kaldırır. 
+        ///</summary>
         public void deleteProjectSocket(string SocketID)
         {
             var rows = LocalTables.localtables.projecttables.Tables["PSockets"].Select("ID_soket = '"+SocketID+"'");
@@ -34,6 +40,9 @@ namespace NURSAN_PROJE.SQL
             foreach (var row in rows)
                 row.Delete();
         }
+        ///<summary>
+        ///Ana veritabanı soketini(resimler ve ıo bağlantıları dahil olarak) kaldırır. Eğer kullanılıyorsa sorar.
+        ///</summary>
         public void deleteMainSocket(string SocketID)
         {
             var used = LocalTables.localtables.projecttables.Tables["PSockets"].Select("ID_soket = '" + SocketID + "'");
@@ -70,6 +79,10 @@ namespace NURSAN_PROJE.SQL
             }
        
         }
+
+        ///<summary>
+        ///Ana veritabanı soketini(resimler ve ıo bağlantıları dahil olarak) proje veritabanına aktarır. Daha önce aktarılmış soketi aktarmaz. Resim yoksa uyarır
+        ///</summary>
         public void socket2Project(string SocketID)
         {
             string searchexp = "ID_soket = '" + SocketID + "'";
@@ -116,15 +129,12 @@ namespace NURSAN_PROJE.SQL
 
                     }
 
-                }            
-              
-                
-
+                } 
             }
-
-
         }
-
+        ///<summary>
+        ///Proje soketinin bilgilerini günceller.
+        ///</summary>
         public void updateSocketInfo(string SocketID,string socketname,string pinc,string swcc,string ledn)//TO-DO
         {
             var socketrows = getFromLocalTablesproject("PSockets").Select("ID_soket ='" + SocketID + "'");
@@ -177,12 +187,11 @@ namespace NURSAN_PROJE.SQL
                 }
 
             }
-
-
-
-
-
         }
+
+        ///<summary>
+        ///İlgili sokete ait resmi gönderiler Image'a göre ayarlar.
+        ///</summary>
         public void setSocketImage(string SocketID, Image img)
         {
                      
@@ -200,7 +209,9 @@ namespace NURSAN_PROJE.SQL
                    
                 }
         }
-
+        ///<summary>
+        ///SoketID sine göre soketin ismini döndürür.
+        ///</summary>
         private string getSocketNameInfo(String SocketID)
         {
             DataTable table = new DataTable();

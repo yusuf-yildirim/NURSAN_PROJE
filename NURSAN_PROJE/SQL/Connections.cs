@@ -9,13 +9,18 @@ namespace NURSAN_PROJE.SQL
 {
     public partial class DataManager
     {
+        ///<summary>
+        ///Projeye yeni bağlantı eklemek için kullanılır.
+        ///</summary>
         public void addConnection(string origin, string origintype, string destination, string destinationtype, string colorıd, string phaseid)//güncelleme gerekir
         {     
             getFromLocalTablesproject("PConnections").Rows.Add(Guid.NewGuid().ToString(), getlastconnectionorder(phaseid), origin, origintype, destination, destinationtype, colorıd, null, null, null, phaseid, null, null);
         }
 
 
-
+        ///<summary>
+        ///Projeden ilgili fazdaki son sıra numrasını çeker.
+        ///</summary>
         public string getlastconnectionorder(string phaseid)//güncelleme gerekir
         {
             try
@@ -31,16 +36,9 @@ namespace NURSAN_PROJE.SQL
 
         }
 
-
-
-
-
-
-
-
-
-
-
+        ///<summary>
+        ///Kullanıcıya gösterilecek bağlantı tablosunu günceller.
+        ///</summary>
         private void update_ConnectionTable(string phaseid)
         {
             DataTable connections = new DataTable("CONNECTIONS");
@@ -50,9 +48,6 @@ namespace NURSAN_PROJE.SQL
             connections.Columns.Add("WireColor");
             connections.Columns.Add("ÖZELLİKLER");
             var rows = getFromLocalTablesproject("PConnections").Select("ID_etap_1 = '" + phaseid + "'","Order ASC");
-
-          //  da = new SQLiteDataAdapter("SELECT * FROM PConnections Where ID_etap_1= '" + phaseid + "' ORDER BY \"Order\" ASC", con);
-            
             foreach(var row in rows)
             {
                 string origin, destination, color;
@@ -83,13 +78,8 @@ namespace NURSAN_PROJE.SQL
             {
                 LocalTables.localtables.projecttables.Tables.Remove("CONNECTIONS");
                 LocalTables.localtables.projecttables.Tables.Add(connections);
-            }
-                       
+            }                       
         }
-
-
-
-
     }
 
 }

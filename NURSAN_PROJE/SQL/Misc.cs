@@ -13,6 +13,9 @@ namespace NURSAN_PROJE.SQL
 {
     public partial class DataManager
     {
+        ///<summary>
+        ///Gönderilen veriyi int e dönüştürmeye çalışır. Başaramazsa uyarı verir ve sıfır döndürür.
+        ///</summary>
         public int str2ınt(object source)
         {
             try
@@ -25,6 +28,9 @@ namespace NURSAN_PROJE.SQL
                 return 0;
             }
         }
+        ///<summary>
+        ///Gönderilen byte[] türünde fotoğraf bilgisini Image türünü çevirip döndürür.
+        ///</summary>
         private Image blob2Image(byte[] imagedata)
         {
             try
@@ -53,6 +59,9 @@ namespace NURSAN_PROJE.SQL
                 return null;
             }
         }
+        ///<summary>
+        ///Gönderilen Image türünde fotoğraf bilgisini byte[] türünü çevirip döndürür.
+        ///</summary>
         private byte[] image2Blob(System.Drawing.Image imageIn)
         {
 
@@ -83,7 +92,9 @@ namespace NURSAN_PROJE.SQL
                 return data;
             }
         }
-
+        ///<summary>
+        ///Gönderilen Image türünün boyutunu string formatında döndürür.
+        ///</summary>
         private string imageSize(Image image,int bytelength)
         {
             string jpegByteSize;
@@ -94,10 +105,16 @@ namespace NURSAN_PROJE.SQL
                 return jpegByteSize; 
             }
         }
+        ///<summary>
+        ///Gönderilen long türünde byte bilgisini megabyte a çevirip string olarak döndürür.
+        ///</summary>
         static string ConvertBytesToMegabytes(long bytes)
         {
             return ((bytes / 1024f) / 1024f).ToString();
         }
+        ///<summary>
+        ///Gönderilen string türünde guid verisinin doğrulamasını yapıp Boolean olarak cevap döndürür.
+        ///</summary>
         public bool GuidCheck(string guid)
         {
             try
@@ -108,50 +125,68 @@ namespace NURSAN_PROJE.SQL
             catch
             {
                 MessageBox.Show("UUID HATASI : " + guid + " ID GEÇERLİ DEĞİL");
-                return false;
+                return false;               
             }
         }
+
+
         bool pointingstarted = false;
+
+        ///<summary>
+        ///Müsait ilk test noktasını string olarak döndürür döndürdüğü test noktasını geçici olarak ("TEMP","TEMP","döndürülennokta","TEMP") ilgili tabloya kaydeder.
+        ///</summary>
         public string getIOPointNumber()
         {
-            var rows = getFromLocalTablesproject("PIO_connection").Select("","IO_PIN ASC");           
-            int syc = 1;
-            int freepoint = 0;           
-            foreach(var row in rows)
+            if(pointingstarted = true)
             {
-                try
+                var rows = getFromLocalTablesproject("PIO_connection").Select("", "IO_PIN ASC");
+                int syc = 1;
+                int freepoint = 0;
+                foreach (var row in rows)
                 {
-                    if (row[3] != DBNull.Value)
-                    {                        
-                        if (Convert.ToInt32(row[3]) == syc)
+                    try
+                    {
+                        if (row[3] != DBNull.Value)
                         {
-                            syc++;
-                            continue;
+                            if (Convert.ToInt32(row[3]) == syc)
+                            {
+                                syc++;
+                                continue;
+                            }
+                            else
+                            {
+                                freepoint = syc + 1;
+                                break;
+                            }
                         }
                         else
                         {
-                            freepoint = syc + 1;
-                            break;
+                            Console.WriteLine("WARNING! " + row[0] + " is not assigned test point!");
+
                         }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        Console.WriteLine("WARNING! " + row[0] + " is not assigned test point!");
-
+                        MessageBox.Show(ex.Message);
                     }
+
+
                 }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-             
-              
+                //  MessageBox.Show();
+                getFromLocalTablesproject("PIO_connection").Rows.Add("TEMP", "TEMP", "TEMP", syc, "TEMP");
+                return syc.ToString();
             }
-            //  MessageBox.Show();
-            getFromLocalTablesproject("PIO_connection").Rows.Add("TEMP", "TEMP", "TEMP", syc, "TEMP");
-            return syc.ToString();
+            else
+            {
+                return "HATA lütfen pointingstarted true olarak ayarlayın";
+            }
+         
 
         }
+
+        ///<summary>
+        ///Test noktasının müsaitliği kontrol eder bool olarak döndürür.
+        ///</summary>
         public bool checkIOpoint(string point)
         {
             var rows = getFromLocalTablesproject("PIO_connection").Select("IO_PIN ="+Convert.ToInt32(point)+"", "IO_PIN ASC");
@@ -164,6 +199,9 @@ namespace NURSAN_PROJE.SQL
                 return true;
             }
         }
+        ///<summary>
+        ///Test noktasının hangi soket tarafından kullanıldığını kontrol eder. String olarak döndürür.
+        ///</summary>
         public string checkIOpointWhoUse(string point,string name)
         {
             var rows = getFromLocalTablesproject("PIO_connection").Select("IO_PIN =" + Convert.ToInt32(point) + "", "IO_PIN ASC");
@@ -185,6 +223,10 @@ namespace NURSAN_PROJE.SQL
                 return "NULL";
             }
         }
+
+        ///<summary>
+        ///Otomatik test pini atama işlemini başlatır/bitirir.
+        ///</summary>
         public void setstartpointing(bool state)
         {
             if(pointingstarted == true && state == true)
@@ -208,6 +250,9 @@ namespace NURSAN_PROJE.SQL
                 }
             }
         }
+        ///<summary>
+        ///Manuel test pini atama işlemini başlatır/bitirir.
+        ///</summary>
         public void manualpointing(bool state,int ıo)
         {
             pointingstarted = state;
@@ -225,15 +270,23 @@ namespace NURSAN_PROJE.SQL
                 getFromLocalTablesproject("PIO_connection").Rows.Add("TEMP", "TEMP", "TEMP", ıo, "TEMP");
             }
         }
+        ///<summary>
+        ///Local anaveritabanı tablolarından istenen tabloyu döndürür.
+        ///</summary>
         private DataTable getFromLocalTablesmain(string tablename)          
         {
             return LocalTables.localtables.maintables.Tables[tablename];
         }
+        ///<summary>
+        ///Local proje veritabanı tablolarından istenen tabloyu döndürür.
+        ///</summary>
         public DataTable getFromLocalTablesproject(string tablename)
         {
             return LocalTables.localtables.projecttables.Tables[tablename];
         }
-
+        ///<summary>
+        ///Soket ismi uygunluğunu kontrol eder bool döndürür.
+        ///</summary>
         public bool checknameAvailability(String name)
         {
             var rows = getFromLocalTablesmain("Sockets").Select("Adı ='" + name + "'");
@@ -246,6 +299,9 @@ namespace NURSAN_PROJE.SQL
                return true;
             }
         }
+        ///<summary>
+        ///Led numarası uygunluğunu kontrol eder bool döndürür.
+        ///</summary>
         public bool checklednumberAvailability(String lednumber)
         {
             var rows = getFromLocalTablesmain("Sockets").Select("Led_numarasi =" + lednumber + "");
@@ -258,16 +314,6 @@ namespace NURSAN_PROJE.SQL
                 return true;
             }
         }
-       /*public static DataTable Delete(this DataTable table, string filter)
-        {
-            table.Select(filter).Delete();
-            return table;
-        }
-        public static void Delete(this IEnumerable<DataRow> rows)
-        {
-            foreach (var row in rows)
-                row.Delete();
-        }
-        */
+
     }
 }

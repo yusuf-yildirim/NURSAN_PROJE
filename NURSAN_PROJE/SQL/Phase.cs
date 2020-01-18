@@ -8,8 +8,10 @@ namespace NURSAN_PROJE.SQL
 {
     partial class DataManager
     {
-
-        public void addPhase(string phaseName)//güncelleme gerekir
+        ///<summary>
+        ///Projeye faz ekler
+        ///</summary>
+        public void addPhase(string phaseName)
         {
             LocalTables.localtables.projecttables.Tables["tbl_etap"].Rows.Add(Guid.NewGuid().ToString(), phaseName);
         }

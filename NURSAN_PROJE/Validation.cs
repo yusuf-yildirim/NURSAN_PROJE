@@ -147,8 +147,7 @@ namespace NURSAN_PROJE
         
         //TO-DO
         private void newsocketname_Properties_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-           
+        {          
             if (newsocketname.Text.Length > 0)
             {
                 if (manager.checknameAvailability(newsocketname.Text))
