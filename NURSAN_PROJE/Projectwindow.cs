@@ -50,7 +50,7 @@ namespace NURSAN_PROJE
                 MessageBox.Show(ex.Message);
             }
             manager = new DataManager();
-            updater = new DataManager.TableUpdater(manager);
+            updater = new DataManager.TableUpdater();
             Task.Factory.StartNew(() => refresh_socket_grids());
         }
 
@@ -870,7 +870,7 @@ namespace NURSAN_PROJE
 
         private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DataManager.TableUpdater updater = new DataManager.TableUpdater(manager);
+            DataManager.TableUpdater updater = new DataManager.TableUpdater();
 
             foreach(string tablename in Enum.GetNames(typeof(MainTableName)))
             {

@@ -114,7 +114,7 @@ namespace NURSAN_PROJE.SQL
             ///</summary>
             public void updateTable(DataTable table,Databases db)
             {
-                parent.localTables.updateTable(table, db);
+                DataManager.localTables.updateTable(table, db);
             }
         }
     }
