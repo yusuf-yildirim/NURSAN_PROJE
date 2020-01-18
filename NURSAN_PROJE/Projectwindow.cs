@@ -540,12 +540,14 @@ namespace NURSAN_PROJE
                         DiodeNode.SetValue("Soket Adı", "Diyotlar");
                         GenericComponentNode.SetValue("Soket Adı", "Genel Bileşenler");
                     }
+                    TreeListNode childnode1;
+                    TreeListNode childnode2;
                     switch (componentlist.Rows[i][2].ToString())
                     {
                         case "RESISTOR":
-                            TreeListNode childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, ResistorNode);
+                            childnode1 = treeListLookUpEdit1TreeList.AppendNode(null, ResistorNode);
                             childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
-                            TreeListNode childnode2 = treeListLookUpEdit1TreeList.AppendNode(null, childnode1);
+                            childnode2 = treeListLookUpEdit1TreeList.AppendNode(null, childnode1);
                             childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
                             break;
                         case "CAPACITOR":
