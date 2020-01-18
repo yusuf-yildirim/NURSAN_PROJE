@@ -1558,7 +1558,6 @@
             this.Where_to_treelist_lookup.Properties.TreeList = this.treeList1;
             this.Where_to_treelist_lookup.Size = new System.Drawing.Size(171, 22);
             this.Where_to_treelist_lookup.TabIndex = 49;
-            this.Where_to_treelist_lookup.Popup += new System.EventHandler(this.Where_to_treelist_lookup_Popup);
             // 
             // treeList1
             // 
@@ -1629,8 +1628,6 @@
             this.treeListLookUpEdit1.Properties.TreeList = this.treeListLookUpEdit1TreeList;
             this.treeListLookUpEdit1.Size = new System.Drawing.Size(171, 22);
             this.treeListLookUpEdit1.TabIndex = 47;
-            this.treeListLookUpEdit1.Popup += new System.EventHandler(this.treeListLookUpEdit1_Popup);
-            this.treeListLookUpEdit1.BeforePopup += new System.EventHandler(this.treeListLookUpEdit1_BeforePopup);
             // 
             // treeListLookUpEdit1TreeList
             // 
