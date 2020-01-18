@@ -93,6 +93,11 @@ namespace NURSAN_PROJE
 
         private void simpleButton11_Click(object sender, EventArgs e)
         {
+
+            foreach(TextEdit control in newsocketvargroup.Controls)
+            {
+                control.IsModified = true;
+            }
             //TO-DO
             addsocketvalidateresult = true;
             newsocketname.DoValidate();
