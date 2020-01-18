@@ -11,7 +11,7 @@ namespace NURSAN_PROJE.SQL
 {
     partial class DataManager
     {
-        LocalTables localTables;
+        private static LocalTables localTables;
         private static bool initialize = true;
         public DataManager()
         {
