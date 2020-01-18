@@ -12,9 +12,9 @@ namespace NURSAN_PROJE.SQL
         ///<summary>
         ///Projeye yeni bağlantı eklemek için kullanılır.
         ///</summary>
-        public void addConnection(string origin, string origintype, string destination, string destinationtype, string colorıd, string phaseid)//güncelleme gerekir
+        public void addConnection(string origin, string origintype, string destination, string destinationtype, string colorıd, string phaseid,string cablename)//güncelleme gerekir
         {     
-            getFromLocalTablesproject("PConnections").Rows.Add(Guid.NewGuid().ToString(), getlastconnectionorder(phaseid), origin, origintype, destination, destinationtype, colorıd, null, null, null, phaseid, null, null);
+            getFromLocalTablesproject("PConnections").Rows.Add(Guid.NewGuid().ToString(), getlastconnectionorder(phaseid), origin, origintype, destination, destinationtype, colorıd, cablename, null, null, phaseid, null, null);
         }
 
 
@@ -44,7 +44,7 @@ namespace NURSAN_PROJE.SQL
             DataTable connections = new DataTable("CONNECTIONS");
             connections.Columns.Add("NEREDEN");
             connections.Columns.Add("NEREYE");
-            connections.Columns.Add("KABLO KONTROL");
+            connections.Columns.Add("KABLO ADI");
             connections.Columns.Add("WireColor");
             connections.Columns.Add("ÖZELLİKLER");
             var rows = getFromLocalTablesproject("PConnections").Select("ID_etap_1 = '" + phaseid + "'","Order ASC");
@@ -68,7 +68,7 @@ namespace NURSAN_PROJE.SQL
                     destination = getComponentInfo(row[4].ToString());
                 }
                 color = getColorInfo(row[6].ToString());
-                connections.Rows.Add(origin, destination, color, color, color);  //TO-DO
+                connections.Rows.Add(origin, destination, row[7], color, null);  //TO-DO
             }
             try
             {

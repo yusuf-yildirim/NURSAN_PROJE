@@ -86,7 +86,7 @@ namespace NURSAN_PROJE
 
 
             color = gridLookUpEdit1View.GetRowCellValue(gridLookUpEdit1View.GetSelectedRows()[0], "ID_color").ToString();
-            manager.addConnection(origin, origintype, destination, destinationtype, color, gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString()) ;
+            manager.addConnection(origin, origintype, destination, destinationtype, color, gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString(),"kabloadıdüzelt!") ;
             gridControl1.DataSource = manager.getConnectionbyPhase(gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString());
 
         }

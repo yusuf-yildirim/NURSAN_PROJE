@@ -1392,7 +1392,7 @@
             // 
             // colKABLOKONTROL
             // 
-            this.colKABLOKONTROL.FieldName = "KABLO KONTROL";
+            this.colKABLOKONTROL.FieldName = "KABLO ADI";
             this.colKABLOKONTROL.Name = "colKABLOKONTROL";
             this.colKABLOKONTROL.Visible = true;
             this.colKABLOKONTROL.VisibleIndex = 2;
@@ -1685,9 +1685,9 @@
             // 
             this.labelControl10.Location = new System.Drawing.Point(6, 203);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(42, 13);
+            this.labelControl10.Size = new System.Drawing.Size(45, 13);
             this.labelControl10.TabIndex = 9;
-            this.labelControl10.Text = "Özellikler";
+            this.labelControl10.Text = "Kablo Adı";
             // 
             // labelControl9
             // 
