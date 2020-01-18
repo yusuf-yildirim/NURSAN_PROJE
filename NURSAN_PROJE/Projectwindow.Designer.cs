@@ -213,6 +213,9 @@
             this.Colors_lookup = new DevExpress.XtraEditors.GridLookUpEdit();
             this.Colors = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.component_tabpane = new DevExpress.XtraBars.Navigation.TabPane();
@@ -787,7 +790,8 @@
             this.change_configured_sockets_page});
             this.navigationPane1.RegularSize = new System.Drawing.Size(493, 742);
             this.navigationPane1.SelectedPage = this.change_configured_sockets_page;
-            this.navigationPane1.Size = new System.Drawing.Size(493, 742);
+            this.navigationPane1.Size = new System.Drawing.Size(98, 742);
+            this.navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
             this.navigationPane1.TabIndex = 42;
             this.navigationPane1.Text = "SOKET DÜZENLE";
             this.navigationPane1.TransitionType = DevExpress.Utils.Animation.Transitions.Push;
@@ -936,7 +940,7 @@
             this.change_configured_sockets_page.Controls.Add(this.labelControl44);
             this.change_configured_sockets_page.Controls.Add(this.gridControl4);
             this.change_configured_sockets_page.Name = "change_configured_sockets_page";
-            this.change_configured_sockets_page.Size = new System.Drawing.Size(373, 694);
+            this.change_configured_sockets_page.Size = new System.Drawing.Size(0, 0);
             // 
             // save_socket_data_button
             // 
@@ -1722,23 +1726,52 @@
             // Colors_lookup
             // 
             this.Colors_lookup.EditValue = "Seçiniz...";
-            this.Colors_lookup.Location = new System.Drawing.Point(13, 159);
+            this.Colors_lookup.Location = new System.Drawing.Point(12, 159);
             this.Colors_lookup.MenuManager = this.toolbarFormManager1;
             this.Colors_lookup.Name = "Colors_lookup";
+            this.Colors_lookup.Properties.AcceptEditorTextAsNewValue = DevExpress.Utils.DefaultBoolean.False;
             this.Colors_lookup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Colors_lookup.Properties.DataSource = this.Colors;
+            this.Colors_lookup.Properties.DisplayMember = "ColorName";
             this.Colors_lookup.Properties.PopupView = this.gridLookUpEdit1View;
             this.Colors_lookup.Size = new System.Drawing.Size(171, 20);
             this.Colors_lookup.TabIndex = 50;
             this.Colors_lookup.BeforePopup += new System.EventHandler(this.Colors_lookup_BeforePopup);
+            this.Colors_lookup.EditValueChanged += new System.EventHandler(this.Colors_lookup_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn12,
+            this.gridColumn13,
+            this.gridColumn14});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "gridColumn12";
+            this.gridColumn12.FieldName = "ID_color";
+            this.gridColumn12.Name = "gridColumn12";
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Renk";
+            this.gridColumn13.FieldName = "ColorName";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 0;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Hex Kodu";
+            this.gridColumn14.FieldName = "HexCode";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 1;
             // 
             // tabNavigationPage3
             // 
@@ -3471,5 +3504,8 @@
         private DevExpress.XtraEditors.SimpleButton initializebutton;
         private DevExpress.XtraEditors.CheckEdit checkEdit2;
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
     }
 }

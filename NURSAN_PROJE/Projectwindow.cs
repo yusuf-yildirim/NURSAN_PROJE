@@ -86,7 +86,7 @@ namespace NURSAN_PROJE
 
 
             color = gridLookUpEdit1View.GetRowCellValue(gridLookUpEdit1View.GetSelectedRows()[0], "ID_color").ToString();
-            manager.addConnection(origin, origintype, destination, destinationtype, color, gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString(),"kabloadıdüzelt!") ;
+            manager.addConnection(origin, origintype, destination, destinationtype, color, gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString(),textEdit9.Text) ;
             gridControl1.DataSource = manager.getConnectionbyPhase(gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString());
 
         }
@@ -900,7 +900,10 @@ namespace NURSAN_PROJE
 
         }
 
-     
+        private void Colors_lookup_EditValueChanged(object sender, EventArgs e)
+        {
+            //Colors_lookup.valu ID_color Color Name Hex Code
+        }
     }
 }
 
