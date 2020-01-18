@@ -122,11 +122,18 @@ namespace NURSAN_PROJE.SQL
             else
             {
                 var rows = getFromLocalTablesmain("Components").Select("ID_component='" + ComponentID + "'");
-                getFromLocalTablesproject("PComponents").ImportRow(rows[0]);
-            }
-        
-
-          
+                if(rows[0].RowState != System.Data.DataRowState.Added)
+                {
+                    rows[0].SetAdded();
+                    getFromLocalTablesproject("PComponents").ImportRow(rows[0]);
+                    rows[0].AcceptChanges();
+                }
+                else
+                {
+                    getFromLocalTablesproject("PComponents").ImportRow(rows[0]);
+                }
+              
+            }         
         }
 
 
