@@ -338,33 +338,28 @@ namespace NURSAN_PROJE
         {
 
             treeList1.ClearNodes();
+            treeList1.ForceInitialize();
             try
             {
                 DataTable socketlist = manager.getProjectSockets();
                 Where_to_treelist_lookup.Properties.DisplayMember = "Soket Adı";
                 TreeListNode SocketsNode = null;
-                Console.WriteLine("where to ilk for üstü");
                 for (int i = 0; i < socketlist.Rows.Count; i++)
                 {
-                    Console.WriteLine("where to ilk for altı");
                     if (i == 0)
                     {
-                        Console.WriteLine("where to ilk if");
                         SocketsNode = treeList1.AppendNode(null, null);
                         SocketsNode.SetValue("Soket Adı", "SOKETLER");
                     }
-                    Console.WriteLine("where to ilk iften çıktı");
                     TreeListNode node1 = treeList1.AppendNode(null, SocketsNode);
 
                     node1.SetValue("Soket Adı", socketlist.Rows[i][1]);
                     node1.SetValue("SoketID", socketlist.Rows[i][0]);
 
                     DataTable socketiolist = manager.getIObySocketID(socketlist.Rows[i][0].ToString());
-                    Console.WriteLine("where to ikinci for üstü");
 
                     for (int y = 0; y < socketiolist.Rows.Count; y++)
                     {
-                        Console.WriteLine("where to ikinci for altı");
 
                         try
                         {
@@ -372,15 +367,12 @@ namespace NURSAN_PROJE
                             childnode1.SetValue("IOID", socketiolist.Rows[y][0]);
 
                             childnode1.SetValue("Soket Adı", socketlist.Rows[i][1] + " : " + socketiolist.Rows[y][2]);
-                            Console.WriteLine("where to try içindeki if üstü");
 
                             if (Convert.ToInt32(socketiolist.Rows[y][3]) != 0)
                             {
-                                childnode1.SetValue("SoketIO", "Cihaz Pin : " + socketiolist.Rows[y][3]);//hata burada
-                                Console.WriteLine("where to try içindeki if sonu");
+                                childnode1.SetValue("SoketIO", "Cihaz Pin : " + socketiolist.Rows[y][3]);
 
                             }
-                            Console.WriteLine("socketler yapıldı");
 
                         }
                         catch (Exception err)
@@ -397,31 +389,28 @@ namespace NURSAN_PROJE
                 TreeListNode DiodeNode = null;
                 TreeListNode GenericComponentNode = null;
                 DataTable componentlist = manager.getMainComponents();//TO-DO!!!
+
+                ComponentsNode = treeList1.AppendNode(null, null);
+                ResistorNode = treeList1.AppendNode(null, ComponentsNode);
+                CapacitorNode = treeList1.AppendNode(null, ComponentsNode);
+                SpliceNode = treeList1.AppendNode(null, ComponentsNode);
+                DiodeNode = treeList1.AppendNode(null, ComponentsNode);
+                GenericComponentNode = treeList1.AppendNode(null, ComponentsNode);
+
+                ComponentsNode.SetValue("Soket Adı", "Komponentler");
+                ResistorNode.SetValue("Soket Adı", "Dirençler");
+                CapacitorNode.SetValue("Soket Adı", "Kapasitörler");
+                SpliceNode.SetValue("Soket Adı", "Düğümler");
+                DiodeNode.SetValue("Soket Adı", "Diyotlar");
+                GenericComponentNode.SetValue("Soket Adı", "Genel Bileşenler");
                 for (int i = 0; i < componentlist.Rows.Count; i++)
                 {
-                    if (i == 0)
-                    {
-                        ComponentsNode = treeList1.AppendNode(null, null);
-                        ResistorNode = treeList1.AppendNode(null, ComponentsNode);
-                        CapacitorNode = treeList1.AppendNode(null, ComponentsNode);
-                        SpliceNode = treeList1.AppendNode(null, ComponentsNode);
-                        DiodeNode = treeList1.AppendNode(null, ComponentsNode);
-                        GenericComponentNode = treeList1.AppendNode(null, ComponentsNode);
-
-                        ComponentsNode.SetValue("Soket Adı", "Komponentler");
-                        ResistorNode.SetValue("Soket Adı", "Dirençler");
-                        CapacitorNode.SetValue("Soket Adı", "Kapasitörler");
-                        SpliceNode.SetValue("Soket Adı", "Düğümler");
-                        DiodeNode.SetValue("Soket Adı", "Diyotlar");
-                        GenericComponentNode.SetValue("Soket Adı", "Genel Bileşenler");
-                    }
                     TreeListNode childnode1;
                     TreeListNode childnode2;
                     switch (componentlist.Rows[i][2].ToString())
                     {
                         case "RESISTOR":
 
-                            Console.WriteLine("switch case =" +i);
                             childnode1 = treeList1.AppendNode(null, ResistorNode);
                             childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
                             childnode2 = treeList1.AppendNode(null, childnode1);
@@ -472,6 +461,7 @@ namespace NURSAN_PROJE
             if (tabPane1.SelectedPageIndex == 1)
             {
                 Where_to_treelist_lookup_Popup(sender, EventArgs.Empty);
+                
                 treeListLookUpEdit1_BeforePopup(sender, e);
             }
         }
@@ -497,6 +487,8 @@ namespace NURSAN_PROJE
         private void treeListLookUpEdit1_BeforePopup(object sender, EventArgs e)
         {
             treeListLookUpEdit1TreeList.ClearNodes();
+            treeListLookUpEdit1TreeList.ForceInitialize();
+
             try
             {
                 DataTable socketlist = manager.getProjectSockets();
@@ -542,24 +534,21 @@ namespace NURSAN_PROJE
                 TreeListNode DiodeNode = null;
                 TreeListNode GenericComponentNode = null;
                 DataTable componentlist = manager.getMainComponents();//TO-DO!!!!
+                ComponentsNode = treeListLookUpEdit1TreeList.AppendNode(null, null);
+                ResistorNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
+                CapacitorNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
+                SpliceNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
+                DiodeNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
+                GenericComponentNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
+
+                ComponentsNode.SetValue("Soket Adı", "Komponentler");
+                ResistorNode.SetValue("Soket Adı", "Dirençler");
+                CapacitorNode.SetValue("Soket Adı", "Kapasitörler");
+                SpliceNode.SetValue("Soket Adı", "Düğümler");
+                DiodeNode.SetValue("Soket Adı", "Diyotlar");
+                GenericComponentNode.SetValue("Soket Adı", "Genel Bileşenler");
                 for (int i = 0; i < componentlist.Rows.Count; i++)
                 {
-                    if (i == 0)
-                    {
-                        ComponentsNode = treeListLookUpEdit1TreeList.AppendNode(null, null);
-                        ResistorNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
-                        CapacitorNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
-                        SpliceNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
-                        DiodeNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
-                        GenericComponentNode = treeListLookUpEdit1TreeList.AppendNode(null, ComponentsNode);
-
-                        ComponentsNode.SetValue("Soket Adı", "Komponentler");
-                        ResistorNode.SetValue("Soket Adı", "Dirençler");
-                        CapacitorNode.SetValue("Soket Adı", "Kapasitörler");
-                        SpliceNode.SetValue("Soket Adı", "Düğümler");
-                        DiodeNode.SetValue("Soket Adı", "Diyotlar");
-                        GenericComponentNode.SetValue("Soket Adı", "Genel Bileşenler");
-                    }
                     TreeListNode childnode1;
                     TreeListNode childnode2;
                     switch (componentlist.Rows[i][2].ToString())
