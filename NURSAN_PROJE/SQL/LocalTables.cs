@@ -28,7 +28,7 @@ namespace NURSAN_PROJE.SQL
             }
             else
             {
-                MessageBox.Show("TABLOLAR INITIALIZE EDİLMEDEN KULLANILAMAZ LÜTFEN INITIALIZE METHODUNU ÇAĞIRIN!");
+                Console.WriteLine("Daha önceden initialize edildiğinden emin olun!");
             }
            
         }

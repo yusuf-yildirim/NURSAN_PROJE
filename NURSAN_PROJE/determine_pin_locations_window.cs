@@ -22,7 +22,7 @@ namespace NURSAN_PROJE
         {
             db = new DBeng();
             manager = new DataManager();
-            updater = new DataManager.TableUpdater(manager);
+            updater = new DataManager.TableUpdater();
             InitializeComponent();
             pin_locations = new List<String>();
             //socketimage_to_be_processed = new Bitmap("dummy filename");
@@ -38,7 +38,7 @@ namespace NURSAN_PROJE
         public determine_pin_locations_window(string SocketID, Bitmap img)
         {
             manager = new DataManager();
-            updater = new DataManager.TableUpdater(manager);
+            updater = new DataManager.TableUpdater();
             InitializeComponent();
             //CheckForIllegalCrossThreadCalls = false;
             PropertyItem[] propertyItem2 = img.PropertyItems;

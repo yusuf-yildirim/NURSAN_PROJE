@@ -12,11 +12,19 @@ namespace NURSAN_PROJE.SQL
     partial class DataManager
     {
         private static LocalTables localTables;
-        private static bool initialize = true;
+        private const bool initialize = true;
+        private bool initialized = false;
         public DataManager()
         {
-            localTables = new LocalTables(initialize);
-            initialize = false;
+            if(initialized == false)
+            {
+                localTables = new LocalTables(initialize);
+                initialized = true;
+            }
+            else
+            {
+
+            }                  
         }
         ///<summary>
         ///Kullanıcıya gösterilecek main veritabanı soketlerini DataTable olarak döndürür.
@@ -103,12 +111,7 @@ namespace NURSAN_PROJE.SQL
 
         public class TableUpdater
         {
-            public DataManager parent;
-
-            public TableUpdater(DataManager parent)
-            {
-                this.parent = parent;
-            }
+         
             ///<summary>
             ///İstenen tabloyu istenen veri tabanında senkronize eder.
             ///</summary>
