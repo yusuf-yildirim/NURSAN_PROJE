@@ -28,8 +28,7 @@ namespace NURSAN_PROJE.SQL
             }
             else
             {
-                /*localtables = new LocalTablesStruct();
-                localtables.initialize();*/
+                MessageBox.Show("TABLOLAR INITIALIZE EDİLMEDEN KULLANILAMAZ LÜTFEN INITIALIZE METHODUNU ÇAĞIRIN!");
             }
            
         }
