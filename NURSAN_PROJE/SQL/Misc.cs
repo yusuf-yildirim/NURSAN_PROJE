@@ -273,16 +273,16 @@ namespace NURSAN_PROJE.SQL
         ///<summary>
         ///Local anaveritabanı tablolarından istenen tabloyu döndürür.
         ///</summary>
-        private DataTable getFromLocalTablesmain(string tablename)          
+        public DataTable getFromLocalTablesmain(string tablename)          
         {
-            return LocalTables.localtables.maintables.Tables[tablename];
+            return localTables.getLocalTable(tablename,Databases.Main);
         }
         ///<summary>
         ///Local proje veritabanı tablolarından istenen tabloyu döndürür.
         ///</summary>
         public DataTable getFromLocalTablesproject(string tablename)
         {
-            return LocalTables.localtables.projecttables.Tables[tablename];
+            return localTables.getLocalTable(tablename, Databases.Project);
         }
         ///<summary>
         ///Soket ismi uygunluğunu kontrol eder bool döndürür.

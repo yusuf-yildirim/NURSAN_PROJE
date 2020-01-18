@@ -13,7 +13,7 @@ namespace NURSAN_PROJE.SQL
         ///</summary>
         public void addPhase(string phaseName)
         {
-            LocalTables.localtables.projecttables.Tables["tbl_etap"].Rows.Add(Guid.NewGuid().ToString(), phaseName);
+            getFromLocalTablesproject("tbl_etap").Rows.Add(Guid.NewGuid().ToString(), phaseName);
         }
 
 

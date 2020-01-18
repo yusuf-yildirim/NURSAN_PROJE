@@ -75,8 +75,53 @@ namespace NURSAN_PROJE.SQL
             return database.GetDataTable(tablename, type);
         }
 
+        public DataTable getLocalTable(string tablename, Databases type)
+        {
+            if(type == Databases.Main)
+            {
+               return localtables.maintables.Tables[tablename];
+            }
+            else if (type == Databases.Project)
+            {
+                return localtables.projecttables.Tables[tablename];
+            }
+            else
+            {
+                return null;              
+            }
+        }
+        public void addLocalTable(DataTable table, Databases type)
+        {
+            if (type == Databases.Main)
+            {
+                localtables.maintables.Tables.Add(table);
+            }
+            else if (type == Databases.Project)
+            {
+                localtables.projecttables.Tables.Add(table);
+            }
+            else
+            {
+                MessageBox.Show("HATA");
+            }
+          
+        }
+        public void removeLocalTable(string tablename,Databases type)
+        {
 
-
+            if (type == Databases.Main)
+            {
+                localtables.maintables.Tables.Remove(tablename);
+            }
+            else if (type == Databases.Project)
+            {
+                localtables.projecttables.Tables.Remove(tablename);
+            }
+            else
+            {
+                MessageBox.Show("HATA");
+            }
+        }
 
 
         bool disposed = false;

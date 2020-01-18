@@ -122,12 +122,12 @@ namespace NURSAN_PROJE.SQL
             
             try
             {
-                LocalTables.localtables.projecttables.Tables.Add(iotable);
+                localTables.addLocalTable(iotable, Databases.Project);                
             }
             catch
             {
-                LocalTables.localtables.projecttables.Tables.Remove("MAPPEDIO");
-                LocalTables.localtables.projecttables.Tables.Add(iotable);
+                localTables.removeLocalTable("MAPPEDIO",Databases.Project);
+                localTables.addLocalTable(iotable, Databases.Project);               
             }
 
         }

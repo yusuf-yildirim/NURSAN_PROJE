@@ -19,7 +19,7 @@ namespace NURSAN_PROJE.SQL
             if(initialized == false)
             {
                 localTables = new LocalTables(initialize);
-                initialized = true;
+                initialized = true;                
             }
             else
             {

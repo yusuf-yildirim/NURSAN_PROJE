@@ -93,7 +93,7 @@ namespace NURSAN_PROJE
                 {
                     maintablegrid.DataSource = null;
                     maintablegridview.Columns.Clear();
-                    maintablegrid.DataSource = LocalTables.localtables.maintables.Tables[maintableslist.SelectedValue.ToString()];
+                    maintablegrid.DataSource = manager.getFromLocalTablesmain(maintableslist.SelectedValue.ToString());
                 }               
             }           
         }
@@ -111,7 +111,7 @@ namespace NURSAN_PROJE
                 {
                     projecttablegrid.DataSource = null;
                     projecttablegridview.Columns.Clear();
-                    projecttablegrid.DataSource = LocalTables.localtables.projecttables.Tables[projecttablelist.SelectedValue.ToString()];
+                    projecttablegrid.DataSource = manager.getFromLocalTablesproject(projecttablelist.SelectedValue.ToString());
                 }
             }
         }
@@ -120,14 +120,14 @@ namespace NURSAN_PROJE
         {
             if (maintableslist.SelectedValue.ToString().Length > 0)
             {
-                updater.updateTable(LocalTables.localtables.maintables.Tables[maintableslist.SelectedValue.ToString()], Databases.Main);
+                updater.updateTable(manager.getFromLocalTablesmain(maintableslist.SelectedValue.ToString()), Databases.Main);
             }
         }
         private void projecttablesyncbutton_Click(object sender, EventArgs e)
         {
             if (projecttablelist.SelectedValue.ToString().Length > 0)
             {
-                updater.updateTable(LocalTables.localtables.projecttables.Tables[projecttablelist.SelectedValue.ToString()], Databases.Project);
+                updater.updateTable(manager.getFromLocalTablesproject(projecttablelist.SelectedValue.ToString()), Databases.Project);
             }
         }
         private void initializebutton_Click(object sender, EventArgs e)

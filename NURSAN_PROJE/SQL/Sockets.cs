@@ -18,7 +18,7 @@ namespace NURSAN_PROJE.SQL
         ///</summary>
         public void addSocket(object[] soc_parameters)
         {
-            LocalTables.localtables.maintables.Tables["Sockets"].Rows.Add(soc_parameters[0].ToString(), 
+            getFromLocalTablesmain("Sockets").Rows.Add(soc_parameters[0].ToString(), 
                                                                           soc_parameters[1].ToString(), 
                                                                           str2ınt(soc_parameters[2]),
                                                                           str2ınt(soc_parameters[3]),
@@ -30,13 +30,14 @@ namespace NURSAN_PROJE.SQL
         ///</summary>
         public void deleteProjectSocket(string SocketID)
         {
-            var rows = LocalTables.localtables.projecttables.Tables["PSockets"].Select("ID_soket = '"+SocketID+"'");
+            
+            var rows = getFromLocalTablesproject("PSockets").Select("ID_soket = '"+SocketID+"'");
             foreach (var row in rows)
                 row.Delete();
-            rows = LocalTables.localtables.projecttables.Tables["PIO_connection"].Select("ID_soket = '" + SocketID + "'");
+            rows = getFromLocalTablesproject("PIO_connection").Select("ID_soket = '" + SocketID + "'");
             foreach (var row in rows)
                 row.Delete();
-            rows = LocalTables.localtables.projecttables.Tables["ImageStore"].Select("ID_soket = '" + SocketID + "'");
+            rows = getFromLocalTablesproject("ImageStore").Select("ID_soket = '" + SocketID + "'");
             foreach (var row in rows)
                 row.Delete();
         }
@@ -45,7 +46,9 @@ namespace NURSAN_PROJE.SQL
         ///</summary>
         public void deleteMainSocket(string SocketID)
         {
-            var used = LocalTables.localtables.projecttables.Tables["PSockets"].Select("ID_soket = '" + SocketID + "'");
+            var used = getFromLocalTablesproject("PSockets").Select("ID_soket = '" + SocketID + "'");
+            
+                
             if (used.Length > 0)
             {
 
@@ -54,26 +57,27 @@ namespace NURSAN_PROJE.SQL
                 cikis = MessageBox.Show("Kaldırmak istediğiniz soket kullanımda, devam etmek istiyormusunuz ?", "Uyarı", MessageBoxButtons.YesNo);
                 if (cikis == DialogResult.Yes)
                 {
-                    var rows = LocalTables.localtables.maintables.Tables["Sockets"].Select("ID_soket = '" + SocketID + "'");
+                    var rows = getFromLocalTablesmain("Sockets").Select("ID_soket = '" + SocketID + "'");
+                   
                     foreach (var row in rows)
                         row.Delete();
-                    rows = LocalTables.localtables.maintables.Tables["IO_connections"].Select("ID_soket = '" + SocketID + "'");
+                    rows = getFromLocalTablesmain("IO_connections").Select("ID_soket = '" + SocketID + "'");
                     foreach (var row in rows)
                         row.Delete();
-                    rows = LocalTables.localtables.maintables.Tables["ImageStore"].Select("ID_soket = '" + SocketID + "'");
+                    rows = getFromLocalTablesmain("ImageStore").Select("ID_soket = '" + SocketID + "'");
                     foreach (var row in rows)
                         row.Delete();
                 }
             }
             else
             {
-                var rows = LocalTables.localtables.maintables.Tables["Sockets"].Select("ID_soket = '" + SocketID + "'");
+                var rows = getFromLocalTablesmain("Sockets").Select("ID_soket = '" + SocketID + "'");
                 foreach (var row in rows)
                     row.Delete();
-                rows = LocalTables.localtables.maintables.Tables["IO_connections"].Select("ID_soket = '" + SocketID + "'");
+                rows = getFromLocalTablesmain("IO_connections").Select("ID_soket = '" + SocketID + "'");
                 foreach (var row in rows)
                     row.Delete();
-                rows = LocalTables.localtables.maintables.Tables["ImageStore"].Select("ID_soket = '" + SocketID + "'");
+                rows = getFromLocalTablesmain("ImageStore").Select("ID_soket = '" + SocketID + "'");
                 foreach (var row in rows)
                     row.Delete();
             }
@@ -92,8 +96,8 @@ namespace NURSAN_PROJE.SQL
             }else
             {
                 LoadOption loadop = new LoadOption();
-                var socketrow = LocalTables.localtables.maintables.Tables["Sockets"].Select(searchexp);
-                var imagerow = LocalTables.localtables.maintables.Tables["ImageStore"].Select(searchexp);               
+                var socketrow = getFromLocalTablesmain("Sockets").Select(searchexp);
+                var imagerow = getFromLocalTablesmain("ImageStore").Select(searchexp);               
                 if (imagerow.Length > 0)
                 {
                     if (imagerow[0].RowState != DataRowState.Added)
@@ -212,16 +216,16 @@ namespace NURSAN_PROJE.SQL
         public void setSocketImage(string SocketID, Image img)
         {
                      
-                if (LocalTables.localtables.maintables.Tables["ImageStore"].Select("ID_soket = '" + SocketID + "'").Length > 0)
+                if (getFromLocalTablesmain("ImageStore").Select("ID_soket = '" + SocketID + "'").Length > 0)
                 {
                     byte[] data = image2Blob(img);
-                    LocalTables.localtables.maintables.Tables["ImageStore"].Select("ID_soket ='" + SocketID + "'")[0][2] = data;
+                    getFromLocalTablesmain("ImageStore").Select("ID_soket ='" + SocketID + "'")[0][2] = data;
                   
                 }
                 else
                 {
                     byte[] data = image2Blob(img);
-                    LocalTables.localtables.maintables.Tables["ImageStore"].Rows.Add(SocketID, null, data, imageSize(img, data.Length));
+                    getFromLocalTablesmain("ImageStore").Rows.Add(SocketID, null, data, imageSize(img, data.Length));
                
                    
                 }

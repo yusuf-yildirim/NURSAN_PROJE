@@ -72,12 +72,12 @@ namespace NURSAN_PROJE.SQL
             }
             try
             {
-                LocalTables.localtables.projecttables.Tables.Add(connections);
+                localTables.addLocalTable(connections,Databases.Project);
             }
             catch
             {
-                LocalTables.localtables.projecttables.Tables.Remove("CONNECTIONS");
-                LocalTables.localtables.projecttables.Tables.Add(connections);
+                localTables.removeLocalTable("CONNECTIONS",Databases.Project);
+                localTables.addLocalTable(connections, Databases.Project);
             }                       
         }
     }
