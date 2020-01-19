@@ -39,6 +39,7 @@ namespace NURSAN_PROJE.SQL
         private void update_ConnectionTable(string phaseid)
         {
             DataTable connections = new DataTable("CONNECTIONS");
+            connections.Columns.Add("CONNECTONID");
             connections.Columns.Add("NEREDEN");
             connections.Columns.Add("NEREDENID");
             connections.Columns.Add("NEREYE");
@@ -67,7 +68,7 @@ namespace NURSAN_PROJE.SQL
                     destination = getComponentInfo(row[4].ToString());
                 }
                 color = getColorInfo(row[6].ToString());
-                connections.Rows.Add(origin,row[2], destination,row[4], row[7], color, null);  //TO-DO
+                connections.Rows.Add(row[0],origin, row[2], destination,row[4], row[7], color, null);  //TO-DO
             }
             try
             {
