@@ -18,7 +18,7 @@ namespace NURSAN_PROJE
             BonusSkins.Register();
             //  Application.Run(new Projectwindow());
             tmplog.start_debug();
-            if (args.Length > 0)
+          /*  if (args.Length > 0)
             {
                 using (DBeng db = new DBeng())
                 {
@@ -29,7 +29,7 @@ namespace NURSAN_PROJE
                         locals.getalltables();
                     }
                 }
-            }
+            }*/
             Application.Run(args.Length == 0 ? new Projectwindow(string.Empty) : new Projectwindow(args[0]));
 
         }

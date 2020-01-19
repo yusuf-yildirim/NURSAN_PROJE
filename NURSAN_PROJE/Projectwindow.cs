@@ -37,7 +37,7 @@ namespace NURSAN_PROJE
             {
                 if (path.Length > 0)
                 {
-                    manager = new DataManager();
+                    manager = new DataManager(true);
                     updater = new DataManager.TableUpdater();
                     conf.set_connectionstring("tablo", path);
                     manager.createRecent(path);

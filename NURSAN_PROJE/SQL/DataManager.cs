@@ -14,21 +14,26 @@ namespace NURSAN_PROJE.SQL
         private static LocalTables localTables;
         private const bool initialize = true;
         private static bool initialized = false;
-        public DataManager()
-        {
-            if(initialized == false)
+
+        public DataManager(bool temp)
+        {           
+            if (temp)
             {
-                localTables = new LocalTables(initialize);
-                initialized = true;                
+                if (initialized == false)
+                {
+                    localTables = new LocalTables(initialize);
+                    initialized = true;
+                }
+                else
+                {
+                    Console.WriteLine("Daha önceden tablolar yüklenmiş!");
+                }
             }
             else
             {
-               // localTables = localTables;
-            }                  
-        }
-        public DataManager(bool temp)
-        {
-            localTables = new LocalTables(false);
+                 localTables = new LocalTables(temp);
+                 Console.WriteLine("Tablolar Yüklenmeyecek!");
+            }
         }
         ///<summary>
         ///Kullanıcıya gösterilecek main veritabanı soketlerini DataTable olarak döndürür.
