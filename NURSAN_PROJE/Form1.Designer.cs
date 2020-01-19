@@ -36,12 +36,9 @@
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement1 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement2 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             this.newproject = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton16 = new DevExpress.XtraEditors.SimpleButton();
             this.projectlistbox = new DevExpress.XtraEditors.ListBoxControl();
-            this.projeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.selectscreendb = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
@@ -49,7 +46,6 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.projectlistbox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +81,7 @@
             this.projectlistbox.Appearance.Options.UseFont = true;
             this.projectlistbox.AppearanceHighlight.BackColor = System.Drawing.Color.WhiteSmoke;
             this.projectlistbox.AppearanceHighlight.BackColor2 = System.Drawing.Color.Gainsboro;
-            this.projectlistbox.AppearanceHighlight.Font = new System.Drawing.Font("Tahoma", 214.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.projectlistbox.AppearanceHighlight.Font = new System.Drawing.Font("Tahoma", 229.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.projectlistbox.AppearanceHighlight.FontSizeDelta = 15;
             this.projectlistbox.AppearanceHighlight.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.projectlistbox.AppearanceHighlight.Options.UseBackColor = true;
@@ -97,7 +93,6 @@
                         DevExpress.Utils.Behaviors.ScrollAnnotationAlignment.Default,
                         DevExpress.Utils.Behaviors.ScrollAnnotationAlignment.Center})))});
             this.projectlistbox.ContextButtonOptions.AllowGlyphSkinning = true;
-            this.projectlistbox.DataSource = this.projeBindingSource;
             this.projectlistbox.DisplayMember = "NAME";
             this.projectlistbox.HighlightedItemStyle = DevExpress.XtraEditors.HighlightStyle.Skinned;
             this.projectlistbox.HotTrackItems = true;
@@ -132,23 +127,6 @@
             this.projectlistbox.Templates.Add(ıtemTemplateBase1);
             this.projectlistbox.ValueMember = "PATH";
             this.projectlistbox.SelectedIndexChanged += new System.EventHandler(this.listBoxControl1_SelectedIndexChanged);
-            // 
-            // projeBindingSource
-            // 
-            this.projeBindingSource.DataMember = "proje";
-            this.projeBindingSource.DataSource = this.selectscreendb;
-            // 
-            // selectscreendb
-            // 
-            this.selectscreendb.ConnectionName = "maindatabase";
-            this.selectscreendb.Name = "selectscreendb";
-            customSqlQuery1.Name = "proje";
-            customSqlQuery1.Sql = "select [Recent].[NAME], [Recent].[PATH]\r\n  from [Recent] [Recent]";
-            this.selectscreendb.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery1});
-            this.selectscreendb.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic2VsZWN0c2NyZWVuZGIiPjxWaWV3IE5hbWU9InByb2plIj48RmllbGQgTmFtZ" +
-    "T0iTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQQVRIIiBUeXBlPSJTdHJpbmciIC8+P" +
-    "C9WaWV3PjwvRGF0YVNldD4=";
             // 
             // simpleButton1
             // 
@@ -209,7 +187,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.projectlistbox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -225,8 +202,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.DropDownButton dropDownButton1;
         private System.Windows.Forms.Label label1;
-        private DevExpress.DataAccess.Sql.SqlDataSource selectscreendb;
-        private System.Windows.Forms.BindingSource projeBindingSource;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.ToolTip toolTip1;
     }

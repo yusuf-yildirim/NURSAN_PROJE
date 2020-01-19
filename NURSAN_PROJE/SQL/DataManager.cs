@@ -105,9 +105,29 @@ namespace NURSAN_PROJE.SQL
         {
             return localTables.getSpecifiedTableFromDatabase(tablename, type);
         }
-      
 
-
+        public DataTable getRecent()
+        {
+            return getFromLocalTablesmain("Recent");
+        }
+        ///<summary>
+        ///Son açılan dosya kaydını gerçekleştirir.
+        ///</summary>
+        public void createRecent(String path)//TO-DO CHANGE
+        {            
+            string date = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            if(getFromLocalTablesmain("Recent").Select("PATH = '"+path+"'").Length > 0)
+            {
+                getFromLocalTablesmain("Recent").Select("PATH = '" + path + "'")[0][3] = date;
+                localTables.updateTable(getFromLocalTablesmain("Recent"), Databases.Main);
+            }
+            else
+            {
+                getFromLocalTablesmain("Recent").Rows.Add(Guid.NewGuid().ToString(), path.Split('\\')[(path.Split('\\')).Count() - 1], path, date);
+                localTables.updateTable(getFromLocalTablesmain("Recent"), Databases.Main);
+            }
+            
+        }
 
         public class TableUpdater
         {

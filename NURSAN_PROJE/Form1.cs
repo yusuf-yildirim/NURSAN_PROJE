@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NURSAN_PROJE.SQL;
+using System;
 using System.Windows.Forms;
 
 
@@ -7,20 +8,19 @@ namespace NURSAN_PROJE
     public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
         private Boolean firstlogin = true;
-
+        DataManager manager;
         public Form1()
         {
+            manager = new DataManager();
             InitializeComponent();
             initializelistbox();
-
-            selectscreendb.Fill();
-
+            
         }
 
         public void initializelistbox()
         {
             //   string[] xmlFiles = Directory.GetFiles("C:\\Users\\yyill\\Desktop\\xmlfile", "*.txt").Select(Path.GetFileName).ToArray();
-            //     listBoxControl1.DataSource = xmlFiles;
+              projectlistbox.DataSource = manager.getRecent();
         }
 
         private void simpleButton16_Click(object sender, EventArgs e)

@@ -26,7 +26,8 @@ namespace NURSAN_PROJE
 
             DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
             db = new DBeng();
-        
+            manager = new DataManager();
+            updater = new DataManager.TableUpdater();
             Config conf = new Config();
             this.Hide();
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace NURSAN_PROJE
                 if (path.Length > 0)
                 {
                     conf.set_connectionstring("tablo", path);
-                    db.create_recent(path, maindatasource);
+                    manager.createRecent(path);
                 }
                 else
                 {
@@ -48,9 +49,9 @@ namespace NURSAN_PROJE
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
-            manager = new DataManager();
-            updater = new DataManager.TableUpdater();
+          
             Task.Factory.StartNew(() => refresh_socket_grids());
         }
 

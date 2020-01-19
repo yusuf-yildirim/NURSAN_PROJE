@@ -357,7 +357,7 @@
     <value>17, 95</value>
   </metadata>
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1116, 17</value>
+    <value>966, 17</value>
   </metadata>
   <metadata name="popupMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>342, 95</value>
@@ -368,12 +368,6 @@
   <metadata name="socketsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>530, 56</value>
   </metadata>
-  <metadata name="projectdatasource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>688, 17</value>
-  </metadata>
-  <data name="projectdatasource.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0icHJvamVjdGRhdGFzb3VyY2UiPjxWaWV3IE5hbWU9InRibF9jb25uZWN0aW9uIj48RmllbGQgTmFtZT0iQWTEsSIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0idGJsX1NvY2tldF8xX0FkxLEiIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9IkthYmxvX0FkIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJZb3J1bSIgVHlwZT0iVW5rbm93biIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iaW1hZ2VTdG9yZSI+PEZpZWxkIE5hbWU9ImltYWdlX2lkIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJpbWFnZUZpbGVOYW1lIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJpbWFnZUJsb2IiIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9ImltYWdlRmlsZVNpemVCeXRlcyIgVHlwZT0iVW5rbm93biIgLz48L1ZpZXc+PFZpZXcgTmFtZT0idGJsX1NvY2tldF91c2luZyI+PEZpZWxkIE5hbWU9IklEX3Nva2V0IiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iQWTEsSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQaW5fc2F5aXNpIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iQW5haHRhcl9zYXlpc2kiIFR5cGU9IkludDY0IiAvPjxGaWVsZCBOYW1lPSJMZWRfbnVtYXJhc2kiIFR5cGU9IkludDY0IiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
-  </data>
   <metadata name="tbl_connectionBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
@@ -381,9 +375,9 @@
     <value>530, 17</value>
   </metadata>
   <metadata name="errorprovider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>838, 17</value>
+    <value>688, 17</value>
   </metadata>
   <metadata name="behaviorManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>962, 17</value>
+    <value>812, 17</value>
   </metadata>
 </root>

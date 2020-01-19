@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery4 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.label1 = new System.Windows.Forms.Label();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.okaskprojectnamebutton = new DevExpress.XtraEditors.SimpleButton();
             this.cancelaskprojectnamebutton = new DevExpress.XtraEditors.SimpleButton();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::NURSAN_PROJE.WaitForm1), true, true, true);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -80,21 +76,6 @@
             this.cancelaskprojectnamebutton.Text = "İptal";
             this.cancelaskprojectnamebutton.Click += new System.EventHandler(this.cancelaskprojectnamebutton_Click);
             // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "tablo";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            customSqlQuery4.Name = "create_project";
-            queryParameter4.Name = "project_name";
-            queryParameter4.Type = typeof(string);
-            queryParameter4.ValueInfo = "null";
-            customSqlQuery4.Parameters.Add(queryParameter4);
-            customSqlQuery4.Sql = "insert into proje(ad) values(@project_name)";
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery4});
-            this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9ImNyZWF0ZV9wcm9qZWN0IiAvP" +
-    "jwvRGF0YVNldD4=";
-            // 
             // splashScreenManager1
             // 
             this.splashScreenManager1.ClosingDelay = 500;
@@ -129,7 +110,6 @@
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.SimpleButton okaskprojectnamebutton;
         private DevExpress.XtraEditors.SimpleButton cancelaskprojectnamebutton;
-        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }

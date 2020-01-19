@@ -30,15 +30,7 @@ namespace NURSAN_PROJE.SQL
 
 
 
-        ///<summary>
-        ///Son açılan dosya kaydını gerçekleştirir.
-        ///</summary>
-        public void create_recent(String path, DevExpress.DataAccess.Sql.SqlDataSource datasource)//TO-DO CHANGE
-        {
-            datasource.Queries[0].Parameters[0].Value = path.Split('\\')[(path.Split('\\')).Count() - 1];
-            datasource.Queries[0].Parameters[1].Value = path;
-            datasource.Fill();
-        }
+
 
         ///<summary>
         ///Proje dosyasını yaratır ve ilk ayarlamaları db.ini dosyasına göre yapar.
