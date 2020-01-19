@@ -143,6 +143,7 @@
             this.WireColor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sidePanel2 = new DevExpress.XtraEditors.SidePanel();
             this.gridControl7 = new DevExpress.XtraGrid.GridControl();
             this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -1380,7 +1381,8 @@
             this.colÖZELİİKLER,
             this.WireColor,
             this.gridColumn15,
-            this.gridColumn16});
+            this.gridColumn16,
+            this.gridColumn17});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupPanelText = "Gruplamak için sütunu buraya sürükleyin";
             this.gridView1.Name = "gridView1";
@@ -1434,6 +1436,12 @@
             this.gridColumn16.Caption = "gridColumn16";
             this.gridColumn16.FieldName = "NEREYEID";
             this.gridColumn16.Name = "gridColumn16";
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "gridColumn17";
+            this.gridColumn17.FieldName = "CONNECTONID";
+            this.gridColumn17.Name = "gridColumn17";
             // 
             // sidePanel2
             // 
@@ -2024,6 +2032,7 @@
             this.edit_connection_savebutton.Size = new System.Drawing.Size(100, 35);
             this.edit_connection_savebutton.TabIndex = 51;
             this.edit_connection_savebutton.Text = "Yeni Bağlantı";
+            this.edit_connection_savebutton.Click += new System.EventHandler(this.edit_connection_savebutton_Click);
             // 
             // labelControl12
             // 
@@ -3729,5 +3738,6 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
     }
 }
