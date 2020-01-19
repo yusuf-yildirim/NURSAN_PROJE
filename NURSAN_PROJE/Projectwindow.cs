@@ -979,8 +979,10 @@ namespace NURSAN_PROJE
             if (xtraFolderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
                 filepath = xtraFolderBrowserDialog1.SelectedPath + "\\" + gridView7.GetFocusedRowCellValue(gridColumn2) + ".xlsx";
-                //System.IO.File.Create(filepath);
-                exportphase(filepath);
+                var filetoexportedstream = System.IO.File.Create(filepath);
+                filetoexportedstream.Close();
+                gridControl1.ExportToXlsx(filepath);
+                //exportphase(filepath);
 
             }
         }
@@ -990,7 +992,7 @@ namespace NURSAN_PROJE
             {
                 try
                 {
-                    gridControl7.ExportToXlsx(fullPath);
+                    gridControl1.ExportToXlsx(fullPath);
                     break;
                 }
                 catch (IOException)
