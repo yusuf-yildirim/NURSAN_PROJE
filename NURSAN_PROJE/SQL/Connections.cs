@@ -17,7 +17,20 @@ namespace NURSAN_PROJE.SQL
             getFromLocalTablesproject("PConnections").Rows.Add(Guid.NewGuid().ToString(), getlastconnectionorder(phaseid), origin, origintype, destination, destinationtype, colorıd, cablename, null, null, phaseid, null, null);
         }
 
+        ///<summary>
+        ///WheretoType [SOCKET,COMPONENT]
+        ///</summary>
+        public void updateConnection(string connectionID,string origin,string originType,string destination,string destinationType,string colorID,string cablename)
+        {
+            var row = getFromLocalTablesproject("PConnections").Select("ID_connection = '" + connectionID + "'")[0];
+            row[2] = origin;
+            row[3] = originType;
+            row[4] = destination;
+            row[5] = destinationType;
+            row[6] = colorID;
+            row[7] = cablename;
 
+        }
         ///<summary>
         ///Projeden ilgili fazdaki son sıra numrasını çeker.
         ///</summary>
