@@ -54,11 +54,27 @@ namespace NURSAN_PROJE.SQL
         {
             foreach (string tablename in Enum.GetNames(typeof(MainTableName)))
             {
-                localtables.maintables.Tables.Add(database.GetDataTable(tablename, Databases.Main));
+                if(localtables.maintables.Tables.Contains(tablename))
+                {                  
+                    localtables.maintables.Tables.Remove(tablename);
+                    localtables.maintables.Tables.Add(database.GetDataTable(tablename, Databases.Main));
+                }
+                else
+                {
+                    localtables.maintables.Tables.Add(database.GetDataTable(tablename, Databases.Main));
+                }               
             }
             foreach (string tablename in Enum.GetNames(typeof(ProjectTableName)))//TO-DO
             {
-                localtables.projecttables.Tables.Add(database.GetDataTable(tablename, Databases.Project));
+                if (localtables.projecttables.Tables.Contains(tablename))
+                {                   
+                    localtables.projecttables.Tables.Remove(tablename);
+                    localtables.projecttables.Tables.Add(database.GetDataTable(tablename, Databases.Project));
+                }
+                else
+                {
+                    localtables.projecttables.Tables.Add(database.GetDataTable(tablename, Databases.Project));
+                }                    
             }
         }
 

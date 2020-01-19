@@ -128,7 +128,7 @@ namespace NURSAN_PROJE.SQL
             }
             
         }
-
+    
         public class TableUpdater
         {
          
@@ -139,6 +139,7 @@ namespace NURSAN_PROJE.SQL
             {
                 DataManager.localTables.updateTable(table, db);
             }
+
         }
     }
 }

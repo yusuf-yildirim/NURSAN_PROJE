@@ -1,5 +1,6 @@
 ﻿using NURSAN_PROJE.SQL;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 
@@ -32,8 +33,18 @@ namespace NURSAN_PROJE
         {
             if (firstlogin == false)
             {
-                Data.selectedfile = projectlistbox.SelectedItem.ToString();
-                MessageBox.Show(Data.selectedfile);
+                DataTable temp = projectlistbox.DataSource as DataTable;
+                string path = temp.Rows[projectlistbox.SelectedIndex][2].ToString();
+                using (DBeng db = new DBeng())
+                {
+                    db.setProjectPath(path);
+                    using(LocalTables locals = new LocalTables(true))
+                    {
+                        locals.getalltables();
+                    }
+                }
+            
+                
                 this.Hide();
 
             }

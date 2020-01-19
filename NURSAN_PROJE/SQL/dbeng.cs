@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace NURSAN_PROJE.SQL
 {
-    class DBeng
+    class DBeng : IDisposable
     {
        // mainsource x = new mainsource();
         static SQLiteConnection con;
@@ -57,17 +57,25 @@ namespace NURSAN_PROJE.SQL
             {
                 MessageBox.Show(err.Message);
             }
+        }
 
+
+        public void setProjectPath(string path)
+        {
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
+            connectionStringsSection.ConnectionStrings["tablo"].ConnectionString = @"XpoProvider=SQLite;Data Source=" +path;
+            config.Save();
         }
         ///<summary>
         ///Çağırıldığı yere istenen tabloyu istenen veritabanından DataTable olarak döndürür.
         ///</summary>
         public DataTable GetDataTable(string tablename, Databases db)
-        {
-           
+        {           
             if (db == Databases.Main)
             {
                 con = new SQLiteConnection("Data Source=" + Application.StartupPath + "\\tablo.db;Version=3;");
+               
                 DataTable DT = new DataTable();
                 con.Open();
                 cmd = con.CreateCommand();
@@ -86,6 +94,7 @@ namespace NURSAN_PROJE.SQL
             else if(db == Databases.Project)
             {
                 con = new SQLiteConnection(getconstring.get_conn_string("tablo") + ";Version=3;");
+                Console.WriteLine(getconstring.get_conn_string("tablo") + ";Version=3;");
                 DataTable DT = new DataTable();
                 con.Open();
                 cmd = con.CreateCommand();
@@ -162,9 +171,39 @@ namespace NURSAN_PROJE.SQL
           
         }
 
-  
 
+
+        bool disposed = false;
+
+        // Public implementation of Dispose pattern callable by consumers.
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        // Protected implementation of Dispose pattern.
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposed)
+                return;
+
+            if (disposing)
+            {
+                // Free any other managed objects here.
+                //
+            }
+
+            // Free any unmanaged objects here.
+            //
+            disposed = true;
+        }
+
+        ~DBeng()
+        {
+            Dispose(false);
+        }
 
     }
- 
+
 }
