@@ -148,7 +148,7 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.export_connections_button = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.delete_phase_button = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -1380,7 +1380,7 @@
             this.sidePanel2.Controls.Add(this.gridControl7);
             this.sidePanel2.Controls.Add(this.searchControl1);
             this.sidePanel2.Controls.Add(this.export_connections_button);
-            this.sidePanel2.Controls.Add(this.simpleButton6);
+            this.sidePanel2.Controls.Add(this.delete_phase_button);
             this.sidePanel2.Controls.Add(this.simpleButton5);
             this.sidePanel2.Controls.Add(this.simpleButton4);
             this.sidePanel2.Controls.Add(this.simpleButton3);
@@ -1447,13 +1447,14 @@
             this.export_connections_button.TabIndex = 5;
             this.export_connections_button.Click += new System.EventHandler(this.export_connections_button_Click);
             // 
-            // simpleButton6
+            // delete_phase_button
             // 
-            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
-            this.simpleButton6.Location = new System.Drawing.Point(76, 61);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(29, 29);
-            this.simpleButton6.TabIndex = 4;
+            this.delete_phase_button.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("delete_phase_button.ImageOptions.Image")));
+            this.delete_phase_button.Location = new System.Drawing.Point(76, 61);
+            this.delete_phase_button.Name = "delete_phase_button";
+            this.delete_phase_button.Size = new System.Drawing.Size(29, 29);
+            this.delete_phase_button.TabIndex = 4;
+            this.delete_phase_button.Click += new System.EventHandler(this.delete_phase_button_Click);
             // 
             // simpleButton5
             // 
@@ -3157,7 +3158,7 @@
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.SidePanel sidePanel2;
         private DevExpress.XtraEditors.SimpleButton export_connections_button;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton delete_phase_button;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;

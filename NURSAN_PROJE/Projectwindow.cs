@@ -1005,6 +1005,25 @@ namespace NURSAN_PROJE
             }
 
         }
+
+        private void delete_phase_button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Console.WriteLine(manager.getPhases().Rows.Count + " phase row count");
+                if (manager.getPhases().Rows.Count != 1)
+                {
+                    manager.deletePhase(gridView7.GetFocusedRowCellValue(gridColumn1).ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Mutlaka bir etap olmalıdır.");
+                }
+            }catch(Exception err)
+            {
+                Console.WriteLine(err.Message + err.StackTrace);
+            }
+        }
     }
 }
 
