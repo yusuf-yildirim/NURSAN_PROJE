@@ -30,10 +30,7 @@ namespace NURSAN_PROJE.SQL
             catch
             {
                 return "1";
-            }
-           
-           
-
+            }    
         }
 
         ///<summary>
@@ -68,7 +65,7 @@ namespace NURSAN_PROJE.SQL
                     destination = getComponentInfo(row[4].ToString());
                 }
                 color = getColorInfo(row[6].ToString());
-                connections.Rows.Add(origin, destination, row[7], color, null);  //TO-DO
+                connections.Rows.Add(origin,row[2], destination,row[4], row[7], color, null);  //TO-DO
             }
             try
             {
