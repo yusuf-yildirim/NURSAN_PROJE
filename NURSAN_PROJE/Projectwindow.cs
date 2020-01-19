@@ -1022,12 +1022,12 @@ namespace NURSAN_PROJE
 
             TreeListNode fromobjectnode = edit_connection_fromobject_lookupedit_treelist.FindNodeByFieldValue("IOID", fromobjectid);
             TreeListNode toobjectnode = edit_connection_toobject_lookupedit_treelist.FindNodeByFieldValue("IOID", toobjectid);
-
-            edit_connection_fromobject_lookupedit_treelist.SelectNode(fromobjectnode);
-            edit_connection_toobject_lookupedit_treelist.SelectNode(toobjectnode);
-
-
+            
             edit_connection_fromobject_lookupedit_treelist.SetFocusedNode(fromobjectnode);
+            edit_connection_toobject_lookupedit_treelist.SetFocusedNode(toobjectnode);
+
+            edit_connection_fromobject_lookupedit.RefreshEditValue();
+            edit_connection_toobject_lookupedit.RefreshEditValue();
 
             edit_connection_fromobject_lookupedit_treelist.Refresh();
             edit_connection_fromobject_lookupedit_treelist.Refresh();

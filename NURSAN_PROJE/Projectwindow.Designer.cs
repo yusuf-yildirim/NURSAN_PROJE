@@ -1963,6 +1963,7 @@
             this.edit_connection_fromobject_lookupedit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.edit_connection_fromobject_lookupedit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.edit_connection_fromobject_lookupedit.Properties.Name = "edit_connection_fromobject_lookupedit";
             this.edit_connection_fromobject_lookupedit.Properties.TreeList = this.edit_connection_fromobject_lookupedit_treelist;
             this.edit_connection_fromobject_lookupedit.Size = new System.Drawing.Size(166, 22);
             this.edit_connection_fromobject_lookupedit.TabIndex = 57;
