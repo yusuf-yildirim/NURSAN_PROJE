@@ -17,6 +17,17 @@ namespace NURSAN_PROJE
             BonusSkins.Register();
             //  Application.Run(new Projectwindow());
             tmplog.start_debug();
+            if (args[0].Length > 0)
+            {
+                using (DBeng db = new DBeng())
+                {
+                    db.setProjectPath(args[0]);
+                    using (LocalTables locals = new LocalTables(true))
+                    {
+                        locals.getalltables();
+                    }
+                }
+            }
             Application.Run(args.Length == 0 ? new Projectwindow(string.Empty) : new Projectwindow(args[0]));
 
         }

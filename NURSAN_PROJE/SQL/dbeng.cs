@@ -101,7 +101,14 @@ namespace NURSAN_PROJE.SQL
                 cmd.CommandText = string.Format("SELECT * FROM {0}", tablename);
                 da = new SQLiteDataAdapter(cmd);
                 da.AcceptChangesDuringFill = false;
-                da.Fill(DT);
+                try
+                {
+                    da.Fill(DT);
+                }
+                catch
+                {
+                    Console.WriteLine("WARNING TABLE NOT FOUND!");
+                }
                 con.Close();
                 DT.TableName = tablename;
                 foreach (DataRow row in DT.Rows)
