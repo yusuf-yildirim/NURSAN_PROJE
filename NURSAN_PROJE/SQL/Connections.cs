@@ -29,8 +29,27 @@ namespace NURSAN_PROJE.SQL
             row[5] = destinationType;
             row[6] = colorID;
             row[7] = cablename;
-
         }
+        ///<summary>
+        ///İlgili ConnectionID yi siler.
+        ///</summary>
+        public void removeConnection(string connectionID,string phaseID)
+        {
+             getFromLocalTablesproject("PConnections").Select("ID_connection = '" + connectionID + "'")[0].Delete();
+            remapConnectionOrder(phaseID);
+        }
+
+        public void remapConnectionOrder(string phaseID)
+        {
+            var rows = getFromLocalTablesproject("PConnections").Select("ID_etap_1 = '" + phaseID + "'Order ASC");
+            int neworder = 1;
+            foreach(var row in rows)
+            {
+                row[1] = neworder;
+                neworder++;
+            }
+        }
+
         ///<summary>
         ///Projeden ilgili fazdaki son sıra numrasını çeker.
         ///</summary>
