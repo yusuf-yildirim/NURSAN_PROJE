@@ -56,7 +56,7 @@ namespace NURSAN_PROJE.Tkk
         }
         public string getLed(string ID)
         {
-            MessageBox.Show(getSocketIDbyIOID(ID));
+           // MessageBox.Show(getSocketIDbyIOID(ID));
             return manager.getFromLocalTablesproject("PSockets").Select("ID_soket ='" + getSocketIDbyIOID(ID) + "'")[0][4].ToString() ;
         }
 
