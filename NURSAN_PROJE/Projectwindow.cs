@@ -8,6 +8,8 @@ using NURSAN_PROJE.SQL;
 using System;
 using System.Data;
 using System.Drawing;
+using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -273,9 +275,17 @@ namespace NURSAN_PROJE
 
         private void simpleButton14_Click(object sender, EventArgs e)
         {
-            string[] generic_current = add_generic_current.Text.Split(' ');
-            manager.addComponent("GENERIC", add_generic_name.Text, Convert.ToInt32(generic_current[0]), multipliertonumber(generic_current[1]), Convert.ToInt32(add_generic_voltagedrop.Text), Convert.ToInt32(add_resistor_tolerance.Text));
-            refresh_socket_grids();
+            try
+            {
+                string[] generic_current = add_generic_current.Text.Split(' ');
+                manager.addComponent("GENERIC", add_generic_name.Text, Convert.ToInt32(generic_current[0]), multipliertonumber(generic_current[1]), Convert.ToInt32(add_generic_voltagedrop.Text), Convert.ToInt32(add_generic_tolerance.Text));
+                refresh_socket_grids();
+            }
+            catch(Exception err)
+            {
+                Console.WriteLine(err.Message + err.StackTrace);
+                MessageBox.Show("Lütfen değerleri doğru giriniz.");
+            }
         }
         public int multipliertonumber(string multiplier)
         {
@@ -907,7 +917,91 @@ namespace NURSAN_PROJE
         {
             //Colors_lookup.valu ID_color Color Name Hex Code
         }
+        DataTable change_rowindex_phase_datatable;
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            change_rowindex_phase_datatable = manager.getPhases();
+            DataRow row = change_rowindex_phase_datatable.Rows[gridView7.FocusedRowHandle];
+            int new_focus_phases = MoveRow(row, "Up");
+            gridControl7.DataSource = change_rowindex_phase_datatable;
+            gridView7.FocusedRowHandle = new_focus_phases;
 
+        }
+        public int MoveRow(DataRow row, string direction)
+        {
+            DataRow oldRow = row;
+            DataRow newRow = change_rowindex_phase_datatable.NewRow();
+
+            newRow.ItemArray = oldRow.ItemArray;
+
+            int oldRowIndex = change_rowindex_phase_datatable.Rows.IndexOf(row);
+
+            if (direction =="Down")
+            {
+                int newRowIndex = oldRowIndex + 1;
+
+                if (oldRowIndex < (change_rowindex_phase_datatable.Rows.Count))
+                {
+                    change_rowindex_phase_datatable.Rows.Remove(oldRow);
+                    change_rowindex_phase_datatable.Rows.InsertAt(newRow, newRowIndex);
+                    return change_rowindex_phase_datatable.Rows.IndexOf(newRow);
+                }
+            }
+
+            if (direction == "Up")
+            {
+                int newRowIndex = oldRowIndex - 1;
+
+                if (oldRowIndex > 0)
+                {
+                    change_rowindex_phase_datatable.Rows.Remove(oldRow);
+                    change_rowindex_phase_datatable.Rows.InsertAt(newRow, newRowIndex);
+                    return change_rowindex_phase_datatable.Rows.IndexOf(newRow);
+                }
+            }
+
+            return 0;
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+
+            change_rowindex_phase_datatable = manager.getPhases();
+            DataRow row = change_rowindex_phase_datatable.Rows[gridView7.FocusedRowHandle];
+            int new_focus_phases = MoveRow(row, "Down");
+            gridControl7.DataSource = change_rowindex_phase_datatable;
+            gridView7.FocusedRowHandle = new_focus_phases;
+        }
+
+        private void export_connections_button_Click(object sender, EventArgs e)
+        {
+            string filepath;
+            if (xtraFolderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                filepath = xtraFolderBrowserDialog1.SelectedPath + "\\" + gridView7.GetFocusedRowCellValue(gridColumn2) + ".xlsx";
+                var filetoexportedstream = System.IO.File.Create(filepath);
+                filetoexportedstream.Close();
+                gridControl1.ExportToXlsx(filepath);
+                //exportphase(filepath);
+
+            }
+        }
+        public void exportphase(string fullPath)
+        {
+            for (int numTries = 0; numTries < 10; numTries++)
+            {
+                try
+                {
+                    gridControl1.ExportToXlsx(fullPath);
+                    break;
+                }
+                catch (IOException)
+                {
+                    Thread.Sleep(50);
+                }
+            }
+
+        }
     }
 }
 

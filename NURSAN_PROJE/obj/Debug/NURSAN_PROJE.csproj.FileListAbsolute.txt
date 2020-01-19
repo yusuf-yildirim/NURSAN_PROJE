@@ -835,3 +835,6 @@ C:\Users\yyill\source\repos\BurakcanKolay\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NU
 D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.ResistorEdit.resources
 D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.CustomEditForms.GenericComponentEdit.resources
 D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.CapacitorEdit.resources
+C:\Users\yyill\source\repos\BurakcanKolay\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.CustomEditForms.GenericComponentEdit.resources
+C:\Users\yyill\source\repos\BurakcanKolay\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.ResistorEdit.resources
+C:\Users\yyill\source\repos\BurakcanKolay\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.CapacitorEdit.resources

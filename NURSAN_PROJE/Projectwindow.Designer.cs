@@ -147,7 +147,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
-            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
+            this.export_connections_button = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
@@ -294,6 +294,7 @@
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::NURSAN_PROJE.WaitForm2), true, true, true);
+            this.xtraFolderBrowserDialog1 = new DevExpress.XtraEditors.XtraFolderBrowserDialog(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.recentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).BeginInit();
@@ -1378,7 +1379,7 @@
             // 
             this.sidePanel2.Controls.Add(this.gridControl7);
             this.sidePanel2.Controls.Add(this.searchControl1);
-            this.sidePanel2.Controls.Add(this.simpleButton7);
+            this.sidePanel2.Controls.Add(this.export_connections_button);
             this.sidePanel2.Controls.Add(this.simpleButton6);
             this.sidePanel2.Controls.Add(this.simpleButton5);
             this.sidePanel2.Controls.Add(this.simpleButton4);
@@ -1417,8 +1418,6 @@
             this.gridColumn1.Caption = "gridColumn1";
             this.gridColumn1.FieldName = "ID_etap";
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
             // 
             // gridColumn2
             // 
@@ -1426,7 +1425,7 @@
             this.gridColumn2.FieldName = "Etap_Adı";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 0;
             // 
             // searchControl1
             // 
@@ -1439,13 +1438,14 @@
             this.searchControl1.Size = new System.Drawing.Size(166, 20);
             this.searchControl1.TabIndex = 6;
             // 
-            // simpleButton7
+            // export_connections_button
             // 
-            this.simpleButton7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton7.ImageOptions.Image")));
-            this.simpleButton7.Location = new System.Drawing.Point(41, 61);
-            this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(29, 29);
-            this.simpleButton7.TabIndex = 5;
+            this.export_connections_button.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("export_connections_button.ImageOptions.Image")));
+            this.export_connections_button.Location = new System.Drawing.Point(41, 61);
+            this.export_connections_button.Name = "export_connections_button";
+            this.export_connections_button.Size = new System.Drawing.Size(29, 29);
+            this.export_connections_button.TabIndex = 5;
+            this.export_connections_button.Click += new System.EventHandler(this.export_connections_button_Click);
             // 
             // simpleButton6
             // 
@@ -1462,6 +1462,7 @@
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(29, 29);
             this.simpleButton5.TabIndex = 3;
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // simpleButton4
             // 
@@ -1470,6 +1471,7 @@
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(29, 29);
             this.simpleButton4.TabIndex = 2;
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // simpleButton3
             // 
@@ -2528,6 +2530,27 @@
             this.add_generic_tolerance.Name = "add_generic_tolerance";
             this.add_generic_tolerance.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.add_generic_tolerance.Properties.Items.AddRange(new object[] {
+            "5",
+            "10",
+            "15",
+            "20",
+            "25",
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "55",
+            "60",
+            "65",
+            "70",
+            "75",
+            "80",
+            "85",
+            "90",
+            "95",
+            "100"});
             this.add_generic_tolerance.Size = new System.Drawing.Size(96, 20);
             this.add_generic_tolerance.TabIndex = 47;
             // 
@@ -2943,6 +2966,10 @@
             // 
             this.splashScreenManager1.ClosingDelay = 500;
             // 
+            // xtraFolderBrowserDialog1
+            // 
+            this.xtraFolderBrowserDialog1.SelectedPath = "xtraFolderBrowserDialog1";
+            // 
             // Projectwindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3129,7 +3156,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.SidePanel sidePanel2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton7;
+        private DevExpress.XtraEditors.SimpleButton export_connections_button;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
@@ -3343,5 +3370,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraEditors.XtraFolderBrowserDialog xtraFolderBrowserDialog1;
     }
 }
