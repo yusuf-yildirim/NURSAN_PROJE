@@ -19,7 +19,7 @@ namespace NURSAN_PROJE
         public ResistorEdit(string componentID)
         {
             InitializeComponent();
-            manager = new DataManager();           
+            manager = new DataManager(true);           
             var rows = manager.getFromLocalTablesproject("PComponents").Select("ID_component = '"+componentID+"'")[0];  
             updateresistorname.EditValue = rows[1].ToString();
             updateresistorvalue.EditValue = rows[3].ToString();

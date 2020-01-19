@@ -21,7 +21,7 @@ namespace NURSAN_PROJE
         public determine_pin_locations_window(string SocketID)
         {
             db = new DBeng();
-            manager = new DataManager();
+            manager = new DataManager(true);
             updater = new DataManager.TableUpdater();
             InitializeComponent();
             pin_locations = new List<String>();
@@ -37,7 +37,7 @@ namespace NURSAN_PROJE
         Color point_color_for_pin_processing;
         public determine_pin_locations_window(string SocketID, Bitmap img)
         {
-            manager = new DataManager();
+            manager = new DataManager(true);
             updater = new DataManager.TableUpdater();
             InitializeComponent();
             //CheckForIllegalCrossThreadCalls = false;

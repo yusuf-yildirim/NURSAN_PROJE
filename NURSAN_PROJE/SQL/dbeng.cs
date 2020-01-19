@@ -92,7 +92,7 @@ namespace NURSAN_PROJE.SQL
                 }
                 catch
                 {
-                    MessageBox.Show("Ana tablo güncellenirken/çekilirken hata!");
+                    MessageBox.Show("Ana veritabanı güncellenirken/çekilirken hata!");
                 }
 
                 con.Close();
@@ -105,8 +105,7 @@ namespace NURSAN_PROJE.SQL
             }
             else if (db == Databases.Project)
             {
-                con = new SQLiteConnection(getconstring.get_conn_string("tablo") + ";Version=3;");
-                Console.WriteLine(getconstring.get_conn_string("tablo") + ";Version=3;");
+                con = new SQLiteConnection(getconstring.get_conn_string("tablo") + ";Version=3;");                
                 DataTable DT = new DataTable();
                 con.Open();
                 cmd = con.CreateCommand();
@@ -119,7 +118,7 @@ namespace NURSAN_PROJE.SQL
                 }
                 catch
                 {
-                    Console.WriteLine("WARNING TABLE NOT FOUND!");
+                    MessageBox.Show("Proje veritabanı güncellenirken/çekilirken hata!");
                 }
                 con.Close();
                 DT.TableName = tablename;
