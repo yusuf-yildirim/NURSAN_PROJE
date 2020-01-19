@@ -196,12 +196,6 @@ namespace NURSAN_PROJE
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            /*mainsource.tbl_Socket.Addtbl_SocketRow("allah", "aaa", 54, 4, 2);
-              this.tbl_SocketTableAdapter.Update(this.mainsource.tbl_Socket);*/
-
-        }
 
         private void gridView5_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -219,7 +213,7 @@ namespace NURSAN_PROJE
             catch (Exception err)
             {
                 registeredsocketimg.Image = null;
-                Console.WriteLine("252 - RESİM YOK");
+                Console.WriteLine("RESİM YÜKLENEMEDİ");
             }
         }
 
