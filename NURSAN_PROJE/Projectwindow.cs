@@ -893,11 +893,19 @@ namespace NURSAN_PROJE
 
         private void simpleButton12_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Tkk.tkkCreator x = new Tkk.tkkCreator(manager);
+                x.test(manager.getFromLocalTablesproject("PConnections").Rows.Count);
+            }
+            catch
+            {
 
-           
+            }
+
         }
 
-   
+
 
         private void Colors_lookup_EditValueChanged(object sender, EventArgs e)
         {
