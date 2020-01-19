@@ -238,10 +238,17 @@ namespace NURSAN_PROJE
             newsocketpinc_TextChanged(this, e);
         }
 
+        bool splicevalidation = false;
         private void add_splice_button_Click(object sender, EventArgs e)
         {
-            manager.addComponent("SPLICE", add_splice_name.Text);
-            refresh_socket_grids();
+            splicevalidation = false;
+            add_splice_name.IsModified = true;
+            add_splice_name.DoValidate();
+            if (splicevalidation == true)
+            {
+                manager.addComponent("SPLICE", add_splice_name.Text);
+                refresh_socket_grids();
+            }            
         }
 
         private void add_capacitor_button_Click(object sender, EventArgs e)
@@ -1007,6 +1014,7 @@ namespace NURSAN_PROJE
             }
         }
 
+       
     }
 }
 

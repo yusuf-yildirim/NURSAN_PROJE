@@ -749,7 +749,8 @@
             this.change_configured_sockets_page});
             this.navigationPane1.RegularSize = new System.Drawing.Size(493, 742);
             this.navigationPane1.SelectedPage = this.change_configured_sockets_page;
-            this.navigationPane1.Size = new System.Drawing.Size(493, 742);
+            this.navigationPane1.Size = new System.Drawing.Size(98, 742);
+            this.navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
             this.navigationPane1.TabIndex = 42;
             this.navigationPane1.Text = "SOKET DÜZENLE";
             this.navigationPane1.TransitionType = DevExpress.Utils.Animation.Transitions.Push;
@@ -898,7 +899,7 @@
             this.change_configured_sockets_page.Controls.Add(this.labelControl44);
             this.change_configured_sockets_page.Controls.Add(this.gridControl4);
             this.change_configured_sockets_page.Name = "change_configured_sockets_page";
-            this.change_configured_sockets_page.Size = new System.Drawing.Size(373, 694);
+            this.change_configured_sockets_page.Size = new System.Drawing.Size(0, 0);
             // 
             // save_socket_data_button
             // 
@@ -1911,11 +1912,13 @@
             // 
             // add_splice_name
             // 
+            this.add_splice_name.CausesValidation = false;
             this.add_splice_name.Location = new System.Drawing.Point(127, 67);
             this.add_splice_name.MenuManager = this.toolbarFormManager1;
             this.add_splice_name.Name = "add_splice_name";
             this.add_splice_name.Size = new System.Drawing.Size(100, 20);
             this.add_splice_name.TabIndex = 14;
+            this.add_splice_name.Validating += new System.ComponentModel.CancelEventHandler(this.add_splice_name_Validating);
             // 
             // add_splice_label
             // 

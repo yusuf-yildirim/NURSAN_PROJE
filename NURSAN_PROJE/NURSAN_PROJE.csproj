@@ -197,6 +197,7 @@
       <DependentUpon>Projectwindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQL\AvailabilityCheck.cs" />
     <Compile Include="SQL\Colors.cs" />
     <Compile Include="SQL\Components.cs" />
     <Compile Include="SQL\Connections.cs" />

@@ -399,7 +399,19 @@ namespace NURSAN_PROJE
         }
 
 
-
+        private void add_splice_name_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if(manager.checksplicenameAvailability(add_splice_name.Text) == true)
+            {
+                e.Cancel = false;
+                splicevalidation = true;
+            }
+            else
+            {
+                e.Cancel = true;
+                add_splice_name.ErrorText = "Bu isim kullanılıyor";
+            }
+        }
 
         //BOŞ GEÇİLMEMESİ GEREKEN PARAMETRELERİN KONTROLÜ! YENİ SOKET
         private bool errorprovider_checktext_null()
