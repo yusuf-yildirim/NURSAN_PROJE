@@ -264,7 +264,7 @@ namespace NURSAN_PROJE
         private bool errorprovider_editsockets_isinputpopulated()
         {
             bool exit_code = true;
-            foreach (TextEdit t in groupControl1.Controls)
+            foreach (TextEdit t in updatesoketgroup.Controls)
             {
                 if (string.IsNullOrEmpty(t.Text))
                 {

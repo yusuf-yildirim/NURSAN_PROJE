@@ -97,7 +97,7 @@
             this.change_configured_sockets_page = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.save_socket_data_button = new DevExpress.XtraEditors.SimpleButton();
             this.new_socket_auto_assign_pin = new DevExpress.XtraEditors.CheckEdit();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.updatesoketgroup = new DevExpress.XtraEditors.GroupControl();
             this.edit_socket_name = new DevExpress.XtraEditors.TextEdit();
             this.edit_socket_switchnumber = new DevExpress.XtraEditors.TextEdit();
             this.edit_socket_lednumber = new DevExpress.XtraEditors.TextEdit();
@@ -316,8 +316,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.newsocketpinc.Properties)).BeginInit();
             this.change_configured_sockets_page.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.new_socket_auto_assign_pin.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.updatesoketgroup)).BeginInit();
+            this.updatesoketgroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_switchnumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_lednumber.Properties)).BeginInit();
@@ -890,7 +890,7 @@
             this.change_configured_sockets_page.Caption = "SOKET DÜZENLE";
             this.change_configured_sockets_page.Controls.Add(this.save_socket_data_button);
             this.change_configured_sockets_page.Controls.Add(this.new_socket_auto_assign_pin);
-            this.change_configured_sockets_page.Controls.Add(this.groupControl1);
+            this.change_configured_sockets_page.Controls.Add(this.updatesoketgroup);
             this.change_configured_sockets_page.Controls.Add(this.labelControl41);
             this.change_configured_sockets_page.Controls.Add(this.edit_socket_save_button);
             this.change_configured_sockets_page.Controls.Add(this.labelControl42);
@@ -920,19 +920,19 @@
             this.new_socket_auto_assign_pin.CheckedChanged += new System.EventHandler(this.new_socket_auto_assign_pin_CheckedChanged);
             this.new_socket_auto_assign_pin.CheckStateChanged += new System.EventHandler(this.new_socket_auto_assign_pin_CheckStateChanged);
             // 
-            // groupControl1
+            // updatesoketgroup
             // 
-            this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.groupControl1.Controls.Add(this.edit_socket_name);
-            this.groupControl1.Controls.Add(this.edit_socket_switchnumber);
-            this.groupControl1.Controls.Add(this.edit_socket_lednumber);
-            this.groupControl1.Controls.Add(this.edit_socket_pinnumber);
-            this.groupControl1.Location = new System.Drawing.Point(172, 33);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(151, 136);
-            this.groupControl1.TabIndex = 48;
-            this.groupControl1.Text = "groupControl1";
+            this.updatesoketgroup.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.updatesoketgroup.Controls.Add(this.edit_socket_name);
+            this.updatesoketgroup.Controls.Add(this.edit_socket_switchnumber);
+            this.updatesoketgroup.Controls.Add(this.edit_socket_lednumber);
+            this.updatesoketgroup.Controls.Add(this.edit_socket_pinnumber);
+            this.updatesoketgroup.Location = new System.Drawing.Point(172, 33);
+            this.updatesoketgroup.Name = "updatesoketgroup";
+            this.updatesoketgroup.ShowCaption = false;
+            this.updatesoketgroup.Size = new System.Drawing.Size(151, 136);
+            this.updatesoketgroup.TabIndex = 48;
+            this.updatesoketgroup.Text = "groupControl1";
             // 
             // edit_socket_name
             // 
@@ -3019,8 +3019,8 @@
             this.change_configured_sockets_page.ResumeLayout(false);
             this.change_configured_sockets_page.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.new_socket_auto_assign_pin.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.updatesoketgroup)).EndInit();
+            this.updatesoketgroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_switchnumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edit_socket_lednumber.Properties)).EndInit();
@@ -3300,7 +3300,7 @@
         private DevExpress.XtraEditors.TextEdit add_generic_name;
         private DevExpress.XtraEditors.LabelControl labelControl34;
         private DevExpress.XtraEditors.ComboBoxEdit add_generic_current;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.GroupControl updatesoketgroup;
         private DevExpress.XtraEditors.TextEdit edit_socket_name;
         private DevExpress.XtraEditors.TextEdit edit_socket_switchnumber;
         private DevExpress.XtraEditors.TextEdit edit_socket_lednumber;
