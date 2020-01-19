@@ -40,7 +40,9 @@ namespace NURSAN_PROJE.SQL
         {
             DataTable connections = new DataTable("CONNECTIONS");
             connections.Columns.Add("NEREDEN");
+            connections.Columns.Add("NEREDENID");
             connections.Columns.Add("NEREYE");
+            connections.Columns.Add("NEREYEID");
             connections.Columns.Add("KABLO ADI");
             connections.Columns.Add("WireColor");
             connections.Columns.Add("ÖZELLİKLER");
