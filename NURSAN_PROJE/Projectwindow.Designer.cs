@@ -2528,6 +2528,27 @@
             this.add_generic_tolerance.Name = "add_generic_tolerance";
             this.add_generic_tolerance.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.add_generic_tolerance.Properties.Items.AddRange(new object[] {
+            "5",
+            "10",
+            "15",
+            "20",
+            "25",
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "55",
+            "60",
+            "65",
+            "70",
+            "75",
+            "80",
+            "85",
+            "90",
+            "95",
+            "100"});
             this.add_generic_tolerance.Size = new System.Drawing.Size(96, 20);
             this.add_generic_tolerance.TabIndex = 47;
             // 
