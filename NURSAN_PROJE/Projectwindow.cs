@@ -1151,6 +1151,68 @@ namespace NURSAN_PROJE
 
             }
         }
+
+        private void edit_connection_savebutton_Click(object sender, EventArgs e)
+        {
+            string origin = null, origintype = null, destination = null, destinationtype = null, color = null;
+            if (edit_connection_fromobject_lookupedit_treelist.FocusedNode["IOID"].ToString().Length > 0)
+            {
+                origin = edit_connection_fromobject_lookupedit_treelist.FocusedNode["IOID"].ToString();
+                origintype = "SOCKET";
+            }
+            else if (edit_connection_fromobject_lookupedit_treelist.FocusedNode["ComponentID"].ToString().Length > 0)
+            {
+                origin = edit_connection_fromobject_lookupedit_treelist.FocusedNode["ComponentID"].ToString();
+                origintype = "COMPONENT";
+            }
+            if (edit_connection_toobject_lookupedit_treelist.FocusedNode["IOID"].ToString().Length > 0)
+            {
+                destination = edit_connection_toobject_lookupedit_treelist.FocusedNode["IOID"].ToString();
+                destinationtype = "SOCKET";
+            }
+            else if (edit_connection_toobject_lookupedit_treelist.FocusedNode["ComponentID"].ToString().Length > 0)
+            {
+                destination = edit_connection_toobject_lookupedit_treelist.FocusedNode["ComponentID"].ToString();
+                destinationtype = "COMPONENT";
+            }
+
+            color = gridView5.GetRowCellValue(gridView5.GetSelectedRows()[0], "ID_color").ToString();
+
+            manager.updateConnection(gridView1.GetFocusedRowCellValue(gridColumn17).ToString(),
+                origin,
+                origintype,
+                destination,
+                destinationtype,
+                color,
+                edit_connection_name.Text);
+            gridControl1.DataSource = manager.getConnectionbyPhase(gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString());
+
+        }
+        public string getobjecttype()
+        {
+            string origin = null, origintype = null, destination = null, destinationtype = null, color = null;
+            if (treeListLookUpEdit1TreeList.FocusedNode["IOID"].ToString().Length > 0)
+            {
+                origin = treeListLookUpEdit1TreeList.FocusedNode["IOID"].ToString();
+                origintype = "SOCKET";
+            }
+            else if (treeListLookUpEdit1TreeList.FocusedNode["ComponentID"].ToString().Length > 0)
+            {
+                origin = treeListLookUpEdit1TreeList.FocusedNode["ComponentID"].ToString();
+                origintype = "COMPONENT";
+            }
+            if (treeList1.FocusedNode["IOID"].ToString().Length > 0)
+            {
+                destination = treeList1.FocusedNode["IOID"].ToString();
+                destinationtype = "SOCKET";
+            }
+            else if (treeList1.FocusedNode["ComponentID"].ToString().Length > 0)
+            {
+                destination = treeList1.FocusedNode["ComponentID"].ToString();
+                destinationtype = "COMPONENT";
+            }
+            return null;
+        }
     }
 }
 
