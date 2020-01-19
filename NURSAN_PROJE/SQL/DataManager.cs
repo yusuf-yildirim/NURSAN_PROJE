@@ -13,7 +13,7 @@ namespace NURSAN_PROJE.SQL
     {
         private static LocalTables localTables;
         private const bool initialize = true;
-        private bool initialized = false;
+        private static bool initialized = false;
         public DataManager()
         {
             if(initialized == false)
@@ -23,7 +23,7 @@ namespace NURSAN_PROJE.SQL
             }
             else
             {
-
+               // localTables = localTables;
             }                  
         }
         ///<summary>

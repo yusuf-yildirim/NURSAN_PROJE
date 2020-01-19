@@ -907,21 +907,6 @@ namespace NURSAN_PROJE
             //Colors_lookup.valu ID_color Color Name Hex Code
         }
 
-        private void gridView2_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-            Console.WriteLine(gridView2.GetRowCellValue(gridView2.GetSelectedRows()[0], "Tur").ToString());
-            if (gridView2.GetRowCellValue(gridView2.GetSelectedRows()[0], "Tur").ToString() == "RESISTOR")
-            {
-                gridView2.OptionsEditForm.CustomEditFormLayout = new ResistorEdit();
-            }
-            else
-            {
-                gridView2.OptionsEditForm.CustomEditFormLayout = new XtraUserControl2();
-            }
-            
-
-        }
     }
 }
 

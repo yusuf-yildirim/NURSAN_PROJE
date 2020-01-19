@@ -144,6 +144,24 @@
     <Compile Include="askprojectname.Designer.cs">
       <DependentUpon>askprojectname.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomEditForms\DiodeEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomEditForms\DiodeEdit.Designer.cs">
+      <DependentUpon>DiodeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomEditForms\GenericComponentEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomEditForms\GenericComponentEdit.Designer.cs">
+      <DependentUpon>GenericComponentEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomEditForms\SpliceEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomEditForms\SpliceEdit.Designer.cs">
+      <DependentUpon>SpliceEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enums.cs" />
     <Compile Include="Configurator\Config.cs" />
     <Compile Include="Data.cs" />
@@ -214,17 +232,20 @@
     <Compile Include="CustomEditForms\ResistorEdit.Designer.cs">
       <DependentUpon>ResistorEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomEditForms\XtraUserControl2.cs">
+    <Compile Include="CustomEditForms\CapacitorEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomEditForms\XtraUserControl2.Designer.cs">
-      <DependentUpon>XtraUserControl2.cs</DependentUpon>
+    <Compile Include="CustomEditForms\CapacitorEdit.Designer.cs">
+      <DependentUpon>CapacitorEdit.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="askPhase.resx">
       <DependentUpon>askPhase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="askprojectname.resx">
       <DependentUpon>askprojectname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomEditForms\GenericComponentEdit.resx">
+      <DependentUpon>GenericComponentEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="determine_pin_locations_window.resx">
       <DependentUpon>determine_pin_locations_window.cs</DependentUpon>
@@ -257,8 +278,8 @@
     <EmbeddedResource Include="CustomEditForms\ResistorEdit.resx">
       <DependentUpon>ResistorEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomEditForms\XtraUserControl2.resx">
-      <DependentUpon>XtraUserControl2.cs</DependentUpon>
+    <EmbeddedResource Include="CustomEditForms\CapacitorEdit.resx">
+      <DependentUpon>CapacitorEdit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

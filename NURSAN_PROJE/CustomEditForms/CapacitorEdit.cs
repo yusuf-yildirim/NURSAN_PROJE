@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace NURSAN_PROJE
 {
-    public partial class XtraUserControl2 : DevExpress.XtraEditors.XtraUserControl
+    public partial class CapacitorEdit : DevExpress.XtraEditors.XtraUserControl
     {
-        public XtraUserControl2()
+        public CapacitorEdit()
         {
             InitializeComponent();
         }

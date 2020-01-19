@@ -13,8 +13,6 @@ namespace NURSAN_PROJE
 
         public void addMainSocket()
         {
-
-
             string[,] arr2 = new string[3, 999];
           
                 object[] arr = new object[5];
@@ -42,9 +40,20 @@ namespace NURSAN_PROJE
                 {
                     t.Text = "";
                 }
-          
-
-
         }
+        private void gridView2_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string componentID = gridView2.GetRowCellValue(gridView2.GetSelectedRows()[0], "ID_component").ToString();
+            if (gridView2.GetRowCellValue(gridView2.GetSelectedRows()[0], "Tur").ToString() == "RESISTOR")
+            {
+                gridView2.OptionsEditForm.CustomEditFormLayout = new ResistorEdit(componentID);
+            }
+            else
+            {
+                gridView2.OptionsEditForm.CustomEditFormLayout = new CapacitorEdit();
+            }
+        }
+
+
     }
 }
