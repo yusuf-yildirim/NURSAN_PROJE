@@ -26,6 +26,10 @@ namespace NURSAN_PROJE.SQL
                // localTables = localTables;
             }                  
         }
+        public DataManager(bool temp)
+        {
+            localTables = new LocalTables(false);
+        }
         ///<summary>
         ///Kullanıcıya gösterilecek main veritabanı soketlerini DataTable olarak döndürür.
         ///</summary>

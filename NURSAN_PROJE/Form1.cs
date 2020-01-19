@@ -1,6 +1,7 @@
 ﻿using NURSAN_PROJE.SQL;
 using System;
 using System.Data;
+using System.IO;
 using System.Windows.Forms;
 
 
@@ -12,16 +13,16 @@ namespace NURSAN_PROJE
         DataManager manager;
         public Form1()
         {
-            manager = new DataManager();
+            manager = new DataManager(false);
             InitializeComponent();
             initializelistbox();
-            
+
         }
 
         public void initializelistbox()
         {
-            //   string[] xmlFiles = Directory.GetFiles("C:\\Users\\yyill\\Desktop\\xmlfile", "*.txt").Select(Path.GetFileName).ToArray();
-              projectlistbox.DataSource = manager.getRecent();
+            //   string[] xmlFiles = Directory.GetFiles("C:\\Users\\yyill\\Desktop\\xmlfile", "*.txt").Select(Path.GetFileName).ToArray(); 
+            projectlistbox.DataSource = manager.getDatabaseTable("Recent", Databases.Main);
         }
 
         private void simpleButton16_Click(object sender, EventArgs e)
@@ -31,23 +32,31 @@ namespace NURSAN_PROJE
 
         private void listBoxControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            DataTable temp = projectlistbox.DataSource as DataTable;
+            string path = temp.Rows[projectlistbox.SelectedIndex][2].ToString();
             if (firstlogin == false)
             {
-                DataTable temp = projectlistbox.DataSource as DataTable;
-                string path = temp.Rows[projectlistbox.SelectedIndex][2].ToString();
-                using (DBeng db = new DBeng())
+                if (File.Exists(path) == true)
                 {
-                    db.setProjectPath(path);
-                    using(LocalTables locals = new LocalTables(true))
+                    using (DBeng db = new DBeng())
                     {
-                        locals.getalltables();
+                        db.setProjectPath(path);
+                        using (LocalTables locals = new LocalTables(true))
+                        {
+                            locals.getalltables();
+                        }
                     }
-                }
-            
-                
-                this.Hide();
 
+
+                    this.Hide();
+
+                }
+                else
+                {
+                    MessageBox.Show("Dosya artık mevcut değil" + path);
+                }
             }
+
             firstlogin = false;
 
         }

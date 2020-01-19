@@ -13,7 +13,7 @@ namespace NURSAN_PROJE.SQL
 {
     class DBeng : IDisposable
     {
-       // mainsource x = new mainsource();
+        // mainsource x = new mainsource();
         static SQLiteConnection con;
         static SQLiteDataAdapter da;
         static SQLiteCommand cmd;
@@ -49,9 +49,13 @@ namespace NURSAN_PROJE.SQL
                 m_dbConnection.Open();
                 string sql = File.ReadAllText(@"db.ini");
                 SQLiteCommand command = new SQLiteCommand(commandText: sql, connection: m_dbConnection);
-                command.ExecuteNonQuery();              
+                command.ExecuteNonQuery();
                 m_dbConnection.Close();
                 created = true;
+                using (LocalTables update = new LocalTables(true))
+                {
+                    update.getalltables();
+                }
             }
             catch (Exception err)
             {
@@ -64,25 +68,33 @@ namespace NURSAN_PROJE.SQL
         {
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-            connectionStringsSection.ConnectionStrings["tablo"].ConnectionString = @"XpoProvider=SQLite;Data Source=" +path;
+            connectionStringsSection.ConnectionStrings["tablo"].ConnectionString = @"XpoProvider=SQLite;Data Source=" + path;
             config.Save();
         }
         ///<summary>
         ///Çağırıldığı yere istenen tabloyu istenen veritabanından DataTable olarak döndürür.
         ///</summary>
         public DataTable GetDataTable(string tablename, Databases db)
-        {           
+        {
             if (db == Databases.Main)
             {
                 con = new SQLiteConnection("Data Source=" + Application.StartupPath + "\\tablo.db;Version=3;");
-               
+
                 DataTable DT = new DataTable();
                 con.Open();
                 cmd = con.CreateCommand();
                 cmd.CommandText = string.Format("SELECT * FROM {0}", tablename);
                 da = new SQLiteDataAdapter(cmd);
                 da.AcceptChangesDuringFill = false;
-                da.Fill(DT);
+                try
+                {
+                    da.Fill(DT);
+                }
+                catch
+                {
+                    MessageBox.Show("Ana tablo güncellenirken/çekilirken hata!");
+                }
+
                 con.Close();
                 DT.TableName = tablename;
                 foreach (DataRow row in DT.Rows)
@@ -91,7 +103,7 @@ namespace NURSAN_PROJE.SQL
                 }
                 return DT;
             }
-            else if(db == Databases.Project)
+            else if (db == Databases.Project)
             {
                 con = new SQLiteConnection(getconstring.get_conn_string("tablo") + ";Version=3;");
                 Console.WriteLine(getconstring.get_conn_string("tablo") + ";Version=3;");
@@ -150,19 +162,19 @@ namespace NURSAN_PROJE.SQL
 
 
             }
-            else if(db == Databases.Project)
+            else if (db == Databases.Project)
             {
                 con = new SQLiteConnection(getconstring.get_conn_string("tablo") + ";Version=3;");
-                Console.WriteLine("Proje veritabanı " +DT.TableName.ToString() + " tablosu "+DT.Rows.Count.ToString() + " tane satır ile güncelleniyor!");
+                Console.WriteLine("Proje veritabanı " + DT.TableName.ToString() + " tablosu " + DT.Rows.Count.ToString() + " tane satır ile güncelleniyor!");
                 try
                 {
                     con.Open();
                     cmd = con.CreateCommand();
                     cmd.CommandText = string.Format("SELECT * FROM {0}", DT.TableName);
                     da = new SQLiteDataAdapter(cmd);
-                    SQLiteCommandBuilder builder = new SQLiteCommandBuilder(da);                    
-                    da.Update(DT);                    
-                    con.Close();                    
+                    SQLiteCommandBuilder builder = new SQLiteCommandBuilder(da);
+                    da.Update(DT);
+                    con.Close();
                 }
                 catch (Exception Ex)
                 {
@@ -175,7 +187,7 @@ namespace NURSAN_PROJE.SQL
                 MessageBox.Show("UNEXPECTED ERROR");
                 Console.WriteLine("UNEXPECTED ERROR");
             }
-          
+
         }
 
 

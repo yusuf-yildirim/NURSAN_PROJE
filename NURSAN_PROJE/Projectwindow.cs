@@ -26,10 +26,9 @@ namespace NURSAN_PROJE
         public Projectwindow(string path)
         {
 
+
             DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
-            db = new DBeng();
-            manager = new DataManager();
-            updater = new DataManager.TableUpdater();
+            //db = new DBeng();            
             Config conf = new Config();
             this.Hide();
             InitializeComponent();
@@ -38,11 +37,15 @@ namespace NURSAN_PROJE
             {
                 if (path.Length > 0)
                 {
+                    manager = new DataManager();
+                    updater = new DataManager.TableUpdater();
                     conf.set_connectionstring("tablo", path);
                     manager.createRecent(path);
                 }
                 else
                 {
+                    manager = new DataManager(false);
+                    updater = new DataManager.TableUpdater();
                     new Form1().ShowDialog();
                     this.Show();
 

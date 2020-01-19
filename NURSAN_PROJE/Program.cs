@@ -1,4 +1,5 @@
 ﻿using DevExpress.UserSkins;
+using NURSAN_PROJE.SQL;
 using System;
 using System.Windows.Forms;
 
@@ -17,10 +18,11 @@ namespace NURSAN_PROJE
             BonusSkins.Register();
             //  Application.Run(new Projectwindow());
             tmplog.start_debug();
-            if (args[0].Length > 0)
+            if (args.Length > 0)
             {
                 using (DBeng db = new DBeng())
                 {
+
                     db.setProjectPath(args[0]);
                     using (LocalTables locals = new LocalTables(true))
                     {
