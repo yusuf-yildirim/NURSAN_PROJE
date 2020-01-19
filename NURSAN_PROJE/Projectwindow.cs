@@ -630,6 +630,7 @@ namespace NURSAN_PROJE
         private void gridView7_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {          
             gridControl1.DataSource = manager.getConnectionbyPhase(gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString());
+            
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -886,8 +887,9 @@ namespace NURSAN_PROJE
  
 
         private void simpleButton12_Click(object sender, EventArgs e)
-        {         
-                  
+        {
+
+           
         }
 
         private void edit_socket_lednumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
@@ -903,6 +905,22 @@ namespace NURSAN_PROJE
         private void Colors_lookup_EditValueChanged(object sender, EventArgs e)
         {
             //Colors_lookup.valu ID_color Color Name Hex Code
+        }
+
+        private void gridView2_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+            Console.WriteLine(gridView2.GetRowCellValue(gridView2.GetSelectedRows()[0], "Tur").ToString());
+            if (gridView2.GetRowCellValue(gridView2.GetSelectedRows()[0], "Tur").ToString() == "RESISTOR")
+            {
+                gridView2.OptionsEditForm.CustomEditFormLayout = new ResistorEdit();
+            }
+            else
+            {
+                gridView2.OptionsEditForm.CustomEditFormLayout = new XtraUserControl2();
+            }
+            
+
         }
     }
 }

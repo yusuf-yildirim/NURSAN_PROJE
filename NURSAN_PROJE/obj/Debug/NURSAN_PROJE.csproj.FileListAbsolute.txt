@@ -832,3 +832,5 @@ D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.W
 D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.WaitForm2.resources
 C:\Users\yyill\source\repos\BurakcanKolay\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.WaitForm1.resources
 C:\Users\yyill\source\repos\BurakcanKolay\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.WaitForm2.resources
+D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.XtraUserControl2.resources
+D:\masüstü\Proje Dosyaları\NURSAN_PROJE\NURSAN_PROJE\obj\Debug\NURSAN_PROJE.ResistorEdit.resources

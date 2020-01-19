@@ -298,9 +298,6 @@
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.workflow_page = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.diagramControl1 = new DevExpress.XtraDiagram.DiagramControl();
             this.diagramShape1 = new DevExpress.XtraDiagram.DiagramShape();
@@ -2694,15 +2691,13 @@
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn3,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn11});
+            this.gridColumn8});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.GroupPanelText = "Gruplamak için sütunu buraya sürükleyin";
             this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplace;
             this.gridView2.OptionsNavigation.AutoFocusNewRow = true;
+            this.gridView2.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView2_ShowingEditor);
             // 
             // gridColumn3
             // 
@@ -2713,27 +2708,10 @@
             // 
             // gridColumn8
             // 
+            this.gridColumn8.FieldName = "Component_Name";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 1;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 2;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 3;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 4;
             // 
             // workflow_page
             // 
@@ -3478,9 +3456,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.Data.RealTimeSource projectcomponentsource;
         private DevExpress.XtraEditors.SearchControl searchControl2;
         private System.Windows.Forms.BindingSource bindingSource1;
