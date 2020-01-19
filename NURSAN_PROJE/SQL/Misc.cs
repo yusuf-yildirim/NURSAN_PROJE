@@ -287,32 +287,64 @@ namespace NURSAN_PROJE.SQL
         ///<summary>
         ///Soket ismi uygunluğunu kontrol eder bool döndürür.
         ///</summary>
-        public bool checknameAvailability(String name)
+        public bool checknameAvailability(String name,Databases database)
         {
-            var rows = getFromLocalTablesmain("Sockets").Select("Adı ='" + name + "'");
-            if(rows.Length > 0)
+            if(database == Databases.Main)
             {
-               return false;
+                var rows = getFromLocalTablesmain("Sockets").Select("Adı ='" + name + "'");
+                if (rows.Length > 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
             else
             {
-               return true;
+                var rows = getFromLocalTablesproject("PSockets").Select("Adı ='" + name + "'");
+                if (rows.Length > 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
+          
         }
         ///<summary>
         ///Led numarası uygunluğunu kontrol eder bool döndürür.
         ///</summary>
-        public bool checklednumberAvailability(String lednumber)
+        public bool checklednumberAvailability(String lednumber,Databases database)
         {
-            var rows = getFromLocalTablesmain("Sockets").Select("Led_numarasi =" + lednumber + "");
-            if (rows.Length > 0)
+            if(database == Databases.Main)
             {
-                return false;
+                var rows = getFromLocalTablesmain("Sockets").Select("Led_numarasi =" + lednumber + "");
+                if (rows.Length > 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
             else
             {
-                return true;
+                var rows = getFromLocalTablesproject("PSockets").Select("Led_numarasi =" + lednumber + "");
+                if (rows.Length > 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
+           
         }
 
     }

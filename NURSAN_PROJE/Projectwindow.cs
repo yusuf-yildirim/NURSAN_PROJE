@@ -827,32 +827,22 @@ namespace NURSAN_PROJE
             //DİĞER HEPSİ GİBİ YAPILMASINA RAĞMEN BU DATASOURCE VERİLERİ GÖSTERMİYOR !??!?
         }
 
-
+        bool updatesocketvaliteresult = true;
         private void save_socket_data_button_Click(object sender, EventArgs e)
         {
-            string socketid;
-           
-            if (gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString().Length != 0)
+            updatesocketvaliteresult = true;
+            foreach (TextEdit control in updatesoketgroup.Controls)
             {
-                Console.WriteLine("2");
-
-                socketid = gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString();
-                Console.WriteLine("3");
-
-                manager.updateSocketInfo(socketid, edit_socket_name.Text, edit_socket_pinnumber.Text, edit_socket_switchnumber.Text, edit_socket_lednumber.Text);
-                Console.WriteLine("4");
-
-                assign_pin_datatable = manager.getIObySocketIDMapped(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
-                Console.WriteLine("5");
-
-                gridControl4.DataSource = assign_pin_datatable;
-                Console.WriteLine("6");
-
-                gridControl4.RefreshDataSource();
-                Console.WriteLine("7");
-
-            }
-
+              
+                if (control.IsModified == true)
+                {                   
+                    control.DoValidate();
+                }
+            }           
+            if (updatesocketvaliteresult == true)
+            {
+                updateProjectSocket();
+            }          
         }
 
         private void new_socket_auto_assign_pin_CheckedChanged(object sender, EventArgs e)

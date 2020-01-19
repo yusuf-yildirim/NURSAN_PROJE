@@ -9,7 +9,6 @@ namespace NURSAN_PROJE
 {
     public partial class Projectwindow : DevExpress.XtraBars.ToolbarForm.ToolbarForm
     {
-       
 
         public void addMainSocket()
         {
@@ -41,6 +40,22 @@ namespace NURSAN_PROJE
                     t.Text = "";
                 }
         }
+
+        public void updateProjectSocket()
+        {
+            string socketid;
+
+            if (gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString().Length != 0)
+            {
+                socketid = gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString();               
+                manager.updateSocketInfo(socketid, edit_socket_name.Text, edit_socket_pinnumber.Text, edit_socket_switchnumber.Text, edit_socket_lednumber.Text);
+                assign_pin_datatable = manager.getIObySocketIDMapped(gridView6.GetRowCellValue(gridView6.GetSelectedRows()[0], "ID_soket").ToString());
+                gridControl4.DataSource = assign_pin_datatable;               
+                gridControl4.RefreshDataSource();              
+            }
+
+
+        }
         private void gridView2_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e)
         {
             string componentID = gridView2.GetRowCellValue(gridView2.GetSelectedRows()[0], "ID_component").ToString();
@@ -54,6 +69,6 @@ namespace NURSAN_PROJE
             }
         }
 
-
+    
     }
 }

@@ -148,7 +148,7 @@ namespace NURSAN_PROJE
         {          
             if (newsocketname.Text.Length > 0)
             {
-                if (manager.checknameAvailability(newsocketname.Text))
+                if (manager.checknameAvailability(newsocketname.Text,Databases.Main))
                 {
                     e.Cancel = false;
                     addsocketvalidateresult = false;
@@ -211,7 +211,7 @@ namespace NURSAN_PROJE
             try
             {
                 Convert.ToInt32(newsocketledc.Text);
-                if (manager.checklednumberAvailability(newsocketledc.Text))
+                if (manager.checklednumberAvailability(newsocketledc.Text,Databases.Main))
                 {
                     e.Cancel = false;
                     if (addsocketvalidateresult == false)
@@ -279,6 +279,128 @@ namespace NURSAN_PROJE
             }
             return exit_code;
         }
+        //-*-*-*-*--*-*--*---*-*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        private void edit_socket_name_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (edit_socket_name.Text.Length > 0)
+            {
+                if (manager.checknameAvailability(edit_socket_name.Text,Databases.Project) || edit_socket_name.Text == edit_socket_name.OldEditValue.ToString())
+                {
+                    e.Cancel = false;
+                    if(updatesocketvaliteresult == true)
+                    updatesocketvaliteresult = true;
+                }
+                else
+                {
+                    edit_socket_name.ErrorText = "Bu isim daha önce kullanılmış!";
+                    e.Cancel = true;
+                    updatesocketvaliteresult = false;
+
+                }
+            }
+            else
+            {
+                edit_socket_name.ErrorText = "Bu alan boş bırakılamaz!";
+                e.Cancel = true;
+                updatesocketvaliteresult = false;
+            }
+        }
+
+        private void edit_socket_switchnumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                Convert.ToInt32(edit_socket_switchnumber.Text);
+                if (Convert.ToInt32(edit_socket_switchnumber.Text) > 0)
+                {
+                    e.Cancel = false;
+                    if (updatesocketvaliteresult == true)
+                        updatesocketvaliteresult = true;
+
+                }
+                else
+                {
+                    e.Cancel = true;
+                    updatesocketvaliteresult = false;
+                    edit_socket_switchnumber.ErrorText = "Lütfen bu alana sıfır dan büyük bir sayı giriniz!";
+                }
+            }
+            catch
+            {
+                e.Cancel = true;
+                updatesocketvaliteresult = false;
+                edit_socket_switchnumber.ErrorText = "Lütfen bu alana bir sayı giriniz";
+            }
+        }
+        private void edit_socket_lednumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            
+                try
+                {
+                    Convert.ToInt32(edit_socket_lednumber.Text);               
+                    if (manager.checklednumberAvailability(edit_socket_lednumber.Text, Databases.Project) || edit_socket_lednumber.Text == edit_socket_lednumber.OldEditValue.ToString())
+                    {
+                        e.Cancel = false;
+                    if (updatesocketvaliteresult == true)
+                        updatesocketvaliteresult = true;
+
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                        updatesocketvaliteresult = false;
+                        edit_socket_lednumber.ErrorText = "Bu led numarası daha önce kullanılmış!";
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    e.Cancel = true;
+                    updatesocketvaliteresult = false;
+                    //MessageBox.Show(ex.Message);
+                    edit_socket_lednumber.ErrorText = "Lütfen bu alana bir sayı giriniz";
+
+                }
+            }
+           
+
+         
+        
+
+        private void edit_socket_pinnumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                Convert.ToInt32(edit_socket_pinnumber.Text);
+                if (Convert.ToInt32(edit_socket_pinnumber.Text) <= 0)
+                {
+                    edit_socket_pinnumber.ErrorText = "Lütfen bu alana sıfır dan büyük bir sayı giriniz!";
+                    e.Cancel = true;
+                   
+                        updatesocketvaliteresult = false;
+
+
+                }
+                else
+                {
+                    e.Cancel = false;
+                    if (updatesocketvaliteresult == true)
+                        updatesocketvaliteresult = true;
+
+
+                }
+            }
+            catch
+            {
+                edit_socket_pinnumber.ErrorText = "Lütfen bu alana bir sayı giriniz!";
+                e.Cancel = true;
+                updatesocketvaliteresult = false;
+            }
+        }
+
+
+
+
         //BOŞ GEÇİLMEMESİ GEREKEN PARAMETRELERİN KONTROLÜ! YENİ SOKET
         private bool errorprovider_checktext_null()
         {
@@ -300,24 +422,7 @@ namespace NURSAN_PROJE
         }
 
 
-        private void edit_socket_name_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-        }
-
-        private void edit_socket_switchnumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-        }
-        private void edit_socket_lednumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-        }
-
-        private void edit_socket_pinnumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-        }
+     
     }
 
 }

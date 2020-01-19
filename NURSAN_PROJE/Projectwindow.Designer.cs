@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery2 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery2 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column6 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression6 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column7 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression7 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column8 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression8 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column9 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression9 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column10 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression10 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery1 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.Column column1 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression1 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table1 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column2 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression2 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column3 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression3 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column4 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression4 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column5 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression5 = new DevExpress.DataAccess.Sql.ColumnExpression();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Projectwindow));
-            DevExpress.XtraEditors.TableLayout.ItemTemplateBase ıtemTemplateBase2 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition4 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement3 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
-            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement4 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.Utils.Animation.Transition transition2 = new DevExpress.Utils.Animation.Transition();
+            DevExpress.XtraEditors.TableLayout.ItemTemplateBase ıtemTemplateBase1 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement1 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement2 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.Utils.Animation.Transition transition1 = new DevExpress.Utils.Animation.Transition();
             this.recentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maindatasource = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
@@ -419,43 +419,43 @@
             // 
             this.maindatasource.ConnectionName = "maindatabase";
             this.maindatasource.Name = "maindatasource";
-            customSqlQuery2.Name = "addrecent";
-            queryParameter3.Name = "NAME";
-            queryParameter3.Type = typeof(string);
-            queryParameter3.ValueInfo = "TEST İSİM";
-            queryParameter4.Name = "PATH";
-            queryParameter4.Type = typeof(string);
-            queryParameter4.ValueInfo = "./TEST YOL";
-            customSqlQuery2.Parameters.Add(queryParameter3);
-            customSqlQuery2.Parameters.Add(queryParameter4);
-            customSqlQuery2.Sql = "INSERT INTO Recent(NAME,PATH) VALUES(@NAME, @PATH)";
-            columnExpression6.ColumnName = "ID_soket";
-            table2.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"153\" />";
-            table2.Name = "tbl_Socket";
-            columnExpression6.Table = table2;
-            column6.Expression = columnExpression6;
-            columnExpression7.ColumnName = "Adı";
-            columnExpression7.Table = table2;
-            column7.Expression = columnExpression7;
-            columnExpression8.ColumnName = "Pin_sayisi";
-            columnExpression8.Table = table2;
-            column8.Expression = columnExpression8;
-            columnExpression9.ColumnName = "Anahtar_sayisi";
-            columnExpression9.Table = table2;
-            column9.Expression = columnExpression9;
-            columnExpression10.ColumnName = "Led_numarasi";
-            columnExpression10.Table = table2;
-            column10.Expression = columnExpression10;
-            selectQuery2.Columns.Add(column6);
-            selectQuery2.Columns.Add(column7);
-            selectQuery2.Columns.Add(column8);
-            selectQuery2.Columns.Add(column9);
-            selectQuery2.Columns.Add(column10);
-            selectQuery2.Name = "recent";
-            selectQuery2.Tables.Add(table2);
+            customSqlQuery1.Name = "addrecent";
+            queryParameter1.Name = "NAME";
+            queryParameter1.Type = typeof(string);
+            queryParameter1.ValueInfo = "TEST İSİM";
+            queryParameter2.Name = "PATH";
+            queryParameter2.Type = typeof(string);
+            queryParameter2.ValueInfo = "./TEST YOL";
+            customSqlQuery1.Parameters.Add(queryParameter1);
+            customSqlQuery1.Parameters.Add(queryParameter2);
+            customSqlQuery1.Sql = "INSERT INTO Recent(NAME,PATH) VALUES(@NAME, @PATH)";
+            columnExpression1.ColumnName = "ID_soket";
+            table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"153\" />";
+            table1.Name = "tbl_Socket";
+            columnExpression1.Table = table1;
+            column1.Expression = columnExpression1;
+            columnExpression2.ColumnName = "Adı";
+            columnExpression2.Table = table1;
+            column2.Expression = columnExpression2;
+            columnExpression3.ColumnName = "Pin_sayisi";
+            columnExpression3.Table = table1;
+            column3.Expression = columnExpression3;
+            columnExpression4.ColumnName = "Anahtar_sayisi";
+            columnExpression4.Table = table1;
+            column4.Expression = columnExpression4;
+            columnExpression5.ColumnName = "Led_numarasi";
+            columnExpression5.Table = table1;
+            column5.Expression = columnExpression5;
+            selectQuery1.Columns.Add(column1);
+            selectQuery1.Columns.Add(column2);
+            selectQuery1.Columns.Add(column3);
+            selectQuery1.Columns.Add(column4);
+            selectQuery1.Columns.Add(column5);
+            selectQuery1.Name = "recent";
+            selectQuery1.Tables.Add(table1);
             this.maindatasource.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery2,
-            selectQuery2});
+            customSqlQuery1,
+            selectQuery1});
             this.maindatasource.ResultSchemaSerializable = resources.GetString("maindatasource.ResultSchemaSerializable");
             // 
             // toolbarFormManager1
@@ -936,6 +936,7 @@
             // 
             // edit_socket_name
             // 
+            this.edit_socket_name.CausesValidation = false;
             this.edit_socket_name.Location = new System.Drawing.Point(3, 3);
             this.edit_socket_name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.edit_socket_name.MenuManager = this.toolbarFormManager1;
@@ -946,6 +947,7 @@
             // 
             // edit_socket_switchnumber
             // 
+            this.edit_socket_switchnumber.CausesValidation = false;
             this.edit_socket_switchnumber.Location = new System.Drawing.Point(3, 107);
             this.edit_socket_switchnumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.edit_socket_switchnumber.MenuManager = this.toolbarFormManager1;
@@ -957,6 +959,7 @@
             // 
             // edit_socket_lednumber
             // 
+            this.edit_socket_lednumber.CausesValidation = false;
             this.edit_socket_lednumber.Location = new System.Drawing.Point(3, 70);
             this.edit_socket_lednumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.edit_socket_lednumber.MenuManager = this.toolbarFormManager1;
@@ -967,6 +970,7 @@
             // 
             // edit_socket_pinnumber
             // 
+            this.edit_socket_pinnumber.CausesValidation = false;
             this.edit_socket_pinnumber.Location = new System.Drawing.Point(3, 35);
             this.edit_socket_pinnumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.edit_socket_pinnumber.MenuManager = this.toolbarFormManager1;
@@ -1814,25 +1818,25 @@
             this.listBoxControl1.Name = "listBoxControl1";
             this.listBoxControl1.Size = new System.Drawing.Size(226, 473);
             this.listBoxControl1.TabIndex = 21;
-            ıtemTemplateBase2.Columns.Add(tableColumnDefinition3);
-            ıtemTemplateBase2.Columns.Add(tableColumnDefinition4);
-            templatedItemElement3.FieldName = "Component_Name";
-            templatedItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            templatedItemElement3.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement3.Text = "Component_Name";
-            templatedItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            templatedItemElement4.ColumnIndex = 1;
-            templatedItemElement4.FieldName = "Deger";
-            templatedItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            templatedItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement4.Text = "Deger";
-            templatedItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            ıtemTemplateBase2.Elements.Add(templatedItemElement3);
-            ıtemTemplateBase2.Elements.Add(templatedItemElement4);
-            ıtemTemplateBase2.Name = "template1";
-            tableRowDefinition2.Length.Value = 15D;
-            ıtemTemplateBase2.Rows.Add(tableRowDefinition2);
-            this.listBoxControl1.Templates.Add(ıtemTemplateBase2);
+            ıtemTemplateBase1.Columns.Add(tableColumnDefinition1);
+            ıtemTemplateBase1.Columns.Add(tableColumnDefinition2);
+            templatedItemElement1.FieldName = "Component_Name";
+            templatedItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement1.Text = "Component_Name";
+            templatedItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement2.ColumnIndex = 1;
+            templatedItemElement2.FieldName = "Deger";
+            templatedItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement2.Text = "Deger";
+            templatedItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            ıtemTemplateBase1.Elements.Add(templatedItemElement1);
+            ıtemTemplateBase1.Elements.Add(templatedItemElement2);
+            ıtemTemplateBase1.Name = "template1";
+            tableRowDefinition1.Length.Value = 15D;
+            ıtemTemplateBase1.Rows.Add(tableRowDefinition1);
+            this.listBoxControl1.Templates.Add(ıtemTemplateBase1);
             // 
             // maincomponentsource
             // 
@@ -2931,18 +2935,18 @@
             // 
             // transitionManager1
             // 
-            transition2.BarWaitingIndicatorProperties.Caption = "";
-            transition2.BarWaitingIndicatorProperties.Description = "";
-            transition2.Control = null;
-            transition2.LineWaitingIndicatorProperties.AnimationElementCount = 5;
-            transition2.LineWaitingIndicatorProperties.Caption = "";
-            transition2.LineWaitingIndicatorProperties.Description = "";
-            transition2.RingWaitingIndicatorProperties.AnimationElementCount = 5;
-            transition2.RingWaitingIndicatorProperties.Caption = "";
-            transition2.RingWaitingIndicatorProperties.Description = "";
-            transition2.WaitingIndicatorProperties.Caption = "";
-            transition2.WaitingIndicatorProperties.Description = "";
-            this.transitionManager1.Transitions.Add(transition2);
+            transition1.BarWaitingIndicatorProperties.Caption = "";
+            transition1.BarWaitingIndicatorProperties.Description = "";
+            transition1.Control = null;
+            transition1.LineWaitingIndicatorProperties.AnimationElementCount = 5;
+            transition1.LineWaitingIndicatorProperties.Caption = "";
+            transition1.LineWaitingIndicatorProperties.Description = "";
+            transition1.RingWaitingIndicatorProperties.AnimationElementCount = 5;
+            transition1.RingWaitingIndicatorProperties.Caption = "";
+            transition1.RingWaitingIndicatorProperties.Description = "";
+            transition1.WaitingIndicatorProperties.Caption = "";
+            transition1.WaitingIndicatorProperties.Description = "";
+            this.transitionManager1.Transitions.Add(transition1);
             // 
             // errorprovider
             // 
