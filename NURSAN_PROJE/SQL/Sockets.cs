@@ -233,7 +233,7 @@ namespace NURSAN_PROJE.SQL
         ///<summary>
         ///SoketID sine göre soketin ismini döndürür.
         ///</summary>
-        private string getSocketNameInfo(String SocketID)
+        public string getSocketNameInfo(String SocketID)
         {
             DataTable table = new DataTable();
             return getFromLocalTablesproject("PSockets").Select("ID_soket = '" + SocketID + "'")[0].ItemArray.ElementAt(1).ToString();       
