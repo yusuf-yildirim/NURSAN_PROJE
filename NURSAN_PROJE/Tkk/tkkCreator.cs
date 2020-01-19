@@ -23,10 +23,8 @@ namespace NURSAN_PROJE.Tkk
             {
                 string originID = getOriginIDbyOrder(i.ToString());
                 string destinationID = getDestinationIDbyOrder(i.ToString());
-                Console.WriteLine(i.ToString().PadLeft(4, '0') +" 01 "+getIO(originID) +" "+ getIO(destinationID) + " 0000 0000 0000 0000 \"METİN\" \"" + getNameWithID(originID)+"-"+getPin(originID)+"\" \"" + getNameWithID(destinationID) + "-" + getPin(destinationID) + "\"");
-            }
-
-          
+                Console.WriteLine(i.ToString().PadLeft(4, '0') +" 01 "+getIO(originID) +" "+ getIO(destinationID) + " 0000 0000 0000 0000 \"METİN\" \"" + getNameWithID(originID)+"-"+getPin(originID)+"\" \"" + getNameWithID(destinationID) + "-" + getPin(destinationID) + "\" \""+ getLed(originID)+"\" \""+ getLed(destinationID)+"\"");
+            }          
         }
 
         public string getOriginIDbyOrder(string order)
@@ -38,6 +36,10 @@ namespace NURSAN_PROJE.Tkk
         {
             //  MessageBox.Show(order);
             return manager.getFromLocalTablesproject("PConnections").Select("Order = '" + order + "'")[0][4].ToString();
+        }
+        public string getSocketIDbyIOID(string ID)
+        {
+            return manager.getFromLocalTablesproject("PIO_connection").Select("ID_IO ='" + ID + "'")[0][1].ToString();
         }
         public string getNameWithID(string ID)
         {
@@ -51,6 +53,11 @@ namespace NURSAN_PROJE.Tkk
         public string getIO(string ID)
         {            
             return int2hex(Convert.ToInt32(manager.getFromLocalTablesproject("PIO_connection").Select("ID_IO ='" + ID + "'")[0][3]));
+        }
+        public string getLed(string ID)
+        {
+            MessageBox.Show(getSocketIDbyIOID(ID));
+            return manager.getFromLocalTablesproject("PSockets").Select("ID_soket ='" + getSocketIDbyIOID(ID) + "'")[0][4].ToString() ;
         }
 
         public string int2hex(int x)
