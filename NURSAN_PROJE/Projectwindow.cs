@@ -8,6 +8,8 @@ using NURSAN_PROJE.SQL;
 using System;
 using System.Data;
 using System.Drawing;
+using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -969,6 +971,34 @@ namespace NURSAN_PROJE
             int new_focus_phases = MoveRow(row, "Down");
             gridControl7.DataSource = change_rowindex_phase_datatable;
             gridView7.FocusedRowHandle = new_focus_phases;
+        }
+
+        private void export_connections_button_Click(object sender, EventArgs e)
+        {
+            string filepath;
+            if (xtraFolderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                filepath = xtraFolderBrowserDialog1.SelectedPath + "\\" + gridView7.GetFocusedRowCellValue(gridColumn2) + ".xlsx";
+                //System.IO.File.Create(filepath);
+                exportphase(filepath);
+
+            }
+        }
+        public void exportphase(string fullPath)
+        {
+            for (int numTries = 0; numTries < 10; numTries++)
+            {
+                try
+                {
+                    gridControl7.ExportToXlsx(fullPath);
+                    break;
+                }
+                catch (IOException)
+                {
+                    Thread.Sleep(50);
+                }
+            }
+
         }
     }
 }
