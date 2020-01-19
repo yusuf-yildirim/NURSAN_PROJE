@@ -1417,8 +1417,6 @@
             this.gridColumn1.Caption = "gridColumn1";
             this.gridColumn1.FieldName = "ID_etap";
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
             // 
             // gridColumn2
             // 
@@ -1426,7 +1424,7 @@
             this.gridColumn2.FieldName = "Etap_Adı";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 0;
             // 
             // searchControl1
             // 
@@ -1462,6 +1460,7 @@
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(29, 29);
             this.simpleButton5.TabIndex = 3;
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // simpleButton4
             // 
@@ -1470,6 +1469,7 @@
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(29, 29);
             this.simpleButton4.TabIndex = 2;
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // simpleButton3
             // 

@@ -915,7 +915,61 @@ namespace NURSAN_PROJE
         {
             //Colors_lookup.valu ID_color Color Name Hex Code
         }
+        DataTable change_rowindex_phase_datatable;
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            change_rowindex_phase_datatable = manager.getPhases();
+            DataRow row = change_rowindex_phase_datatable.Rows[gridView7.FocusedRowHandle];
+            int new_focus_phases = MoveRow(row, "Up");
+            gridControl7.DataSource = change_rowindex_phase_datatable;
+            gridView7.FocusedRowHandle = new_focus_phases;
 
+        }
+        public int MoveRow(DataRow row, string direction)
+        {
+            DataRow oldRow = row;
+            DataRow newRow = change_rowindex_phase_datatable.NewRow();
+
+            newRow.ItemArray = oldRow.ItemArray;
+
+            int oldRowIndex = change_rowindex_phase_datatable.Rows.IndexOf(row);
+
+            if (direction =="Down")
+            {
+                int newRowIndex = oldRowIndex + 1;
+
+                if (oldRowIndex < (change_rowindex_phase_datatable.Rows.Count))
+                {
+                    change_rowindex_phase_datatable.Rows.Remove(oldRow);
+                    change_rowindex_phase_datatable.Rows.InsertAt(newRow, newRowIndex);
+                    return change_rowindex_phase_datatable.Rows.IndexOf(newRow);
+                }
+            }
+
+            if (direction == "Up")
+            {
+                int newRowIndex = oldRowIndex - 1;
+
+                if (oldRowIndex > 0)
+                {
+                    change_rowindex_phase_datatable.Rows.Remove(oldRow);
+                    change_rowindex_phase_datatable.Rows.InsertAt(newRow, newRowIndex);
+                    return change_rowindex_phase_datatable.Rows.IndexOf(newRow);
+                }
+            }
+
+            return 0;
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+
+            change_rowindex_phase_datatable = manager.getPhases();
+            DataRow row = change_rowindex_phase_datatable.Rows[gridView7.FocusedRowHandle];
+            int new_focus_phases = MoveRow(row, "Down");
+            gridControl7.DataSource = change_rowindex_phase_datatable;
+            gridView7.FocusedRowHandle = new_focus_phases;
+        }
     }
 }
 
