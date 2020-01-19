@@ -141,6 +141,8 @@
             this.colKABLOKONTROL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colÖZELİİKLER = new DevExpress.XtraGrid.Columns.GridColumn();
             this.WireColor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sidePanel2 = new DevExpress.XtraEditors.SidePanel();
             this.gridControl7 = new DevExpress.XtraGrid.GridControl();
             this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -154,30 +156,56 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
+            this.tabPane2 = new DevExpress.XtraBars.Navigation.TabPane();
+            this.tabNavigationPage5 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.Where_to_treelist_lookup = new DevExpress.XtraEditors.TreeListLookUpEdit();
             this.treeList1 = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn4 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
-            this.treeListLookUpEdit1 = new DevExpress.XtraEditors.TreeListLookUpEdit();
-            this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
-            this.SoketAdı = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.SoketIO = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.SoketID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.IOID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
             this.Colors_lookup = new DevExpress.XtraEditors.GridLookUpEdit();
             this.Colors = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.treeListLookUpEdit1 = new DevExpress.XtraEditors.TreeListLookUpEdit();
+            this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
+            this.SoketAdı = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.SoketIO = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.SoketID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.IOID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.tabNavigationPage6 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.edit_connection_toobject_lookupedit = new DevExpress.XtraEditors.TreeListLookUpEdit();
+            this.edit_connection_toobject_lookupedit_treelist = new DevExpress.XtraTreeList.TreeList();
+            this.treeListColumn5 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn6 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn7 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn8 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.edit_connection_name = new DevExpress.XtraEditors.TextEdit();
+            this.edit_connection_colorpicker = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.edit_connection_fromobject_lookupedit = new DevExpress.XtraEditors.TreeListLookUpEdit();
+            this.edit_connection_fromobject_lookupedit_treelist = new DevExpress.XtraTreeList.TreeList();
+            this.treeListColumn9 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn10 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn11 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn12 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.edit_connection_savebutton = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.component_tabpane = new DevExpress.XtraBars.Navigation.TabPane();
@@ -341,14 +369,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
             this.sidePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabPane2)).BeginInit();
+            this.tabPane2.SuspendLayout();
+            this.tabNavigationPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Where_to_treelist_lookup.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Colors_lookup.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Colors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
+            this.tabNavigationPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.edit_connection_toobject_lookupedit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edit_connection_toobject_lookupedit_treelist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edit_connection_name.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edit_connection_colorpicker.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edit_connection_fromobject_lookupedit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edit_connection_fromobject_lookupedit_treelist)).BeginInit();
             this.tabNavigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -1339,11 +1378,14 @@
             this.colNEREYE,
             this.colKABLOKONTROL,
             this.colÖZELİİKLER,
-            this.WireColor});
+            this.WireColor,
+            this.gridColumn15,
+            this.gridColumn16});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupPanelText = "Gruplamak için sütunu buraya sürükleyin";
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
             // colNEREDEN
             // 
@@ -1380,6 +1422,18 @@
             this.WireColor.Name = "WireColor";
             this.WireColor.Visible = true;
             this.WireColor.VisibleIndex = 3;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "gridColumn15";
+            this.gridColumn15.FieldName = "NEREDENID";
+            this.gridColumn15.Name = "gridColumn15";
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "gridColumn16";
+            this.gridColumn16.FieldName = "NEREYEID";
+            this.gridColumn16.Name = "gridColumn16";
             // 
             // sidePanel2
             // 
@@ -1501,15 +1555,7 @@
             // 
             // sidePanel1
             // 
-            this.sidePanel1.Controls.Add(this.Where_to_treelist_lookup);
-            this.sidePanel1.Controls.Add(this.textEdit9);
-            this.sidePanel1.Controls.Add(this.treeListLookUpEdit1);
-            this.sidePanel1.Controls.Add(this.labelControl10);
-            this.sidePanel1.Controls.Add(this.labelControl9);
-            this.sidePanel1.Controls.Add(this.labelControl7);
-            this.sidePanel1.Controls.Add(this.labelControl6);
-            this.sidePanel1.Controls.Add(this.simpleButton2);
-            this.sidePanel1.Controls.Add(this.Colors_lookup);
+            this.sidePanel1.Controls.Add(this.tabPane2);
             this.sidePanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.sidePanel1.Location = new System.Drawing.Point(1360, 0);
             this.sidePanel1.Name = "sidePanel1";
@@ -1517,10 +1563,41 @@
             this.sidePanel1.TabIndex = 1;
             this.sidePanel1.Text = "sidePanel1";
             // 
+            // tabPane2
+            // 
+            this.tabPane2.Controls.Add(this.tabNavigationPage5);
+            this.tabPane2.Controls.Add(this.tabNavigationPage6);
+            this.tabPane2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPane2.Location = new System.Drawing.Point(1, 0);
+            this.tabPane2.Name = "tabPane2";
+            this.tabPane2.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
+            this.tabNavigationPage5,
+            this.tabNavigationPage6});
+            this.tabPane2.RegularSize = new System.Drawing.Size(195, 746);
+            this.tabPane2.SelectedPage = this.tabNavigationPage6;
+            this.tabPane2.Size = new System.Drawing.Size(195, 746);
+            this.tabPane2.TabIndex = 51;
+            this.tabPane2.Text = "tabPane2";
+            // 
+            // tabNavigationPage5
+            // 
+            this.tabNavigationPage5.Caption = "Yeni Bağlantı";
+            this.tabNavigationPage5.Controls.Add(this.Where_to_treelist_lookup);
+            this.tabNavigationPage5.Controls.Add(this.labelControl6);
+            this.tabNavigationPage5.Controls.Add(this.textEdit9);
+            this.tabNavigationPage5.Controls.Add(this.Colors_lookup);
+            this.tabNavigationPage5.Controls.Add(this.treeListLookUpEdit1);
+            this.tabNavigationPage5.Controls.Add(this.simpleButton2);
+            this.tabNavigationPage5.Controls.Add(this.labelControl10);
+            this.tabNavigationPage5.Controls.Add(this.labelControl7);
+            this.tabNavigationPage5.Controls.Add(this.labelControl9);
+            this.tabNavigationPage5.Name = "tabNavigationPage5";
+            this.tabNavigationPage5.Size = new System.Drawing.Size(195, 717);
+            // 
             // Where_to_treelist_lookup
             // 
             this.Where_to_treelist_lookup.EditValue = "";
-            this.Where_to_treelist_lookup.Location = new System.Drawing.Point(13, 96);
+            this.Where_to_treelist_lookup.Location = new System.Drawing.Point(12, 95);
             this.Where_to_treelist_lookup.MenuManager = this.toolbarFormManager1;
             this.Where_to_treelist_lookup.Name = "Where_to_treelist_lookup";
             this.Where_to_treelist_lookup.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
@@ -1579,18 +1656,76 @@
             this.treeListColumn4.Visible = true;
             this.treeListColumn4.VisibleIndex = 3;
             // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(5, 18);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(41, 13);
+            this.labelControl6.TabIndex = 1;
+            this.labelControl6.Text = "Nereden";
+            // 
             // textEdit9
             // 
-            this.textEdit9.Location = new System.Drawing.Point(13, 222);
+            this.textEdit9.Location = new System.Drawing.Point(12, 221);
             this.textEdit9.MenuManager = this.toolbarFormManager1;
             this.textEdit9.Name = "textEdit9";
             this.textEdit9.Size = new System.Drawing.Size(171, 20);
             this.textEdit9.TabIndex = 10;
             // 
+            // Colors_lookup
+            // 
+            this.Colors_lookup.EditValue = "Seçiniz...";
+            this.Colors_lookup.Location = new System.Drawing.Point(11, 158);
+            this.Colors_lookup.MenuManager = this.toolbarFormManager1;
+            this.Colors_lookup.Name = "Colors_lookup";
+            this.Colors_lookup.Properties.AcceptEditorTextAsNewValue = DevExpress.Utils.DefaultBoolean.False;
+            this.Colors_lookup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.Colors_lookup.Properties.DataSource = this.Colors;
+            this.Colors_lookup.Properties.DisplayMember = "ColorName";
+            this.Colors_lookup.Properties.PopupView = this.gridLookUpEdit1View;
+            this.Colors_lookup.Size = new System.Drawing.Size(171, 20);
+            this.Colors_lookup.TabIndex = 50;
+            this.Colors_lookup.BeforePopup += new System.EventHandler(this.Colors_lookup_BeforePopup);
+            this.Colors_lookup.EditValueChanged += new System.EventHandler(this.Colors_lookup_EditValueChanged);
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn12,
+            this.gridColumn13,
+            this.gridColumn14});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "gridColumn12";
+            this.gridColumn12.FieldName = "ID_color";
+            this.gridColumn12.Name = "gridColumn12";
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Renk";
+            this.gridColumn13.FieldName = "ColorName";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 0;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Hex Kodu";
+            this.gridColumn14.FieldName = "HexCode";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 1;
+            // 
             // treeListLookUpEdit1
             // 
             this.treeListLookUpEdit1.EditValue = "[NEREDEN]";
-            this.treeListLookUpEdit1.Location = new System.Drawing.Point(13, 38);
+            this.treeListLookUpEdit1.Location = new System.Drawing.Point(12, 37);
             this.treeListLookUpEdit1.MenuManager = this.toolbarFormManager1;
             this.treeListLookUpEdit1.Name = "treeListLookUpEdit1";
             this.treeListLookUpEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
@@ -1649,96 +1784,269 @@
             this.IOID.Visible = true;
             this.IOID.VisibleIndex = 3;
             // 
-            // labelControl10
-            // 
-            this.labelControl10.Location = new System.Drawing.Point(6, 203);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(45, 13);
-            this.labelControl10.TabIndex = 9;
-            this.labelControl10.Text = "Kablo Adı";
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Location = new System.Drawing.Point(6, 140);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(58, 13);
-            this.labelControl9.TabIndex = 7;
-            this.labelControl9.Text = "Kablo Rengi";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(6, 77);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(34, 13);
-            this.labelControl7.TabIndex = 3;
-            this.labelControl7.Text = "Nereye";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(6, 19);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(41, 13);
-            this.labelControl6.TabIndex = 1;
-            this.labelControl6.Text = "Nereden";
-            // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(48, 305);
+            this.simpleButton2.Location = new System.Drawing.Point(42, 276);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(112, 35);
             this.simpleButton2.TabIndex = 0;
             this.simpleButton2.Text = "Yeni Bağlantı";
             this.simpleButton2.Click += new System.EventHandler(this.SimpleButton2_Click);
             // 
-            // Colors_lookup
+            // labelControl10
             // 
-            this.Colors_lookup.EditValue = "Seçiniz...";
-            this.Colors_lookup.Location = new System.Drawing.Point(12, 159);
-            this.Colors_lookup.MenuManager = this.toolbarFormManager1;
-            this.Colors_lookup.Name = "Colors_lookup";
-            this.Colors_lookup.Properties.AcceptEditorTextAsNewValue = DevExpress.Utils.DefaultBoolean.False;
-            this.Colors_lookup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.labelControl10.Location = new System.Drawing.Point(5, 202);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(45, 13);
+            this.labelControl10.TabIndex = 9;
+            this.labelControl10.Text = "Kablo Adı";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(5, 76);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(34, 13);
+            this.labelControl7.TabIndex = 3;
+            this.labelControl7.Text = "Nereye";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(5, 139);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(58, 13);
+            this.labelControl9.TabIndex = 7;
+            this.labelControl9.Text = "Kablo Rengi";
+            // 
+            // tabNavigationPage6
+            // 
+            this.tabNavigationPage6.Caption = "Düzenle";
+            this.tabNavigationPage6.Controls.Add(this.edit_connection_toobject_lookupedit);
+            this.tabNavigationPage6.Controls.Add(this.labelControl11);
+            this.tabNavigationPage6.Controls.Add(this.edit_connection_name);
+            this.tabNavigationPage6.Controls.Add(this.edit_connection_colorpicker);
+            this.tabNavigationPage6.Controls.Add(this.edit_connection_fromobject_lookupedit);
+            this.tabNavigationPage6.Controls.Add(this.edit_connection_savebutton);
+            this.tabNavigationPage6.Controls.Add(this.labelControl12);
+            this.tabNavigationPage6.Controls.Add(this.labelControl13);
+            this.tabNavigationPage6.Controls.Add(this.labelControl14);
+            this.tabNavigationPage6.Name = "tabNavigationPage6";
+            this.tabNavigationPage6.Size = new System.Drawing.Size(195, 717);
+            // 
+            // edit_connection_toobject_lookupedit
+            // 
+            this.edit_connection_toobject_lookupedit.EditValue = "";
+            this.edit_connection_toobject_lookupedit.Location = new System.Drawing.Point(17, 95);
+            this.edit_connection_toobject_lookupedit.MenuManager = this.toolbarFormManager1;
+            this.edit_connection_toobject_lookupedit.Name = "edit_connection_toobject_lookupedit";
+            this.edit_connection_toobject_lookupedit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.edit_connection_toobject_lookupedit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.Colors_lookup.Properties.DataSource = this.Colors;
-            this.Colors_lookup.Properties.DisplayMember = "ColorName";
-            this.Colors_lookup.Properties.PopupView = this.gridLookUpEdit1View;
-            this.Colors_lookup.Size = new System.Drawing.Size(171, 20);
-            this.Colors_lookup.TabIndex = 50;
-            this.Colors_lookup.BeforePopup += new System.EventHandler(this.Colors_lookup_BeforePopup);
-            this.Colors_lookup.EditValueChanged += new System.EventHandler(this.Colors_lookup_EditValueChanged);
+            this.edit_connection_toobject_lookupedit.Properties.TreeList = this.edit_connection_toobject_lookupedit_treelist;
+            this.edit_connection_toobject_lookupedit.Size = new System.Drawing.Size(166, 22);
+            this.edit_connection_toobject_lookupedit.TabIndex = 58;
             // 
-            // gridLookUpEdit1View
+            // edit_connection_toobject_lookupedit_treelist
             // 
-            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn12,
-            this.gridColumn13,
-            this.gridColumn14});
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.edit_connection_toobject_lookupedit_treelist.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.treeListColumn5,
+            this.treeListColumn6,
+            this.treeListColumn7,
+            this.treeListColumn8});
+            this.edit_connection_toobject_lookupedit_treelist.KeyFieldName = "";
+            this.edit_connection_toobject_lookupedit_treelist.Location = new System.Drawing.Point(-217, 399);
+            this.edit_connection_toobject_lookupedit_treelist.Name = "edit_connection_toobject_lookupedit_treelist";
+            this.edit_connection_toobject_lookupedit_treelist.OptionsBehavior.PopulateServiceColumns = true;
+            this.edit_connection_toobject_lookupedit_treelist.OptionsPrint.PrintReportFooter = false;
+            this.edit_connection_toobject_lookupedit_treelist.OptionsView.ShowIndentAsRowStyle = true;
+            this.edit_connection_toobject_lookupedit_treelist.ParentFieldName = "";
+            this.edit_connection_toobject_lookupedit_treelist.Size = new System.Drawing.Size(388, 200);
+            this.edit_connection_toobject_lookupedit_treelist.TabIndex = 0;
             // 
-            // gridColumn12
+            // treeListColumn5
             // 
-            this.gridColumn12.Caption = "gridColumn12";
-            this.gridColumn12.FieldName = "ID_color";
-            this.gridColumn12.Name = "gridColumn12";
+            this.treeListColumn5.Caption = "Adı";
+            this.treeListColumn5.FieldName = "Soket Adı";
+            this.treeListColumn5.Name = "treeListColumn5";
+            this.treeListColumn5.Visible = true;
+            this.treeListColumn5.VisibleIndex = 0;
             // 
-            // gridColumn13
+            // treeListColumn6
             // 
-            this.gridColumn13.Caption = "Renk";
-            this.gridColumn13.FieldName = "ColorName";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 0;
+            this.treeListColumn6.Caption = "Özellikler";
+            this.treeListColumn6.FieldName = "SoketIO";
+            this.treeListColumn6.Name = "treeListColumn6";
+            this.treeListColumn6.Visible = true;
+            this.treeListColumn6.VisibleIndex = 1;
             // 
-            // gridColumn14
+            // treeListColumn7
             // 
-            this.gridColumn14.Caption = "Hex Kodu";
-            this.gridColumn14.FieldName = "HexCode";
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 1;
+            this.treeListColumn7.Caption = "treeListColumn7";
+            this.treeListColumn7.FieldName = "SoketID";
+            this.treeListColumn7.Name = "treeListColumn7";
+            // 
+            // treeListColumn8
+            // 
+            this.treeListColumn8.Caption = "treeListColumn8";
+            this.treeListColumn8.FieldName = "IOID";
+            this.treeListColumn8.Name = "treeListColumn8";
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(7, 18);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(41, 13);
+            this.labelControl11.TabIndex = 52;
+            this.labelControl11.Text = "Nereden";
+            // 
+            // edit_connection_name
+            // 
+            this.edit_connection_name.Location = new System.Drawing.Point(17, 221);
+            this.edit_connection_name.MenuManager = this.toolbarFormManager1;
+            this.edit_connection_name.Name = "edit_connection_name";
+            this.edit_connection_name.Size = new System.Drawing.Size(166, 20);
+            this.edit_connection_name.TabIndex = 56;
+            // 
+            // edit_connection_colorpicker
+            // 
+            this.edit_connection_colorpicker.EditValue = "Seçiniz...";
+            this.edit_connection_colorpicker.Location = new System.Drawing.Point(16, 158);
+            this.edit_connection_colorpicker.MenuManager = this.toolbarFormManager1;
+            this.edit_connection_colorpicker.Name = "edit_connection_colorpicker";
+            this.edit_connection_colorpicker.Properties.AcceptEditorTextAsNewValue = DevExpress.Utils.DefaultBoolean.False;
+            this.edit_connection_colorpicker.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.edit_connection_colorpicker.Properties.DataSource = this.Colors;
+            this.edit_connection_colorpicker.Properties.DisplayMember = "ColorName";
+            this.edit_connection_colorpicker.Properties.PopupView = this.gridView5;
+            this.edit_connection_colorpicker.Size = new System.Drawing.Size(166, 20);
+            this.edit_connection_colorpicker.TabIndex = 59;
+            // 
+            // gridView5
+            // 
+            this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11});
+            this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView5.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "gridColumn12";
+            this.gridColumn9.FieldName = "ID_color";
+            this.gridColumn9.Name = "gridColumn9";
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Renk";
+            this.gridColumn10.FieldName = "ColorName";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 0;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Hex Kodu";
+            this.gridColumn11.FieldName = "HexCode";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 1;
+            // 
+            // edit_connection_fromobject_lookupedit
+            // 
+            this.edit_connection_fromobject_lookupedit.EditValue = "[NEREDEN]";
+            this.edit_connection_fromobject_lookupedit.Location = new System.Drawing.Point(17, 37);
+            this.edit_connection_fromobject_lookupedit.MenuManager = this.toolbarFormManager1;
+            this.edit_connection_fromobject_lookupedit.Name = "edit_connection_fromobject_lookupedit";
+            this.edit_connection_fromobject_lookupedit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.edit_connection_fromobject_lookupedit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.edit_connection_fromobject_lookupedit.Properties.TreeList = this.edit_connection_fromobject_lookupedit_treelist;
+            this.edit_connection_fromobject_lookupedit.Size = new System.Drawing.Size(166, 22);
+            this.edit_connection_fromobject_lookupedit.TabIndex = 57;
+            // 
+            // edit_connection_fromobject_lookupedit_treelist
+            // 
+            this.edit_connection_fromobject_lookupedit_treelist.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.treeListColumn9,
+            this.treeListColumn10,
+            this.treeListColumn11,
+            this.treeListColumn12});
+            this.edit_connection_fromobject_lookupedit_treelist.KeyFieldName = "";
+            this.edit_connection_fromobject_lookupedit_treelist.Location = new System.Drawing.Point(11, 191);
+            this.edit_connection_fromobject_lookupedit_treelist.Name = "edit_connection_fromobject_lookupedit_treelist";
+            this.edit_connection_fromobject_lookupedit_treelist.OptionsBehavior.PopulateServiceColumns = true;
+            this.edit_connection_fromobject_lookupedit_treelist.OptionsPrint.PrintReportFooter = false;
+            this.edit_connection_fromobject_lookupedit_treelist.OptionsView.ShowIndentAsRowStyle = true;
+            this.edit_connection_fromobject_lookupedit_treelist.ParentFieldName = "";
+            this.edit_connection_fromobject_lookupedit_treelist.Size = new System.Drawing.Size(388, 200);
+            this.edit_connection_fromobject_lookupedit_treelist.TabIndex = 0;
+            // 
+            // treeListColumn9
+            // 
+            this.treeListColumn9.Caption = "Soket Adı";
+            this.treeListColumn9.FieldName = "Soket Adı";
+            this.treeListColumn9.Name = "treeListColumn9";
+            this.treeListColumn9.Visible = true;
+            this.treeListColumn9.VisibleIndex = 0;
+            // 
+            // treeListColumn10
+            // 
+            this.treeListColumn10.Caption = "SoketIO";
+            this.treeListColumn10.FieldName = "SoketIO";
+            this.treeListColumn10.Name = "treeListColumn10";
+            this.treeListColumn10.Visible = true;
+            this.treeListColumn10.VisibleIndex = 1;
+            // 
+            // treeListColumn11
+            // 
+            this.treeListColumn11.Caption = "SoketID";
+            this.treeListColumn11.FieldName = "SoketID";
+            this.treeListColumn11.Name = "treeListColumn11";
+            this.treeListColumn11.Visible = true;
+            this.treeListColumn11.VisibleIndex = 2;
+            // 
+            // treeListColumn12
+            // 
+            this.treeListColumn12.Caption = "IOID";
+            this.treeListColumn12.FieldName = "IOID";
+            this.treeListColumn12.Name = "treeListColumn12";
+            this.treeListColumn12.Visible = true;
+            this.treeListColumn12.VisibleIndex = 3;
+            // 
+            // edit_connection_savebutton
+            // 
+            this.edit_connection_savebutton.Location = new System.Drawing.Point(48, 266);
+            this.edit_connection_savebutton.Name = "edit_connection_savebutton";
+            this.edit_connection_savebutton.Size = new System.Drawing.Size(100, 35);
+            this.edit_connection_savebutton.TabIndex = 51;
+            this.edit_connection_savebutton.Text = "Yeni Bağlantı";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Location = new System.Drawing.Point(7, 202);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(45, 13);
+            this.labelControl12.TabIndex = 55;
+            this.labelControl12.Text = "Kablo Adı";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(7, 76);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(34, 13);
+            this.labelControl13.TabIndex = 53;
+            this.labelControl13.Text = "Nereye";
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Location = new System.Drawing.Point(7, 139);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(58, 13);
+            this.labelControl14.TabIndex = 54;
+            this.labelControl14.Text = "Kablo Rengi";
             // 
             // tabNavigationPage3
             // 
@@ -1868,7 +2176,7 @@
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(226, 46);
             this.simpleButton1.TabIndex = 14;
-            this.simpleButton1.Text = "Yeni Bileşen Tanımla";
+            this.simpleButton1.Text = "Tanımlı Bileşenleri Göster";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton13
@@ -3053,15 +3361,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
             this.sidePanel1.ResumeLayout(false);
-            this.sidePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabPane2)).EndInit();
+            this.tabPane2.ResumeLayout(false);
+            this.tabNavigationPage5.ResumeLayout(false);
+            this.tabNavigationPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Where_to_treelist_lookup.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Colors_lookup.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Colors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
+            this.tabNavigationPage6.ResumeLayout(false);
+            this.tabNavigationPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.edit_connection_toobject_lookupedit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edit_connection_toobject_lookupedit_treelist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edit_connection_name.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edit_connection_colorpicker.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edit_connection_fromobject_lookupedit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edit_connection_fromobject_lookupedit_treelist)).EndInit();
             this.tabNavigationPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -3380,5 +3700,33 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraEditors.XtraFolderBrowserDialog xtraFolderBrowserDialog1;
+        private DevExpress.XtraBars.Navigation.TabPane tabPane2;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage5;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage6;
+        private DevExpress.XtraEditors.TreeListLookUpEdit edit_connection_toobject_lookupedit;
+        private DevExpress.XtraTreeList.TreeList edit_connection_toobject_lookupedit_treelist;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.TextEdit edit_connection_name;
+        private DevExpress.XtraEditors.GridLookUpEdit edit_connection_colorpicker;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraEditors.TreeListLookUpEdit edit_connection_fromobject_lookupedit;
+        private DevExpress.XtraTreeList.TreeList edit_connection_fromobject_lookupedit_treelist;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn9;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn10;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn11;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn12;
+        private DevExpress.XtraEditors.SimpleButton edit_connection_savebutton;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn5;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn6;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn7;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
     }
 }

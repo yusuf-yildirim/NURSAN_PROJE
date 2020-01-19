@@ -1008,7 +1008,149 @@ namespace NURSAN_PROJE
             }
         }
 
-       
+        private void gridView1_RowClick(object sender, RowClickEventArgs e)
+        {
+           
+            populatetreelists(edit_connection_fromobject_lookupedit_treelist, edit_connection_fromobject_lookupedit);
+            populatetreelists(edit_connection_toobject_lookupedit_treelist, edit_connection_toobject_lookupedit);
+
+            string fromobjectid = gridView1.GetFocusedRowCellValue(gridColumn15).ToString();
+            string toobjectid = gridView1.GetFocusedRowCellValue(gridColumn16).ToString();
+            Console.WriteLine("başlangıaç");
+            Console.WriteLine(fromobjectid);
+            Console.WriteLine(toobjectid);
+
+            TreeListNode fromobjectnode = edit_connection_fromobject_lookupedit_treelist.FindNodeByFieldValue("IOID", fromobjectid);
+            TreeListNode toobjectnode = edit_connection_toobject_lookupedit_treelist.FindNodeByFieldValue("IOID", toobjectid);
+
+            edit_connection_fromobject_lookupedit_treelist.SelectNode(fromobjectnode);
+            edit_connection_toobject_lookupedit_treelist.SelectNode(toobjectnode);
+
+
+            edit_connection_fromobject_lookupedit_treelist.SetFocusedNode(fromobjectnode);
+
+            edit_connection_fromobject_lookupedit_treelist.Refresh();
+            edit_connection_fromobject_lookupedit_treelist.Refresh();
+
+            edit_connection_toobject_lookupedit_treelist.RefreshEditor(true);
+            edit_connection_toobject_lookupedit_treelist.RefreshEditor(true);
+
+
+        }
+        public void populatetreelists(DevExpress.XtraTreeList.TreeList treelist,TreeListLookUpEdit lookupedit)
+        {
+            treelist.ClearNodes();
+            treelist.ForceInitialize();
+
+            try
+            {
+                DataTable socketlist = manager.getProjectSockets();
+                lookupedit.Properties.DisplayMember = "Soket Adı";
+                TreeListNode SocketsNode = null;
+                for (int i = 0; i < socketlist.Rows.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        SocketsNode = treelist.AppendNode(null, null);
+                        SocketsNode.SetValue("Soket Adı", "SOKETLER");
+                    }
+                    TreeListNode node1 = treelist.AppendNode(null, SocketsNode);
+
+                    node1.SetValue("Soket Adı", socketlist.Rows[i][1]);
+                    node1.SetValue("SoketID", socketlist.Rows[i][0]);
+
+                    DataTable socketiolist = manager.getIObySocketID(socketlist.Rows[i][0].ToString());
+
+                    for (int y = 0; y < socketiolist.Rows.Count; y++)
+                    {
+                        try
+                        {
+                            TreeListNode childnode1 = treelist.AppendNode(null, node1);
+                            childnode1.SetValue("IOID", socketiolist.Rows[y][0]);
+
+                            childnode1.SetValue("Soket Adı", socketlist.Rows[i][1] + " : " + socketiolist.Rows[y][2]);
+                            if (Convert.ToInt32(socketiolist.Rows[y][3]) != 0)
+                            {
+                                childnode1.SetValue("SoketIO", "Cihaz Pin : " + socketiolist.Rows[y][3]);
+                            }
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                }
+                TreeListNode ComponentsNode = null;
+                TreeListNode ResistorNode = null;
+                TreeListNode CapacitorNode = null;
+                TreeListNode SpliceNode = null;
+                TreeListNode DiodeNode = null;
+                TreeListNode GenericComponentNode = null;
+                DataTable componentlist = manager.getMainComponents();//TO-DO!!!!
+                ComponentsNode = treelist.AppendNode(null, null);
+                ResistorNode = treelist.AppendNode(null, ComponentsNode);
+                CapacitorNode = treelist.AppendNode(null, ComponentsNode);
+                SpliceNode = treelist.AppendNode(null, ComponentsNode);
+                DiodeNode = treelist.AppendNode(null, ComponentsNode);
+                GenericComponentNode = treelist.AppendNode(null, ComponentsNode);
+
+                ComponentsNode.SetValue("Soket Adı", "Komponentler");
+                ResistorNode.SetValue("Soket Adı", "Dirençler");
+                CapacitorNode.SetValue("Soket Adı", "Kapasitörler");
+                SpliceNode.SetValue("Soket Adı", "Düğümler");
+                DiodeNode.SetValue("Soket Adı", "Diyotlar");
+                GenericComponentNode.SetValue("Soket Adı", "Genel Bileşenler");
+                for (int i = 0; i < componentlist.Rows.Count; i++)
+                {
+                    TreeListNode childnode1;
+                    TreeListNode childnode2;
+                    switch (componentlist.Rows[i][2].ToString())
+                    {
+                        case "RESISTOR":
+                            childnode1 = treelist.AppendNode(null, ResistorNode);
+                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
+                            childnode2 = treelist.AppendNode(null, childnode1);
+                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
+                            break;
+                        case "CAPACITOR":
+                            childnode1 = treelist.AppendNode(null, CapacitorNode);
+                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
+                            childnode2 = treelist.AppendNode(null, childnode1);
+                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
+                            break;
+                        case "SPLICE":
+                            childnode1 = treelist.AppendNode(null, SpliceNode);
+                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
+                            childnode2 = treelist.AppendNode(null, childnode1);
+                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
+                            break;
+                        case "DIODE":
+                            childnode1 = treelist.AppendNode(null, DiodeNode);
+                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
+                            childnode2 = treelist.AppendNode(null, childnode1);
+                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
+                            break;
+                        case "GENERIC":
+                            childnode1 = treelist.AppendNode(null, GenericComponentNode);
+                            childnode1.SetValue("Soket Adı", componentlist.Rows[i][1]);
+                            childnode2 = treelist.AppendNode(null, childnode1);
+                            childnode1.SetValue("ComponentID", componentlist.Rows[i][0] + "!!");
+                            break;
+                    }
+                }
+                Console.WriteLine("ok");
+                treelist.Refresh();
+                //treeListLookUpEdit1TreeList.RefreshDataSource();
+                treelist.RefreshEditor(true);
+                //populatetreelists(edit_connection_fromobject_lookupedit_treelist);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("fail");
+                Console.WriteLine(ex.StackTrace);
+
+            }
+        }
     }
 }
 
