@@ -1213,6 +1213,12 @@ namespace NURSAN_PROJE
             }
             return null;
         }
+
+        private void delete_connection_button_Click(object sender, EventArgs e)
+        {
+            manager.removeConnection(gridView1.GetFocusedRowCellValue(gridColumn17).ToString(),gridView7.GetFocusedRowCellValue(gridColumn1).ToString());
+            gridControl1.DataSource = manager.getConnectionbyPhase(gridView7.GetRowCellValue(gridView7.GetSelectedRows()[0], "ID_etap").ToString());
+        }
     }
 }
 

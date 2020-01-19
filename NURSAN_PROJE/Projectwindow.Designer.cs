@@ -184,6 +184,7 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.tabNavigationPage6 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.delete_connection_button = new DevExpress.XtraEditors.SimpleButton();
             this.edit_connection_toobject_lookupedit = new DevExpress.XtraEditors.TreeListLookUpEdit();
             this.edit_connection_toobject_lookupedit_treelist = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn5 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -1828,6 +1829,7 @@
             // tabNavigationPage6
             // 
             this.tabNavigationPage6.Caption = "Düzenle";
+            this.tabNavigationPage6.Controls.Add(this.delete_connection_button);
             this.tabNavigationPage6.Controls.Add(this.edit_connection_toobject_lookupedit);
             this.tabNavigationPage6.Controls.Add(this.labelControl11);
             this.tabNavigationPage6.Controls.Add(this.edit_connection_name);
@@ -1839,6 +1841,17 @@
             this.tabNavigationPage6.Controls.Add(this.labelControl14);
             this.tabNavigationPage6.Name = "tabNavigationPage6";
             this.tabNavigationPage6.Size = new System.Drawing.Size(195, 717);
+            // 
+            // delete_connection_button
+            // 
+            this.delete_connection_button.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.delete_connection_button.Appearance.Options.UseForeColor = true;
+            this.delete_connection_button.Location = new System.Drawing.Point(48, 323);
+            this.delete_connection_button.Name = "delete_connection_button";
+            this.delete_connection_button.Size = new System.Drawing.Size(100, 41);
+            this.delete_connection_button.TabIndex = 60;
+            this.delete_connection_button.Text = "Sil";
+            this.delete_connection_button.Click += new System.EventHandler(this.delete_connection_button_Click);
             // 
             // edit_connection_toobject_lookupedit
             // 
@@ -3739,5 +3752,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraEditors.SimpleButton delete_connection_button;
     }
 }

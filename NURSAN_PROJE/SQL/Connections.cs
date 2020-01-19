@@ -41,7 +41,7 @@ namespace NURSAN_PROJE.SQL
 
         public void remapConnectionOrder(string phaseID)
         {
-            var rows = getFromLocalTablesproject("PConnections").Select("ID_etap_1 = '" + phaseID + "'Order ASC");
+            var rows = getFromLocalTablesproject("PConnections").Select("ID_etap_1 = '" + phaseID + "'", "Order ASC");
             int neworder = 1;
             foreach(var row in rows)
             {
