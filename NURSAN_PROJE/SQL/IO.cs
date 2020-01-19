@@ -146,6 +146,7 @@ namespace NURSAN_PROJE.SQL
             }
             catch
             {
+                MessageBox.Show("CHECK IO.cs");
                 return "HATA";
             }
 

@@ -31,8 +31,6 @@ namespace NURSAN_PROJE
                 edit_socket_save_button.Enabled = false;
             }
         }
-
-       
         bool validate = false;
         private void gridView4_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
         {
@@ -301,6 +299,25 @@ namespace NURSAN_PROJE
             return exit_code;
         }
 
+
+        private void edit_socket_name_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void edit_socket_switchnumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+        private void edit_socket_lednumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void edit_socket_pinnumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
     }
 
 }

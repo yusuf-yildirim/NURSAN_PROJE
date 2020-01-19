@@ -906,15 +906,7 @@ namespace NURSAN_PROJE
            
         }
 
-        private void edit_socket_lednumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-         
-        }
-
-        private void edit_socket_pinnumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-        }
+   
 
         private void Colors_lookup_EditValueChanged(object sender, EventArgs e)
         {
@@ -1024,6 +1016,7 @@ namespace NURSAN_PROJE
                 Console.WriteLine(err.Message + err.StackTrace);
             }
         }
+
     }
 }
 
